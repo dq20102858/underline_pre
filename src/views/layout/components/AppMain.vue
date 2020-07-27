@@ -29,6 +29,7 @@
     },
       methods: {
         reload() {
+            
               this.isRouterAlive = false;
               this.$nextTick(() => {
                   this.isRouterAlive = true;
