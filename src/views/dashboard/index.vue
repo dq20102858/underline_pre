@@ -13,13 +13,9 @@ export default {
       videoList: []
     };
   },
-  created(){
- 
-  },
   mounted() {
      window.open("http://192.168.5.2");
   },
-
   methods: {
     
   }
