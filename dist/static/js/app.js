@@ -2344,7 +2344,7 @@ var store = __webpack_require__("IcnI");
 
 var host = window.location.host;
 // host = 'http://' + host
-host =  true ? 'http://' + host : 'http://129.211.168.161/';
+host =  true ? 'http://' + host : 'http://10.100.103.204:10003/';
 // host = process.env.NODE_ENV == 'production' ? 'http://' + host : 'http://subway.nething.com/'
 var service = axios_default.a.create({
   baseURL: host, // api的base_url
