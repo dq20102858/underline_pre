@@ -820,10 +820,11 @@ code a:hover {
 
 body{background: #E7EEFF; height: 100%; width: 100%; font-size: 14px;margin: 0;padding: 0;
 }
-/* public css */
 p,div,h1,h2,h3,h4,ul,li,span{margin: 0;padding: 0;
 }
 ul,li{list-style-type: none
+}
+.el-tooltip__popper{ max-width:50%;line-height: 22px;
 }
 .app-wrapper{height: 100%;
 }
@@ -1192,6 +1193,20 @@ ul,li{list-style-type: none
     border: 2px solid #fff;
     border-radius: 20px;
     font-weight: bold;
+}
+.applylink {
+  color: #f1403c;
+  margin-right: 20px;
+  font-size: 14px;
+}
+.applylink i {
+  font-size: 16px;
+}
+.applylink:visited {
+  color: #f1403c;
+}
+.applylink:hover {
+  color: #f00;
 }
 
 .hamburger[data-v-5193bb88] {

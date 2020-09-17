@@ -14,20 +14,6 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAAAUCAYAAABf
 
 /***/ }),
 
-/***/ "26g+":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("oL9r");
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__("rjj0")("47d474e2", content, true);
-
-/***/ }),
-
 /***/ "8j58":
 /***/ (function(module, exports) {
 
@@ -63,6 +49,20 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAJCAYAAAA7
 
 /***/ }),
 
+/***/ "Klzy":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("OhCh");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__("rjj0")("0fee9f68", content, true);
+
+/***/ }),
+
 /***/ "N8bY":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -73,13 +73,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var get_iterator = __webpack_require__("BO1k");
 var get_iterator_default = /*#__PURE__*/__webpack_require__.n(get_iterator);
 
-// EXTERNAL MODULE: ./node_modules/babel-runtime/core-js/json/stringify.js
-var stringify = __webpack_require__("mvHQ");
-var stringify_default = /*#__PURE__*/__webpack_require__.n(stringify);
-
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./src/views/monitor/indexmini.vue
 
-
 //
 //
 //
@@ -101,6 +96,37 @@ var stringify_default = /*#__PURE__*/__webpack_require__.n(stringify);
 //
 //
 
+var indexmini_canvas = void 0;
+var indexmini_context = void 0;
+var axis_Height = "650";
+//标尺起点
+var axis_LeftLine = {
+  x: 30,
+  y: axis_Height - 400
+};
+var axis_LeftLine_Two = {
+  x: 30,
+  y: axis_Height - 280
+};
+//出入场线
+var axis_OutLine = {
+  x: 30,
+  y: axis_Height - 160
+};
+var axis_OutLine_Two = {
+  x: 30,
+  y: axis_Height - 50
+};
+
+var axis_Applay = {
+  x: 30,
+  y: axis_Height - 450
+};
+var axis_Applay_two = {
+  x: 30,
+  y: axis_Height - 330
+};
+var applyClickXY = [];
 /* harmony default export */ var indexmini = ({
   data: function data() {
     return {
@@ -161,57 +187,10 @@ var stringify_default = /*#__PURE__*/__webpack_require__.n(stringify);
           //请点
           _this.applyList = data.data.apply_lists;
           //施工进度
-          var jsonWork = [{
-            name: "\u91CC\u7A0B\u4F5C\u4E1A0519",
-            list: [{
-              id: 184,
-              pro_id: 114,
-              pro_name: "\u91CC\u7A0B\u4F5C\u4E1A0519",
-              line_type: 1,
-              start_flag: "1",
-              start_length: "100",
-              end_flag: "1",
-              end_length: "804",
-              line: "\u5DE6\u7EBF"
-            }, {
-              id: 183,
-              pro_id: 114,
-              pro_name: "\u91CC\u7A0B\u4F5C\u4E1A0519",
-              line_type: 1,
-              start_flag: "6",
-              start_length: "736",
-              end_flag: "8",
-              end_length: "694",
-              line: "\u5DE6\u7EBF"
-            }, {
-              id: 184,
-              pro_id: 114,
-              pro_name: "\u91CC\u7A0B\u4F5C\u4E1A0519",
-              line_type: 2,
-              start_flag: "4",
-              start_length: "232",
-              end_flag: "5",
-              end_length: "245",
-              line: "\u5DE6\u7EBF"
-            }, {
-              id: 183,
-              pro_id: 114,
-              pro_name: "\u91CC\u7A0B\u4F5C\u4E1A0519",
-              line_type: 2,
-              start_flag: "6",
-              start_length: "736",
-              end_flag: "8",
-              end_length: "694",
-              line: "\u5DE6\u7EBF"
-            }]
-          }];
           if (data.data.project.length > 0) {
             _this.progressList = data.data.project;
             _this.progressCheckValue = data.data.project[0]["name"];
             _this.progressListItem = data.data.project[0].list;
-            // this.progressList = jsonWork;
-            // this.progressCheckValue = jsonWork[0]["name"];
-            // this.progressListItem = jsonWork[0].list;
           }
           _this.initCanvas();
           //
@@ -220,51 +199,21 @@ var stringify_default = /*#__PURE__*/__webpack_require__.n(stringify);
     },
     initCanvas: function initCanvas() {
       var clientWidth = this.$refs.proWrapper.clientWidth;
-      var canvasWidth = clientWidth - 90;
-      this.cwidth = canvasWidth - 30;
+      var canvasWidth = clientWidth - 60;
+      this.cwidth = canvasWidth;
       var lineTypeBetwentMileage = this.lineTypeMaxMileage - this.lineTypeMinMileage;
       var lineTypeTotalMileage = this.lineTypeMaxMileage + this.lineTypeMinMileage;
       this.every = (parseInt(this.cwidth) / lineTypeBetwentMileage).toFixed(5);
       console.log("canvasWidth：" + this.cwidth + "_" + this.every);
 
-      //请点标尺起点
-      var axis_Height = "650";
-      //左右线标尺起点
-      var axis_LeftLine = {
-        x: 30,
-        y: axis_Height - 400
-      };
-      var axis_LeftLine_Two = {
-        x: 30,
-        y: axis_Height - 280
-      };
-      //出入场线
-      var axis_OutLine = {
-        x: 30,
-        y: axis_Height - 160
-      };
-      var axis_OutLine_Two = {
-        x: 30,
-        y: axis_Height - 50
-      };
-
-      var axis_Applay = {
-        x: 30,
-        y: axis_Height - 450
-      };
-      var axis_Applay_two = {
-        x: 30,
-        y: axis_Height - 330
-      };
-      var offsetX = 30;
       var lineTypeMinMileage = this.lineTypeMinMileage;
       var every = this.every; //每米长度等于px
-      console.log("every：" + every);
+      // console.log("every：" + every);
 
       var canvas = this.$refs.canvasStation;
       var context = canvas.getContext("2d");
       canvas.width = canvasWidth;
-      console.log("lineTypeMinMileage：" + lineTypeMinMileage);
+      //console.log("lineTypeMinMileage：" + lineTypeMinMileage);
       //左右线
       function drawAxesLine(lineJson) {
         // lineJson=[
@@ -381,6 +330,7 @@ var stringify_default = /*#__PURE__*/__webpack_require__.n(stringify);
             if (startLineX == 0) {
               startLineX = axis_LeftLine.x;
             }
+            // console.log("startLineX：" + startLineX);
             // 计算当前站点的x轴
             context.drawImage(img, startLineX - 8, axis_LeftLine.y - 95, 18, 90);
             // //站名
@@ -406,13 +356,7 @@ var stringify_default = /*#__PURE__*/__webpack_require__.n(stringify);
           id: 1,
           name: "ZY01",
           start_flag: 0,
-          start_length: 500,
-          line_type: 1
-        }, {
-          id: 1,
-          name: "ZY01",
-          start_flag: 5,
-          start_length: 245,
+          start_length: 257,
           line_type: 1
         }, {
           id: 1,
@@ -438,9 +382,9 @@ var stringify_default = /*#__PURE__*/__webpack_require__.n(stringify);
             if (jsonCar[i].line_type == 1) {
               var total = parseInt(jsonCar[i].start_flag) * 1000 + parseInt(jsonCar[i].start_length);
               var startLineX = (total - lineTypeMinMileage) * every;
-              // if (jsonCar[i].start_flag == 0) {
-              //   startLineX = axis_LeftLine.x;
-              // }
+              if (jsonCar[i].start_flag == 0) {
+                startLineX = axis_LeftLine.x;
+              }
               context.drawImage(imgcar, startLineX, axis_LeftLine.y - 25, 140, 20);
               //DK
               var codes = jsonCar[i].name + " [ ZDK" + jsonCar[i].start_flag + " +" + jsonCar[i].start_length + " ]";
@@ -518,49 +462,34 @@ var stringify_default = /*#__PURE__*/__webpack_require__.n(stringify);
         var json = jsonData;
         var json1 = [{
           line_type: 1,
-          number: "A4-2-007-1",
+          number: "A1-2-007-1",
           command_num: "(2020)\u5B57\u7B2C04.21-007-2",
           description: "\u98CE\u98CE\u5149\u5149",
-          work_area: "DK0+300\u81F3DK1+804",
+          work_area: "DK0+600\u81F3DK1+804",
           start_time: "2020-04-28 00:00:00",
           end_time: "2020-04-28 23:59:59",
           start_flag: "0",
-          start_length: "300",
+          start_length: "600",
           end_flag: "1",
           end_length: "804",
-          type: "A4",
-          start_total: 14600,
-          end_total: 26410
+          type: "A1",
+          start_total: 600,
+          end_total: 10604
         }, {
           line_type: 1,
           number: "A4-2-007-1",
           command_num: "(2020)\u5B57\u7B2C04.21-007-2",
           description: "\u98CE\u98CE\u5149\u5149",
-          work_area: "DK14+130\u81F3DK42+410",
+          work_area: "DK4+232\u81F3DK5+245",
           start_time: "2020-04-28 00:00:00",
           end_time: "2020-04-28 23:59:59",
-          start_flag: "1",
-          start_length: "804",
-          end_flag: "4",
-          end_length: "232",
+          start_flag: "4",
+          start_length: "232",
+          end_flag: "5",
+          end_length: "245",
           type: "A4",
-          start_total: 14600,
-          end_total: 26410
-        }, {
-          line_type: 1,
-          number: "A3-2-007-1",
-          command_num: "(2020)\u5B57\u7B2C04.21-007-2",
-          description: "\u98CE\u98CE\u5149\u5149",
-          work_area: "DK14+160\u81F3DK21+370",
-          start_time: "2020-04-28 00:00:00",
-          end_time: "2020-04-28 23:59:59",
-          start_flag: "6",
-          start_length: "736",
-          end_flag: "9",
-          end_length: "808",
-          type: "A3",
-          start_total: 14600,
-          end_total: 21370
+          start_total: 40232,
+          end_total: 50245
         }, {
           line_type: 2,
           number: "A3-2-007-1",
@@ -577,7 +506,7 @@ var stringify_default = /*#__PURE__*/__webpack_require__.n(stringify);
           start_total: 14600,
           end_total: 21370
         }];
-        var clickXYApplyList = [];
+        //  let clickXYApplyList = [];
 
         var _loop = function _loop(i) {
           var start = parseInt(json[i].start_flag) * 1000 + parseInt(json[i].start_length);
@@ -585,23 +514,31 @@ var stringify_default = /*#__PURE__*/__webpack_require__.n(stringify);
           var dksatrt = "YDK" + json[i].start_flag + " +" + json[i].start_length;
           var dkend = "YDK" + json[i].end_flag + " +" + json[i].end_length;
           var startX = (start - lineTypeMinMileage) * every;
-          console.log("startX：" + startX);
-          if (startX == 0) {
-            startX = axis_LeftLine.x;
+          if (parseInt(json[i].start_flag) == 0) {
+            startX = startX + axis_LeftLine.x;
           }
           var endX = (end - lineTypeMinMileage) * every;
           var centerX = (endX + startX) / 2; //开始结束平均值
+
+          //  startX=startX+axis_LeftLine.x;
+          console.log("startX：" + startX);
+
           var desc = json[i].type;
           context.lineWidth = 2;
+          //context.fillStyle = "#ffff00";
+          // context.strokeStyle = "#ffff00";
           if (json[i].type == "A1") {
-            context.fillStyle = "#1AE642";
-            context.strokeStyle = "#1AE642";
-          } else if (json[i].type == "A2") {} else if (json[i].type == "A3") {
-            context.fillStyle = "#ff0000";
-            context.strokeStyle = "#ff0000";
+            context.fillStyle = "#f14e0e";
+            context.strokeStyle = "#f14e0e";
+          } else if (json[i].type == "A2") {
+            context.fillStyle = "#fd7510";
+            context.strokeStyle = "#fd7510";
+          } else if (json[i].type == "A3") {
+            context.fillStyle = "#fda328";
+            context.strokeStyle = "#fda328";
           } else if (json[i].type == "A4") {
-            context.fillStyle = "#ffff00";
-            context.strokeStyle = "#ffff00";
+            context.fillStyle = "#f2c136";
+            context.strokeStyle = "#f2c136";
           }
           context.beginPath();
           if (json[i].line_type == 1) {
@@ -611,17 +548,19 @@ var stringify_default = /*#__PURE__*/__webpack_require__.n(stringify);
             context.moveTo(startX, axis_Applay.y);
             context.lineTo(endX + 1, axis_Applay.y);
             //文字
-            clickXYApplyList.push({
-              x: centerX - 32,
-              y: axis_Applay.y - 30,
+            //context.fillRect(centerX - 29, axis_Applay.y - 55, 60, 54);
+            applyClickXY.push({
+              x: centerX - 29,
+              y: axis_Applay.y - 55,
               w: 60,
               h: 54,
               i: json[i]
             });
+
             var img = new Image();
             img.src = __webpack_require__("nDGB")("./" + desc + ".png");
             img.onload = function () {
-              context.drawImage(img, centerX - 32, axis_Applay.y - 56, 60, 54);
+              context.drawImage(img, centerX - 29, axis_Applay.y - 56, 60, 54);
             };
           } else if (json[i].line_type == 2) {
             //画水平直线
@@ -630,9 +569,9 @@ var stringify_default = /*#__PURE__*/__webpack_require__.n(stringify);
             context.moveTo(startX, axis_Applay_two.y);
             context.lineTo(endX + 1, axis_Applay_two.y);
             //文字
-            clickXYApplyList.push({
-              x: centerX - 32,
-              y: axis_Applay_two.y - 30,
+            applyClickXY.push({
+              x: centerX - 29,
+              y: axis_Applay_two.y - 55,
               w: 60,
               h: 54,
               i: json[i]
@@ -640,7 +579,7 @@ var stringify_default = /*#__PURE__*/__webpack_require__.n(stringify);
             var _img = new Image();
             _img.src = __webpack_require__("nDGB")("./" + desc + ".png");
             _img.onload = function () {
-              context.drawImage(_img, centerX - 32, axis_Applay_two.y - 56, 60, 54);
+              context.drawImage(_img, centerX - 29, axis_Applay_two.y - 56, 60, 54);
             };
           }
           context.stroke();
@@ -650,16 +589,18 @@ var stringify_default = /*#__PURE__*/__webpack_require__.n(stringify);
         for (var i = 0; i < json.length; i++) {
           _loop(i);
         }
-        canvas.addEventListener("dblclick", function (event) {
+        canvas.onclick = function (event) {
           var x = event.pageX - canvas.getBoundingClientRect().left;
           var y = event.pageY - canvas.getBoundingClientRect().top;
-          console.log("clickXY：" + stringify_default()(clickXYApplyList));
+
+          console.log("X：" + x + "_" + y);
+          //console.log("clickXY：" + JSON.stringify(applyClickXY));
           var _iteratorNormalCompletion = true;
           var _didIteratorError = false;
           var _iteratorError = undefined;
 
           try {
-            for (var _iterator = get_iterator_default()(clickXYApplyList), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            for (var _iterator = get_iterator_default()(applyClickXY), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
               var item = _step.value;
 
               if (x >= item.x && x <= item.x + item.w && y >= item.y && y <= item.y + item.h) {
@@ -687,48 +628,59 @@ var stringify_default = /*#__PURE__*/__webpack_require__.n(stringify);
               }
             }
           }
-        }, false);
+        };
       }
       //绘制施工进度
       function drawProgressAxis(sprogressListJson) {
         var json = sprogressListJson;
-
+        console.log(sprogressListJson);
+        var json1 = [{
+          id: 233,
+          pro_id: 110,
+          pro_name: "\u6D4B\u8BD52",
+          line_type: 1,
+          start_flag: "0",
+          start_length: "257",
+          end_flag: "0",
+          end_length: "300",
+          line: "\u5DE6\u7EBF"
+        }];
         for (var i = 0; i < json.length; i++) {
-          var start = parseInt(json[i].start_flag) * 1000 + parseInt(json[i].start_length);
-          var end = parseInt(json[i].end_flag) * 1000 + parseInt(json[i].end_length);
-          var _startX = (start - lineTypeMinMileage) * every;
-          var _endX = (end - lineTypeMinMileage) * every;
-          if (json[i].start_flag == 0) {
-            _startX = axis_LeftLine.x;
-          }
-          // 计算当前站点的x轴坐标
+          if (json[i].start_flag != null) {
+            var start = parseInt(json[i].start_flag) * 1000 + parseInt(json[i].start_length);
+            var end = parseInt(json[i].end_flag) * 1000 + parseInt(json[i].end_length);
 
-          //console.log("startX：" + startX + " endX：" + endX);
-          context.lineWidth = 10;
-          context.strokeStyle = "#27DB07";
-          context.beginPath();
-          if (json[i].line_type == 1) {
-            context.moveTo(_startX, axis_LeftLine.y);
-            context.lineTo(_endX + 1, axis_LeftLine.y);
-          } else if (json[i].line_type == 2) {
-            context.moveTo(_startX + 1, axis_LeftLine_Two.y);
-            context.lineTo(_endX + 1, axis_LeftLine_Two.y);
-          } else if (json[i].line_type == 3) {
-            if (start == 0) {
-              _startX = 0;
-              _endX = end * everys;
+            var _startX = axis_LeftLine.x + (start - lineTypeMinMileage) * every;
+            var _endX = axis_LeftLine.x + (end - lineTypeMinMileage) * every;
+            // console.log(
+            //   "startX：" + startX + " endX：" + endX + "_" + lineTypeMinMileage
+            // );
+            context.lineWidth = 10;
+            context.strokeStyle = "#27DB07";
+            context.beginPath();
+            if (json[i].line_type == 1) {
+              context.moveTo(_startX, axis_LeftLine.y);
+              context.lineTo(_endX + 1, axis_LeftLine.y);
+            } else if (json[i].line_type == 2) {
+              context.moveTo(_startX, axis_LeftLine_Two.y);
+              context.lineTo(_endX + 1, axis_LeftLine_Two.y);
+            } else if (json[i].line_type == 3) {
+              if (start == 0) {
+                _startX = 0;
+                _endX = end * everys;
+              }
+              context.moveTo(_startX, axis_OutLine.y);
+              context.lineTo(_endX + 1, axis_OutLine.y);
+            } else if (json[i].line_type == 4) {
+              if (start == 0) {
+                _startX = 0;
+                _endX = end * everys;
+              }
+              context.moveTo(_startX, axis_OutLine_Two.y);
+              context.lineTo(_endX + 1, axis_OutLine_Two.y);
             }
-            context.moveTo(_startX + 1, axis_OutLine.y);
-            context.lineTo(_endX + 1, axis_OutLine.y);
-          } else if (json[i].line_type == 4) {
-            if (start == 0) {
-              _startX = 0;
-              _endX = end * everys;
-            }
-            context.moveTo(_startX + 1, axis_OutLine_Two.y);
-            context.lineTo(_endX + 1, axis_OutLine_Two.y);
+            context.stroke();
           }
-          context.stroke();
           //
         }
       }
@@ -813,14 +765,14 @@ CanvasRenderingContext2D.prototype.fillTextVertical = function (text, x, y) {
   context.textAlign = align;
   context.textBaseline = baseline;
 };
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-0689f1aa","hasScoped":false,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/views/monitor/indexmini.vue
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"proWrapper",style:(_vm.conheight),attrs:{"id":"progress"}},[_c('div',{staticClass:"progress"},[_c('div',{staticStyle:{"display":"bolock","padding-top":"15px","padding-left":"15px"}},[_c('router-link',{staticClass:"rlink",staticStyle:{"color":"#fff"},attrs:{"to":"/monitor/"}},[_vm._v("返回")])],1),_vm._v(" "),_c('div',{staticClass:"station"},[_c('canvas',{ref:"canvasStation",attrs:{"id":"canvasStation","height":"650"}},[_c('p',[_vm._v("您的系统不支持此程序!")])])]),_vm._v(" "),(this.progressCheckValue !='')?_c('div',{staticClass:"progresslist"},[_c('span',{staticClass:"namess"},[_vm._v("施工进度：")]),_vm._v(" "),_c('el-radio-group',{on:{"change":_vm.progressCheckSelect},model:{value:(_vm.progressCheckValue),callback:function ($$v) {_vm.progressCheckValue=$$v},expression:"progressCheckValue"}},_vm._l((_vm.progressList),function(item){return _c('el-radio',{key:item.name,attrs:{"label":item.name}},[_vm._v(_vm._s(item.name))])}))],1):_vm._e()])])}
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-5f52bf06","hasScoped":false,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/views/monitor/indexmini.vue
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"proWrapper",style:(_vm.conheight),attrs:{"id":"minprogress"}},[_c('div',{staticClass:"minprogress"},[_c('div',{staticStyle:{"display":"bolock","padding-top":"15px","padding-left":"15px"}},[_c('router-link',{staticClass:"rlink",staticStyle:{"color":"#fff"},attrs:{"to":"/monitor/"}},[_vm._v("返回")])],1),_vm._v(" "),_c('div',{staticClass:"station"},[_c('canvas',{ref:"canvasStation",attrs:{"id":"canvasStation","height":"650"}},[_c('p',[_vm._v("您的系统不支持此程序!")])])]),_vm._v(" "),(this.progressCheckValue !='')?_c('div',{staticClass:"progresslist"},[_c('span',{staticClass:"namess"},[_vm._v("施工进度：")]),_vm._v(" "),_c('el-radio-group',{on:{"change":_vm.progressCheckSelect},model:{value:(_vm.progressCheckValue),callback:function ($$v) {_vm.progressCheckValue=$$v},expression:"progressCheckValue"}},_vm._l((_vm.progressList),function(item){return _c('el-radio',{key:item.name,attrs:{"label":item.name}},[_vm._v(_vm._s(item.name))])}))],1):_vm._e()])])}
 var staticRenderFns = []
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ var monitor_indexmini = (esExports);
 // CONCATENATED MODULE: ./src/views/monitor/indexmini.vue
 function injectStyle (ssrContext) {
-  __webpack_require__("26g+")
+  __webpack_require__("Klzy")
 }
 var normalizeComponent = __webpack_require__("VU/8")
 /* script */
@@ -856,6 +808,21 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7
 
 /***/ }),
 
+/***/ "OhCh":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("FZ+f")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.sttitle {\r\n  color: #fff;\r\n  padding: 22px 0 0 25px;\r\n  font-size: 24px;\r\n  text-align: center;\n}\n#minprogress {\r\n  position: absolute;\r\n  width: 100%;\r\n  height: 100%;\r\n  background: #081c33;\n}\n.minprogress {\r\n  background: #081c33;\r\n  padding-bottom: 30px;\n}\n.minprogress #canvasStation {\r\n  background: #081c33;\n}\n.minprogress .station {\r\n  margin: 30px 30px 0px 15px;\r\n  position: relative;\r\n  z-index: 999;\n}\n.minprogress .progresslist {\r\n  padding-top: 20px;\r\n  padding-left: 30px;\r\n  color: #fff;\n}\n.minprogress .progresslist .namess {\r\n  padding-bottom: 10px;\r\n  display: inline-block;\r\n  padding-right: 14px;\n}\n.minprogress .progresslist .el-radio__label {\r\n  color: #fff;\n}\n.clear {\r\n  clear: both;\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "aFwl":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -867,6 +834,13 @@ module.exports = __webpack_require__.p + "static/img/A4.167e28a.png";
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "static/img/logo3.d0ae668.png";
+
+/***/ }),
+
+/***/ "mC5q":
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAB4CAYAAAD2SgIRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAHRmlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDggNzkuMTY0MDM2LCAyMDE5LzA4LzEzLTAxOjA2OjU3ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIiB4bWxuczpwaG90b3Nob3A9Imh0dHA6Ly9ucy5hZG9iZS5jb20vcGhvdG9zaG9wLzEuMC8iIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUuNSAoV2luZG93cykiIHhtcDpDcmVhdGVEYXRlPSIyMDIwLTAzLTA5VDEzOjM1OjU1KzA4OjAwIiB4bXA6TW9kaWZ5RGF0ZT0iMjAyMC0wNC0yMlQxNDo0OToxNiswODowMCIgeG1wOk1ldGFkYXRhRGF0ZT0iMjAyMC0wNC0yMlQxNDo0OToxNiswODowMCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDplY2NlYTQzYi1jODczLTI2NDUtOTM2OC03N2VlY2EwZmE5NGQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QzFDNDIyOTVGQzIxMTFFNzgyMTFDQzIwRTFCNkNBQjIiIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpDMUM0MjI5NUZDMjExMUU3ODIxMUNDMjBFMUI2Q0FCMiIgZGM6Zm9ybWF0PSJpbWFnZS9wbmciIHBob3Rvc2hvcDpDb2xvck1vZGU9IjMiIHBob3Rvc2hvcDpJQ0NQcm9maWxlPSJzUkdCIElFQzYxOTY2LTIuMSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkMxQzQyMjkyRkMyMTExRTc4MjExQ0MyMEUxQjZDQUIyIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkMxQzQyMjkzRkMyMTExRTc4MjExQ0MyMEUxQjZDQUIyIi8+IDx4bXBNTTpIaXN0b3J5PiA8cmRmOlNlcT4gPHJkZjpsaSBzdEV2dDphY3Rpb249InNhdmVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOjcyZTQ0MzI2LTkxZmYtYjI0Zi1iMGU0LWQyZDg0NTVkYzdmNiIgc3RFdnQ6d2hlbj0iMjAyMC0wMy0wOVQxMzo0MTowNCswODowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIDIxLjAgKFdpbmRvd3MpIiBzdEV2dDpjaGFuZ2VkPSIvIi8+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJzYXZlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDplY2NlYTQzYi1jODczLTI2NDUtOTM2OC03N2VlY2EwZmE5NGQiIHN0RXZ0OndoZW49IjIwMjAtMDQtMjJUMTQ6NDk6MTYrMDg6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCAyMS4wIChXaW5kb3dzKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8L3JkZjpTZXE+IDwveG1wTU06SGlzdG9yeT4gPHBob3Rvc2hvcDpEb2N1bWVudEFuY2VzdG9ycz4gPHJkZjpCYWc+IDxyZGY6bGk+eG1wLmRpZDpDMUM0MjI5NUZDMjExMUU3ODIxMUNDMjBFMUI2Q0FCMjwvcmRmOmxpPiA8L3JkZjpCYWc+IDwvcGhvdG9zaG9wOkRvY3VtZW50QW5jZXN0b3JzPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PiO+MIUAAAIMSURBVGiB7ZnBSltBFIb/q92qIAgG1D5BoVsXLuy+byKFZhE3LvMC7rNpwIWLrhQstbgqpEJLH6GiKC40wSf4urkJ13jm3pnA4J1wfxgI957zMTnzz5whyQDF0EIUapLgNxXvtyTtSvoo6W3+7J+k7/m4dmYC1lgE9oEhbg2Bgzz2BcOCLgE/SoDT+pbnVIIHAdCxBlXgPUfiI3CRj0dHTNsFfgfcGAlfgPVC3DpwbMTdA+8tcNcIPpn+ioVxZsR3LfC5EbhTAv5gxJ+P3xc3yKbhxvsSj986fC/p+c67MwLXSsAt49mVBf5tBH4uAbeNZ38nnwo12wZGRt16QKsQt5E/m9YoZ5g+7hgJAA/A13w8OWI6RZa12n8ciWX6Nc2xwKvAZQD0J55nhYAV4NQDegosWwwXeDyOSqBHZblVYGE7oFeV5wMW0C9A+z45GXi3/0+SMkmHPsEhzTST5D2L9Np/KDiLAQ665IXO+PUXr+qKVZR3fUPBUWscBRxUilC7RfFxtBlLkXxcj1LMt4+liDVOyxVBSs9u0Q76ppnGB9di8YI038dmPWpci4M+vS2d3t0tSE2XnhnsXYpanMfRdl6ap1u09h/Nx+ntvLRq3JxuE0Uthbfm2xVBqgU4vQ6S3s6LCk7Px83iSWouhbMqvZ8V5v8Plte/bTY1ngncXApnU+PjiWqzeN6z/g9+6LPjimg+WgAAAABJRU5ErkJggg=="
 
 /***/ }),
 
@@ -899,13 +873,18 @@ var map = {
 	"./m-jindu.png": "OdHK",
 	"./m_admin.png": "nf3M",
 	"./m_apply.png": "+IES",
+	"./m_apply_on.png": "TwrZ",
 	"./m_dashboard.png": "ajDz",
 	"./m_description.png": "XV6P",
+	"./m_detault.png": "YrFG",
+	"./m_device.png": "nZu5",
 	"./m_dispatch.png": "QpWN",
+	"./m_dispatch_on.png": "yvSC",
 	"./m_location.png": "T9cL",
 	"./m_message.png": "/rPO",
 	"./m_monitor.png": "RsYl",
 	"./m_plan.png": "B/i6",
+	"./m_plan_on.png": "q1L4",
 	"./m_progress.png": "dwkL",
 	"./m_project.png": "hbpv",
 	"./m_real_time.png": "7WLs",
@@ -913,6 +892,7 @@ var map = {
 	"./m_search.png": "ivFw",
 	"./m_security.png": "8Eth",
 	"./m_set.png": "Iu5b",
+	"./m_weekplanappl.png": "4hvV",
 	"./sta.png": "mC5q",
 	"./stasm.png": "JBQT",
 	"./user.png": "Ctr9"
@@ -932,21 +912,6 @@ webpackContext.keys = function webpackContextKeys() {
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
 webpackContext.id = "nDGB";
-
-/***/ }),
-
-/***/ "oL9r":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("FZ+f")(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.sttitle {\r\n  color: #fff;\r\n  padding: 22px 0 0 25px;\r\n  font-size: 24px;\r\n  text-align: center;\n}\n#progress {\r\n  position: absolute;\r\n  width: 100%;\r\n  height: 100%;\r\n  background: #081c33;\n}\n.progress {\r\n  background: #081c33;\r\n  padding-bottom: 30px;\n}\n.station {\r\n  margin: 30px 30px 0px 30px;\r\n  position: relative;\r\n  z-index: 999;\n}\n.progresslist {\r\n  padding-top: 20px;\r\n  padding-left: 30px;\r\n  color: #fff;\n}\n.progresslist .namess {\r\n  padding-bottom: 10px;\r\n  display: inline-block;\r\n  padding-right: 14px;\n}\n.progresslist .el-radio__label {\r\n  color: #fff;\n}\n.clear {\r\n  clear: both;\n}\r\n/* //#27DB07 */\r\n", ""]);
-
-// exports
-
 
 /***/ }),
 

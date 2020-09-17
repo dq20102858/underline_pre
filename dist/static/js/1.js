@@ -7,18 +7,17 @@ module.exports = __webpack_require__.p + "static/img/A1.22763fd.png";
 
 /***/ }),
 
-/***/ "0W6U":
+/***/ "0MiO":
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__("FZ+f")(false);
-// imports
+// style-loader: Adds some css to the DOM by adding a <style> tag
 
-
-// module
-exports.push([module.i, "\n#progress {\r\n  position: absolute;\r\n  width: 100%;\r\n  height: 100%;\r\n  background: #081c33;\n}\n.progress {\r\n  background: #081c33;\n}\r\n/*starte-top*/\n.starte-top {\r\n  padding-top: 30px;\r\n  overflow: hidden;\r\n  margin: 0 30px;\n}\n.starte-top .sleft,\r\n.starte-top .sright {\r\n  background: #4b6eca;\r\n  color: #fff;\r\n  padding: 10px 15px 15px 15px;\r\n  display: block;\r\n  font-size: 16px;\r\n  font-weight: 700;\n}\n.starte-top .sleft {\r\n  float: left;\r\n  margin-right: 20px;\n}\n.starte-top .sright {\r\n  float: right;\n}\n.starte-top .line-a {\r\n  position: relative;\r\n  background: #fff;\r\n  height: 1px;\r\n  display: block;\r\n  margin-top: 6px;\n}\n.starte-top .line-a::before {\r\n  content: \"\";\r\n  position: absolute;\r\n  left: 0;\r\n  top: 2px;\r\n  width: 10px;\r\n  height: 3px;\r\n  border-bottom: 1px solid #fff;\r\n  -webkit-transform: rotateZ(45deg);\r\n          transform: rotateZ(45deg);\n}\n.starte-top .line-b {\r\n  position: relative;\r\n  background: #fff;\r\n  height: 1px;\r\n  display: block;\r\n  margin-top: 6px;\n}\n.starte-top .line-b::before {\r\n  content: \"\";\r\n  position: absolute;\r\n  right: -1px;\r\n  top: 4px;\r\n  width: 10px;\r\n  height: 3px;\r\n  border-bottom: 1px solid #fff;\r\n  -webkit-transform: rotateZ(135deg);\r\n          transform: rotateZ(135deg);\n}\n.starte-top .stations {\r\n  float: left;\n}\n.starte-top .stations .item {\r\n  width: 500px;\r\n  overflow: hidden;\r\n  display: inline-block;\r\n  white-space: nowrap;\n}\n.starte-top .stations ul li {\r\n  display: inline-block;\r\n  background: #4b6eca;\r\n  color: #fff;\r\n  padding: 17px 15px;\r\n  margin-left: 10px;\r\n  cursor: pointer;\n}\n.starte-top .stations ul li:hover {\r\n  background: #2359e2;\n}\n.starte-top .stations i {\r\n  display: inline-block;\r\n  background: #3062e2;\r\n  color: #fff;\r\n  padding: 15px 15px;\r\n  font-size: 20px;\r\n  vertical-align: top;\r\n  cursor: pointer;\n}\n.starte-top .stations i:hover {\r\n  background: #2359e2;\n}\r\n/*check-list*/\n.check-list {\r\n  margin: 20px 30px 0 30px;\n}\n.check-list .namess {\r\n  color: #fff;\r\n  margin-right: 15px;\n}\n.chkleft {\r\n  margin: 10px 30px 0 30px;\n}\n.chkleft .rlink {\r\n  color: #fff;\r\n  margin-right: 20px;\r\n  font-size: 15px;\n}\n.chkright {\r\n  float: right;\n}\n.check-list .el-checkbox__label {\r\n  color: #fff;\r\n  font-size: 14px;\n}\n.bridgechk.is-checked {\r\n  border-color: #cdaa7d !important;\n}\n.bridgechk .el-checkbox__input.is-checked .el-checkbox__inner {\r\n  background-color: #cdaa7d;\r\n  border-color: #cdaa7d;\n}\n.bridgechk.is-checked .el-checkbox__label {\r\n  color: #cdaa7d;\n}\n.tunnelchk.is-checked {\r\n  border-color: #25bfdb !important;\n}\n.tunnelchk .el-checkbox__input.is-checked .el-checkbox__inner {\r\n  background-color: #25bfdb;\r\n  border-color: #25bfdb;\n}\n.tunnelchk.is-checked .el-checkbox__label {\r\n  color: #25bfdb;\n}\n.speedchk.is-checked {\r\n  border-color: #ff9900 !important;\n}\n.speedchk .el-checkbox__input.is-checked .el-checkbox__inner {\r\n  background-color: #ff9900;\r\n  border-color: #ff9900;\n}\n.speedchk.is-checked .el-checkbox__label {\r\n  color: #ff9900;\n}\n.slopechk.is-checked {\r\n  border-color: #6e7b8b !important;\n}\n.slopechk .el-checkbox__input.is-checked .el-checkbox__inner {\r\n  background-color: #6e7b8b;\r\n  border-color: #6e7b8b;\n}\n.slopechk.is-checked .el-checkbox__label {\r\n  color: #6e7b8b;\n}\n.alertchk.is-checked {\r\n  border-color: #e53636 !important;\n}\n.alertchk .el-checkbox__input.is-checked .el-checkbox__inner {\r\n  background-color: #e53636;\r\n  border-color: #e53636;\n}\n.alertchk.is-checked .el-checkbox__label {\r\n  color: #e53636;\n}\n.daocchk.is-checked {\r\n  border-color: #107af7 !important;\n}\n.daocchk .el-checkbox__input.is-checked .el-checkbox__inner {\r\n  background-color: #107af7;\r\n  border-color: #107af7;\n}\n.daocchk.is-checked .el-checkbox__label {\r\n  color: #107af7;\n}\n.buildchk.is-checked {\r\n  border-color: #08ce80 !important;\n}\n.buildchk .el-checkbox__input.is-checked .el-checkbox__inner {\r\n  background-color: #08ce80;\r\n  border-color: #08ce80;\n}\n.buildchk.is-checked .el-checkbox__label {\r\n  color: #08ce80;\n}\r\n/*canvas*/\n.main-canvas {\r\n  background: #081c33;\r\n  margin: 0 10px;\n}\n.main-canvas .group-canvas {\r\n  overflow-x: scroll;\r\n  overflow-y: hidden;\r\n  height: 680px;\r\n  padding-right: 20px;\n}\n.progresslist {\r\n  padding-top: 20px;\r\n  padding-left: 30px;\r\n  color: #fff;\n}\n.progresslist .namess {\r\n  padding-bottom: 10px;\r\n  display: inline-block;\r\n  padding-right: 14px;\n}\n.progresslist .el-radio__label {\r\n  color: #fff;\n}\n.suofang {\r\n  padding: 30px 0 10px 30px;\n}\n.suofang a {\r\n  color: #fff;\r\n  margin-right: 10px;\r\n  font-size: 18px;\n}\n.cartablebox {\r\n  padding: 20px 10px;\n}\n.cartitle {\r\n  text-align: center;\r\n  border: 1px #2048a3 solid;\r\n  color: #2048a3;\r\n  padding: 5px 0;\r\n\r\n  cursor: pointer;\n}\n.cartablebox .app-table {\r\n  border-radius: 6px 6px 0 0;\n}\n.cartablebox .app-table .el-table__header-wrapper {\r\n  background: #3655a5;\r\n  border-radius: 6px 6px 0 0;\n}\n.cartablebox .el-table--medium th {\r\n  padding: 4px 0;\r\n  color: #fff;\n}\n.cartablebox .el-table--medium td {\r\n  padding: 2px 0;\r\n  color: #4b6eca;\n}\n.cartablebox .el-table th {\r\n  background: #1d397a !important;\n}\r\n", ""]);
-
-// exports
-
+// load the styles
+var content = __webpack_require__("ounH");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__("rjj0")("59c28f68", content, true);
 
 /***/ }),
 
@@ -85,20 +84,6 @@ module.exports = __webpack_require__.p + "static/img/logo3.d0ae668.png";
 
 /***/ }),
 
-/***/ "ePgN":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("0W6U");
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__("rjj0")("985edef2", content, true);
-
-/***/ }),
-
 /***/ "lZYz":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -111,6 +96,13 @@ var get_iterator_default = /*#__PURE__*/__webpack_require__.n(get_iterator);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./src/views/monitor/index.vue
 
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -264,6 +256,7 @@ var offsetX = 100;
 var offsetXLine = 88;
 var scrollGapX = 0;
 var scrollStartx = 0;
+var applyClickXY = [];
 /* harmony default export */ var monitor = ({
   data: function data() {
     return {
@@ -298,7 +291,6 @@ var scrollStartx = 0;
       progressListItem: [],
       progressCheckValue: 0,
       applyList: [],
-      applyClickXYList: [],
       lineTypeList: [],
       every: 0.5,
       minKM: 0,
@@ -310,42 +302,9 @@ var scrollStartx = 0;
       enterLineMaxMileage: 0,
       outLineMinMileage: 0,
       outLineMaxMileage: 0,
-      cartableShowText: "显示机车列表信息",
-      cartableShow: false,
-      cartableData: [{
-        id: 1,
-        name: "ZY01",
-        speed: "0km/h",
-        address: "Dk1+300",
-        linetype: "左线",
-        status: "离线",
-        createtime: "2020-05-10 15:44:34"
-      }, {
-        id: 2,
-        name: "ZY02",
-        speed: "0km/h",
-        address: "Dk1+300",
-        linetype: "左线",
-        status: "离线",
-        createtime: "2020-05-10 15:44:34"
-      }, {
-        id: 3,
-        name: "ZY03",
-        speed: "0km/h",
-        address: "Dk1+300",
-        linetype: "左线",
-        status: "离线",
-        createtime: "2020-05-10 15:44:34"
-      }, {
-        id: 4,
-        name: "ZY04",
-        speed: "0km/h",
-        address: "Dk1+300",
-        linetype: "左线",
-        status: "离线",
-        createtime: "2020-05-10 15:44:34"
-      }],
-      applyClickXY: []
+      cartableShowText: "隐藏机车列表信息",
+      cartableShow: true,
+      locationRealtime: []
     };
   },
   updated: function updated() {
@@ -353,6 +312,7 @@ var scrollStartx = 0;
   },
   created: function created() {
     this.getProjectProcessMap();
+    this.getLocationRealtime();
   },
 
   methods: {
@@ -387,7 +347,7 @@ var scrollStartx = 0;
           var json = data.data.stations;
           _this.scrollwidth = document.documentElement.clientWidth - 510;
           _this.scrollwidthTwo = (_this.leftLineMaxMileage - _this.leftLineMinMileage) * everys + 150;
-          console.log(_this.scrollwidth);
+          // console.log(this.scrollwidth);
           //请点
           _this.applyList = data.data.apply_lists;
           //桥 隧道等
@@ -1009,42 +969,70 @@ var scrollStartx = 0;
         }
       }
       //绘制请点
-      var clickXY = [];
+
       function drawAxesApply(applyListJson) {
-        var json1 = applyListJson;
-        var json = [{
+        var json = applyListJson;
+        var json1 = [{
           line_type: 1,
-          number: "A1-2-007-1",
+          number: "A4-2-007-1",
           command_num: "(2020)\u5B57\u7B2C04.21-007-2",
           description: "\u98CE\u98CE\u5149\u5149",
-          work_area: "DK14+130\u81F3DK42+410",
-          start_time: "2020-04-28 00:00:00",
-          end_time: "2020-04-28 23:59:59",
-          start_flag: "0",
-          start_length: "600",
-          end_flag: "1",
-          end_length: "800",
-          type: "A1",
-          start_total: 14600,
-          end_total: 16410
-        }, {
-          line_type: 2,
-          number: "A3-2-007-1",
-          command_num: "(2020)\u5B57\u7B2C04.21-007-2",
-          description: "\u98CE\u98CE\u5149\u5149",
-          work_area: "DK14+130\u81F3DK42+410",
+          work_area: "DK0+300\u81F3DK1+804",
           start_time: "2020-04-28 00:00:00",
           end_time: "2020-04-28 23:59:59",
           start_flag: "0",
           start_length: "300",
           end_flag: "1",
-          end_length: "500",
+          end_length: "804",
+          type: "A4",
+          start_total: 14600,
+          end_total: 26410
+        }, {
+          line_type: 1,
+          number: "A4-2-007-1",
+          command_num: "(2020)\u5B57\u7B2C04.21-007-2",
+          description: "\u98CE\u98CE\u5149\u5149",
+          work_area: "DK14+130\u81F3DK42+410",
+          start_time: "2020-04-28 00:00:00",
+          end_time: "2020-04-28 23:59:59",
+          start_flag: "1",
+          start_length: "804",
+          end_flag: "4",
+          end_length: "232",
+          type: "A4",
+          start_total: 14600,
+          end_total: 26410
+        }, {
+          line_type: 1,
+          number: "A3-2-007-1",
+          command_num: "(2020)\u5B57\u7B2C04.21-007-2",
+          description: "\u98CE\u98CE\u5149\u5149",
+          work_area: "DK14+160\u81F3DK21+370",
+          start_time: "2020-04-28 00:00:00",
+          end_time: "2020-04-28 23:59:59",
+          start_flag: "6",
+          start_length: "736",
+          end_flag: "9",
+          end_length: "808",
           type: "A3",
           start_total: 14600,
-          end_total: 16410
+          end_total: 21370
+        }, {
+          line_type: 2,
+          number: "A3-2-007-1",
+          command_num: "(2020)\u5B57\u7B2C04.21-007-2",
+          description: "\u98CE\u98CE\u5149\u5149",
+          work_area: "DK14+160\u81F3DK21+370",
+          start_time: "2020-04-28 00:00:00",
+          end_time: "2020-04-28 23:59:59",
+          start_flag: "6",
+          start_length: "736",
+          end_flag: "9",
+          end_length: "808",
+          type: "A3",
+          start_total: 14600,
+          end_total: 21370
         }];
-        console.log("applyListJson" + applyListJson);
-
         for (var _i11 = 0; _i11 < json.length; _i11++) {
           var _start9 = parseInt(json[_i11].start_flag) * 1000 + parseInt(json[_i11].start_length);
           var _end9 = parseInt(json[_i11].end_flag) * 1000 + parseInt(json[_i11].end_length);
@@ -1058,10 +1046,20 @@ var scrollStartx = 0;
           var dkend = "DK" + json[_i11].end_flag + " +" + json[_i11].end_length;
 
           context.lineWidth = 2;
-          context.fillStyle = "#ffff00";
-          context.strokeStyle = "#ffff00";
+          if (json[_i11].type == "A1") {
+            context.fillStyle = "#f14e0e";
+            context.strokeStyle = "#f14e0e";
+          } else if (json[_i11].type == "A2") {
+            context.fillStyle = "#fd7510";
+            context.strokeStyle = "#fd7510";
+          } else if (json[_i11].type == "A3") {
+            context.fillStyle = "#fda328";
+            context.strokeStyle = "#fda328";
+          } else if (json[_i11].type == "A4") {
+            context.fillStyle = "#f2c136";
+            context.strokeStyle = "#f2c136";
+          }
           context.beginPath();
-
           if (json[_i11].line_type == 1) {
             (function () {
               var startX = (_start9 - leftLineMinMileage) * everys;
@@ -1079,11 +1077,11 @@ var scrollStartx = 0;
               var img = new Image();
               img.src = __webpack_require__("nDGB")("./" + descType + ".png");
               img.onload = function () {
-                context.drawImage(img, centerX + offsetX - 32, axis_applay.y - 56, 60, 54);
+                context.drawImage(img, centerX + offsetX - 30, axis_applay.y - 56, 60, 54);
               };
-              clickXY.push({
-                x: centerX + 52,
-                y: axis_applay.y - 60,
+              applyClickXY.push({
+                x: centerX + 70,
+                y: axis_applay.y - 55,
                 w: 60,
                 h: 54,
                 i: json[_i11]
@@ -1101,11 +1099,11 @@ var scrollStartx = 0;
               var img = new Image();
               img.src = __webpack_require__("nDGB")("./" + descType + ".png");
               img.onload = function () {
-                context.drawImage(img, centerX + offsetX - 32, axis_applay_two.y - 56, 60, 54);
+                context.drawImage(img, centerX + offsetX - 30, axis_applay_two.y - 56, 60, 54);
               };
-              clickXY.push({
-                x: centerX + 32,
-                y: axis_applay_two.y - 60,
+              applyClickXY.push({
+                x: centerX + 70,
+                y: axis_applay_two.y - 55,
                 w: 60,
                 h: 54,
                 i: json[_i11]
@@ -1115,39 +1113,30 @@ var scrollStartx = 0;
           context.stroke();
           //
         }
-
-        var applyClickXY = [];
-
-        applyClickXY.push(clickXY);
-        console.log(applyClickXY);
       }
-      canvas.addEventListener("dblclick", function (e) {
+      canvas.onclick = function (event) {
         var x = event.pageX - canvas.getBoundingClientRect().left;
         var y = event.pageY - canvas.getBoundingClientRect().top;
-        //    debugger;
-        console.log(clickXY);
-        var myxx = clickXY;
-        var nums = 0;
+        //console.log("X：" + x + "_" + y);
+        //debugger;
+        //console.log(applyClickXY);
         var _iteratorNormalCompletion = true;
         var _didIteratorError = false;
         var _iteratorError = undefined;
 
         try {
-          for (var _iterator = get_iterator_default()(myxx), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+          for (var _iterator = get_iterator_default()(applyClickXY), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
             var item = _step.value;
 
-            nums++;
-            if (nums == 1) {
-              if (x >= item.x && x <= item.x + item.w && y >= item.y && y <= item.y + item.h) {
-                var infos = item.i;
-
-                that.$confirm("<p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>作业编号：</span>" + infos.number + "</p><p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>作业令号</span>：" + infos.command_num + "</p>" + "<p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>开始时间：</span>" + infos.start_time + "</p><p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>结束时间：</span>" + infos.end_time + "</p>" + "<p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>施工区间：</span>" + infos.work_area + "</p><p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>施工内容：</span>" + infos.description + "</p>", {
-                  distinguishCancelAndClose: true,
-                  dangerouslyUseHTMLString: true,
-                  showCancelButton: false,
-                  showConfirmButton: false
-                }).catch(function () {});
-              }
+            if (x >= item.x && x <= item.x + item.w && y >= item.y && y <= item.y + item.h) {
+              var infos = item.i;
+              that.$confirm("<p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>作业编号：</span>" + infos.number + "</p><p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>作业令号</span>：" + infos.command_num + "</p>" + "<p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>开始时间：</span>" + infos.start_time + "</p><p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>结束时间：</span>" + infos.end_time + "</p>" + "<p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>施工区间：</span>" + infos.work_area + "</p><p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>施工内容：</span>" + infos.description + "</p>", {
+                distinguishCancelAndClose: true,
+                dangerouslyUseHTMLString: true,
+                showCancelButton: false,
+                showConfirmButton: false
+              }).catch(function () {});
+              break;
             }
           }
         } catch (err) {
@@ -1164,19 +1153,7 @@ var scrollStartx = 0;
             }
           }
         }
-      });
-      function getEventPosition(ev) {
-        var x, y;
-        if (ev.layerX || ev.layerX == 0) {
-          x = ev.layerX;
-          y = ev.layerY;
-        } else if (ev.offsetX || ev.offsetX == 0) {
-          // Opera
-          x = ev.offsetX;
-          y = ev.offsetY;
-        }
-        return { x: x, y: y };
-      }
+      };
       //车定位
       function drawAxesCar(jsonData) {
         var jsonCar = [{
@@ -1332,9 +1309,9 @@ var scrollStartx = 0;
         drawSlopeAxis(this.slopeList);
       }
       //作业
-      if (this.applyList.length > 0) {
-        drawAxesApply(this.applyList);
-      }
+      // if (this.applyList.length > 0) {
+      drawAxesApply(this.applyList);
+      // }
       //道岔
       if (this.daocCheckValue) {
         drawDaocha();
@@ -1421,7 +1398,14 @@ var scrollStartx = 0;
           //判断是否点击鼠标左键
           gapX = event.clientX;
           startx = document.querySelector(".group-canvas").scrollLeft; // document.documentElement.scrollLeft; // scroll的初始位置
-          console.log("a：" + event.clientX + "_" + document.documentElement.scrollLeft + "_" + event.screenX);
+          // console.log(
+          //   "a：" +
+          //     event.clientX +
+          //     "_" +
+          //     document.documentElement.scrollLeft +
+          //     "_" +
+          //     event.screenX
+          // );
           //movemove事件必须绑定到$(document)上，鼠标移动是在整个屏幕上的 此处的$(document)可以改为obj
           document.addEventListener("mousemove", move);
           document.addEventListener("mouseup", stop);
@@ -1448,27 +1432,41 @@ var scrollStartx = 0;
         this.cartableShow = true;
         this.cartableShowText = "隐藏机车列表信息";
       }
+    },
+    getLocationRealtime: function getLocationRealtime() {
+      var _this3 = this;
+
+      this.request({
+        url: "/monitor/getLocationRealtime",
+        method: "get"
+      }).then(function (response) {
+        var data = response.data;
+        if (data.status == 1) {
+          _this3.locationRealtime = data.data;
+        }
+      });
     }
+
     //
 
   },
   mounted: function mounted() {
-    var _this3 = this;
+    var _this4 = this;
 
     this.dragScroll();
     window.addEventListener("resize", function () {
-      _this3.scrollwidth = document.documentElement.clientWidth - 640;
+      _this4.scrollwidth = document.documentElement.clientWidth - 640;
     });
   }
 });
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-715b60ba","hasScoped":false,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/views/monitor/index.vue
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"progress"}},[_c('div',{staticClass:"progress"},[_c('div',{staticClass:"starte-top"},[_c('div',{staticClass:"sleft"},[_vm._v("\n        "+_vm._s(_vm.firstStation)+"方向\n        "),_c('i',{staticClass:"line-a"})]),_vm._v(" "),_c('div',{staticClass:"scenter"},[_c('div',{staticClass:"stations"},[_c('i',{staticClass:"el-icon-arrow-left",on:{"click":_vm.stationLeftMove}}),_vm._v(" "),_c('div',{staticClass:"item",style:({width:_vm.scrollwidth  + 'px'})},[_c('ul',{style:({width: _vm.stationList.length * 100 + 'px','margin-left': _vm.wdpx * 100 + 'px'})},_vm._l((_vm.stationList),function(item){return _c('li',{key:item.id,on:{"click":function($event){_vm.scrollPosition(item.start_flag,item.start_length)}}},[_vm._v(_vm._s(item.name))])}))]),_vm._v(" "),_c('i',{staticClass:"el-icon-arrow-right",on:{"click":_vm.stationRightMove}})])]),_vm._v(" "),_c('div',{staticClass:"sright"},[_vm._v("\n        "+_vm._s(_vm.lastStation)+"方向\n        "),_c('i',{staticClass:"line-b"})])]),_vm._v(" "),_c('div',{staticClass:"chkleft"},[_c('router-link',{staticClass:"rlink",attrs:{"to":"/monitor/indexmini"}},[_vm._v("缩小")])],1),_vm._v(" "),_c('div',{staticClass:"main-canvas"},[_c('div',{staticClass:"group-canvas"},[_c('div',{attrs:{"id":"scrollbar"}},[_c('canvas',{ref:"mycanvas",attrs:{"id":"mycanvas","height":"680"}},[_c('p',[_vm._v("您的系统不支持此程序!")])])])])]),_vm._v(" "),_c('div',{staticClass:"check-list"},[_c('span',{staticClass:"namess"},[_vm._v("显示图形：")]),_vm._v(" "),_c('el-checkbox',{staticClass:"bridgechk",attrs:{"label":"桥"},on:{"change":_vm.bridgeCheckSelect},model:{value:(_vm.bridgeCheckValue),callback:function ($$v) {_vm.bridgeCheckValue=$$v},expression:"bridgeCheckValue"}}),_vm._v(" "),_c('el-checkbox',{staticClass:"tunnelchk",attrs:{"label":"隧道"},on:{"change":_vm.tunnelCheckSelect},model:{value:(_vm.tunnelCheckValue),callback:function ($$v) {_vm.tunnelCheckValue=$$v},expression:"tunnelCheckValue"}}),_vm._v(" "),_c('el-checkbox',{staticClass:"alertchk",attrs:{"label":"防区"},on:{"change":_vm.alertCheckSelect},model:{value:(_vm.alertCheckValue),callback:function ($$v) {_vm.alertCheckValue=$$v},expression:"alertCheckValue"}}),_vm._v(" "),_c('el-checkbox',{staticClass:"slopechk",attrs:{"label":"坡度"},on:{"change":_vm.slopeCheckSelect},model:{value:(_vm.slopeCheckValue),callback:function ($$v) {_vm.slopeCheckValue=$$v},expression:"slopeCheckValue"}}),_vm._v(" "),_c('el-checkbox',{staticClass:"daocchk",attrs:{"label":"道岔"},on:{"change":_vm.daocCheckSelect},model:{value:(_vm.daocCheckValue),callback:function ($$v) {_vm.daocCheckValue=$$v},expression:"daocCheckValue"}}),_vm._v(" "),_c('el-checkbox',{staticClass:"speedchk",attrs:{"label":"限速区"},on:{"change":_vm.speedCheckSelect},model:{value:(_vm.speedCheckValue),callback:function ($$v) {_vm.speedCheckValue=$$v},expression:"speedCheckValue"}}),_vm._v(" "),_c('el-checkbox',{staticClass:"buildchk",attrs:{"label":"施工地段"},on:{"change":_vm.buildCheckSelect},model:{value:(_vm.buildCheckValue),callback:function ($$v) {_vm.buildCheckValue=$$v},expression:"buildCheckValue"}})],1),_vm._v(" "),(this.progressCheckValue !='')?_c('div',{staticClass:"progresslist"},[_c('span',{staticClass:"namess"},[_vm._v("施工进度：")]),_vm._v(" "),_c('el-radio-group',{on:{"change":_vm.progressCheckSelect},model:{value:(_vm.progressCheckValue),callback:function ($$v) {_vm.progressCheckValue=$$v},expression:"progressCheckValue"}},_vm._l((_vm.progressList),function(item){return _c('el-radio',{key:item.name,attrs:{"label":item.name}},[_vm._v(_vm._s(item.name))])}))],1):_vm._e(),_vm._v(" "),_c('div',{staticClass:"cartablebox"},[_c('div',{staticClass:"cartitle",on:{"click":_vm.showCarList}},[_vm._v(_vm._s(_vm.cartableShowText))]),_vm._v(" "),_c('el-table',{directives:[{name:"show",rawName:"v-show",value:(_vm.cartableShow),expression:"cartableShow"}],attrs:{"data":_vm.cartableData}},[_c('el-table-column',{attrs:{"prop":"id","label":"编号","width":"60"}}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"name","label":"列车名称","width":"80"}}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"speed","label":"当前速度","width":"100"}}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"address","label":"当前位置","width":"100"}}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"linetype","label":"线别","width":"100"}}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"status","label":"状态","width":"100"}}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"","label":"司机"}}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"","label":"车长"}}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"createtime","label":"最后更新时间"}}),_vm._v(" "),_c('el-table-column')],1)],1)])])}
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-7b3216e7","hasScoped":false,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/views/monitor/index.vue
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"progress"}},[_c('div',{staticClass:"progress"},[_c('div',{staticClass:"starte-top"},[_c('div',{staticClass:"sleft"},[_vm._v("\n        "+_vm._s(_vm.firstStation)+"方向\n        "),_c('i',{staticClass:"line-a"})]),_vm._v(" "),_c('div',{staticClass:"scenter"},[_c('div',{staticClass:"stations"},[_c('i',{staticClass:"el-icon-arrow-left",on:{"click":_vm.stationLeftMove}}),_vm._v(" "),_c('div',{staticClass:"item",style:({width:_vm.scrollwidth  + 'px'})},[_c('ul',{style:({width: _vm.stationList.length * 100 + 'px','margin-left': _vm.wdpx * 100 + 'px'})},_vm._l((_vm.stationList),function(item){return _c('li',{key:item.id,on:{"click":function($event){_vm.scrollPosition(item.start_flag,item.start_length)}}},[_vm._v(_vm._s(item.name))])}))]),_vm._v(" "),_c('i',{staticClass:"el-icon-arrow-right",on:{"click":_vm.stationRightMove}})])]),_vm._v(" "),_c('div',{staticClass:"sright"},[_vm._v("\n        "+_vm._s(_vm.lastStation)+"方向\n        "),_c('i',{staticClass:"line-b"})])]),_vm._v(" "),_c('div',{staticClass:"chkleft"},[_c('router-link',{staticClass:"rlink",attrs:{"to":"/monitor/indexmini"}},[_vm._v("缩小")])],1),_vm._v(" "),_c('div',{staticClass:"main-canvas"},[_c('div',{staticClass:"group-canvas"},[_c('div',{attrs:{"id":"scrollbar"}},[_c('canvas',{ref:"mycanvas",attrs:{"id":"mycanvas","height":"680"}},[_c('p',[_vm._v("您的系统不支持此程序!")])])])])]),_vm._v(" "),_c('div',{staticClass:"check-list"},[_c('span',{staticClass:"namess"},[_vm._v("显示图形：")]),_vm._v(" "),_c('el-checkbox',{staticClass:"bridgechk",attrs:{"label":"桥"},on:{"change":_vm.bridgeCheckSelect},model:{value:(_vm.bridgeCheckValue),callback:function ($$v) {_vm.bridgeCheckValue=$$v},expression:"bridgeCheckValue"}}),_vm._v(" "),_c('el-checkbox',{staticClass:"tunnelchk",attrs:{"label":"隧道"},on:{"change":_vm.tunnelCheckSelect},model:{value:(_vm.tunnelCheckValue),callback:function ($$v) {_vm.tunnelCheckValue=$$v},expression:"tunnelCheckValue"}}),_vm._v(" "),_c('el-checkbox',{staticClass:"alertchk",attrs:{"label":"防区"},on:{"change":_vm.alertCheckSelect},model:{value:(_vm.alertCheckValue),callback:function ($$v) {_vm.alertCheckValue=$$v},expression:"alertCheckValue"}}),_vm._v(" "),_c('el-checkbox',{staticClass:"slopechk",attrs:{"label":"坡度"},on:{"change":_vm.slopeCheckSelect},model:{value:(_vm.slopeCheckValue),callback:function ($$v) {_vm.slopeCheckValue=$$v},expression:"slopeCheckValue"}}),_vm._v(" "),_c('el-checkbox',{staticClass:"daocchk",attrs:{"label":"道岔"},on:{"change":_vm.daocCheckSelect},model:{value:(_vm.daocCheckValue),callback:function ($$v) {_vm.daocCheckValue=$$v},expression:"daocCheckValue"}}),_vm._v(" "),_c('el-checkbox',{staticClass:"speedchk",attrs:{"label":"限速区"},on:{"change":_vm.speedCheckSelect},model:{value:(_vm.speedCheckValue),callback:function ($$v) {_vm.speedCheckValue=$$v},expression:"speedCheckValue"}}),_vm._v(" "),_c('el-checkbox',{staticClass:"buildchk",attrs:{"label":"施工地段"},on:{"change":_vm.buildCheckSelect},model:{value:(_vm.buildCheckValue),callback:function ($$v) {_vm.buildCheckValue=$$v},expression:"buildCheckValue"}})],1),_vm._v(" "),(this.progressCheckValue !='')?_c('div',{staticClass:"progresslist"},[_c('span',{staticClass:"namess"},[_vm._v("施工进度：")]),_vm._v(" "),_c('el-radio-group',{on:{"change":_vm.progressCheckSelect},model:{value:(_vm.progressCheckValue),callback:function ($$v) {_vm.progressCheckValue=$$v},expression:"progressCheckValue"}},_vm._l((_vm.progressList),function(item){return _c('el-radio',{key:item.name,attrs:{"label":item.name}},[_vm._v(_vm._s(item.name))])}))],1):_vm._e(),_vm._v(" "),_c('div',{staticClass:"cartablebox"},[_c('div',{staticClass:"cartitle",on:{"click":_vm.showCarList}},[_vm._v(_vm._s(_vm.cartableShowText))]),_vm._v(" "),_c('el-table',{directives:[{name:"show",rawName:"v-show",value:(_vm.cartableShow),expression:"cartableShow"}],attrs:{"data":_vm.locationRealtime}},[_c('el-table-column',{attrs:{"prop":"id","label":"编号","width":"60"}}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"name","label":"列车名称","width":"80"}}),_vm._v(" "),_c('el-table-column',{attrs:{"label":"当前速度","width":"100"}}),_vm._v(" "),_c('el-table-column',{attrs:{"label":"当前位置","width":"100"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_vm._v("DK"+_vm._s(scope.row.start_flag)+" + "+_vm._s(scope.row.start_length))]}}])}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"line_type_desc","label":"线别","width":"100"}}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"is_online","label":"状态","width":"100"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [(scope.row.is_online=='1')?_c('span',{staticClass:"statused"},[_vm._v("在线")]):_vm._e(),_vm._v(" "),(scope.row.is_online=='0')?_c('span',{staticClass:"statused"},[_vm._v("离线")]):_vm._e()]}}])}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"","label":"司机"}}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"","label":"车长"}}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"create_time","label":"最后更新时间"}}),_vm._v(" "),_c('el-table-column')],1)],1)])])}
 var staticRenderFns = []
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ var views_monitor = (esExports);
 // CONCATENATED MODULE: ./src/views/monitor/index.vue
 function injectStyle (ssrContext) {
-  __webpack_require__("ePgN")
+  __webpack_require__("0MiO")
 }
 var normalizeComponent = __webpack_require__("VU/8")
 /* script */
@@ -1494,6 +1492,13 @@ var Component = normalizeComponent(
 
 /* harmony default export */ var src_views_monitor = __webpack_exports__["default"] = (Component.exports);
 
+
+/***/ }),
+
+/***/ "mC5q":
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAB4CAYAAAD2SgIRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAHRmlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDggNzkuMTY0MDM2LCAyMDE5LzA4LzEzLTAxOjA2OjU3ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIiB4bWxuczpwaG90b3Nob3A9Imh0dHA6Ly9ucy5hZG9iZS5jb20vcGhvdG9zaG9wLzEuMC8iIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUuNSAoV2luZG93cykiIHhtcDpDcmVhdGVEYXRlPSIyMDIwLTAzLTA5VDEzOjM1OjU1KzA4OjAwIiB4bXA6TW9kaWZ5RGF0ZT0iMjAyMC0wNC0yMlQxNDo0OToxNiswODowMCIgeG1wOk1ldGFkYXRhRGF0ZT0iMjAyMC0wNC0yMlQxNDo0OToxNiswODowMCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDplY2NlYTQzYi1jODczLTI2NDUtOTM2OC03N2VlY2EwZmE5NGQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QzFDNDIyOTVGQzIxMTFFNzgyMTFDQzIwRTFCNkNBQjIiIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpDMUM0MjI5NUZDMjExMUU3ODIxMUNDMjBFMUI2Q0FCMiIgZGM6Zm9ybWF0PSJpbWFnZS9wbmciIHBob3Rvc2hvcDpDb2xvck1vZGU9IjMiIHBob3Rvc2hvcDpJQ0NQcm9maWxlPSJzUkdCIElFQzYxOTY2LTIuMSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkMxQzQyMjkyRkMyMTExRTc4MjExQ0MyMEUxQjZDQUIyIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkMxQzQyMjkzRkMyMTExRTc4MjExQ0MyMEUxQjZDQUIyIi8+IDx4bXBNTTpIaXN0b3J5PiA8cmRmOlNlcT4gPHJkZjpsaSBzdEV2dDphY3Rpb249InNhdmVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOjcyZTQ0MzI2LTkxZmYtYjI0Zi1iMGU0LWQyZDg0NTVkYzdmNiIgc3RFdnQ6d2hlbj0iMjAyMC0wMy0wOVQxMzo0MTowNCswODowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIDIxLjAgKFdpbmRvd3MpIiBzdEV2dDpjaGFuZ2VkPSIvIi8+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJzYXZlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDplY2NlYTQzYi1jODczLTI2NDUtOTM2OC03N2VlY2EwZmE5NGQiIHN0RXZ0OndoZW49IjIwMjAtMDQtMjJUMTQ6NDk6MTYrMDg6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCAyMS4wIChXaW5kb3dzKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8L3JkZjpTZXE+IDwveG1wTU06SGlzdG9yeT4gPHBob3Rvc2hvcDpEb2N1bWVudEFuY2VzdG9ycz4gPHJkZjpCYWc+IDxyZGY6bGk+eG1wLmRpZDpDMUM0MjI5NUZDMjExMUU3ODIxMUNDMjBFMUI2Q0FCMjwvcmRmOmxpPiA8L3JkZjpCYWc+IDwvcGhvdG9zaG9wOkRvY3VtZW50QW5jZXN0b3JzPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PiO+MIUAAAIMSURBVGiB7ZnBSltBFIb/q92qIAgG1D5BoVsXLuy+byKFZhE3LvMC7rNpwIWLrhQstbgqpEJLH6GiKC40wSf4urkJ13jm3pnA4J1wfxgI957zMTnzz5whyQDF0EIUapLgNxXvtyTtSvoo6W3+7J+k7/m4dmYC1lgE9oEhbg2Bgzz2BcOCLgE/SoDT+pbnVIIHAdCxBlXgPUfiI3CRj0dHTNsFfgfcGAlfgPVC3DpwbMTdA+8tcNcIPpn+ioVxZsR3LfC5EbhTAv5gxJ+P3xc3yKbhxvsSj986fC/p+c67MwLXSsAt49mVBf5tBH4uAbeNZ38nnwo12wZGRt16QKsQt5E/m9YoZ5g+7hgJAA/A13w8OWI6RZa12n8ciWX6Nc2xwKvAZQD0J55nhYAV4NQDegosWwwXeDyOSqBHZblVYGE7oFeV5wMW0C9A+z45GXi3/0+SMkmHPsEhzTST5D2L9Np/KDiLAQ665IXO+PUXr+qKVZR3fUPBUWscBRxUilC7RfFxtBlLkXxcj1LMt4+liDVOyxVBSs9u0Q76ppnGB9di8YI038dmPWpci4M+vS2d3t0tSE2XnhnsXYpanMfRdl6ap1u09h/Nx+ntvLRq3JxuE0Uthbfm2xVBqgU4vQ6S3s6LCk7Px83iSWouhbMqvZ8V5v8Plte/bTY1ngncXApnU+PjiWqzeN6z/g9+6LPjimg+WgAAAABJRU5ErkJggg=="
 
 /***/ }),
 
@@ -1526,13 +1531,18 @@ var map = {
 	"./m-jindu.png": "OdHK",
 	"./m_admin.png": "nf3M",
 	"./m_apply.png": "+IES",
+	"./m_apply_on.png": "TwrZ",
 	"./m_dashboard.png": "ajDz",
 	"./m_description.png": "XV6P",
+	"./m_detault.png": "YrFG",
+	"./m_device.png": "nZu5",
 	"./m_dispatch.png": "QpWN",
+	"./m_dispatch_on.png": "yvSC",
 	"./m_location.png": "T9cL",
 	"./m_message.png": "/rPO",
 	"./m_monitor.png": "RsYl",
 	"./m_plan.png": "B/i6",
+	"./m_plan_on.png": "q1L4",
 	"./m_progress.png": "dwkL",
 	"./m_project.png": "hbpv",
 	"./m_real_time.png": "7WLs",
@@ -1540,6 +1550,7 @@ var map = {
 	"./m_search.png": "ivFw",
 	"./m_security.png": "8Eth",
 	"./m_set.png": "Iu5b",
+	"./m_weekplanappl.png": "4hvV",
 	"./sta.png": "mC5q",
 	"./stasm.png": "JBQT",
 	"./user.png": "Ctr9"
@@ -1559,6 +1570,21 @@ webpackContext.keys = function webpackContextKeys() {
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
 webpackContext.id = "nDGB";
+
+/***/ }),
+
+/***/ "ounH":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("FZ+f")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n#progress {\r\n  position: absolute;\r\n  width: 100%;\r\n  height: 100%;\r\n  background: #081c33;\n}\n.progress {\r\n  background: #081c33;\n}\r\n/*starte-top*/\n.starte-top {\r\n  padding-top: 30px;\r\n  overflow: hidden;\r\n  margin: 0 30px;\n}\n.starte-top .sleft,\r\n.starte-top .sright {\r\n  background: #4b6eca;\r\n  color: #fff;\r\n  padding: 10px 15px 15px 15px;\r\n  display: block;\r\n  font-size: 16px;\r\n  font-weight: 700;\n}\n.starte-top .sleft {\r\n  float: left;\r\n  margin-right: 20px;\n}\n.starte-top .sright {\r\n  float: right;\n}\n.starte-top .line-a {\r\n  position: relative;\r\n  background: #fff;\r\n  height: 1px;\r\n  display: block;\r\n  margin-top: 6px;\n}\n.starte-top .line-a::before {\r\n  content: \"\";\r\n  position: absolute;\r\n  left: 0;\r\n  top: 2px;\r\n  width: 10px;\r\n  height: 3px;\r\n  border-bottom: 1px solid #fff;\r\n  -webkit-transform: rotateZ(45deg);\r\n          transform: rotateZ(45deg);\n}\n.starte-top .line-b {\r\n  position: relative;\r\n  background: #fff;\r\n  height: 1px;\r\n  display: block;\r\n  margin-top: 6px;\n}\n.starte-top .line-b::before {\r\n  content: \"\";\r\n  position: absolute;\r\n  right: -1px;\r\n  top: 4px;\r\n  width: 10px;\r\n  height: 3px;\r\n  border-bottom: 1px solid #fff;\r\n  -webkit-transform: rotateZ(135deg);\r\n          transform: rotateZ(135deg);\n}\n.starte-top .stations {\r\n  float: left;\n}\n.starte-top .stations .item {\r\n  width: 500px;\r\n  overflow: hidden;\r\n  display: inline-block;\r\n  white-space: nowrap;\n}\n.starte-top .stations ul li {\r\n  display: inline-block;\r\n  background: #4b6eca;\r\n  color: #fff;\r\n  padding: 17px 15px;\r\n  margin-left: 10px;\r\n  cursor: pointer;\n}\n.starte-top .stations ul li:hover {\r\n  background: #2359e2;\n}\n.starte-top .stations i {\r\n  display: inline-block;\r\n  background: #3062e2;\r\n  color: #fff;\r\n  padding: 15px 15px;\r\n  font-size: 20px;\r\n  vertical-align: top;\r\n  cursor: pointer;\n}\n.starte-top .stations i:hover {\r\n  background: #2359e2;\n}\r\n/*check-list*/\n.check-list {\r\n  margin: 20px 30px 0 30px;\n}\n.check-list .namess {\r\n  color: #fff;\r\n  margin-right: 15px;\n}\n.chkleft {\r\n  margin: 10px 30px 0 30px;\n}\n.chkleft .rlink {\r\n  color: #fff;\r\n  margin-right: 20px;\r\n  font-size: 15px;\n}\n.chkright {\r\n  float: right;\n}\n.check-list .el-checkbox__label {\r\n  color: #fff;\r\n  font-size: 14px;\n}\n.bridgechk.is-checked {\r\n  border-color: #cdaa7d !important;\n}\n.bridgechk .el-checkbox__input.is-checked .el-checkbox__inner {\r\n  background-color: #cdaa7d;\r\n  border-color: #cdaa7d;\n}\n.bridgechk.is-checked .el-checkbox__label {\r\n  color: #cdaa7d;\n}\n.tunnelchk.is-checked {\r\n  border-color: #25bfdb !important;\n}\n.tunnelchk .el-checkbox__input.is-checked .el-checkbox__inner {\r\n  background-color: #25bfdb;\r\n  border-color: #25bfdb;\n}\n.tunnelchk.is-checked .el-checkbox__label {\r\n  color: #25bfdb;\n}\n.speedchk.is-checked {\r\n  border-color: #ff9900 !important;\n}\n.speedchk .el-checkbox__input.is-checked .el-checkbox__inner {\r\n  background-color: #ff9900;\r\n  border-color: #ff9900;\n}\n.speedchk.is-checked .el-checkbox__label {\r\n  color: #ff9900;\n}\n.slopechk.is-checked {\r\n  border-color: #6e7b8b !important;\n}\n.slopechk .el-checkbox__input.is-checked .el-checkbox__inner {\r\n  background-color: #6e7b8b;\r\n  border-color: #6e7b8b;\n}\n.slopechk.is-checked .el-checkbox__label {\r\n  color: #6e7b8b;\n}\n.alertchk.is-checked {\r\n  border-color: #e53636 !important;\n}\n.alertchk .el-checkbox__input.is-checked .el-checkbox__inner {\r\n  background-color: #e53636;\r\n  border-color: #e53636;\n}\n.alertchk.is-checked .el-checkbox__label {\r\n  color: #e53636;\n}\n.daocchk.is-checked {\r\n  border-color: #107af7 !important;\n}\n.daocchk .el-checkbox__input.is-checked .el-checkbox__inner {\r\n  background-color: #107af7;\r\n  border-color: #107af7;\n}\n.daocchk.is-checked .el-checkbox__label {\r\n  color: #107af7;\n}\n.buildchk.is-checked {\r\n  border-color: #08ce80 !important;\n}\n.buildchk .el-checkbox__input.is-checked .el-checkbox__inner {\r\n  background-color: #08ce80;\r\n  border-color: #08ce80;\n}\n.buildchk.is-checked .el-checkbox__label {\r\n  color: #08ce80;\n}\r\n/*canvas*/\n.main-canvas {\r\n  background: #081c33;\r\n  margin: 0 10px;\n}\n.main-canvas .group-canvas {\r\n  overflow-x: scroll;\r\n  overflow-y: hidden;\r\n  height: 680px;\r\n  padding-right: 20px;\n}\n.progresslist {\r\n  padding-top: 20px;\r\n  padding-left: 30px;\r\n  color: #fff;\n}\n.progresslist .namess {\r\n  padding-bottom: 10px;\r\n  display: inline-block;\r\n  padding-right: 14px;\n}\n.progresslist .el-radio__label {\r\n  color: #fff;\n}\n.progresslist .el-radio {\r\n  margin-bottom: 10px;\n}\n.suofang {\r\n  padding: 30px 0 10px 30px;\n}\n.suofang a {\r\n  color: #fff;\r\n  margin-right: 10px;\r\n  font-size: 18px;\n}\n.cartablebox {\r\n  padding: 20px 10px;\n}\n.cartitle {\r\n  text-align: center;\r\n  border: 1px #2048a3 solid;\r\n  color: #2048a3;\r\n  padding: 5px 0;\r\n\r\n  cursor: pointer;\n}\n.cartablebox .app-table {\r\n  border-radius: 6px 6px 0 0;\n}\n.cartablebox .app-table .el-table__header-wrapper {\r\n  background: #3655a5;\r\n  border-radius: 6px 6px 0 0;\n}\n.cartablebox .el-table--medium th {\r\n  padding: 4px 0;\r\n  color: #fff;\n}\n.cartablebox .el-table--medium td {\r\n  padding: 2px 0;\r\n  color: #4b6eca;\n}\n.cartablebox .el-table th {\r\n  background: #1d397a !important;\n}\r\n", ""]);
+
+// exports
+
 
 /***/ }),
 
