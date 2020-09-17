@@ -17,7 +17,6 @@ export default {
      window.open("http://192.168.5.2");
   },
   methods: {
-    
   }
 };
 </script>
