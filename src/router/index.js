@@ -114,7 +114,7 @@ const constantRouterMap = [
         component: () => import('@/views/project/detaillist')
       }
     ]
-  }  ,
+  },
   {
     path: '/admin',
     component: Layout,
@@ -127,7 +127,7 @@ const constantRouterMap = [
       {
         path: '/departlist',
         component: () => import('@/views/admin/departlist')
-      }  ,
+      },
       {
         path: '/postlist',
         component: () => import('@/views/admin/postlist')
@@ -151,7 +151,18 @@ const constantRouterMap = [
       {
         path: '/monitor/indexmini',
         component: () => import('@/views/monitor/indexmini')
-      } 
+      }
+    ]
+  },
+  {
+    path: '/demo',
+    component: Layout,
+    hidden: true,
+    children: [
+      {
+        path: '/demo', 
+        component: () => import('@/views/demo/index')
+      }
     ]
   }
 ]
