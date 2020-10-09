@@ -3,7 +3,7 @@
     <template v-for="item in routes">
       <router-link
         @click.native="activeSel($event,item.path+'/'+item.children[0].path)"
-        v-if="item.redirect=='dashboard'"
+        v-if="item.redirect=='monitor'"
         :to="item.path+'/'+item.children[0].path"
         :key="item.children[0].name"
       >
