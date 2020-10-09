@@ -1,47 +1,63 @@
 <template>
-    <div class="app-wrapper" :class="classObj">
-        <sidebar class="sidebar-container"></sidebar>
-        <div class="main-container">
-            <navbar :msg="msg"></navbar>
-            <!-- <tags-view></tags-view> -->
-            <app-main></app-main>
-        </div>
+  <div class="app-wrapper" :class="classObj">
+    <div class="app-ishow" v-if="noMenu">
+      <sidebar class="sidebar-container"></sidebar>
+      <div class="main-container">
+        <navbar :msg="msg"></navbar>
+        <!-- <tags-view></tags-view> -->
+        <app-main></app-main>
+      </div>
     </div>
+    <div v-else>
+      131
+    </div>
+  </div>
 </template>
 <script>
-    import { Navbar, Sidebar, AppMain } from "./components";
-    // import ResizeMixin from "./mixin/ResizeHandler";
-    export default {
-      data() {
-        return {
-          msg: 0,
-        }
-      },
-      components: {
-        Navbar,
-        Sidebar,
-        AppMain
-      },
-      // mixins: [ResizeMixin],
-      computed: {
-        sidebar() {
-          return this.$store.state.app.sidebar;
-        },
-        device() {
-          return this.$store.state.app.device;
-        },
-        classObj() {
-          return {
-            hideSidebar: !this.sidebar.opened,
-            withoutAnimation: this.sidebar.withoutAnimation,
-            mobile: this.device === "mobile"
-          };
-        }
-      },
-      methods: {
-        handleClickOutside() {
-          this.$store.dispatch("closeSideBar", { withoutAnimation: false });
-        }
-      }
+import { Navbar, Sidebar, AppMain } from "./components";
+// import ResizeMixin from "./mixin/ResizeHandler";
+export default {
+  data() {
+    return {
+      msg: 0,
+      noMenu: true
     };
+  },
+  components: {
+    Navbar,
+    Sidebar,
+    AppMain
+  },
+  // mixins: [ResizeMixin],
+  computed: {
+    sidebar() {
+      return this.$store.state.app.sidebar;
+    },
+    device() {
+      return this.$store.state.app.device;
+    },
+    classObj() {
+      return {
+        hideSidebar: !this.sidebar.opened,
+        withoutAnimation: this.sidebar.withoutAnimation,
+        mobile: this.device === "mobile"
+      };
+    }
+  },
+  mounted() {
+    this.isMenu();
+  },
+  methods: {
+    isMenu() {
+      let curpath = this.$route.path;
+      console.log(curpath);
+      if (curpath == "/datav") {
+        this.noMenu = false;
+      } 
+    },
+    handleClickOutside() {
+      this.$store.dispatch("closeSideBar", { withoutAnimation: false });
+    }
+  }
+};
 </script>

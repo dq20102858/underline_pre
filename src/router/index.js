@@ -160,7 +160,7 @@ const constantRouterMap = [
     hidden: true,
     children: [
       {
-        path: '/datav', 
+        path: '/datav',
         component: () => import('@/views/datav/index')
       }
     ]
@@ -169,9 +169,12 @@ const constantRouterMap = [
     path: '/demo',
     component: Layout,
     hidden: true,
+    meta: {
+      keepAlive: false
+    },
     children: [
       {
-        path: '/demo', 
+        path: '/demo',
         component: () => import('@/views/demo/index')
       }
     ]
@@ -211,6 +214,6 @@ export const asyncRouterMap = {
   '/views/location/cardetector': () => import('@/views/location/cardetector'),//车载探测器
   '/views/location/locationbind': () => import('@/views/location/locationbind'),//定位从设备
   '/views/location/device': () => import('@/views/location/device'),//机具
-  '/views/message/index': () => import('@/views/message/index'),  
-  
+  '/views/message/index': () => import('@/views/message/index'),
+
 }
