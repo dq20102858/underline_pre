@@ -155,12 +155,42 @@ const constantRouterMap = [
     ]
   },
   {
-    path: '/demo',
+    path: '/datav',
     component: Layout,
     hidden: true,
     children: [
       {
-        path: '/demo', 
+        path: '/datav',
+        component: () => import('@/views/datav/index')
+      },
+      {
+        path: '/datav/schedule',
+        component: () => import('@/views/datav/schedule')
+      },
+      {
+        path: '/datav/diagram',
+        component: () => import('@/views/datav/diagram')
+      },
+      {
+        path: '/datav/diagrama',
+        component: () => import('@/views/datav/diagrama')
+      },
+      {
+        path: '/datav/personnel',
+        component: () => import('@/views/datav/personnel')
+      }
+    ]
+  },
+  {
+    path: '/demo',
+    component: Layout,
+    hidden: true,
+    meta: {
+      keepAlive: false
+    },
+    children: [
+      {
+        path: '/demo',
         component: () => import('@/views/demo/index')
       }
     ]
@@ -175,12 +205,11 @@ export default new Router({
 
 //路由组件注册
 export const asyncRouterMap = {
-
   '/views/layout/Layout': () => import('@/views/layout/Layout'),
+  '/views/monitor/index': () => import('@/views/monitor/index'),//行车监控
   '/views/dashboard/index': () => import('@/views/dashboard'),//视频监控
   '/views/admin/index': () => import('@/views/admin/index'),//人员管理
   '/views/project/index': () => import('@/views/project/index'),//工程进度
-  '/views/monitor/index': () => import('@/views/monitor/index'),//行车监控
   '/views/run_monitor/index': () => import('@/views/run_monitor/index'),//列车运行监控
   '/views/location/index': () => import('@/views/location/index'),//定位管理
   '/views/real_time/index': () => import('@/views/real_time/index'),//实时管理
@@ -193,15 +222,14 @@ export const asyncRouterMap = {
   '/views/description/index': () => import('@/views/description/index'),//项目介绍
   '/views/set/index': () => import('@/views/set/index'),//设置
   '/views/back/index': () => import('@/views/back/index'),//返回
-
   '/views/apply/daychart': () => import('@/views/apply/daychart'),//日班图表
   '/views/apply/conflictcheck': () => import('@/views/apply/conflictcheck'),//冲突检测
   '/views/apply/weekplan': () => import('@/views/apply/weekplan'),//周计划
   '/views/apply/weekplanapply': () => import('@/views/apply/weekplanapply'),//周计划l审核历史
-
   '/views/location/walldetector': () => import('@/views/location/walldetector'),//墙壁探测器
   '/views/location/cardetector': () => import('@/views/location/cardetector'),//车载探测器
   '/views/location/locationbind': () => import('@/views/location/locationbind'),//定位从设备
   '/views/location/device': () => import('@/views/location/device'),//机具
   '/views/message/index': () => import('@/views/message/index'),
+
 }
