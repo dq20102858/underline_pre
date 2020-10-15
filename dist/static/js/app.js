@@ -1,4 +1,4 @@
-webpackJsonp([47],{
+webpackJsonp([48],{
 
 /***/ "+IES":
 /***/ (function(module, exports) {
@@ -1566,7 +1566,7 @@ function hasPermission(roles, permissionRoles) {
   });
 }
 
-var whiteList = ['/login', '/authredirect']; // no redirect whitelist
+var whiteList = ['/login', '/authredirect', '/demo']; // no redirect whitelist
 
 router["c" /* default */].beforeEach(function (to, from, next) {
   nprogress_default.a.start(); // start progress bar
@@ -2149,6 +2149,16 @@ var constantRouterMap = [{
     path: '/monitor/indexmini',
     component: function component() {
       return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(6)]).then(__webpack_require__.bind(null, "N8bY"));
+    }
+  }]
+}, {
+  path: '/demo',
+  component: __WEBPACK_IMPORTED_MODULE_2__views_layout_Layout__["default"],
+  hidden: true,
+  children: [{
+    path: '/demo',
+    component: function component() {
+      return __webpack_require__.e/* import() */(46).then(__webpack_require__.bind(null, "+RJ3"));
     }
   }]
 }];

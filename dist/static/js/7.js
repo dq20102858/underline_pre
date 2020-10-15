@@ -1,5 +1,20 @@
 webpackJsonp([7,10],{
 
+/***/ "1zSW":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("FZ+f")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.app-video .video-js {\r\n  background: none;\r\n  width: 100%;\r\n  height: 180px;\n}\n.videolist {\r\n  overflow: hidden;\n}\n.videolist .grid-content {\r\n background: #fff;\r\n  border: 1px #3655a5 solid;\r\n  border-radius: 6px;\r\n  padding: 2px;\n}\n.videolist .grid-title {\r\n color: #1d397a;\r\n  font-size: 16px;\r\n  padding:10px 8px 8px 8px;\n}\n.videolist .el-row {\r\n  margin-bottom: 20px;\n}\n.videolist .el-row :last-child {\r\n  margin-bottom: 0;\n}\n.videolist .el-col {\r\n  border-radius: 4px;\r\n  margin-bottom: 20px;\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "49WS":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1564,6 +1579,7 @@ videojs_flash_es_Flash.VERSION = version$1;
 //
 //
 //
+//
 
 
 /* harmony default export */ var dashboard = ({
@@ -1576,6 +1592,9 @@ videojs_flash_es_Flash.VERSION = version$1;
     this.$nextTick(function () {
       this.initVideo();
     });
+  },
+  mounted: function mounted() {
+    window.open("https://192.168.5.2/doc/page/login.asp");
   },
   created: function created() {
     this.getVideos();
@@ -1629,14 +1648,14 @@ videojs_flash_es_Flash.VERSION = version$1;
     //this.myPlayer.dispose(); //销毁video实例
   }
 });
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-5323fa0d","hasScoped":false,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/views/dashboard/index.vue
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-1d40d354","hasScoped":false,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/views/dashboard/index.vue
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"app-video"},[_c('div',{staticClass:"el-menu-top"},[_c('el-menu',{attrs:{"mode":"horizontal"}},[_c('li',{staticClass:"ptitle"},[_c('img',{attrs:{"src":__webpack_require__("+KSh")}}),_vm._v("视频监控\n      ")])])],1),_vm._v(" "),_c('div',{staticClass:"app-page"},[_c('el-row',{staticClass:"videolist",attrs:{"gutter":20}},_vm._l((_vm.videoList),function(item,i){return _c('el-col',{key:i,attrs:{"span":6}},[_c('div',{staticClass:"grid-content"},[_c('video',{ref:"myVideo",refInFor:true,staticClass:"video-js vjs-default-skin vjs-big-play-centered vjs-fluid",attrs:{"id":'myVideo'+item.id}},[_c('source',{attrs:{"src":item.url,"type":"rtmp/flv"}})]),_vm._v(" "),_c('div',{staticClass:"grid-title"},[_vm._v(_vm._s(item.name))])])])}))],1)])}
 var staticRenderFns = []
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ var views_dashboard = (esExports);
 // CONCATENATED MODULE: ./src/views/dashboard/index.vue
 function injectStyle (ssrContext) {
-  __webpack_require__("KEcW")
+  __webpack_require__("N9sG")
 }
 var normalizeComponent = __webpack_require__("VU/8")
 /* script */
@@ -2997,17 +3016,17 @@ var update = __webpack_require__("rjj0")("0efe647d", content, true);
 
 /***/ }),
 
-/***/ "KEcW":
+/***/ "N9sG":
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__("evkB");
+var content = __webpack_require__("1zSW");
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__("rjj0")("406f7675", content, true);
+var update = __webpack_require__("rjj0")("13300024", content, true);
 
 /***/ }),
 
@@ -3022,21 +3041,6 @@ if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
 var update = __webpack_require__("rjj0")("494d0ae0", content, true);
-
-/***/ }),
-
-/***/ "evkB":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("FZ+f")(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.app-video .video-js {\r\n  background: none;\r\n  width: 100%;\r\n  height: 180px;\n}\n.videolist {\r\n  overflow: hidden;\n}\n.videolist .grid-content {\r\n background: #fff;\r\n  border: 1px #3655a5 solid;\r\n  border-radius: 6px;\r\n  padding: 2px;\n}\n.videolist .grid-title {\r\n color: #1d397a;\r\n  font-size: 16px;\r\n  padding:10px 8px 8px 8px;\n}\n.videolist .el-row {\r\n  margin-bottom: 20px;\n}\n.videolist .el-row :last-child {\r\n  margin-bottom: 0;\n}\n.videolist .el-col {\r\n  border-radius: 4px;\r\n  margin-bottom: 20px;\n}\r\n", ""]);
-
-// exports
-
 
 /***/ }),
 
