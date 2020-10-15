@@ -5,19 +5,7 @@
       :toggleClick="toggleSideBar"
       :isActive="sidebar.opened"
     ></hamburger>
-    <!-- <breadcrumb class="breadcrumb-container"></breadcrumb> -->
     <el-breadcrumb class="app-breadcrumb" separator-class="el-icon-arrow-right">
-      <!-- <el-breadcrumb-item>当前位置</el-breadcrumb-item>
-      <el-breadcrumb-item
-        v-for="(item,index)  in levelList"
-        :key="item.path"
-        v-if="item.meta.title"
-      >
-        <router-link v-if="index==levelList.length-1" :to="item.path">
-        <span class="no-redirect">{{item.meta.title}}</span> 
-        </router-link>
-        <span v-else style="cursor:text;">{{item.meta.title}}</span>
-      </el-breadcrumb-item>-->
     </el-breadcrumb>
     <div class="right-menu">
       <span v-if="sys_role == 1">
@@ -28,9 +16,9 @@
 
       <el-dropdown class="avatar-container right-menu-item" trigger="click">
         <div class="avatar-wrapper">
-          <!-- <span class="dapin">大屏</span> -->
+          <!-- <a class="dapin" target="_blank" href="/#/datav/">大屏</a> -->
           <!-- <img class="user-avatar" :src="avatar" /> -->
-          <span style="font-size:12px;">欢迎您，{{ name }}</span>
+          <span>欢迎您，{{ name }}</span>
 
           <i class="el-icon-caret-bottom"></i>
         </div>
@@ -238,5 +226,15 @@ export default {
 .dapin {
   display: inline-block;
   margin-right: 20px;
+  background: #4b6eca;
+  height: 28px;
+  line-height: 28px;
+  padding: 0 10px;
+  color: #fff;
+  border-radius: 3px;
+}
+.dapin:hover {
+  color: #fff;
+    background: #409eff;
 }
 </style>
