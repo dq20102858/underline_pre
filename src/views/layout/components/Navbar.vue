@@ -1,6 +1,10 @@
 <template>
   <el-menu class="navbar" mode="horizontal">
-    <hamburger class="hamburger-container" :toggleClick="toggleSideBar" :isActive="sidebar.opened"></hamburger>
+    <hamburger
+      class="hamburger-container"
+      :toggleClick="toggleSideBar"
+      :isActive="sidebar.opened"
+    ></hamburger>
     <!-- <breadcrumb class="breadcrumb-container"></breadcrumb> -->
     <el-breadcrumb class="app-breadcrumb" separator-class="el-icon-arrow-right">
       <!-- <el-breadcrumb-item>当前位置</el-breadcrumb-item>
@@ -16,7 +20,7 @@
       </el-breadcrumb-item>-->
     </el-breadcrumb>
     <div class="right-menu">
-      <span v-if="sys_role==1">
+      <span v-if="sys_role == 1">
         <router-link v-show="isShow" class="applylink" to="weekplanapply">
           <i class="el-icon-message"></i>
         </router-link>
@@ -24,8 +28,9 @@
 
       <el-dropdown class="avatar-container right-menu-item" trigger="click">
         <div class="avatar-wrapper">
+          <!-- <span class="dapin">大屏</span> -->
           <!-- <img class="user-avatar" :src="avatar" /> -->
-          <span style="font-size:12px;">欢迎您，{{name}}</span>
+          <span style="font-size:12px;">欢迎您，{{ name }}</span>
 
           <i class="el-icon-caret-bottom"></i>
         </div>
@@ -229,5 +234,9 @@ export default {
 }
 .applylink:hover {
   color: #f00;
+}
+.dapin {
+  display: inline-block;
+  margin-right: 20px;
 }
 </style>
