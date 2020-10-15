@@ -1,7 +1,7 @@
 <template>
   <div id="project-intro">
     <div class="intro-box">
-      <div class="datav-ptitle"><h3>项目介绍</h3></div>
+      <div class="datav-ptitle" style="padding-top:0"><h3>项目介绍</h3></div>
       <div class="intro-info">
         <el-scrollbar style="height:100%">
           无锡地铁4号线一期工程起自刘潭站，串联了
@@ -23,7 +23,44 @@
       </div>
     </div>
     <div class="intro-box">
-     123
+      <div class="subwap">
+        <div class="dot dot1"><i></i></div>
+        <div class="dname1">刘潭</div>
+        <div class="dot dot2"><i></i></div>
+        <div class="dname2">广石路</div>
+        <div class="dot dot3"><i></i></div>
+        <div class="dname3">黄巷站</div>
+        <div class="dot dot4"><i></i></div>
+        <div class="dname4">盛岸站</div>
+        <div class="dot dot5"><i></i></div>
+        <div class="dname5">惠山古镇站</div>
+        <div class="dot dot6"><i></i></div>
+        <div class="dname6">青山湾荣院站</div>
+        <div class="dot dot7"><i></i></div>
+        <div class="dname7">河埒口站</div>
+        <div class="dot dot8"><i></i></div>
+        <div class="dname8">西园弄站</div>
+        <div class="dot dot9"><i></i></div>
+        <div class="dname9">体育中心站</div>
+        <div class="dot dot10"><i></i></div>
+        <div class="dname10">夏家边站</div>
+        <div class="dot dot11"><i></i></div>
+        <div class="dname11">蠡湖大桥站</div>
+        <div class="dot dot12"><i></i></div>
+        <div class="dname12">大剧院站</div>
+        <div class="dot dot13"><i></i></div>
+        <div class="dname13">五湖大道站</div>
+        <div class="dot dot14"><i></i></div>
+        <div class="dname14">周新苑站</div>
+        <div class="dot dot15"><i></i></div>
+        <div class="dname15">市民中心站</div>
+        <div class="dot dot16"><i></i></div>
+        <div class="dname16">吴都路站</div>
+        <div class="dot dot17"><i></i></div>
+        <div class="dname17">丰润道站</div>
+        <div class="dot dot18"><i></i></div>
+        <div class="dname18">博览中心站</div>
+      </div>
     </div>
   </div>
 </template>
@@ -74,7 +111,6 @@ export default {
 #project-intro {
   position: relative;
   width: 33.3%;
-  border: 1px #fff solid;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -104,9 +140,193 @@ export default {
   width: 5px;
   border-radius: 100%;
   vertical-align: middle;
-  background: #15e4ff; margin-right: 5px;
+  background: #15e4ff;
+  margin-right: 5px;
 }
 #project-intro .el-scrollbar__wrap {
   overflow-x: hidden;
+}
+
+.subwap {
+  position: relative;
+  z-index: 1000;
+  height: 600px;
+  background: url(~@/assets/image/subline.png) no-repeat 50px center;
+  background-size: auto 550px;
+}
+.subwap .dot {
+  padding: 2px;
+  border-radius: 100%;
+  border: 1px rgba(255, 255, 255, 0.5) solid;
+  position: absolute;
+}
+.subwap .dot i {
+  height: 5px;
+  width: 5px;
+  background: #fff;
+  border-radius: 100%;
+  display: block;
+}
+.dot1 {
+  left: 190px;
+  top: 26px;
+}
+.dname1 {
+  position: absolute;
+  left: 210px;
+  top: 22px;
+}
+.dot2 {
+  left: 160px;
+  top: 46px;
+}
+.dname2 {
+  position: absolute;
+  left: 100px;
+  top: 42px;
+}
+.dot3 {
+  top: 96px;
+  left: 136px;
+}
+.dname3 {
+  position: absolute;
+  top: 93px;
+  left: 156px;
+}
+.dot4 {
+  top: 136px;
+  left: 100px;
+}
+.dname4 {
+  position: absolute;
+  top: 132px;
+  left: 50px;
+}
+.dot5 {
+  top: 170px;
+  left: 108px;
+}
+.dname5 {
+  position: absolute;
+  top: 168px;
+  left: 25px;
+}
+.dot6 {
+  top: 220px;
+  left: 95px;
+}
+.dname6 {
+  position: absolute;
+  top: 216px;
+  left: 115px;
+}
+.dot7 {
+  top: 260px;
+  left: 71px;
+}
+.dname7 {
+  position: absolute;
+  top: 258px;
+  left: 5px;
+}
+.dot8 {
+  top: 300px;
+  left: 71px;
+}
+.dname8 {
+  position: absolute;
+  top: 298px;
+  left: 5px;
+}
+.dot9 {
+  top: 330px;
+  left: 71px;
+}
+.dname9 {
+  position: absolute;
+  top: 328px;
+  left: 92px;
+}
+.dot10 {
+  top: 365px;
+  left: 62px;
+}
+.dname10 {
+  position: absolute;
+  top: 360px;
+  left: 0px;
+}
+.dot11 {
+  top: 392px;
+  left: 82px;
+}
+.dname11 {
+  position: absolute;
+  top: 400px;
+  left: 10px;
+}
+.dot12 {
+  top: 418px;
+  left: 124px;
+}
+.dname12 {
+  position: absolute;
+  top: 414px;
+  left: 144px;
+}
+.dot13 {
+  top: 443px;
+  left: 154px;
+}
+.dname13 {
+  position: absolute;
+  top: 454px;
+  left: 84px;
+}
+.dot14 {
+  top: 455px;
+  left: 188px;
+}
+.dname14 {
+  position: absolute;
+  top: 453px;
+  left: 212px;
+}
+.dot15 {
+  top: 490px;
+  left: 204px;
+}
+.dname15 {
+  position: absolute;
+  top: 487px;
+  left: 121px;
+}
+.dot16 {
+  top: 520px;
+  left: 209px;
+}
+.dname16 {
+  position: absolute;
+  top: 517px;
+  left: 144px;
+}
+.dot17 {
+  top: 557px;
+  left: 222px;
+}
+.dname17 {
+  position: absolute;
+  top: 557px;
+  left: 161px;
+}
+.dot18 {
+  top: 554px;
+  left: 247px;
+}
+.dname18 {
+  position: absolute;
+  top: 530px;
+  left: 244px;
 }
 </style>

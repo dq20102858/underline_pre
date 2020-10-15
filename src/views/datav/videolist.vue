@@ -1,38 +1,36 @@
 <template>
   <div id="videolist">
-      <div class="videos">
-        <div class="grid-content">
-          <img :src="require('@/assets/image/video.jpg')" />
-        </div>
-        <div class="grid-content">
-          <img :src="require('@/assets/image/video.jpg')" />
-        </div>
-        <div class="grid-content">
-          <img :src="require('@/assets/image/video.jpg')" />
-        </div>
-        <div class="grid-content">
-          <img :src="require('@/assets/image/video.jpg')" />
-        </div>
+    <div class="videos">
+      <div class="grid-content">
+        <img :src="require('@/assets/image/video.jpg')" />
+      </div>
+      <div class="grid-content">
+        <img :src="require('@/assets/image/video.jpg')" />
+      </div>
+      <div class="grid-content">
+        <img :src="require('@/assets/image/video.jpg')" />
+      </div>
+      <div class="grid-content">
+        <img :src="require('@/assets/image/video.jpg')" />
       </div>
     </div>
+  </div>
 </template>
 <script>
 export default {
   name: "videolist",
   data() {
-    return {
-    };
+    return {};
   },
   created() {},
-  methods: {
-  }
+  methods: {}
 };
 </script>
 
 <style>
 #videolist {
   position: relative;
-  width:50%;
+  width: 50%;
 }
 #videolist .videos {
   display: flex;
@@ -41,10 +39,10 @@ export default {
 }
 #videolist .videos .grid-content {
   width: 50%;
-  height:49.6%;
+  height: 49.6%;
   padding: 5px;
   overflow: hidden;
-  display: block
+  display: block;
 }
 #videolist .videos .grid-content img {
   width: 100%;
