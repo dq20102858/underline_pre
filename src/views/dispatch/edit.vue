@@ -155,7 +155,7 @@ export default {
         station_worker_id: "",
         station: "",
         description: "",
-        template_id: 1
+        template_id:''
       },
       locomotiveList: [],
       masterList: [],
