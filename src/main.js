@@ -27,8 +27,8 @@ import 'video.js/dist/video-js.css'
 Vue.prototype.$video = Video
 
 // import layer;
- import layer from 'vue-layer'
- import 'vue-layer/lib/vue-layer.css';
+import layer from 'vue-layer'
+import 'vue-layer/lib/vue-layer.css';
 Vue.prototype.$layer = layer(Vue);
 
 // 
@@ -44,7 +44,8 @@ Vue.use(eventBus)
 Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key])
 })
-
+import dataV from '@jiaminghi/data-view'
+Vue.use(dataV)
 Vue.config.productionTip = false
 
 new Vue({

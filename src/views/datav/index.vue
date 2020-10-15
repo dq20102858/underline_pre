@@ -1,207 +1,132 @@
 <template>
-  <div id="location">
-    <div class="el-menu-top">
-      <el-menu router default-active="device" mode="horizontal">
-        <li class="ptitle">
-          <img :src="require('@/assets/image/icon-location.png')" />定位管理
-        </li>
-        <el-menu-item index="location">人员定位统计</el-menu-item>
-        <el-menu-item index="walldetector">信号基站</el-menu-item>
-        <el-menu-item index="cardetector">车载探测器</el-menu-item>
-        <el-menu-item index="locationbind">定位从设备</el-menu-item>
-        <el-menu-item index="device" @click="pageToFirst">机具</el-menu-item>
-      </el-menu>
-    </div>
-    <div class="app-page">
-       </div>
+  <div id="data-view">
+    <dv-full-screen-container>
+      <top-header />
+      <div class="main-content">
+        <div class="block-left-right-content">
+          <project-intro></project-intro>
+          <div class="block-top-bottom-content">
+            <div class="block-diagram">
+              <diagram></diagram>
+            </div>
+            <div class="block-diagram-content">
+              <videolist></videolist>
+              <operation />
+            </div>
+          </div>
+        </div>
+        <div class="block-two-content">
+          <schedule></schedule>
+          <personnel></personnel>
+          <monitors></monitors>
+        </div>
+      </div>
+    </dv-full-screen-container>
   </div>
 </template>
 <script>
+import topHeader from "./topHeader";
+import schedule from "./schedule"; //项目进度
+import personnel from "./personnel"; //人员进出
+import monitors from "./monitors"; //实时监测
+import projectIntro from "./projectIntro"; //
+import operation from "./operation"; //
+import videolist from "./videolist"; //
+import diagram from "./diagram"; //运行图
 export default {
+  name: "DataView",
+  components: {
+    topHeader,
+    schedule,
+    personnel,
+    monitors,
+    projectIntro,
+    operation,
+    videolist,
+    diagram
+  },
   data() {
     return {
-      diaLogFormVisible: false,
-      diaLogTitle: "添加信息",
-      companyList: [],
-      deviceData: {},
-      deviceRules: {
-        depart_id: [
-          { required: true, message: "请选择公司", trigger: "change" }
-        ],
-        name: [
-          {
-            required: true,
-            message: "请输入机具名称2~20个字符",
-            trigger: "blur"
-          },
-          { min: 2, max: 20, message: "长度在2到20个字符", trigger: "blur" },
-          {
-            pattern: /(^\S+).*(\S+$)/,
-            message: "开始和结尾不能有空格",
-            trigger: "blur"
-          }
-        ],
-        description: [
-          { min: 0, max: 50, message: "长度在0到50个字符", trigger: "blur" }
-        ]
-      },
-      page_cur: 1,
-      pageTotal: 0,
-      page_size: 20,
-      page_total: 0,
-      dataList: []
+      fatherWidth: 0
     };
   },
-  created() {
+  mounted() {
+    // this.fatherWidth = document.getElementById("diagram").clientWidth;
   },
+  created() {
+ },
   methods: {
-    getCompanyList() {
-      this.request({
-        url: "/apply/getCompanyLists",
-        method: "get"
-      }).then(res => {
-        let data = res.data;
-        if (data.status == 1) {
-          this.companyList = data.data;
-        }
-      });
-    },
-    getDataList() {
-      let page = this.page_cur;
-      this.request({
-        url: "/location/getDevicePages",
-        method: "get",
-        params: {
-          page
-        }
-      }).then(res => {
-        let data = res.data;
-        if (data.status == 1) {
-          this.dataList = data.data.data;
-          this.page_cur = parseInt(data.data.current_page);
-          this.pageTotal = data.data.total;
-          this.page_size = data.data.per_page;
-          this.page_total = data.data.last_page;
-        }
-      });
-    },
-    pageChange(value) {
-      this.page_cur = value;
-      this.getDataList();
-    },
-    pageToFirst() {
-      this.pageChange(1);
-    },
-    pageToLast() {
-      this.page_cur = this.page_total;
-      this.pageChange(this.page_total);
-    },
-    addDialogInfo() {
-      this.deviceData = {
-        depart_id: "",
-        name: "",
-        description: ""
-      };
-      this.diaLogTitle = "添加机具信息";
-      this.diaLogFormVisible = true;
-      this.$nextTick(() => {
-        this.$refs["deviceRulesRef"].clearValidate();
-      });
-    },
-    addOrEditDialog() {
-      this.$refs["deviceRulesRef"].validate(valid => {
-        if (valid) {
-          let data = this.deviceData;
-          if (this.deviceData.description == "") {
-            this.deviceData.description = "暂无";
-          }
-          this.request({
-            url: "/location/addOrEditDevice",
-            method: "post",
-            data
-          }).then(response => {
-            var data = response.data;
-            if (data.status == 1) {
-              this.diaLogFormVisible = false;
-              this.$message({
-                type: "success",
-                message: "保存成功！"
-              });
-              this.getDataList();
-            }
-          });
-         } else {
-          console.log("操作失败！");
-          return false;
-        }
-      });
-    },
-    goEdit(id) {
-      this.diaLogTitle = "修改机具信息";
-      this.diaLogFormVisible = true;
-      this.$nextTick(() => {
-        this.$refs["deviceRulesRef"].clearValidate();
-      });
-      this.request({
-        url: "/location/getDevice",
-        method: "get",
-        params: { id }
-      }).then(response => {
-        let data = response.data;
-        if (data.status == 1) {
-          this.deviceData = data.data;
-          if (data.data.description == "暂无") {
-            this.deviceData.description = "";
-          }
-        }
-      });
-    },
-
-    goDel(id) {
-      this.$confirm("您确定要删除？删除后不能恢复！", "提示", {
-        confirmButtonText: "确定",
-        cancelButtonText: "取消",
-        type: "warning",
-        customClass: "el-message-box-new"
-      })
-        .then(() => {
-          this.request({
-            url: "/location/deleteDevice",
-            method: "post",
-            data: { id: id }
-          }).then(res => {
-            let data = res.data;
-            if (data.status == 1) {
-              this.$message({
-                type: "success",
-                message: "删除成功！"
-              });
-              this.getDataList();
-            }
-          });
-        })
-        .catch(() => {});
-    }
-    //
   }
 };
 </script>
-<style >
-.dialog-jiju .el-textarea__inner {
-  border: 1px #9db9fa solid;
-  color: #4b6eca;
-  height: 100px;
+<style>
+#data-view {
+  width: 100%;
+  height: 100%;
+  background: #01023a;
+  color: #fff;
 }
-.dialog-jiju .el-textarea {
-  width: 100% !important;
+
+.datav-ptitle {
+  padding: 30px 0 0 30px;
 }
-.dialog-jiju .el-select {
+.datav-ptitle h3 {
+  border-left: 5px solid #15e4ff;
+  color: #15e4ff;
+  font-size: 20px;
+  font-weight: 700;
+  padding-left: 10px;
+}
+.datav-list {
+  padding: 20px 30px;
+  overflow: hidden;
+}
+
+#dv-full-screen-container {
+  background: #01023a url("~@/assets/image/datav-bg.png") no-repeat 60px 70px;
+  background-size: 800px;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.block-left-right-content {
+  flex: 1;
+  display: flex;
+  margin-top: 20px;
+}
+
+.block-top-bottom-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.block-diagram {
+  display: block;
+  height: 50%;
   width: 100%;
 }
-.dialog-jiju .el-form-item__label {
-  width: 110px;
+.block-diagram-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 50%;
+  overflow: hidden;
 }
-.dialog-jiju .el-form-item__content {
-  margin-left: 110px;
+
+.block-two-content {
+  height: 33%;
+  display: flex;
+  padding-bottom: 20px;
+}
+.threebox {
+  width: 33.333%;
+  float: left;
 }
 </style>

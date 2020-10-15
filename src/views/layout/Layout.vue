@@ -9,7 +9,7 @@
       </div>
     </div>
     <div v-else>
-      131
+     <app-main></app-main>
     </div>
   </div>
 </template>
@@ -51,7 +51,8 @@ export default {
     isMenu() {
       let curpath = this.$route.path;
       console.log(curpath);
-      if (curpath == "/datav") {
+      // if (curpath == "/datav") {
+      if (curpath.indexOf("datav") != -1) {
         this.noMenu = false;
       } 
     },

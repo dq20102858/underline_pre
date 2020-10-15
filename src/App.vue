@@ -31,6 +31,7 @@
 body{background: #E7EEFF; height: 100%; width: 100%; font-size: 14px;margin: 0;padding: 0; }
 p,div,h1,h2,h3,h4,ul,li,span{margin: 0;padding: 0;}
 ul,li{list-style-type: none}
+i,em {font-style: normal;}
  .el-tooltip__popper{ max-width:50%;line-height: 22px; }
 .app-wrapper{height: 100%;}
 .app-pages{margin: 15px;}

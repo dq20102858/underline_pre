@@ -1,44 +1,14 @@
 <template>
   <div id="progress">
     <div class="progress">
-      <div class="starte-top">
-        <div class="sleft">
-          {{firstStation}}方向
-          <i class="line-a"></i>
-        </div>
-        <div class="scenter">
-          <div class="stations">
-            <i class="el-icon-arrow-left" @click="stationLeftMove"></i>
-            <div class="item" :style="{width:scrollwidth  + 'px'}">
-              <ul
-                :style="{width: stationList.length * 100 + 'px','margin-left': wdpx * 100 + 'px'}"
-              >
-                <li
-                  @click="scrollPosition(item.start_flag,item.start_length)"
-                  v-for="item in stationList"
-                  :key="item.id"
-                >{{item.name}}</li>
-              </ul>
-            </div>
-            <i class="el-icon-arrow-right" @click="stationRightMove"></i>
-          </div>
-        </div>
-        <div class="sright">
-          {{lastStation}}方向
-          <i class="line-b"></i>
-        </div>
-      </div>
-      <div class="chkleft">
-        <router-link to="/monitor/indexmini" class="rlink">缩小</router-link>
-      </div>
-      <div class="main-canvas">
-        <div class="group-canvas">
-          <div id="scrollbar">
-            <canvas id="mycanvas" height="680" ref="mycanvas">
-              <p>您的系统不支持此程序!</p>
-            </canvas>
-          </div>
-        </div>
+      <div class="main-canvas" ref="canvasWrapper">
+        <!-- <div class="group-canvas">
+          <div id="scrollbar"> -->
+        <canvas id="mycanvas" height="680" ref="mycanvas">
+          <p>您的系统不支持此程序!</p>
+        </canvas>
+        <!-- </div>
+        </div> -->
       </div>
       <div class="check-list">
         <span class="namess">显示图形：</span>
@@ -73,7 +43,12 @@
           @change="slopeCheckSelect"
           label="坡度"
         ></el-checkbox>
-        <el-checkbox class="daocchk" v-model="daocCheckValue" @change="daocCheckSelect" label="道岔"></el-checkbox>
+        <el-checkbox
+          class="daocchk"
+          v-model="daocCheckValue"
+          @change="daocCheckSelect"
+          label="道岔"
+        ></el-checkbox>
         <el-checkbox
           class="speedchk"
           v-model="speedCheckValue"
@@ -87,33 +62,19 @@
           label="施工地段"
         ></el-checkbox>
       </div>
-      <div class="progresslist" v-if="this.progressCheckValue !=''">
+      <div class="progresslist" v-if="this.progressCheckValue != ''">
         <span class="namess">施工进度：</span>
-        <el-radio-group v-model="progressCheckValue" @change="progressCheckSelect">
-          <el-radio v-for="item in progressList" :key="item.name" :label="item.name">{{item.name}}</el-radio>
+        <el-radio-group
+          v-model="progressCheckValue"
+          @change="progressCheckSelect"
+        >
+          <el-radio
+            v-for="item in progressList"
+            :key="item.name"
+            :label="item.name"
+            >{{ item.name }}</el-radio
+          >
         </el-radio-group>
-      </div>
-      <div class="cartablebox">
-        <div @click="showCarList" class="cartitle">{{cartableShowText}}</div>
-        <el-table :data="locationRealtime" v-show="cartableShow">
-          <el-table-column prop="id" label="编号" width="60"></el-table-column>
-          <el-table-column prop="name" label="列车名称" width="80"></el-table-column>
-          <el-table-column label="当前速度" width="100"></el-table-column>
-          <el-table-column label="当前位置" width="100">
-            <template slot-scope="scope">DK{{scope.row.start_flag}} + {{scope.row.start_length}}</template>
-          </el-table-column>
-          <el-table-column prop="line_type_desc" label="线别" width="100"></el-table-column>
-          <el-table-column prop="is_online" label="状态" width="100">
-            <template slot-scope="scope">
-              <span class="statused" v-if="scope.row.is_online=='1'">在线</span>
-              <span class="statused" v-if="scope.row.is_online=='0'">离线</span>
-            </template>
-          </el-table-column>
-          <el-table-column prop label="司机"></el-table-column>
-          <el-table-column prop label="车长"></el-table-column>
-          <el-table-column prop="create_time" label="最后更新时间"></el-table-column>
-          <el-table-column></el-table-column>
-        </el-table>
       </div>
     </div>
   </div>
@@ -203,10 +164,7 @@ export default {
       enterLineMinMileage: 0,
       enterLineMaxMileage: 0,
       outLineMinMileage: 0,
-      outLineMaxMileage: 0,
-      cartableShowText: "隐藏机车列表信息",
-      cartableShow: true,
-      locationRealtime: []
+      outLineMaxMileage: 0
     };
   },
   updated() {
@@ -214,7 +172,6 @@ export default {
   },
   created() {
     this.getProjectProcessMap();
-    this.getLocationRealtime();
   },
   methods: {
     getProjectProcessMap() {
@@ -281,18 +238,21 @@ export default {
       let enterLineMaxMileage = this.enterLineMaxMileage;
       let outLineMinMileage = this.outLineMinMileage;
       let outLineMaxMileage = this.leftLineMaxMileage;
-      let axis_Width = (leftLineMaxMileage - leftLineMinMileage) * everys + 150;
-      console.log(
-        "axis_Width：" +
-          axis_Width +
-          "_" +
-          leftLineMinMileage +
-          "_" +
-          leftLineMaxMileage
-      );
+
       //初始化
+
+      let canvastWidth = this.$refs.canvasWrapper.clientWidth;
+     let  axis_Width = canvastWidth; //  (parseInt(end + endLength) - parseInt(start + startLength)) * everys;
+      console.log(axis_Width);
+      let lineTypeBetwentMileage =
+        this.lineTypeMaxMileage - this.lineTypeMinMileage;
+      let lineTypeTotalMileage =
+        this.lineTypeMaxMileage + this.lineTypeMinMileage;
+      this.every = (parseInt(this.cwidth) / lineTypeBetwentMileage).toFixed(5);
+      console.log("canvasWidth：" + this.cwidth + "_" + this.every);
+
       canvas = this.$refs.mycanvas;
-      canvas.width = axis_Width;
+      canvas.width = canvastWidth;
       context = canvas.getContext("2d");
       let lineJson = this.lineTypeList;
       for (let i = 0; i < lineJson.length; i++) {
@@ -305,8 +265,7 @@ export default {
         let startLength = parseInt(lineJson[i].start_length);
         let end = parseInt(lineJson[i].end_flag) * 1000;
         let endLength = parseInt(lineJson[i].end_length);
-        axis_Width =
-          (parseInt(end + endLength) - parseInt(start + startLength)) * everys;
+
         if (lineJson[i].id == 1) {
           drawAxisTicksNum(
             start,
@@ -1613,84 +1572,11 @@ export default {
     //道岔
     daocCheckSelect() {
       this.initCanvas();
-    },
-
-    //top
-    stationLeftMove() {
-      if (this.wdpx < 0) {
-        this.wdpx += 1;
-      }
-    },
-    stationRightMove() {
-      if (this.wdpx > -(this.stationList.length + this.wdpx)) {
-        this.wdpx -= 1;
-      }
-    },
-    scrollPosition(start_flag, start_length) {
-      let total = start_flag;
-      let startX = (total - this.minKM) * 1000 * 0.5;
-      document.querySelector(".group-canvas").scrollLeft = startX;
-    },
-    dragScroll() {
-      let gapX = 0;
-      let startx = 0;
-      let obj = document.getElementById("scrollbar"); //
-      obj.addEventListener("mousedown", function(event) {
-        if (event.button == 0) {
-          //判断是否点击鼠标左键
-          gapX = event.clientX;
-          startx = document.querySelector(".group-canvas").scrollLeft; // document.documentElement.scrollLeft; // scroll的初始位置
-          // console.log(
-          //   "a：" +
-          //     event.clientX +
-          //     "_" +
-          //     document.documentElement.scrollLeft +
-          //     "_" +
-          //     event.screenX
-          // );
-          //movemove事件必须绑定到$(document)上，鼠标移动是在整个屏幕上的 此处的$(document)可以改为obj
-          document.addEventListener("mousemove", move);
-          document.addEventListener("mouseup", stop);
-        }
-        return false; //阻止默认事件或冒泡
-      });
-      function move(event) {
-        var left = event.clientX - gapX; // 鼠标移动的相对距离
-        document.querySelector(".group-canvas").scrollLeft = startx - left;
-        return false; //阻止默认事件或冒泡
-      }
-      function stop() {
-        //解绑定，这一步很必要，前面有解释
-        document.removeEventListener("mousemove", move);
-        document.removeEventListener("mouseup", stop);
-      }
-    },
-    showCarList() {
-      let show = this.cartableShow;
-      if (show) {
-        this.cartableShow = false;
-        this.cartableShowText = "显示机车列表信息";
-      } else {
-        this.cartableShow = true;
-        this.cartableShowText = "隐藏机车列表信息";
-      }
-    },
-    getLocationRealtime() {
-      this.request({
-        url: "/monitor/getLocationRealtime",
-        method: "get"
-      }).then(response => {
-        var data = response.data;
-        if (data.status == 1) {
-          this.locationRealtime = data.data;
-        }
-      });
     }
 
     //
   },
   mounted() {
-    this.dragScroll();
     window.addEventListener("resize", () => {
       this.scrollwidth = document.documentElement.clientWidth - 640;
     });
@@ -1821,74 +1707,74 @@ export default {
   color: #fff;
   font-size: 14px;
 }
-.check-list .bridgechk.is-checked {
+.bridgechk.is-checked {
   border-color: #cdaa7d !important;
 }
-.check-list .bridgechk .el-checkbox__input.is-checked .el-checkbox__inner {
+.bridgechk .el-checkbox__input.is-checked .el-checkbox__inner {
   background-color: #cdaa7d;
   border-color: #cdaa7d;
 }
-.check-list .bridgechk.is-checked .el-checkbox__label {
+.bridgechk.is-checked .el-checkbox__label {
   color: #cdaa7d;
 }
-.check-list .tunnelchk.is-checked {
+.tunnelchk.is-checked {
   border-color: #25bfdb !important;
 }
-.check-list .tunnelchk .el-checkbox__input.is-checked .el-checkbox__inner {
+.tunnelchk .el-checkbox__input.is-checked .el-checkbox__inner {
   background-color: #25bfdb;
   border-color: #25bfdb;
 }
-.check-list .tunnelchk.is-checked .el-checkbox__label {
+.tunnelchk.is-checked .el-checkbox__label {
   color: #25bfdb;
 }
-.check-list .speedchk.is-checked {
+.speedchk.is-checked {
   border-color: #ff9900 !important;
 }
-.check-list .speedchk .el-checkbox__input.is-checked .el-checkbox__inner {
+.speedchk .el-checkbox__input.is-checked .el-checkbox__inner {
   background-color: #ff9900;
   border-color: #ff9900;
 }
-.check-list .speedchk.is-checked .el-checkbox__label {
+.speedchk.is-checked .el-checkbox__label {
   color: #ff9900;
 }
-.check-list .slopechk.is-checked {
+.slopechk.is-checked {
   border-color: #6e7b8b !important;
 }
-.check-list .slopechk .el-checkbox__input.is-checked .el-checkbox__inner {
+.slopechk .el-checkbox__input.is-checked .el-checkbox__inner {
   background-color: #6e7b8b;
   border-color: #6e7b8b;
 }
-.check-list .slopechk.is-checked .el-checkbox__label {
+.slopechk.is-checked .el-checkbox__label {
   color: #6e7b8b;
 }
-.check-list .alertchk.is-checked {
+.alertchk.is-checked {
   border-color: #e53636 !important;
 }
-.check-list .alertchk .el-checkbox__input.is-checked .el-checkbox__inner {
+.alertchk .el-checkbox__input.is-checked .el-checkbox__inner {
   background-color: #e53636;
   border-color: #e53636;
 }
-.check-list .alertchk.is-checked .el-checkbox__label {
+.alertchk.is-checked .el-checkbox__label {
   color: #e53636;
 }
-.check-list .daocchk.is-checked {
+.daocchk.is-checked {
   border-color: #107af7 !important;
 }
-.check-list .daocchk .el-checkbox__input.is-checked .el-checkbox__inner {
+.daocchk .el-checkbox__input.is-checked .el-checkbox__inner {
   background-color: #107af7;
   border-color: #107af7;
 }
-.check-list .daocchk.is-checked .el-checkbox__label {
+.daocchk.is-checked .el-checkbox__label {
   color: #107af7;
 }
-.check-list .buildchk.is-checked {
+.buildchk.is-checked {
   border-color: #08ce80 !important;
 }
-.check-list .buildchk .el-checkbox__input.is-checked .el-checkbox__inner {
+.buildchk .el-checkbox__input.is-checked .el-checkbox__inner {
   background-color: #08ce80;
   border-color: #08ce80;
 }
-.check-list .buildchk.is-checked .el-checkbox__label {
+.buildchk.is-checked .el-checkbox__label {
   color: #08ce80;
 }
 /*canvas*/

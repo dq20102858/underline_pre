@@ -162,6 +162,22 @@ const constantRouterMap = [
       {
         path: '/datav',
         component: () => import('@/views/datav/index')
+      },
+      {
+        path: '/datav/schedule',
+        component: () => import('@/views/datav/schedule')
+      },
+      {
+        path: '/datav/diagram',
+        component: () => import('@/views/datav/diagram')
+      },
+      {
+        path: '/datav/diagrama',
+        component: () => import('@/views/datav/diagrama')
+      },
+      {
+        path: '/datav/personnel',
+        component: () => import('@/views/datav/personnel')
       }
     ]
   },
