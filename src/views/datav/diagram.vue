@@ -189,6 +189,8 @@ export default {
           //请点
           this.applyList = data.data.apply_lists;
           this.speedList = data.data.speed_lists; //限速区
+          this.buildList = data.data.work_lists; //施工地段
+          this.alertList = data.data.alert_lists; //防区
           //施工进度
           if (data.data.project.length > 0) {
             this.progressList = data.data.project;
@@ -202,8 +204,8 @@ export default {
     },
 
     initCanvas() {
-      let clientWidth = this.$refs.canvasWrapper.clientWidth - 30;
-      let canvasWidth = clientWidth;
+      const that = this;
+      let canvasWidth = this.$refs.canvasWrapper.clientWidth - 30;
       this.cwidth = canvasWidth;
       let lineTypeBetwentMileage =
         this.lineTypeMaxMileage - this.lineTypeMinMileage;
@@ -500,19 +502,99 @@ export default {
             context.moveTo(startX + offsetX, axis_LeftLine.y);
             context.lineTo(endX, axis_LeftLine.y);
             context.fillRect(centerX, axis_LeftLine.y, 2, 30);
-            context.fillText(desc, centerX, axis_LeftLine.y + 42);
+            context.fillText(desc, centerX-45, axis_LeftLine.y + 42);
           } else if (json[i].line_type == 2) {
             context.moveTo(startX, axis_LeftLine_Two.y);
             context.lineTo(endX, axis_LeftLine_Two.y);
             context.fillRect(centerX, axis_LeftLine_Two.y, 2, 30);
-            context.fillText(desc, centerX, axis_LeftLine_Two.y +42);
+            context.fillText(desc, centerX-45, axis_LeftLine_Two.y + 42);
           }
           context.stroke();
         }
       }
+      //绘制施工路段
+      function drawBuildAxis(listJson) {
+        let json = listJson;
+        for (let i = 0; i < json.length; i++) {
+          let start =
+            parseInt(json[i].start_flag) * 1000 +
+            parseInt(json[i].start_length);
+          let end =
+            parseInt(json[i].end_flag) * 1000 + parseInt(json[i].end_length);
+          context.strokeStyle = "#08ce80";
+          context.lineWidth = 10;
+          context.fillStyle = "#08ce80";
+          context.font = "12px Microsoft Yahei";
+          let desc = json[i].name;
+          context.beginPath();
+
+          let startX = (start - lineTypeMinMileage) * everys;
+          let endX = (end - lineTypeMinMileage) * everys;
+          let centerX = (endX + startX) / 2; //开始结束平均值
+          //画水平直线
+          if (json[i].line_type == 1) {
+            context.moveTo(startX, axis_LeftLine.y);
+            context.lineTo(endX, axis_LeftLine.y);
+            context.fillRect(centerX, axis_LeftLine.y, 2, 30);
+            context.fillText(desc, centerX - 24, axis_LeftLine.y + 42);
+          } else if (json[i].line_type == 2) {
+            if (start == 0) {
+              startX = 0;
+              endX = end * everys;
+            }
+
+            context.moveTo(startX, axis_LeftLine_Two.y);
+            context.lineTo(endX, axis_LeftLine_Two.y);
+            context.fillRect(centerX, axis_LeftLine_Two.y, 2, 30);
+            context.fillText(desc, centerX -24, axis_LeftLine_Two.y + 42);
+          }
+          context.stroke();
+        }
+      }
+      //绘制防区
+      function drawAlertAxis(alertListJson) {
+        let json = alertListJson;
+        for (let i = 0; i < json.length; i++) {
+          let start =
+            parseInt(json[i].start_flag) * 1000 +
+            parseInt(json[i].start_length);
+          let end =
+            parseInt(json[i].end_flag) * 1000 + parseInt(json[i].end_length);
+          context.strokeStyle = "#e53636";
+          context.lineWidth = 10;
+          context.fillStyle = "#e53636";
+          context.font = "12px Microsoft Yahei";
+          let desc =
+            "防区 DK" +
+            json[i].start_flag +
+            "+" +
+            json[i].start_length +
+            "- DK" +
+            json[i].end_flag +
+            "+" +
+            json[i].end_length;
+          context.beginPath();
+          let startX = (start - lineTypeMinMileage) * everys;
+          let endX = (end - lineTypeMinMileage) * everys;
+          let centerX = (endX + startX) / 2; //开始结束平均值
+          if (json[i].line_type == 1) {
+            context.moveTo(startX, axis_LeftLine.y);
+            context.lineTo(endX, axis_LeftLine.y);
+            context.fillRect(centerX, axis_LeftLine.y, 2, 30);
+            context.fillText(desc, centerX - 80, axis_LeftLine.y + 42);
+          } else if (json[i].line_type == 2) {
+            context.moveTo(startX, axis_LeftLine_Two.y);
+            context.lineTo(endX, axis_LeftLine_Two.y);
+            context.fillRect(centerX, axis_LeftLine_Two.y, 2, 30);
+            context.fillText(desc, centerX - 80, axis_LeftLine_Two.y + 42);
+          }
+          context.stroke();
+          //
+        }
+      }
 
       //绘制请点
-      let that = this;
+
       function drawAxesApply(jsonData) {
         let json = jsonData;
         let json1 = [
@@ -764,6 +846,16 @@ export default {
       //限速区
       if (this.speedCheckValue) {
         drawSpeedAxis(this.speedList);
+      }
+      //施工路段
+      if (this.buildCheckValue) {
+        drawBuildAxis(this.buildList);
+      }
+      //防区
+      if (this.alertList.length > 0) {
+        if (this.alertCheckValue) {
+          drawAlertAxis(this.alertList);
+        }
       }
       //施工进度
       // if (this.progressCheckValue) {
