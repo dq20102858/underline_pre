@@ -168,13 +168,13 @@ export default {
   display: block;
 }
 .dot1 {
-  left: 190px;
-  top: 26px;
+  left: 192px;
+  top: 28px;
 }
 .dname1 {
   position: absolute;
   left: 210px;
-  top: 22px;
+  top: 25px;
 }
 .dot2 {
   left: 160px;
@@ -223,7 +223,7 @@ export default {
 }
 .dot7 {
   top: 260px;
-  left: 71px;
+  left: 70px;
 }
 .dname7 {
   position: absolute;
@@ -232,7 +232,7 @@ export default {
 }
 .dot8 {
   top: 300px;
-  left: 71px;
+  left: 69px;
 }
 .dname8 {
   position: absolute;
@@ -241,16 +241,16 @@ export default {
 }
 .dot9 {
   top: 330px;
-  left: 71px;
+  left: 70px;
 }
 .dname9 {
   position: absolute;
   top: 328px;
-  left: 92px;
+  left: 90px;
 }
 .dot10 {
   top: 365px;
-  left: 62px;
+  left: 63px;
 }
 .dname10 {
   position: absolute;
@@ -276,7 +276,7 @@ export default {
   left: 144px;
 }
 .dot13 {
-  top: 443px;
+  top: 444px;
   left: 154px;
 }
 .dname13 {
@@ -312,17 +312,17 @@ export default {
   left: 144px;
 }
 .dot17 {
-  top: 557px;
-  left: 222px;
+  top: 558px;
+  left: 224px;
 }
 .dname17 {
   position: absolute;
   top: 557px;
-  left: 161px;
+  left: 160px;
 }
 .dot18 {
-  top: 554px;
-  left: 247px;
+  top: 555px;
+  left: 249px;
 }
 .dname18 {
   position: absolute;
