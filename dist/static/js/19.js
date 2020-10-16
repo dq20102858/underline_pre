@@ -1,20 +1,6 @@
 webpackJsonp([19],{
 
-/***/ "21Hu":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("QFUH");
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__("rjj0")("38b2b94f", content, true);
-
-/***/ }),
-
-/***/ "QFUH":
+/***/ "0QOC":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("FZ+f")(false);
@@ -22,1285 +8,905 @@ exports = module.exports = __webpack_require__("FZ+f")(false);
 
 
 // module
-exports.push([module.i, "\n#progress {\r\n  position: absolute;\r\n  width: 100%;\r\n  height: 100%;\r\n  background: #081c33;\n}\n.progress {\r\n  background: #081c33;\n}\r\n/*starte-top*/\n.starte-top {\r\n  padding-top: 30px;\r\n  overflow: hidden;\r\n  margin: 0 30px;\n}\n.starte-top .sleft,\r\n.starte-top .sright {\r\n  background: #4b6eca;\r\n  color: #fff;\r\n  padding: 10px 15px 15px 15px;\r\n  display: block;\r\n  font-size: 16px;\r\n  font-weight: 700;\n}\n.starte-top .sleft {\r\n  float: left;\r\n  margin-right: 20px;\n}\n.starte-top .sright {\r\n  float: right;\n}\n.starte-top .line-a {\r\n  position: relative;\r\n  background: #fff;\r\n  height: 1px;\r\n  display: block;\r\n  margin-top: 6px;\n}\n.starte-top .line-a::before {\r\n  content: \"\";\r\n  position: absolute;\r\n  left: 0;\r\n  top: 2px;\r\n  width: 10px;\r\n  height: 3px;\r\n  border-bottom: 1px solid #fff;\r\n  -webkit-transform: rotateZ(45deg);\r\n          transform: rotateZ(45deg);\n}\n.starte-top .line-b {\r\n  position: relative;\r\n  background: #fff;\r\n  height: 1px;\r\n  display: block;\r\n  margin-top: 6px;\n}\n.starte-top .line-b::before {\r\n  content: \"\";\r\n  position: absolute;\r\n  right: -1px;\r\n  top: 4px;\r\n  width: 10px;\r\n  height: 3px;\r\n  border-bottom: 1px solid #fff;\r\n  -webkit-transform: rotateZ(135deg);\r\n          transform: rotateZ(135deg);\n}\n.starte-top .stations {\r\n  float: left;\n}\n.starte-top .stations .item {\r\n  width: 500px;\r\n  overflow: hidden;\r\n  display: inline-block;\r\n  white-space: nowrap;\n}\n.starte-top .stations ul li {\r\n  display: inline-block;\r\n  background: #4b6eca;\r\n  color: #fff;\r\n  padding: 17px 15px;\r\n  margin-left: 10px;\r\n  cursor: pointer;\n}\n.starte-top .stations ul li:hover {\r\n  background: #2359e2;\n}\n.starte-top .stations i {\r\n  display: inline-block;\r\n  background: #3062e2;\r\n  color: #fff;\r\n  padding: 15px 15px;\r\n  font-size: 20px;\r\n  vertical-align: top;\r\n  cursor: pointer;\n}\n.starte-top .stations i:hover {\r\n  background: #2359e2;\n}\r\n/*check-list*/\n.check-list {\r\n  margin: 20px 30px 0 30px;\n}\n.check-list .namess {\r\n  color: #fff;\r\n  margin-right: 15px;\n}\n.chkleft {\r\n  margin: 10px 30px 0 30px;\n}\n.chkleft .rlink {\r\n  color: #fff;\r\n  margin-right: 20px;\r\n  font-size: 15px;\n}\n.chkright {\r\n  float: right;\n}\n.check-list .el-checkbox__label {\r\n  color: #fff;\r\n  font-size: 14px;\n}\n.bridgechk.is-checked {\r\n  border-color: #cdaa7d !important;\n}\n.bridgechk .el-checkbox__input.is-checked .el-checkbox__inner {\r\n  background-color: #cdaa7d;\r\n  border-color: #cdaa7d;\n}\n.bridgechk.is-checked .el-checkbox__label {\r\n  color: #cdaa7d;\n}\n.tunnelchk.is-checked {\r\n  border-color: #25bfdb !important;\n}\n.tunnelchk .el-checkbox__input.is-checked .el-checkbox__inner {\r\n  background-color: #25bfdb;\r\n  border-color: #25bfdb;\n}\n.tunnelchk.is-checked .el-checkbox__label {\r\n  color: #25bfdb;\n}\n.speedchk.is-checked {\r\n  border-color: #ff9900 !important;\n}\n.speedchk .el-checkbox__input.is-checked .el-checkbox__inner {\r\n  background-color: #ff9900;\r\n  border-color: #ff9900;\n}\n.speedchk.is-checked .el-checkbox__label {\r\n  color: #ff9900;\n}\n.slopechk.is-checked {\r\n  border-color: #6e7b8b !important;\n}\n.slopechk .el-checkbox__input.is-checked .el-checkbox__inner {\r\n  background-color: #6e7b8b;\r\n  border-color: #6e7b8b;\n}\n.slopechk.is-checked .el-checkbox__label {\r\n  color: #6e7b8b;\n}\n.alertchk.is-checked {\r\n  border-color: #e53636 !important;\n}\n.alertchk .el-checkbox__input.is-checked .el-checkbox__inner {\r\n  background-color: #e53636;\r\n  border-color: #e53636;\n}\n.alertchk.is-checked .el-checkbox__label {\r\n  color: #e53636;\n}\n.daocchk.is-checked {\r\n  border-color: #107af7 !important;\n}\n.daocchk .el-checkbox__input.is-checked .el-checkbox__inner {\r\n  background-color: #107af7;\r\n  border-color: #107af7;\n}\n.daocchk.is-checked .el-checkbox__label {\r\n  color: #107af7;\n}\n.buildchk.is-checked {\r\n  border-color: #08ce80 !important;\n}\n.buildchk .el-checkbox__input.is-checked .el-checkbox__inner {\r\n  background-color: #08ce80;\r\n  border-color: #08ce80;\n}\n.buildchk.is-checked .el-checkbox__label {\r\n  color: #08ce80;\n}\r\n/*canvas*/\n.main-canvas {\r\n  background: #081c33;\r\n  margin: 0 10px;\n}\n.main-canvas .group-canvas {\r\n  overflow-x: scroll;\r\n  overflow-y: hidden;\r\n  height: 680px;\r\n  padding-right: 20px;\n}\n.progresslist {\r\n  padding-top: 20px;\r\n  padding-left: 30px;\r\n  color: #fff;\n}\n.progresslist .namess {\r\n  padding-bottom: 10px;\r\n  display: inline-block;\r\n  padding-right: 14px;\n}\n.progresslist .el-radio__label {\r\n  color: #fff;\n}\n.progresslist .el-radio {\r\n  margin-bottom: 10px;\n}\n.suofang {\r\n  padding: 30px 0 10px 30px;\n}\n.suofang a {\r\n  color: #fff;\r\n  margin-right: 10px;\r\n  font-size: 18px;\n}\n.cartablebox {\r\n  padding: 20px 10px;\n}\n.cartitle {\r\n  text-align: center;\r\n  border: 1px #2048a3 solid;\r\n  color: #2048a3;\r\n  padding: 5px 0;\r\n\r\n  cursor: pointer;\n}\n.cartablebox .app-table {\r\n  border-radius: 6px 6px 0 0;\n}\n.cartablebox .app-table .el-table__header-wrapper {\r\n  background: #3655a5;\r\n  border-radius: 6px 6px 0 0;\n}\n.cartablebox .el-table--medium th {\r\n  padding: 4px 0;\r\n  color: #fff;\n}\n.cartablebox .el-table--medium td {\r\n  padding: 2px 0;\r\n  color: #4b6eca;\n}\n.cartablebox .el-table th {\r\n  background: #1d397a !important;\n}\r\n", ""]);
+exports.push([module.i, "\n.security-title {\r\n  background: #3655a5;\r\n  color: #fff;\r\n  border-bottom: none !important;\r\n  font-size: 18px;\r\n  border-radius: 6px 6px 0 0;\r\n  padding: 12px 0;\r\n  text-align: center;\n}\n#security .formbox {\r\n  padding: 0 10px;\n}\n#security .el-textarea {\r\n  width: 100%;\n}\n#security .el-textarea__inner {\r\n  height: 140px;\n}\n#security .textarea1 .el-textarea__inner {\r\n  height: 80px;\n}\n#security .el-form-item-inline .el-input--medium {\r\n  display: inline-block;\r\n  width: 80px;\r\n  text-align: center;\n}\n#security .el-form-item-inline input {\r\n  display: inline-block;\r\n  width: 80px;\r\n  text-align: center;\n}\n#security .listpagedetail {\r\n  margin-top: 20px;\r\n  margin-bottom: 20px;\n}\n#security .listpagedetail .app-page-container {\r\n  min-height: 300px;\n}\n#security .listpagedetail .detailleft {\r\n  float: left;\r\n  width: 49.2%;\n}\n#security .listpagedetail .detailright {\r\n  float: right;\r\n  width: 49.2%;\r\n  height: 400px;\n}\n.steps-info {\r\n  line-height: 28px;\n}\n.steps-info .imgs {\r\n  width: 100%;\r\n  overflow: hidden;\r\n  display: block;\n}\n.steps-info .imgs img {\r\n  width: 148px;\r\n  height: 148px;\r\n  margin-right: 10px;\r\n  border-radius: 6px;\r\n  border: 1px #f9f9f9 solid;\n}\n.steps-info .imgs .el-image__inner--center {\r\n  left: 0;\r\n  top: 0;\r\n  -webkit-transform: translate(0%, 0%);\r\n          transform: translate(0%, 0%);\n}\n.steps-info .el-icon-circle-close {\r\n  color: #fff;\n}\n.steps-section {\r\n  overflow-x: auto;\n}\n.timeline {\r\n  width: 100%;\r\n  height: auto;\r\n  padding-bottom: 10px;\r\n  font-size: 0;\r\n  white-space: nowrap;\n}\n.timeline li {\r\n  text-align: center;\r\n  position: relative;\r\n  display: inline-block;\r\n  *display: inline;\r\n  zoom: 1;\r\n  width: auto;\r\n  font-size: 16px;\r\n  padding: 20px;\n}\n.timeline li .time {\r\n  padding-top: 10px;\r\n  color: #333;\r\n  font-weight: 400;\n}\n.timeline li .time p {\r\n  line-height: 31px;\n}\n.timeline li .time:before {\r\n  content: \"\";\r\n  display: block;\r\n  position: absolute;\r\n  width: 28px;\r\n  height: 28px;\r\n  top: 50px;\r\n  margin-bottom: -4px;\r\n  left: 50%;\r\n  margin-left: -15px;\r\n  border: 5px #898989 solid;\r\n  background: #fff;\r\n  border-radius: 100%;\r\n  background-size: 10px 10px;\r\n  z-index: 100;\n}\n.timeline li .time:after {\r\n  content: \"\";\r\n  display: block;\r\n  position: absolute;\r\n  width: 100%;\r\n  height: 2px;\r\n  background: #898989;\r\n  left: 0;\r\n  top: 65px;\r\n  margin-left: -2px;\r\n  z-index: 99;\n}\n.timeline li:last-child .time:before {\r\n  content: \"\";\r\n  display: block;\r\n  position: absolute;\r\n  width: 28px;\r\n  height: 28px;\r\n  top: 50px;\r\n  margin-bottom: -4px;\r\n  left: 50%;\r\n  margin-left: -15px;\r\n  border: 5px #4b6eca solid;\r\n  background: #fff;\r\n  border-radius: 100%;\r\n  background-size: 10px 10px;\r\n  z-index: 999;\n}\n.timeline li .desc {\r\n  color: #888;\r\n  padding-bottom: 50px;\r\n  font-size: 16px;\n}\n.uploader .el-upload {\r\n  border: 1px dashed #9db9fa;\r\n  border-radius: 6px;\r\n  cursor: pointer;\r\n  position: relative;\r\n  overflow: hidden;\r\n  font-size: 28px;\r\n  color: #8c939d;\r\n  width: 148px;\r\n  height: 148px;\r\n  line-height: 148px;\r\n  text-align: center;\n}\n.uploader .upimgitem {\r\n  width: 100%;\r\n  margin-top: 10px;\n}\n.uploaderthree .el-upload {\r\n  border: 1px dashed #9db9fa;\r\n  border-radius: 6px;\r\n  cursor: pointer;\r\n  position: relative;\r\n  overflow: hidden;\r\n  font-size: 28px;\r\n  color: #8c939d;\r\n  width: 148px;\r\n  height: 148px;\r\n  line-height: 148px;\r\n  text-align: center;\n}\n.uploaderthree .upimgitem {\r\n  width: 100%;\r\n  margin-top: 10px;\n}\n.dialog-danger .el-textarea__inner {\r\n  border: 1px #9db9fa solid;\r\n  color: #4b6eca;\r\n  height: 100px;\n}\n.dialog-danger .el-textarea {\r\n  width: 100% !important;\n}\n.dialog-danger .el-select {\r\n  width: 100%;\n}\n.dialog-danger .el-form-item__label {\r\n  width: 110px;\n}\n.dialog-danger .el-form-item__content {\r\n  margin-left: 110px;\n}\n.my-radio .el-radio {\r\n  margin-right: 15px !important;\n}\n.my-radio label{margin-bottom: 15px;\n}\n.el-image-viewer__canvas img {\r\n  width: auto !important;\r\n  height: auto !important;\n}\r\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ "fPwq":
+/***/ "h5Rs":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
-// EXTERNAL MODULE: ./node_modules/babel-runtime/core-js/get-iterator.js
-var get_iterator = __webpack_require__("BO1k");
-var get_iterator_default = /*#__PURE__*/__webpack_require__.n(get_iterator);
+// CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./src/views/security/index.vue
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
-// CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./src/views/datav/diagrama.vue
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-var canvas = void 0;
-var context = void 0;
-var axis_Height = "680";
-//左右线标尺起点
-var axis_LeftLine = {
-  x: 100,
-  y: axis_Height - 490
-};
-var axis_LeftLine_Two = {
-  x: 100,
-  y: axis_Height - 285
-};
-//出入场线
-var axis_OutLine = {
-  x: 100,
-  y: axis_Height - 150
-};
-var axis_OutLine_Two = {
-  x: 100,
-  y: axis_Height - 80
-};
-//请点标尺起点
-var axis_applay = {
-  x: 100,
-  y: axis_Height - 535
-};
-var axis_applay_two = {
-  x: 100,
-  y: axis_Height - 345
-};
-//刻度的间隔
-var tick_Spacing = 100;
-var tick_Height = 8; //刻度线高度
-var everys = 0.5; //每米长度等于px
-var offsetX = 100;
-var offsetXLine = 88;
-var scrollGapX = 0;
-var scrollStartx = 0;
-var applyClickXY = [];
-/* harmony default export */ var diagrama = ({
+/* harmony default export */ var security = ({
   data: function data() {
+    var _this = this;
+
     return {
-      flag: false,
-      startX: 0,
-      endX: 0,
-      slideStyle: {
-        left: 0,
-        transition: "none"
+      pickerOptionsStart: {
+        disabledDate: function disabledDate(time) {
+          if (_this.searchForm.end_time) {
+            return time.getTime() > new Date(_this.searchForm.end_time).getTime();
+          }
+        }
       },
-      wdpx: 0,
-      stationList: [],
-      firstStation: "",
-      lastStation: "",
-      scrollwidth: 900,
-      scrollwidthTwo: 900,
-      bridgeCheckValue: true,
-      bridgeList: [],
-      tunnelCheckValue: true,
-      tunnelList: [],
-      speedCheckValue: true,
-      speedList: [],
-      buildCheckValue: true,
-      buildList: [],
-      alertCheckValue: true,
-      alertList: [],
-      slopeCheckValue: true,
-      slopeList: [],
-      daocCheckValue: true,
-      daocList: [],
-      progressList: [],
-      progressListItem: [],
-      progressCheckValue: 0,
-      applyList: [],
-      lineTypeList: [],
-      every: 0.5,
-      minKM: 0,
-      minKMLength: 0,
-      leftLineMinMileage: 0,
-      leftLineMaxMileage: 0,
-      leftLineBetwentMileage: 0,
-      enterLineMinMileage: 0,
-      enterLineMaxMileage: 0,
-      outLineMinMileage: 0,
-      outLineMaxMileage: 0
+      pickerOptionsEnd: {
+        disabledDate: function disabledDate(time) {
+          if (_this.searchForm.start_time) {
+            return time.getTime() < new Date(_this.searchForm.start_time).getTime();
+          }
+        }
+      },
+      searchForm: {
+        type: 1
+      },
+      uploadAction: this.hostURL + "/upload/uploadFile",
+      dataList: [],
+      dataListEmptyText: "无近七日内安全管理事件",
+      companyList: [],
+      trainList: [],
+      dangerTypeList: [],
+      dangerDetermineList: [],
+      objSelectLists: [],
+      formData: {},
+      formRules: {
+        depart_id: [{ required: true, message: "请选择公司", trigger: "change" }],
+        admin_id: [{ required: true, message: "请选择人员", trigger: "change" }],
+        title: [{
+          required: true,
+          message: "请输入安全事件标题2~30个字符",
+          trigger: "blur"
+        }, { min: 2, max: 30, message: "长度在2到30个字符", trigger: "blur" }, {
+          pattern: /(^\S+).*(\S+$)/,
+          message: "开始和结尾不能有空格",
+          trigger: "blur"
+        }],
+        address: [{
+          required: true,
+          message: "请输入安全事件地址2~100个字符",
+          trigger: "blur"
+        }, { min: 2, max: 100, message: "长度在2到100个字符", trigger: "blur" }, {
+          pattern: /\s\S+|S+\s|\S/,
+          message: "内容不能全是空格",
+          trigger: "blur"
+        }],
+        description: [{
+          required: true,
+          message: "请输入安全事件描述2~255个字符",
+          trigger: "blur"
+        }, { min: 2, max: 255, message: "长度在2到255个字符", trigger: "blur" }, {
+          pattern: /\s\S+|S+\s|\S/,
+          message: "内容不能全是空格",
+          trigger: "blur"
+        }]
+      },
+      dialogFormEvent: false,
+      dialogImageUrl: "",
+      dialogVisible: false,
+      eventTitle: "",
+      eventDesc: "",
+      eventPictureList: [],
+      eventPeopleList: [],
+      diaDangerFormVisible: false,
+      dangerIdValue: 0,
+      dangerTypeValue: "",
+      diaPeopleFormVisible: false,
+      peopleData: {},
+      assignersList: [],
+      peopleRules: {
+        user_id: [{ required: true, message: "请选择指派人员", trigger: "change" }],
+        remark: [{
+          min: 2,
+          max: 200,
+          message: "请输入备注描述长度在2到200个字符",
+          trigger: "blur"
+        }]
+      }
     };
   },
-  updated: function updated() {
-    this.initCanvas();
-  },
   created: function created() {
-    this.getProjectProcessMap();
+    //alert(document.location.hostname);
+    this.defaultDate();
+    this.getCompanyLists();
+    // this.getTrainList();
+    // this.getDangerType();
+    this.getDangerDetermine();
+    this.getDataList();
   },
 
   methods: {
-    getProjectProcessMap: function getProjectProcessMap() {
-      var _this = this;
+    defaultDate: function defaultDate() {
+      var currentDate = new Date();
+      var endTime = currentDate.setHours(23, 59, 59, 999);
+      var starTime = new Date(currentDate.setDate(currentDate.getDate() - 7)).setHours(0, 0, 0, 999);
+      this.$set(this.searchForm, "start_time", new Date(starTime));
+      this.$set(this.searchForm, "end_time", new Date(endTime));
+    },
+
+    //====列表数据
+    getDataList: function getDataList() {
+      var _this2 = this;
+
+      var page = this.page_cur;
+      //let type = this.searchForm.type;
+      // let danger_type = this.searchForm.danger_type;
+      // let danger_determine = this.searchForm.danger_determine;
+      // let loco_id = this.searchForm.loco_id;
+      // let start_location = this.searchForm.start_location;
+      // let end_location = this.searchForm.end_location;
+      var start_time = this.searchForm.start_time;
+      var end_time = this.searchForm.end_time;
+      this.request({
+        url: "/security/getSecurityPages",
+        method: "get",
+        params: {
+          page: page,
+          start_time: start_time,
+          end_time: end_time
+        }
+      }).then(function (res) {
+        var data = res.data;
+        if (data.status == 1) {
+          _this2.dataList = data.data.data;
+          _this2.page_cur = parseInt(data.data.current_page);
+          _this2.pageTotal = data.data.total;
+          _this2.page_size = data.data.per_page;
+          _this2.page_total = data.data.last_page;
+        }
+      });
+    },
+    pageChange: function pageChange(value) {
+      this.page_cur = value;
+      this.getDataList();
+    },
+    pageToFirst: function pageToFirst() {
+      this.pageChange(1);
+    },
+    pageToLast: function pageToLast() {
+      this.page_cur = this.page_total;
+      this.pageChange(this.page_total);
+    },
+    pageSearch: function pageSearch() {
+      this.dataListEmptyText = "暂无数据";
+      this.page_cur = 1;
+      this.getDataList();
+      this.goDetail(0);
+    },
+    resetSerach: function resetSerach() {
+      this.searchForm.start_time = "";
+      this.searchForm.end_time = "";
+      this.page_cur = 1;
+      this.getDataList();
+      this.goDetail(0);
+    },
+
+    //================事件表单操作
+    addDialogEvents: function addDialogEvents() {
+      var _this3 = this;
+
+      this.dialogFormEvent = true;
+      this.$nextTick(function () {
+        _this3.$refs["formRulesRef"].clearValidate();
+      });
+      var uploadImgs = document.getElementsByClassName("upimgitem");
+      if (uploadImgs.length > 0) {
+        this.$refs.uploadfive.clearFiles();
+      }
+      console.log("uploadImgs：" + uploadImgs.length);
+    },
+
+    //获取公司
+    getCompanyLists: function getCompanyLists() {
+      var _this4 = this;
 
       this.request({
-        url: "/monitor/getMointorDatas",
+        url: "/apply/getCompanyLists",
         method: "get"
+      }).then(function (res) {
+        var data = res.data;
+        if (data.status == 1) {
+          _this4.companyList = data.data;
+        }
+      });
+    },
+    selectCompanyList: function selectCompanyList(val) {
+      var _this5 = this;
+
+      this.$set(this.formData, "admin_id", "");
+      this.request({
+        url: "/user/getUserByDepart",
+        method: "get",
+        params: { id: val, type: 1 }
       }).then(function (response) {
         var data = response.data;
         if (data.status == 1) {
-          //线别
-          _this.lineTypeList = data.data.line_types;
-          var linetypeJson = data.data.line_types;
-          for (var i = 0; i < linetypeJson.length; i++) {
-            if (linetypeJson[i].id == 1) {
-              _this.leftLineMinMileage = parseInt(linetypeJson[i].start_total);
-              _this.leftLineMaxMileage = parseInt(linetypeJson[i].end_total);
-              _this.minKM = parseInt(linetypeJson[i].start_flag); //最小公里
-              _this.minKMLength = parseInt(linetypeJson[i].start_length); //最小米数
-            } else if (linetypeJson[i].id == 3) {
-              _this.enterLineMinMileage = parseInt(linetypeJson[i].start_total);
-              _this.enterLineMaxMileage = parseInt(linetypeJson[i].end_total);
-            } else if (linetypeJson[i].id == 4) {
-              _this.outLineMinMileage = parseInt(linetypeJson[i].start_total);
-              _this.outLineMaxMileage = parseInt(linetypeJson[i].end_total);
-            }
-          }
-          //======站点
-          _this.stationList = data.data.stations;
-          var json = data.data.stations;
-          _this.scrollwidth = document.documentElement.clientWidth - 510;
-          _this.scrollwidthTwo = (_this.leftLineMaxMileage - _this.leftLineMinMileage) * everys + 150;
-          // console.log(this.scrollwidth);
-          //请点
-          _this.applyList = data.data.apply_lists;
-          //桥 隧道等
-          _this.bridgeList = data.data.bridge_lists; //桥
-          _this.tunnelList = data.data.tunnel_lists; //隧道
-          _this.speedList = data.data.speed_lists; //限速区
-          _this.buildList = data.data.work_lists; //施工地段
-
-          _this.alertList = data.data.alert_lists; //防区
-          _this.slopeList = data.data.slope_lists; //坡度
-          //施工进度
-          if (data.data.project.length > 0) {
-            _this.progressList = data.data.project;
-            _this.progressCheckValue = data.data.project[0]["name"];
-            _this.progressListItem = data.data.project[0].list;
-          }
+          _this5.objSelectLists = data.data;
         }
       });
     },
-    initCanvas: function initCanvas() {
-      var that = this;
-      //坐标轴宽度高度
-      //  let axis_Width = this.totalMileage / 2 + 1000;
 
-      var minkm = this.minKM; //最小的公里数
-      var minkmLength = this.minKMLength; //最小米数
-      var leftLineMinMileage = this.leftLineMinMileage;
-      var leftLineMaxMileage = this.leftLineMaxMileage;
-      var enterLineMinMileage = this.enterLineMinMileage;
-      var enterLineMaxMileage = this.enterLineMaxMileage;
-      var outLineMinMileage = this.outLineMinMileage;
-      var outLineMaxMileage = this.leftLineMaxMileage;
+    //获取机车
+    getTrainList: function getTrainList() {
+      var _this6 = this;
 
-      //初始化
+      this.request({
+        url: "/dispatch/getLocomotiveLists",
+        method: "get"
+      }).then(function (res) {
+        var data = res.data;
+        if (data.status == 1) {
+          _this6.trainList = data.data;
+        }
+      });
+    },
 
-      var canvastWidth = this.$refs.canvasWrapper.clientWidth;
-      var axis_Width = canvastWidth; //  (parseInt(end + endLength) - parseInt(start + startLength)) * everys;
-      console.log(axis_Width);
-      var lineTypeBetwentMileage = this.lineTypeMaxMileage - this.lineTypeMinMileage;
-      var lineTypeTotalMileage = this.lineTypeMaxMileage + this.lineTypeMinMileage;
-      this.every = (parseInt(this.cwidth) / lineTypeBetwentMileage).toFixed(5);
-      console.log("canvasWidth：" + this.cwidth + "_" + this.every);
+    //获取隐患类型
+    getDangerType: function getDangerType() {
+      var _this7 = this;
 
-      canvas = this.$refs.mycanvas;
-      canvas.width = canvastWidth;
-      context = canvas.getContext("2d");
-      var lineJson = this.lineTypeList;
-      for (var i = 0; i < lineJson.length; i++) {
-        context.font = "12px Microsoft Yahei";
-        context.fillStyle = "#E8C640";
-        context.lineWidth = 10;
-        context.strokeStyle = "#fff";
-        context.beginPath();
-        var start = parseInt(lineJson[i].start_flag) * 1000;
-        var startLength = parseInt(lineJson[i].start_length);
-        var end = parseInt(lineJson[i].end_flag) * 1000;
-        var endLength = parseInt(lineJson[i].end_length);
+      this.request({
+        url: "/security/getDangerType",
+        method: "get"
+      }).then(function (res) {
+        var data = res.data;
+        if (data.status == 1) {
+          _this7.dangerTypeList = data.data.data.reverse();
+        }
+      });
+    },
 
-        if (lineJson[i].id == 1) {
-          drawAxisTicksNum(start, startLength, end, endLength, axis_Width, axis_LeftLine.x, axis_LeftLine.y, "ZDK");
-          context.font = "15px Microsoft Yahei";
-          context.fillText("左线", axis_LeftLine.x - 60, axis_LeftLine.y + 28);
-        } else if (lineJson[i].id == 2) {
-          drawAxisTicksNum(start, startLength, end, endLength, axis_Width, axis_LeftLine_Two.x, axis_LeftLine_Two.y, "YDK");
-          context.font = "15px Microsoft Yahei";
-          context.fillText("右线", axis_LeftLine_Two.x - 60, axis_LeftLine_Two.y + 28);
-        } else if (lineJson[i].id == 3) {
-          drawAxisTicksNum(start, startLength, end, endLength, axis_Width, axis_OutLine.x, axis_OutLine.y, "RDK");
-          context.font = "15px Microsoft Yahei";
-          context.fillText("入场线", axis_OutLine.x - 68, axis_OutLine.y + 28);
-        } else if (lineJson[i].id == 4) {
-          drawAxisTicksNum(start, startLength, end, endLength, axis_Width, axis_OutLine_Two.x, axis_OutLine_Two.y, "CDK");
-          context.font = "15px Microsoft Yahei";
-          context.fillText("出场线", axis_OutLine_Two.x - 68, axis_OutLine_Two.y + 28);
+    //获取隐患判定
+    getDangerDetermine: function getDangerDetermine() {
+      var _this8 = this;
+
+      this.request({
+        url: "/security/getDangerDetermine",
+        method: "get"
+      }).then(function (res) {
+        var data = res.data;
+        if (data.status == 1) {
+          _this8.dangerDetermineList = data.data.data.reverse();
+        }
+      });
+    },
+
+    //上传图片
+    uploadExceed: function uploadExceed() {
+      this.$message({
+        type: "warning",
+        message: "\u6700\u591A\u53EF\u4EE5\u4E0A\u4F205\u5F20\u56FE\u7247"
+      });
+    },
+    uploadSuccess: function uploadSuccess(res, file) {
+      // let result= URL.createObjectURL(file.raw);
+      console.log("图上传成功", res);
+      var upload_list_li = document.getElementsByClassName("el-upload-list")[0].children;
+      if (res.data.url != "") {
+        for (var i = 0; i < upload_list_li.length; i++) {
+          var li_a = upload_list_li[i];
+          var imgElement = document.createElement("img");
+          imgElement.setAttribute("src", res.data.url);
+          imgElement.setAttribute("class", "upimgitem");
+          if (li_a.lastElementChild.nodeName !== "IMG") {
+            li_a.appendChild(imgElement);
+          }
         }
       }
-      function drawAxisTicksNum(start, startLen, end, endLen, axis_Width, axis_Line_X, axis_Line_y, axis_DK) {
-        //查找起始坐标
-        var first = darpNum(startLen);
-        var last = darpNum(endLen);
-        var lastMileage = end + endLen;
-        //
-        context.beginPath();
-        context.font = "12px Microsoft Yahei";
-        context.lineWidth = 10;
-        context.strokeStyle = "#ffffff";
-        context.moveTo(axis_Line_X, axis_Line_y);
-        context.lineTo(axis_Width + axis_Line_X + 1, axis_Line_y);
-        context.stroke();
-        //
-        context.beginPath();
-        context.fillStyle = "white";
-        context.textAlign = "center";
-        context.textBaseline = "top";
-        context.lineWidth = 2;
-        context.strokeStyle = "white";
-        var num_Ticks = axis_Width;
-        //起点
-        var startTicksNum = axis_DK + start / 1000 + " + " + startLen;
-        context.fillText(startTicksNum, axis_Line_X, axis_Line_y + 30);
-        context.moveTo(offsetX + 1, axis_Line_y + 5);
-        context.lineTo(offsetX + 1, axis_Line_y + 20);
-        //
-        //终点
-        var endTicksNum = axis_DK + end / 1000 + " + " + endLen;
-        //alert(endTicksNum);
-        context.fillText(endTicksNum, axis_Width + axis_Line_X, //guohonglin add
-        axis_Line_y + 30);
-        context.moveTo(axis_Width + axis_Line_X, //guohonglin add
-        axis_Line_y + 5);
-        context.lineTo(axis_Width + axis_Line_X, //guohonglin add
-        axis_Line_y + 20);
-        context.stroke();
+    },
+    uploadBefore: function uploadBefore(file) {
+      var filename = file.name.substring(file.name.lastIndexOf(".") + 1);
+      var extension = filename === "GIF" || filename === "gif" || filename === "jpeg" || filename === "jpg" || filename === "JPG" || filename === "png" || filename === "PNG";
+      var isLtM = file.size / 1024 / 1024 < 2;
+      if (!extension) {
+        this.$message({
+          message: "上传图片只能是 jpg  png  gif 格式!",
+          type: "error"
+        });
+        return false; //必须加上return false; 才能阻止
+      }
+      if (!isLtM) {
+        this.$message({
+          message: "上传图片大小不能超过 2MB!",
+          type: "error"
+        });
+        return false;
+      }
+      return extension || isLtM;
+    },
 
-        //中间
+    //保存
+    addEvent: function addEvent() {
+      var _this9 = this;
 
-        axis_Line_X = (parseInt(first) - parseInt(startLen)) * everys;
-        var num = 0;
-        var minKm = start / 1000;
-        for (var _i = 1; _i <= axis_Width; _i++) {
-          var nums = parseInt(first) + parseInt(200 * num);
-          var endFlagNum = parseInt(minKm * 1000) + parseInt(nums);
-          if (endFlagNum < lastMileage) {
-            if (nums == 1000) {
-              minKm++;
-              //画数字
-              context.fillText(axis_DK + minKm + " + 000", axis_Line_X + _i * tick_Spacing, axis_Line_y + 20);
-              num = 0;
-              first = 200;
-              //画小标
-              context.moveTo(axis_Line_X + _i * tick_Spacing, axis_Line_y + 5);
-              context.lineTo(axis_Line_X + _i * tick_Spacing, axis_Line_y + 15);
-              //
+      this.$refs["formRulesRef"].validate(function (valid) {
+        if (valid) {
+          var data = _this9.formData;
+          var img_urls = [];
+          var uls = document.getElementsByClassName("el-upload-list");
+          for (var i = 0; i < uls.length; i++) {
+            var imgs = uls[i].getElementsByClassName("upimgitem");
+            for (var j = 0; j < imgs.length; j++) {
+              //img_urls[i][j] = imgs[j].src;
+              img_urls.push({
+                src: imgs[j].src
+              });
+            }
+          }
+          _this9.formData.file = img_urls;
+          _this9.request({
+            url: "/security/addSecurity",
+            method: "post",
+            data: data
+          }).then(function (res) {
+            var data = res.data;
+            if (data.status == 1) {
+              _this9.$message({
+                showClose: true,
+                message: "添加成功",
+                type: "success"
+              });
+              _this9.formData = {};
+              _this9.dialogFormEvent = false;
+              _this9.getDataList();
             } else {
-              num++;
-              nums = parseInt(first) + parseInt(200 * (num - 1));
-              //画数字
-
-              context.fillText(nums, axis_Line_X + _i * tick_Spacing, axis_Line_y + 20);
-              //画小标
-              context.moveTo(axis_Line_X + _i * tick_Spacing, axis_Line_y + 5);
-              context.lineTo(axis_Line_X + _i * tick_Spacing, axis_Line_y + 10);
-            }
-          }
-          //
-        }
-        //结束
-        context.stroke();
-      }
-
-      function darpNum(startLen) {
-        var nums = void 0;
-        var startLens = parseInt(startLen);
-        if (startLens >= 0 && startLens < 200) {
-          nums = 200;
-        } else if (startLens >= 200 && startLens < 400) {
-          nums = 400;
-        } else if (startLens >= 400 && startLens < 600) {
-          nums = 600;
-        } else if (startLens >= 600 && startLens < 800) {
-          nums = 800;
-        } else if (startLens >= 800 && startLens <= 1000) {
-          nums = 1000;
-        }
-        return nums;
-      }
-      //绘制地铁站
-      function drawStations(stationListJson) {
-        var json = stationListJson;
-        var img = new Image();
-        img.src = __webpack_require__("mC5q");
-        img.onload = function () {
-          var start = 0;
-          for (var _i2 = 0; _i2 < json.length; _i2++) {
-            // 绘制站点图
-            var total = parseInt(json[_i2].start_flag) * 1000 + parseInt(json[_i2].start_length);
-            //console.log("total：" + total);
-            // 计算当前站点的x轴坐标
-            var startX = (total - leftLineMinMileage) * everys;
-            // console.log(startX);
-            context.drawImage(img, startX + offsetXLine + 1, 65, 24, 120);
-            //站名
-            context.font = "bold 20px Microsoft Yahei";
-            context.fillStyle = "#fff";
-            context.textAlign = "left";
-            var origin = json[_i2].name;
-            var lens = json[_i2].name.length;
-            context.fillText(origin, startX + 90, 25);
-            //DK
-            var codes = "DK" + json[_i2].start_flag + " +" + json[_i2].start_length;
-            context.fillStyle = "#0AE39A";
-            context.font = "14px Microsoft Yahei";
-            context.fillText(codes, startX + 90, 52);
-          }
-        };
-      }
-      //绘制道岔
-      function drawDaocha() {
-        // let json1 = ListJson;
-        var json = [{
-          id: 1,
-          type: 1,
-          start_flag: 15,
-          start_length: 400,
-          end_flag: 15,
-          end_length: 900
-        }, {
-          id: 1,
-          type: 1,
-          start_flag: 31,
-          start_length: 400,
-          end_flag: 32,
-          end_length: 200
-        }];
-        var img = new Image();
-        img.src = __webpack_require__("xHIs");
-        img.onload = function () {
-          var start = 0;
-          for (var _i3 = 0; _i3 < json.length; _i3++) {
-            var _start = parseInt(json[_i3].start_flag) * 1000 + parseInt(json[_i3].start_length);
-            var _end = parseInt(json[_i3].end_flag) * 1000 + parseInt(json[_i3].end_length);
-            var betweenMeters = (_end - _start) * everys; //两点之间距离米
-            var startX = (_start - leftLineMinMileage) * everys;
-            context.drawImage(img, startX + offsetXLine + 13, axis_LeftLine.y + 5, betweenMeters + 20, 196);
-          }
-        };
-      }
-      //绘制桥
-      function drawBridgeAxis(bridgeListJson) {
-        var json = bridgeListJson;
-        for (var _i4 = 0; _i4 < json.length; _i4++) {
-          var _start2 = parseInt(json[_i4].start_flag) * 1000 + parseInt(json[_i4].start_length);
-          var _end2 = parseInt(json[_i4].end_flag) * 1000 + parseInt(json[_i4].end_length);
-          var betweenMeters = _end2 - _start2; //两点之间距离米
-          var startX = (_start2 - leftLineMinMileage) * everys; //开始值
-          var endX = (_end2 - leftLineMinMileage) * everys; //结束值
-          var centerX = (endX + startX) / 2; //开始结束平均值
-
-          context.lineWidth = 2;
-          context.fillStyle = "#CDAA7D";
-          context.font = "12px Microsoft Yahei";
-          context.strokeStyle = "#CDAA7D";
-          var desc = json[_i4].name + " 共" + betweenMeters + "米";
-          var codes = "DK" + json[_i4].start_flag + " +" + json[_i4].start_length + " ~ " + "DK" + json[_i4].end_flag + " +" + json[_i4].end_length;
-          context.beginPath();
-          if (json[_i4].line_type == 1) {
-            //画垂直线
-            context.fillRect(startX + offsetX - 1, axis_LeftLine.y - 101, 2, 96);
-            context.fillRect(endX + offsetX - 1, axis_LeftLine.y - 101, 2, 96);
-            context.moveTo(startX + offsetX, axis_LeftLine.y - 100);
-            context.lineTo(endX + offsetX, axis_LeftLine.y - 100);
-            // context.strokeRect(
-            //   startX + offsetX,
-            //   axis_LeftLine.y - 100,
-            //   betweenMeters * everys,
-            //   1
-            // );
-            //文字
-            context.fillText(desc, centerX + offsetX, axis_LeftLine.y - 95);
-            context.font = "11px Microsoft Yahei";
-            context.fillStyle = "#fff";
-            context.fillText(codes, centerX + offsetX, axis_LeftLine.y - 80);
-          } else if (json[_i4].line_type == 2) {
-            //画垂直线
-            context.fillRect(startX + offsetX - 1, axis_LeftLine_Two.y - 101, 2, 96);
-            context.fillRect(endX + offsetX - 1, axis_LeftLine_Two.y - 101, 2, 96);
-            context.moveTo(startX + offsetX, axis_LeftLine_Two.y - 100);
-            context.lineTo(endX + offsetX, axis_LeftLine_Two.y - 100);
-            //文字
-            context.fillText(desc, centerX + offsetX, axis_LeftLine_Two.y - 95);
-            context.font = "11px Microsoft Yahei";
-            context.fillStyle = "#fff";
-            context.fillText(codes, centerX + offsetX, axis_LeftLine_Two.y - 80);
-          }
-          context.stroke();
-        }
-      }
-      //绘隧道
-      function drawTunnelAxis(tunnelListJson) {
-        var json = tunnelListJson;
-        for (var _i5 = 0; _i5 < json.length; _i5++) {
-          var _start3 = parseInt(json[_i5].start_flag) * 1000 + parseInt(json[_i5].start_length);
-          var _end3 = parseInt(json[_i5].end_flag) * 1000 + parseInt(json[_i5].end_length);
-          var betweenMeters = _end3 - _start3; //两点之间距离米
-          var startX = (_start3 - leftLineMinMileage) * everys; //开始值
-          var endX = (_end3 - leftLineMinMileage) * everys; //结束值
-          var centerX = (endX + startX) / 2; //开始结束平均值
-
-          var desc = json[_i5].name + " 共" + betweenMeters + "米";
-          var codes = "DK" + json[_i5].start_flag + " +" + json[_i5].start_length + " ~ " + "DK" + json[_i5].end_flag + " +" + json[_i5].end_length;
-
-          context.lineWidth = 2;
-          context.fillStyle = "#25bfdb";
-          context.font = "12px Microsoft Yahei";
-          context.strokeStyle = "#25bfdb";
-          context.beginPath();
-          if (json[_i5].line_type == 1) {
-            //画垂直线  矩形
-            context.fillRect(startX + offsetX - 1, axis_LeftLine.y - 38, 2, 33);
-            context.fillRect(endX + offsetX - 1, axis_LeftLine.y - 38, 2, 33);
-            context.moveTo(startX + offsetX, axis_LeftLine.y - 37);
-            context.lineTo(endX + offsetX, axis_LeftLine.y - 37);
-            //context.strokeRect(startX + offsetX,axis_LeftLine.y -38,betweenMeters * everys,1);
-            //文字
-            context.fillText(desc, centerX + offsetX, axis_LeftLine.y - 31);
-            context.fillStyle = "#fff";
-            context.font = "10px Microsoft Yahei";
-            context.fillText(codes, centerX + offsetX, axis_LeftLine.y - 17);
-          } else if (json[_i5].line_type == 2) {
-            //画垂直线 画矩形
-            context.fillRect(startX + offsetX - 1, axis_LeftLine_Two.y - 38, 2, 33);
-            context.fillRect(endX + offsetX - 1, axis_LeftLine_Two.y - 38, 2, 33);
-            context.moveTo(startX + offsetX, axis_LeftLine_Two.y - 37);
-            context.lineTo(endX + offsetX, axis_LeftLine_Two.y - 37);
-            //context.strokeRect(startX + offsetX,axis_LeftLine_Two.y - 38,betweenMeters * everys,1 );
-            //文字
-            context.fillText(desc, centerX + offsetX, axis_LeftLine_Two.y - 31);
-            context.fillStyle = "#fff";
-            context.font = "10px Microsoft Yahei";
-            context.fillText(codes, centerX + offsetX, axis_LeftLine_Two.y - 17);
-          }
-          context.stroke();
-        }
-      }
-      //绘制限速区
-      function drawSpeedAxis(speedListJson) {
-        var json = speedListJson;
-        for (var _i6 = 0; _i6 < json.length; _i6++) {
-          var _start4 = parseInt(json[_i6].start_flag) * 1000 + parseInt(json[_i6].start_length);
-          var _end4 = parseInt(json[_i6].end_flag) * 1000 + parseInt(json[_i6].end_length);
-          context.strokeStyle = "#ff9900";
-          context.lineWidth = 10;
-          context.fillStyle = "#ff9900";
-          context.font = "12px Microsoft Yahei";
-          var desc = "限速" + json[_i6].speed + "公里/小时";
-          context.beginPath();
-          //画水平直线
-          if (json[_i6].line_type == 1) {
-            var startX = (_start4 - leftLineMinMileage) * everys;
-            var endX = (_end4 - leftLineMinMileage) * everys;
-            var centerX = (endX + startX) / 2; //开始结束平均值
-            context.fillRect(centerX + offsetX, axis_LeftLine.y, 2, 30);
-            context.moveTo(startX + offsetX, axis_LeftLine.y);
-            context.lineTo(endX + offsetX, axis_LeftLine.y);
-            context.fillText(desc, centerX + offsetX, axis_LeftLine.y + 35);
-          } else if (json[_i6].line_type == 2) {
-            var _startX = (_start4 - leftLineMinMileage) * everys;
-            var _endX = (_end4 - leftLineMinMileage) * everys;
-            var _centerX = (_endX + _startX) / 2;
-
-            if (_start4 == 0) {
-              _startX = 0;
-              _endX = _end4 * everys;
-            }
-            context.fillRect(_centerX + offsetX, axis_LeftLine_Two.y, 2, 30);
-            context.moveTo(_startX + offsetX, axis_LeftLine_Two.y);
-            context.lineTo(_endX + offsetX, axis_LeftLine_Two.y);
-            context.fillText(desc, _centerX + offsetX, axis_LeftLine_Two.y + 35);
-          } else if (json[_i6].line_type == 3) {
-            var _startX2 = (_start4 - enterLineMinMileage) * everys;
-            var _endX2 = (_end4 - enterLineMinMileage) * everys;
-            var _centerX2 = (_endX2 + _startX2) / 2;
-            if (_start4 == 0) {
-              _startX2 = 0;
-              _endX2 = _end4 * everys;
-            }
-            context.fillRect(_centerX2 + offsetX, axis_OutLine.y, 2, 30);
-            context.moveTo(_startX2 + offsetX, axis_OutLine.y);
-            context.lineTo(_endX2 + offsetX, axis_OutLine.y);
-            context.fillText(desc, _centerX2 + offsetX, axis_OutLine.y + 35);
-          } else if (json[_i6].line_type == 4) {
-            var _startX3 = (_start4 - outLineMinMileage) * everys;
-            var _endX3 = (_end4 - outLineMinMileage) * everys;
-            var _centerX3 = (_endX3 + _startX3) / 2;
-            if (_start4 == 0) {
-              _startX3 = 0;
-              _endX3 = _end4 * everys;
-            }
-            context.fillRect(_centerX3 + offsetX, axis_OutLine_Two.y, 2, 30);
-            context.moveTo(_startX3 + offsetX, axis_OutLine_Two.y);
-            context.lineTo(_endX3 + offsetX, axis_OutLine_Two.y);
-            context.fillText(desc, _centerX3 + offsetX, axis_OutLine_Two.y + 35);
-          }
-          context.stroke();
-        }
-      }
-      //绘制施工路段
-      function drawBuildAxis(listJson) {
-        var json = listJson;
-        for (var _i7 = 0; _i7 < json.length; _i7++) {
-          var _start5 = parseInt(json[_i7].start_flag) * 1000 + parseInt(json[_i7].start_length);
-          var _end5 = parseInt(json[_i7].end_flag) * 1000 + parseInt(json[_i7].end_length);
-          context.strokeStyle = "#08ce80";
-          context.lineWidth = 10;
-          context.fillStyle = "#08ce80";
-          context.font = "12px Microsoft Yahei";
-          var desc = json[_i7].name;
-          context.beginPath();
-          //画水平直线
-          if (json[_i7].line_type == 1) {
-            var startX = (_start5 - leftLineMinMileage) * everys;
-            var endX = (_end5 - leftLineMinMileage) * everys;
-            var centerX = (endX + startX) / 2; //开始结束平均值
-            context.fillRect(centerX + offsetX, axis_LeftLine.y, 2, 30);
-            context.moveTo(startX + offsetX, axis_LeftLine.y);
-            context.lineTo(endX + offsetX, axis_LeftLine.y);
-            context.fillText(desc, centerX + offsetX, axis_LeftLine.y + 35);
-          } else if (json[_i7].line_type == 2) {
-            var _startX4 = (_start5 - leftLineMinMileage) * everys;
-            var _endX4 = (_end5 - leftLineMinMileage) * everys;
-            var _centerX4 = (_endX4 + _startX4) / 2;
-
-            if (_start5 == 0) {
-              _startX4 = 0;
-              _endX4 = _end5 * everys;
-            }
-            context.fillRect(_centerX4 + offsetX, axis_LeftLine_Two.y, 2, 30);
-            context.moveTo(_startX4 + offsetX, axis_LeftLine_Two.y);
-            context.lineTo(_endX4 + offsetX, axis_LeftLine_Two.y);
-            context.fillText(desc, _centerX4 + offsetX, axis_LeftLine_Two.y + 35);
-          } else if (json[_i7].line_type == 3) {
-            var _startX5 = (_start5 - enterLineMinMileage) * everys;
-            var _endX5 = (_end5 - enterLineMinMileage) * everys;
-            var _centerX5 = (_endX5 + _startX5) / 2;
-            if (_start5 == 0) {
-              _startX5 = 0;
-              _endX5 = _end5 * everys;
-            }
-            context.fillRect(_centerX5 + offsetX, axis_OutLine.y, 2, 30);
-            context.moveTo(_startX5 + offsetX, axis_OutLine.y);
-            context.lineTo(_endX5 + offsetX, axis_OutLine.y);
-            context.fillText(desc, _centerX5 + offsetX, axis_OutLine.y + 35);
-          } else if (json[_i7].line_type == 4) {
-            var _startX6 = (_start5 - outLineMinMileage) * everys;
-            var _endX6 = (_end5 - outLineMinMileage) * everys;
-            var _centerX6 = (_endX6 + _startX6) / 2;
-            if (_start5 == 0) {
-              _startX6 = 0;
-              _endX6 = _end5 * everys;
-            }
-            context.fillRect(_centerX6 + offsetX, axis_OutLine_Two.y, 2, 30);
-            context.moveTo(_startX6 + offsetX, axis_OutLine_Two.y);
-            context.lineTo(_endX6 + offsetX, axis_OutLine_Two.y);
-            context.fillText(desc, _centerX6 + offsetX, axis_OutLine_Two.y + 35);
-          }
-          context.stroke();
-        }
-      }
-      //绘制防区
-      function drawAlertAxis(alertListJson) {
-        var json = alertListJson;
-        for (var _i8 = 0; _i8 < json.length; _i8++) {
-          var _start6 = parseInt(json[_i8].start_flag) * 1000 + parseInt(json[_i8].start_length);
-          var _end6 = parseInt(json[_i8].end_flag) * 1000 + parseInt(json[_i8].end_length);
-          context.strokeStyle = "#e53636";
-          context.lineWidth = 10;
-          context.fillStyle = "#e53636";
-          context.font = "12px Microsoft Yahei";
-          var desc = "防区 DK" + json[_i8].start_flag + "+" + json[_i8].start_length + "- DK" + json[_i8].end_flag + "+" + json[_i8].end_length;
-          context.beginPath();
-          if (json[_i8].line_type == 1) {
-            var startX = (_start6 - leftLineMinMileage) * everys;
-            var endX = (_end6 - leftLineMinMileage) * everys;
-            var centerX = (endX + startX) / 2; //开始结束平均值
-            context.fillRect(centerX + offsetX, axis_LeftLine.y, 2, 30);
-            context.moveTo(startX + offsetX, axis_LeftLine.y);
-            context.lineTo(endX + offsetX, axis_LeftLine.y);
-            context.fillText(desc, centerX + 100, axis_LeftLine.y + 35);
-          } else if (json[_i8].line_type == 2) {
-            var _startX7 = (_start6 - leftLineMinMileage) * everys;
-            var _endX7 = (_end6 - leftLineMinMileage) * everys;
-            var _centerX7 = (_endX7 + _startX7) / 2;
-            context.fillRect(_centerX7 + offsetX, axis_LeftLine_Two.y, 2, 30);
-            context.moveTo(_startX7 + offsetX, axis_LeftLine_Two.y);
-            context.lineTo(_endX7 + offsetX, axis_LeftLine_Two.y);
-            context.fillText(desc, _centerX7 + 100, axis_LeftLine_Two.y + 35);
-          } else if (json[_i8].line_type == 3) {
-            var _startX8 = (_start6 - enterLineMinMileage) * everys;
-            var _endX8 = (_end6 - enterLineMinMileage) * everys;
-            var _centerX8 = (_endX8 + _startX8) / 2; //开始结束平均值
-            if (_start6 == 0) {
-              _startX8 = 0;
-              _endX8 = _end6 * everys;
-            }
-            context.fillRect(_centerX8 + offsetX, axis_OutLine.y, 2, 30);
-            context.moveTo(_startX8 + offsetX, axis_OutLine.y);
-            context.lineTo(_endX8 + offsetX, axis_OutLine.y);
-            context.fillText(desc, _centerX8 + 100, axis_OutLine.y + 35);
-          } else if (json[_i8].line_type == 4) {
-            var _startX9 = (_start6 - outLineMinMileage) * everys;
-            var _endX9 = (_end6 - outLineMinMileage) * everys;
-            var _centerX9 = (_endX9 + _startX9) / 2; //开始结束平均值
-            if (_start6 == 0) {
-              _startX9 = 0;
-              _endX9 = _end6 * everys;
-            }
-            context.fillRect(_centerX9 + offsetX, axis_OutLine_Two.y, 2, 30);
-            context.moveTo(_startX9 + offsetX, axis_OutLine_Two.y);
-            context.lineTo(_endX9 + offsetX, axis_OutLine_Two.y);
-            context.fillText(desc, _centerX9 + 100, axis_OutLine_Two.y + 35);
-          }
-          context.stroke();
-          //
-        }
-      }
-      //绘制坡度
-      function drawSlopeAxis(slopeListJson) {
-        var json = slopeListJson;
-        for (var _i9 = 0; _i9 < json.length; _i9++) {
-          var _start7 = parseInt(json[_i9].start_flag) * 1000 + parseInt(json[_i9].start_length);
-          var _end7 = parseInt(json[_i9].end_flag) * 1000 + parseInt(json[_i9].end_length);
-          var betweenMeters = _end7 - _start7; //两点之间距离米
-          var startX = (_start7 - leftLineMinMileage) * everys; //开始值
-          var endX = (_end7 - leftLineMinMileage) * everys; //结束值
-          var centerX = (endX + startX) / 2; //开始结束平均值
-
-          context.lineWidth = 1;
-          context.strokeStyle = "#fff";
-          context.fillStyle = "#fff";
-          context.font = "12px Microsoft Yahei";
-          var slope_height = parseFloat(json[_i9].height);
-          var slope_length = parseFloat(json[_i9].length);
-          var slope_center = betweenMeters * everys / 2;
-          context.beginPath();
-          //type  1 2 3 代表上坡 平坡 下坡
-          if (json[_i9].line_type == 1) {
-            //对角线
-            if (json[_i9].type == 1) {
-              context.moveTo(startX + offsetX, axis_LeftLine.y + 100); //起点
-              context.lineTo(startX + offsetX + betweenMeters * everys, axis_LeftLine.y + 50); //终点
-              context.stroke();
-              context.fillText(slope_height, startX + offsetX + slope_center - 20, axis_LeftLine.y + 60);
-              context.fillText(slope_length, startX + offsetX + slope_center + 20, axis_LeftLine.y + 80);
-            }
-            if (json[_i9].type == 2) {
-              context.moveTo(startX + offsetX, axis_LeftLine.y + 50 + 25); //起点
-              context.lineTo(startX + offsetX + betweenMeters * everys, axis_LeftLine.y + 50 + 25); //终点
-              context.stroke();
-              context.fillText(slope_height, startX + offsetX + slope_center, axis_LeftLine.y + 60);
-              context.fillText(slope_length, startX + offsetX + slope_center, axis_LeftLine.y + 80);
-            }
-            if (json[_i9].type == 3) {
-              context.moveTo(startX + offsetX, axis_LeftLine.y + 50); //起点
-              context.lineTo(startX + offsetX + betweenMeters * everys, axis_LeftLine.y + 100); //终点
-              context.stroke();
-              context.fillText(slope_height, startX + offsetX + slope_center + 20, axis_LeftLine.y + 60);
-              context.fillText(slope_length, startX + offsetX + slope_center - 20, axis_LeftLine.y + 80);
-            }
-            //画矩形
-            context.strokeRect(startX + offsetX, axis_LeftLine.y + 50, betweenMeters * everys, 50);
-          } else if (json[_i9].line_type == 2) {
-            //对角线
-            if (json[_i9].type == 1) {
-              context.moveTo(startX + offsetX, axis_LeftLine_Two.y + 100); //起点
-              context.lineTo(startX + offsetX + betweenMeters * everys, axis_LeftLine_Two.y + 50); //终点
-              context.stroke();
-              context.fillText(slope_height, startX + offsetX + slope_center - 20, axis_LeftLine_Two.y + 60);
-              context.fillText(slope_length, startX + offsetX + slope_center + 20, axis_LeftLine_Two.y + 80);
-            }
-            if (json[_i9].type == 2) {
-              context.moveTo(startX + offsetX, axis_LeftLine_Two.y + 50 + 25); //起点
-              context.lineTo(startX + offsetX + betweenMeters * everys, axis_LeftLine_Two.y + 50 + 25); //终点
-              context.stroke();
-              context.fillText(slope_height, startX + offsetX + slope_center, axis_LeftLine_Two.y + 60);
-              context.fillText(slope_length, startX + offsetX + slope_center, axis_LeftLine_Two.y + 80);
-            }
-            if (json[_i9].type == 3) {
-              context.moveTo(startX + offsetX, axis_LeftLine_Two.y + 50); //起点
-              context.lineTo(startX + offsetX + betweenMeters * everys, axis_LeftLine_Two.y + 100); //终点
-              context.stroke();
-              context.fillText(slope_height, startX + offsetX + slope_center + 20, axis_LeftLine_Two.y + 60);
-              context.fillText(slope_length, startX + offsetX + slope_center - 20, axis_LeftLine_Two.y + 80);
-            }
-            //画矩形
-            context.strokeRect(startX + offsetX, axis_LeftLine_Two.y + 50, betweenMeters * everys, 50);
-          }
-          context.stroke();
-        }
-      }
-      //绘制施工进度
-      function drawProgressAxis(sprogressListJson) {
-        var json = sprogressListJson;
-
-        for (var _i10 = 0; _i10 < json.length; _i10++) {
-          var _start8 = parseInt(json[_i10].start_flag) * 1000 + parseInt(json[_i10].start_length);
-          var _end8 = parseInt(json[_i10].end_flag) * 1000 + parseInt(json[_i10].end_length);
-
-          // 计算当前站点的x轴坐标
-
-          //console.log("startX：" + startX + " endX：" + endX);
-          context.lineWidth = 10;
-          context.strokeStyle = "#27DB07";
-          context.beginPath();
-          if (json[_i10].line_type == 1) {
-            var startX = (_start8 - leftLineMinMileage) * everys;
-            var endX = (_end8 - leftLineMinMileage) * everys;
-            //画水平直线
-            context.moveTo(startX + offsetX, axis_LeftLine.y);
-            context.lineTo(endX + offsetX, axis_LeftLine.y);
-          } else if (json[_i10].line_type == 2) {
-            var _startX10 = (_start8 - leftLineMinMileage) * everys;
-            var _endX10 = (_end8 - leftLineMinMileage) * everys;
-            //画水平直线
-            context.moveTo(_startX10 + offsetX, axis_LeftLine_Two.y);
-            context.lineTo(_endX10 + offsetX, axis_LeftLine_Two.y);
-          } else if (json[_i10].line_type == 3) {
-            var _startX11 = (_start8 - enterLineMinMileage) * everys;
-            var _endX11 = (_end8 - enterLineMinMileage) * everys;
-            if (_start8 == 0) {
-              _startX11 = 0;
-              _endX11 = _end8 * everys;
-            }
-            context.moveTo(_startX11 + offsetX, axis_OutLine.y);
-            context.lineTo(_endX11 + offsetX, axis_OutLine.y);
-          } else if (json[_i10].line_type == 4) {
-            var _startX12 = (_start8 - outLineMinMileage) * everys;
-            var _endX12 = (_end8 - outLineMinMileage) * everys;
-            if (_start8 == 0) {
-              _startX12 = 0;
-              _endX12 = _end8 * everys;
-            }
-            context.moveTo(_startX12 + offsetX, axis_OutLine_Two.y);
-            context.lineTo(_endX12 + offsetX, axis_OutLine_Two.y);
-          }
-          context.stroke();
-          //
-        }
-      }
-      //绘制请点
-
-      function drawAxesApply(applyListJson) {
-        var json = applyListJson;
-        var json1 = [{
-          line_type: 1,
-          number: "A4-2-007-1",
-          command_num: "(2020)\u5B57\u7B2C04.21-007-2",
-          description: "\u98CE\u98CE\u5149\u5149",
-          work_area: "DK0+300\u81F3DK1+804",
-          start_time: "2020-04-28 00:00:00",
-          end_time: "2020-04-28 23:59:59",
-          start_flag: "0",
-          start_length: "300",
-          end_flag: "1",
-          end_length: "804",
-          type: "A4",
-          start_total: 14600,
-          end_total: 26410
-        }, {
-          line_type: 1,
-          number: "A4-2-007-1",
-          command_num: "(2020)\u5B57\u7B2C04.21-007-2",
-          description: "\u98CE\u98CE\u5149\u5149",
-          work_area: "DK14+130\u81F3DK42+410",
-          start_time: "2020-04-28 00:00:00",
-          end_time: "2020-04-28 23:59:59",
-          start_flag: "1",
-          start_length: "804",
-          end_flag: "4",
-          end_length: "232",
-          type: "A4",
-          start_total: 14600,
-          end_total: 26410
-        }, {
-          line_type: 1,
-          number: "A3-2-007-1",
-          command_num: "(2020)\u5B57\u7B2C04.21-007-2",
-          description: "\u98CE\u98CE\u5149\u5149",
-          work_area: "DK14+160\u81F3DK21+370",
-          start_time: "2020-04-28 00:00:00",
-          end_time: "2020-04-28 23:59:59",
-          start_flag: "6",
-          start_length: "736",
-          end_flag: "9",
-          end_length: "808",
-          type: "A3",
-          start_total: 14600,
-          end_total: 21370
-        }, {
-          line_type: 2,
-          number: "A3-2-007-1",
-          command_num: "(2020)\u5B57\u7B2C04.21-007-2",
-          description: "\u98CE\u98CE\u5149\u5149",
-          work_area: "DK14+160\u81F3DK21+370",
-          start_time: "2020-04-28 00:00:00",
-          end_time: "2020-04-28 23:59:59",
-          start_flag: "6",
-          start_length: "736",
-          end_flag: "9",
-          end_length: "808",
-          type: "A3",
-          start_total: 14600,
-          end_total: 21370
-        }];
-        for (var _i11 = 0; _i11 < json.length; _i11++) {
-          var _start9 = parseInt(json[_i11].start_flag) * 1000 + parseInt(json[_i11].start_length);
-          var _end9 = parseInt(json[_i11].end_flag) * 1000 + parseInt(json[_i11].end_length);
-          //console.log("start：" + start + " end：" + end);
-          // 计算当前站点的x轴坐标
-          //let startX = (start - parseInt(minkm * 1000)) * everys; //开始值
-          // let endX = (end - parseInt(minkm * 1000)) * everys; //结束值
-
-          var descType = json[_i11].type;
-          var dksatrt = "DK" + json[_i11].start_flag + " +" + json[_i11].start_length;
-          var dkend = "DK" + json[_i11].end_flag + " +" + json[_i11].end_length;
-
-          context.lineWidth = 2;
-          if (json[_i11].type == "A1") {
-            context.fillStyle = "#f14e0e";
-            context.strokeStyle = "#f14e0e";
-          } else if (json[_i11].type == "A2") {
-            context.fillStyle = "#fd7510";
-            context.strokeStyle = "#fd7510";
-          } else if (json[_i11].type == "A3") {
-            context.fillStyle = "#fda328";
-            context.strokeStyle = "#fda328";
-          } else if (json[_i11].type == "A4") {
-            context.fillStyle = "#f2c136";
-            context.strokeStyle = "#f2c136";
-          }
-          context.beginPath();
-          if (json[_i11].line_type == 1) {
-            (function () {
-              var startX = (_start9 - leftLineMinMileage) * everys;
-              var endX = (_end9 - leftLineMinMileage) * everys;
-              var centerX = (endX + startX) / 2; //开始结束平均值
-              //画水平直线
-              context.fillRect(startX + offsetX - 1, axis_applay.y - 8, 2, 15);
-              context.fillRect(endX + offsetX - 1, axis_applay.y - 8, 2, 15);
-              context.moveTo(startX + offsetX, axis_applay.y);
-              context.lineTo(endX + offsetX, axis_applay.y);
-              //文字
-              // context.font = "24px Microsoft Yahei";
-              // context.fillText(desc, centerX + offsetX, axis_applay.y - 25);
-
-              var img = new Image();
-              img.src = __webpack_require__("nDGB")("./" + descType + ".png");
-              img.onload = function () {
-                context.drawImage(img, centerX + offsetX - 30, axis_applay.y - 56, 60, 54);
-              };
-              applyClickXY.push({
-                x: centerX + 70,
-                y: axis_applay.y - 55,
-                w: 60,
-                h: 54,
-                i: json[_i11]
+              _this9.$message({
+                showClose: true,
+                message: "添加失败",
+                type: "error"
               });
-            })();
-          } else if (json[_i11].line_type == 2) {
-            (function () {
-              var startX = (_start9 - leftLineMinMileage) * everys;
-              var endX = (_end9 - leftLineMinMileage) * everys;
-              var centerX = (endX + startX) / 2; //开始结束平均值
-              context.fillRect(startX + offsetX - 1, axis_applay_two.y - 8, 2, 15);
-              context.fillRect(endX + offsetX - 1, axis_applay_two.y - 8, 2, 15);
-              context.moveTo(startX + offsetX, axis_applay_two.y);
-              context.lineTo(endX + offsetX, axis_applay_two.y);
-              var img = new Image();
-              img.src = __webpack_require__("nDGB")("./" + descType + ".png");
-              img.onload = function () {
-                context.drawImage(img, centerX + offsetX - 30, axis_applay_two.y - 56, 60, 54);
-              };
-              applyClickXY.push({
-                x: centerX + 70,
-                y: axis_applay_two.y - 55,
-                w: 60,
-                h: 54,
-                i: json[_i11]
-              });
-            })();
-          }
-          context.stroke();
-          //
-        }
-      }
-      canvas.onclick = function (event) {
-        var x = event.pageX - canvas.getBoundingClientRect().left;
-        var y = event.pageY - canvas.getBoundingClientRect().top;
-        //console.log("X：" + x + "_" + y);
-        //debugger;
-        //console.log(applyClickXY);
-        var _iteratorNormalCompletion = true;
-        var _didIteratorError = false;
-        var _iteratorError = undefined;
-
-        try {
-          for (var _iterator = get_iterator_default()(applyClickXY), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-            var item = _step.value;
-
-            if (x >= item.x && x <= item.x + item.w && y >= item.y && y <= item.y + item.h) {
-              var infos = item.i;
-              that.$confirm("<p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>作业编号：</span>" + infos.number + "</p><p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>作业令号</span>：" + infos.command_num + "</p>" + "<p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>开始时间：</span>" + infos.start_time + "</p><p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>结束时间：</span>" + infos.end_time + "</p>" + "<p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>施工区间：</span>" + infos.work_area + "</p><p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>施工内容：</span>" + infos.description + "</p>", {
-                distinguishCancelAndClose: true,
-                dangerouslyUseHTMLString: true,
-                showCancelButton: false,
-                showConfirmButton: false
-              }).catch(function () {});
-              break;
             }
-          }
-        } catch (err) {
-          _didIteratorError = true;
-          _iteratorError = err;
-        } finally {
-          try {
-            if (!_iteratorNormalCompletion && _iterator.return) {
-              _iterator.return();
-            }
-          } finally {
-            if (_didIteratorError) {
-              throw _iteratorError;
-            }
-          }
-        }
-      };
-      //车定位
-      function drawAxesCar(jsonData) {
-        var jsonCar = [{
-          id: 1,
-          name: "ZY01",
-          start_flag: 1,
-          start_length: 300,
-          line_type: 1
-        }, {
-          id: 1,
-          name: "ZY01",
-          start_flag: 6,
-          start_length: 300,
-          line_type: 1
-        }, {
-          id: 2,
-          name: "ZY02",
-          start_flag: 1,
-          start_length: 430,
-          line_type: 2
-        }, {
-          id: 1,
-          name: "ZY01",
-          start_flag: 7,
-          start_length: 300,
-          line_type: 2
-        }, {
-          id: 1,
-          name: "ZY01",
-          start_flag: 5,
-          start_length: 300,
-          line_type: 2
-        }, {
-          id: 2,
-          name: "ZY02",
-          start_flag: 3,
-          start_length: 430,
-          line_type: 2
-        }];
-
-        var imgcar = new Image();
-        imgcar.src = __webpack_require__("1Dh/");
-        imgcar.onload = function () {
-          var start = 0;
-
-          for (var _i12 = 0; _i12 < jsonCar.length; _i12++) {
-            context.fillStyle = "#fff";
-            context.font = "12px Microsoft Yahei";
-            if (jsonCar[_i12].line_type == 1) {
-              var total = parseInt(jsonCar[_i12].start_flag) * 1000 + parseInt(jsonCar[_i12].start_length);
-              var startLineX = (total - leftLineMinMileage) * everys;
-              context.drawImage(imgcar, startLineX + offsetX, axis_LeftLine.y - 25, 140, 20);
-              //DK
-              var codes = jsonCar[_i12].name + "[ ZDK" + jsonCar[_i12].start_flag + " +" + jsonCar[_i12].start_length + " ]";
-
-              context.fillText(codes, startLineX + offsetX + 18, axis_LeftLine.y - 40);
-            } else if (jsonCar[_i12].line_type == 2) {
-              var _total = parseInt(jsonCar[_i12].start_flag) * 1000 + parseInt(jsonCar[_i12].start_length);
-              var _startLineX = (_total - leftLineMinMileage) * everys;
-              context.drawImage(imgcar, _startLineX + offsetX, axis_LeftLine_Two.y - 25, 140, 20);
-              //DK
-              var _codes = jsonCar[_i12].name + " [ YDK" + jsonCar[_i12].start_flag + " +" + jsonCar[_i12].start_length + " ]";
-              context.fillText(_codes, _startLineX + offsetX + 18, axis_LeftLine_Two.y - 40);
-            } //
-          }
-        };
-      }
-      //人定位
-      function drawAxesPeple(jsonData) {
-        var jsonCar = [{
-          id: 1,
-          name: "R",
-          start_flag: 5,
-          start_length: 300,
-          line_type: 1
-        }, {
-          id: 1,
-          name: "R",
-          start_flag: 3,
-          start_length: 300,
-          line_type: 1
-        }, {
-          id: 1,
-          name: "R",
-          start_flag: 8,
-          start_length: 300,
-          line_type: 2
-        }, {
-          id: 1,
-          name: "R",
-          start_flag: 6,
-          start_length: 300,
-          line_type: 2
-        }];
-
-        var imgcar = new Image();
-        imgcar.src = __webpack_require__("+IES");
-        imgcar.onload = function () {
-          var start = 0;
-          context.fillStyle = "#fff ";
-          context.font = "12px  Microsoft Yahei";
-          for (var _i13 = 0; _i13 < jsonCar.length; _i13++) {
-            if (jsonCar[_i13].line_type == 1) {
-              var total = parseInt(jsonCar[_i13].start_flag) * 1000 + parseInt(jsonCar[_i13].start_length);
-              var startLineX = (total - leftLineMinMileage) * everys;
-              context.drawImage(imgcar, startLineX + offsetX, axis_LeftLine.y - 40, 36, 36);
-              //DK
-              var codes = " [ ZDK" + jsonCar[_i13].start_flag + " +" + jsonCar[_i13].start_length + " ]";
-
-              context.fillText(codes, startLineX + offsetX + 15, axis_LeftLine.y - 50);
-            } else if (jsonCar[_i13].line_type == 2) {
-              var _total2 = parseInt(jsonCar[_i13].start_flag) * 1000 + parseInt(jsonCar[_i13].start_length);
-              var _startLineX2 = (_total2 - leftLineMinMileage) * everys;
-              context.drawImage(imgcar, _startLineX2 + offsetX, axis_LeftLine_Two.y - 40, 36, 36);
-              //DK
-              var _codes2 = " [ YDK" + jsonCar[_i13].start_flag + " +" + jsonCar[_i13].start_length + " ]";
-              context.fillText(_codes2, _startLineX2 + offsetX + 15, axis_LeftLine_Two.y - 50);
-            } //
-          }
-        };
-      }
-      //============================
-      //画地铁站
-      drawStations(this.stationList);
-      //施工进度
-      if (this.progressCheckValue) {
-        drawProgressAxis(this.progressListItem);
-      }
-      //限速区
-      if (this.speedCheckValue) {
-        drawSpeedAxis(this.speedList);
-      }
-      //施工路段
-      if (this.buildCheckValue) {
-        drawBuildAxis(this.buildList);
-      }
-      //防区
-      if (this.alertList.length > 0) {
-        if (this.alertCheckValue) {
-          drawAlertAxis(this.alertList);
-        }
-      }
-      //桥
-      if (this.bridgeCheckValue) {
-        drawBridgeAxis(this.bridgeList);
-      }
-      //隧道
-      if (this.tunnelCheckValue) {
-        drawTunnelAxis(this.tunnelList);
-      }
-      //坡度
-      if (this.slopeCheckValue) {
-        drawSlopeAxis(this.slopeList);
-      }
-      //作业
-      // if (this.applyList.length > 0) {
-      drawAxesApply(this.applyList);
-      // }
-      //道岔
-      if (this.daocCheckValue) {
-        drawDaocha();
-      }
-      //定位人和车
-      drawAxesPeple(this.applyList);
-      drawAxesCar(this.applyList);
-    },
-
-    // ===================================桥 隧道 限速区 防区 道岔 坡度 施工进度
-    //进度
-    progressCheckSelect: function progressCheckSelect(val) {
-      var _this2 = this;
-
-      this.progressList.map(function (item) {
-        if (item.name == val) {
-          _this2.progressListItem = item.list;
+          });
         }
       });
-      this.initCanvas();
+    },
+    goDetail: function goDetail(id) {
+      var _this10 = this;
+
+      this.request({
+        url: "/security/getSecurityDetail",
+        method: "get",
+        params: { id: id }
+      }).then(function (res) {
+        var data = res.data;
+        if (data.status == 1) {
+          if (id == 0) {
+            _this10.eventTitle = "";
+          } else {
+            _this10.eventTitle = " 发起新事件：";
+          }
+          _this10.eventDesc = data.data.description;
+          _this10.eventPictureList = data.data.file;
+        }
+      });
+      this.request({
+        url: "/security/getSecurtiyLogLists",
+        method: "get",
+        params: { sid: id }
+      }).then(function (res) {
+        var data = res.data;
+        if (data.status == 1) {
+          _this10.eventPeopleList = data.data;
+        }
+      });
     },
 
-    //桥
-    bridgeCheckSelect: function bridgeCheckSelect() {
-      context.clearRect(0, 0, canvas.width, canvas.height);
-      this.initCanvas();
+    //查看
+    goDetermine: function goDetermine(id) {
+      this.diaDangerFormVisible = true;
+      this.dangerIdValue = id;
+    },
+    setDetermineDialog: function setDetermineDialog() {
+      var _this11 = this;
+
+      var values = this.dangerTypeValue;
+      if (values == "") {
+        this.$message.error("请选择隐患类型");
+        return false;
+      }
+      var id = this.dangerIdValue;
+      var type = values;
+      this.request({
+        url: "/security/securityJudge",
+        method: "post",
+        data: { sid: id, type: type }
+      }).then(function (res) {
+        var data = res.data;
+        if (data.status == 1) {
+          _this11.$message({
+            showClose: true,
+            message: "设置成功",
+            type: "success"
+          });
+          _this11.diaDangerFormVisible = false;
+          _this11.addPageShow = false;
+          _this11.listPageShow = true;
+          _this11.getDataList();
+        } else {
+          _this11.$message.error("设置失败，请稍后再试");
+        }
+      });
     },
 
-    //隧道
-    tunnelCheckSelect: function tunnelCheckSelect() {
-      this.initCanvas();
+    //===============人员指派
+    //上传图片
+    uploadThreeExceed: function uploadThreeExceed() {
+      this.$message({
+        type: "warning",
+        message: "\u6700\u591A\u53EF\u4EE5\u4E0A\u4F203\u5F20\u56FE\u7247"
+      });
     },
-
-    //防区
-    alertCheckSelect: function alertCheckSelect() {
-      if (this.alertList.length > 0) {
-        this.initCanvas();
+    uploadThreeSuccess: function uploadThreeSuccess(res, file) {
+      console.log("图上传成功", res);
+      var upload_list_li = document.getElementsByClassName("el-upload-list")[0].children;
+      if (res.data.url != "") {
+        for (var i = 0; i < upload_list_li.length; i++) {
+          var li_a = upload_list_li[i];
+          var imgElement = document.createElement("img");
+          imgElement.setAttribute("src", res.data.url);
+          imgElement.setAttribute("class", "upimgitems");
+          if (li_a.lastElementChild.nodeName !== "IMG") {
+            li_a.appendChild(imgElement);
+          }
+        }
       }
     },
 
-    //限速区
-    speedCheckSelect: function speedCheckSelect() {
-      this.initCanvas();
+    //获取人员
+    getAssigners: function getAssigners() {
+      var _this12 = this;
+
+      this.request({
+        url: "/security/getAssigners",
+        method: "get"
+      }).then(function (res) {
+        var data = res.data;
+        if (data.status == 1) {
+          _this12.assignersList = data.data;
+        }
+      });
     },
 
-    //施工路段
-    buildCheckSelect: function buildCheckSelect() {
-      this.initCanvas();
+    //指派
+    goAssign: function goAssign(id) {
+      this.dialogFormEvent = false;
+      this.diaPeopleFormVisible = true;
+      this.dangerIdValue = id;
+      this.getAssigners();
+      this.$set(this.peopleData, "user_id", "");
+      this.$set(this.peopleData, "remark", "");
+      var uploadImgs = document.getElementsByClassName("upimgitems");
+      if (uploadImgs.length > 0) {
+        this.$refs.uploadthree.clearFiles();
+      }
     },
+    saveAssignDialog: function saveAssignDialog() {
+      var _this13 = this;
 
-    //坡度
-    slopeCheckSelect: function slopeCheckSelect() {
-      this.initCanvas();
+      this.$refs["peopleRulesRef"].validate(function (valid) {
+        if (valid) {
+          var data = _this13.peopleData;
+          var user_id = _this13.peopleData.user_id;
+          var sid = _this13.dangerIdValue;
+          var img_urls = [];
+          var uls = document.getElementsByClassName("el-upload-list");
+          for (var i = 0; i < uls.length; i++) {
+            var imgs = uls[i].getElementsByClassName("upimgitems");
+            for (var j = 0; j < imgs.length; j++) {
+              img_urls.push({
+                src: imgs[j].src
+              });
+            }
+          }
+          console.log("img_urls：" + img_urls);
+          _this13.request({
+            url: "/security/assignPeople",
+            method: "POST",
+            header: { "Content-Type": "application/x-www-form-urlencoded" },
+            data: { user_id: user_id, sid: sid, file: img_urls }
+          }).then(function (res) {
+            var data = res.data;
+            if (data.status == 1) {
+              _this13.$message({
+                showClose: true,
+                message: "添加成功",
+                type: "success"
+              });
+              _this13.diaPeopleFormVisible = false;
+              _this13.addPageShow = false;
+              _this13.listPageShow = true;
+              _this13.goDetail(_this13.dangerIdValue);
+            } else {
+              _this13.$message({
+                showClose: true,
+                message: "添加失败",
+                type: "error"
+              });
+            }
+          });
+        }
+      });
     },
-
-    //道岔
-    daocCheckSelect: function daocCheckSelect() {
-      this.initCanvas();
+    changeTime: function changeTime(time) {
+      if (time !== null && time !== undefined && time !== "") {
+        return "<span style='display:block'>" + time.substring(0, 10) + "</span><span style='display:block'>" + time.substring(time.length - 8) + "</span>";
+      } else {
+        return "";
+      }
     }
-
     //
 
-  },
-  mounted: function mounted() {
-    var _this3 = this;
-
-    window.addEventListener("resize", function () {
-      _this3.scrollwidth = document.documentElement.clientWidth - 640;
-    });
   }
 });
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-ad30f32c","hasScoped":false,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/views/datav/diagrama.vue
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"progress"}},[_c('div',{staticClass:"progress"},[_c('div',{ref:"canvasWrapper",staticClass:"main-canvas"},[_c('canvas',{ref:"mycanvas",attrs:{"id":"mycanvas","height":"680"}},[_c('p',[_vm._v("您的系统不支持此程序!")])])]),_vm._v(" "),_c('div',{staticClass:"check-list"},[_c('span',{staticClass:"namess"},[_vm._v("显示图形：")]),_vm._v(" "),_c('el-checkbox',{staticClass:"bridgechk",attrs:{"label":"桥"},on:{"change":_vm.bridgeCheckSelect},model:{value:(_vm.bridgeCheckValue),callback:function ($$v) {_vm.bridgeCheckValue=$$v},expression:"bridgeCheckValue"}}),_vm._v(" "),_c('el-checkbox',{staticClass:"tunnelchk",attrs:{"label":"隧道"},on:{"change":_vm.tunnelCheckSelect},model:{value:(_vm.tunnelCheckValue),callback:function ($$v) {_vm.tunnelCheckValue=$$v},expression:"tunnelCheckValue"}}),_vm._v(" "),_c('el-checkbox',{staticClass:"alertchk",attrs:{"label":"防区"},on:{"change":_vm.alertCheckSelect},model:{value:(_vm.alertCheckValue),callback:function ($$v) {_vm.alertCheckValue=$$v},expression:"alertCheckValue"}}),_vm._v(" "),_c('el-checkbox',{staticClass:"slopechk",attrs:{"label":"坡度"},on:{"change":_vm.slopeCheckSelect},model:{value:(_vm.slopeCheckValue),callback:function ($$v) {_vm.slopeCheckValue=$$v},expression:"slopeCheckValue"}}),_vm._v(" "),_c('el-checkbox',{staticClass:"daocchk",attrs:{"label":"道岔"},on:{"change":_vm.daocCheckSelect},model:{value:(_vm.daocCheckValue),callback:function ($$v) {_vm.daocCheckValue=$$v},expression:"daocCheckValue"}}),_vm._v(" "),_c('el-checkbox',{staticClass:"speedchk",attrs:{"label":"限速区"},on:{"change":_vm.speedCheckSelect},model:{value:(_vm.speedCheckValue),callback:function ($$v) {_vm.speedCheckValue=$$v},expression:"speedCheckValue"}}),_vm._v(" "),_c('el-checkbox',{staticClass:"buildchk",attrs:{"label":"施工地段"},on:{"change":_vm.buildCheckSelect},model:{value:(_vm.buildCheckValue),callback:function ($$v) {_vm.buildCheckValue=$$v},expression:"buildCheckValue"}})],1),_vm._v(" "),(this.progressCheckValue != '')?_c('div',{staticClass:"progresslist"},[_c('span',{staticClass:"namess"},[_vm._v("施工进度：")]),_vm._v(" "),_c('el-radio-group',{on:{"change":_vm.progressCheckSelect},model:{value:(_vm.progressCheckValue),callback:function ($$v) {_vm.progressCheckValue=$$v},expression:"progressCheckValue"}},_vm._l((_vm.progressList),function(item){return _c('el-radio',{key:item.name,attrs:{"label":item.name}},[_vm._v(_vm._s(item.name))])}))],1):_vm._e()])])}
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-980fe588","hasScoped":false,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/views/security/index.vue
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"security"}},[_c('div',{staticClass:"el-menu-top"},[_c('el-menu',{attrs:{"mode":"horizontal"}},[_c('li',{staticClass:"ptitle"},[_c('img',{attrs:{"src":__webpack_require__("k0DF")}}),_vm._v("安全管理\n      ")])])],1),_vm._v(" "),_c('div',{staticClass:"app-page"},[_c('div',{staticClass:"app-page-container"},[_c('div',{staticClass:"app-page-select"},[_c('el-form',{attrs:{"model":_vm.searchForm,"inline":true}},[_c('el-form-item',{staticClass:"form-add-item"},[_c('el-button',{attrs:{"size":"small","icon":"el-icon-plus","type":"primary"},on:{"click":_vm.addDialogEvents}},[_vm._v("添加事件")])],1),_vm._v(" "),_c('el-form-item',{staticStyle:{"display":"none"},attrs:{"label":"事件类型"}},[_c('el-select',{model:{value:(_vm.searchForm.type),callback:function ($$v) {_vm.$set(_vm.searchForm, "type", $$v)},expression:"searchForm.type"}},[_c('el-option',{attrs:{"label":"人员提交","value":1}}),_vm._v(" "),_c('el-option',{attrs:{"label":"机车提交","value":2}})],1)],1),_vm._v(" "),(_vm.searchForm.type==2)?_c('span',[_c('el-form-item',{attrs:{"label":"隐患类型"}},[_c('el-select',{model:{value:(_vm.searchForm.danger_type),callback:function ($$v) {_vm.$set(_vm.searchForm, "danger_type", $$v)},expression:"searchForm.danger_type"}},_vm._l((_vm.dangerTypeList),function(item){return _c('el-option',{key:item.id,attrs:{"label":item.name,"value":item.id}})}))],1),_vm._v(" "),_c('el-form-item',{attrs:{"label":"隐患判定"}},[_c('el-select',{model:{value:(_vm.searchForm.danger_determine),callback:function ($$v) {_vm.$set(_vm.searchForm, "danger_determine", $$v)},expression:"searchForm.danger_determine"}},_vm._l((this.dangerDetermineList),function(item){return _c('el-option',{key:item.id,attrs:{"label":item.name,"value":item.id}})}))],1),_vm._v(" "),_c('el-form-item',{attrs:{"label":"机车"}},[_c('el-select',{model:{value:(_vm.searchForm.loco_id),callback:function ($$v) {_vm.$set(_vm.searchForm, "loco_id", $$v)},expression:"searchForm.loco_id"}},_vm._l((this.trainList),function(item){return _c('el-option',{key:item.id,attrs:{"label":item.name,"value":item.id}})}))],1),_vm._v(" "),_c('el-form-item',{staticClass:"el-form-item-inline",attrs:{"label":"位置范围"}},[_c('el-input',{attrs:{"autocomplete":"off"},model:{value:(_vm.searchForm.start_location),callback:function ($$v) {_vm.$set(_vm.searchForm, "start_location", $$v)},expression:"searchForm.start_location"}}),_vm._v(" "),_c('b',[_vm._v("~")]),_vm._v(" "),_c('el-input',{attrs:{"autocomplete":"off"},model:{value:(_vm.searchForm.end_location),callback:function ($$v) {_vm.$set(_vm.searchForm, "end_location", $$v)},expression:"searchForm.end_location"}})],1)],1):_vm._e(),_vm._v(" "),_c('el-form-item',{attrs:{"label":"发现时间段"}},[_c('el-date-picker',{attrs:{"picker-options":_vm.pickerOptionsStart,"type":"datetime","format":"yyyy-MM-dd HH:mm","placeholder":"开始时间","clearable":""},model:{value:(_vm.searchForm.start_time),callback:function ($$v) {_vm.$set(_vm.searchForm, "start_time", $$v)},expression:"searchForm.start_time"}})],1),_vm._v(" "),_c('el-form-item',{attrs:{"label":"-"}},[_c('el-date-picker',{attrs:{"picker-options":_vm.pickerOptionsEnd,"type":"datetime","format":"yyyy-MM-dd HH:mm","placeholder":"结束时间","clearable":""},model:{value:(_vm.searchForm.end_time),callback:function ($$v) {_vm.$set(_vm.searchForm, "end_time", $$v)},expression:"searchForm.end_time"}})],1),_vm._v(" "),_c('el-form-item',{staticClass:"form-so"},[_c('label',{staticClass:"el-form-item__label"}),_vm._v(" "),_c('el-button',{attrs:{"size":"small","icon":"el-icon-search","type":"primary"},on:{"click":_vm.pageSearch}},[_vm._v("查询")]),_vm._v(" "),_c('el-button',{attrs:{"size":"small","plain":""},on:{"click":_vm.resetSerach}},[_vm._v("重置")])],1)],1)],1),_vm._v(" "),_c('div',{staticClass:"app-table"},[_c('el-table',{attrs:{"data":_vm.dataList,"empty-text":_vm.dataListEmptyText}},[_c('el-table-column',{attrs:{"prop":"id","label":"序号","width":"100"}}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"company","label":"公司"}}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"title","label":"事件名称"}}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"address","label":"事件地址","show-overflow-tooltip":""}}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"type","label":"事件类型"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_vm._v(_vm._s(scope.row.type==1?"人员提交":"机车提交"))]}}])}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"danger_determine_name","label":"隐患判定"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [(scope.row.danger_determine_name=='')?_c('span',[_vm._v("未判定")]):_c('span',[_vm._v(_vm._s(scope.row.danger_determine_name))])]}}])}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"status","label":"状态"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [(scope.row.status==1)?_c('span',[_vm._v("新事件")]):(scope.row.status==2)?_c('span',[_vm._v("处理中")]):_c('span',[_vm._v("已完成")])]}}])}),_vm._v(" "),_c('el-table-column',{attrs:{"label":"当前情况","prop":"current_status"}}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"admin","label":"提交者"}}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"create_time","label":"发布时间"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_c('p',{domProps:{"innerHTML":_vm._s(_vm.changeTime(scope.row.create_time))}})]}}])}),_vm._v(" "),_c('el-table-column',{attrs:{"label":"操作","width":"200"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_c('div',{staticClass:"app-operation"},[_c('el-button',{staticClass:"btn-blue",attrs:{"size":"mini"},on:{"click":function($event){_vm.goDetail(scope.row.id)}}},[_vm._v("查看")]),_vm._v(" "),_c('el-button',{staticClass:"btn-blue",attrs:{"size":"mini"},on:{"click":function($event){_vm.goAssign(scope.row.id)}}},[_vm._v("指派")]),_vm._v(" "),_c('el-button',{staticClass:"btn-red",attrs:{"size":"mini"},on:{"click":function($event){_vm.goDetermine(scope.row.id)}}},[_vm._v("隐患判定")])],1)]}}])})],1),_vm._v(" "),_c('div',{staticClass:"app-pagination"},[(_vm.dataList.length !== 0)?_c('el-pagination',{staticClass:"pagination",attrs:{"layout":"slot,prev, pager, next,slot,total","page-size":this.page_size,"current-page":this.page_cur,"total":this.pageTotal,"prev-text":"上一页","next-text":"下一页"},on:{"current-change":_vm.pageChange}},[_c('button',{staticClass:"btn-first",attrs:{"type":"button"},on:{"click":_vm.pageToFirst}},[_c('span',[_vm._v("首页")])]),_vm._v(" "),_c('button',{staticClass:"btn-last",attrs:{"type":"button"},on:{"click":_vm.pageToLast}},[_c('span',[_vm._v("尾页")])])]):_vm._e()],1)],1)]),_vm._v(" "),_c('div',{staticClass:"listpagedetail"},[_c('div',{staticClass:"detailleft"},[_c('div',{staticClass:"security-title"},[_vm._v("施工问题详情")]),_vm._v(" "),_c('div',{staticClass:"app-page-container"},[_c('div',{staticClass:"steps-info"},[_c('div',{staticStyle:{"overflow":"hidden"}},[_c('h3',[_vm._v(_vm._s(_vm.eventTitle))]),_vm._v("\n              "+_vm._s(_vm.eventDesc)+"\n            ")]),_vm._v(" "),_c('div',{staticClass:"imgs"},_vm._l((_vm.eventPictureList),function(item){return _c('el-image',{key:item.id,attrs:{"preview-src-list":[item.src],"src":item.src}})}))])])]),_vm._v(" "),_c('div',{staticClass:"detailright"},[_c('div',{staticClass:"security-title"},[_vm._v("处理进度")]),_vm._v(" "),_c('div',{staticClass:"app-page-container"},[_c('div',{staticClass:"steps-section"},[_c('ul',{staticClass:"timeline"},_vm._l((_vm.eventPeopleList),function(item){return _c('li',{key:item.id},[_c('div',{staticClass:"desc"},[_vm._v(_vm._s(item.description))]),_vm._v(" "),_c('div',{staticClass:"time"},[_vm._v("\n                  "+_vm._s(item.user_name)+"\n                  "),_c('p',[_vm._v(_vm._s(item.create_time))])])])}))])])])]),_vm._v(" "),_c('el-dialog',{staticClass:"dialog-dangers",attrs:{"width":"900px","close-on-click-modal":false,"title":"添加安全事件","visible":_vm.dialogFormEvent},on:{"update:visible":function($event){_vm.dialogFormEvent=$event}}},[_c('div',{staticClass:"formbox"},[_c('el-form',{ref:"formRulesRef",staticClass:"el-form-custom",attrs:{"label-width":"120px","label-position":"right","model":_vm.formData,"rules":_vm.formRules}},[_c('el-form-item',{attrs:{"label":"添加事件公司：","prop":"depart_id"}},[_c('el-select',{attrs:{"placeholder":"请选择公司"},on:{"change":function($event){_vm.selectCompanyList($event)}},model:{value:(_vm.formData.depart_id),callback:function ($$v) {_vm.$set(_vm.formData, "depart_id", $$v)},expression:"formData.depart_id"}},_vm._l((_vm.companyList),function(item){return _c('el-option',{key:item.id,attrs:{"label":item.name,"value":item.id}})}))],1),_vm._v(" "),_c('el-form-item',{attrs:{"label":"人员：","prop":"admin_id"}},[_c('el-select',{attrs:{"placeholder":"请选择人员："},model:{value:(_vm.formData.admin_id),callback:function ($$v) {_vm.$set(_vm.formData, "admin_id", $$v)},expression:"formData.admin_id"}},_vm._l((this.objSelectLists),function(item){return _c('el-option',{key:item.id,attrs:{"label":item.name,"value":item.id}})}))],1),_vm._v(" "),_c('el-form-item',{attrs:{"label":"安全事件标题：","prop":"title"}},[_c('el-input',{model:{value:(_vm.formData.title),callback:function ($$v) {_vm.$set(_vm.formData, "title", $$v)},expression:"formData.title"}})],1),_vm._v(" "),_c('el-form-item',{staticClass:"textarea1",attrs:{"label":"安全事件地址：","prop":"address"}},[_c('el-input',{attrs:{"type":"textarea"},model:{value:(_vm.formData.address),callback:function ($$v) {_vm.$set(_vm.formData, "address", $$v)},expression:"formData.address"}})],1),_vm._v(" "),_c('el-form-item',{attrs:{"label":"安全事件描述：","prop":"description"}},[_c('el-input',{attrs:{"type":"textarea"},model:{value:(_vm.formData.description),callback:function ($$v) {_vm.$set(_vm.formData, "description", $$v)},expression:"formData.description"}})],1),_vm._v(" "),_c('el-form-item',{attrs:{"label":"相关图片："}},[_c('p',{staticStyle:{"color":"#3655a5"}},[_vm._v("最多可以上传5张图片，支持格式 jpg png gif，大小不能超过 2MB。")]),_vm._v(" "),_c('el-upload',{ref:"uploadfive",staticClass:"uploader el-upload-list--picture-card",attrs:{"action":_vm.uploadAction,"limit":5,"list-type":"picture-card","auto-upload":true,"on-exceed":_vm.uploadExceed,"before-upload":_vm.uploadBefore,"on-success":_vm.uploadSuccess}},[_c('i',{staticClass:"el-icon-plus"})]),_vm._v(" "),_c('el-dialog',{attrs:{"visible":_vm.dialogVisible},on:{"update:visible":function($event){_vm.dialogVisible=$event}}},[_c('img',{attrs:{"width":"100%","src":_vm.dialogImageUrl,"alt":""}})])],1)],1)],1),_vm._v(" "),_c('div',{staticClass:"dialog-footer",attrs:{"slot":"footer"},slot:"footer"},[_c('el-button',{on:{"click":function($event){_vm.dialogFormEvent = false}}},[_vm._v("关闭")]),_vm._v(" "),_c('el-button',{attrs:{"type":"primary"},on:{"click":function($event){_vm.addEvent()}}},[_vm._v("确定上传信息")])],1)]),_vm._v(" "),_c('el-dialog',{staticClass:"dialog-dangers",attrs:{"width":"480px","close-on-click-modal":false,"title":"隐患类型设置","visible":_vm.diaDangerFormVisible},on:{"update:visible":function($event){_vm.diaDangerFormVisible=$event}}},[_c('el-form',{staticClass:"el-form-custom"},[_c('el-form-item',[_c('el-radio-group',{staticClass:"my-radio",model:{value:(_vm.dangerTypeValue),callback:function ($$v) {_vm.dangerTypeValue=$$v},expression:"dangerTypeValue"}},_vm._l((_vm.dangerDetermineList),function(item){return _c('el-radio',{key:item.id,attrs:{"label":item.id}},[_vm._v(_vm._s(item.name))])}))],1),_vm._v(" "),_c('div',{staticClass:"blank"})],1),_vm._v(" "),_c('div',{staticClass:"dialog-footer",attrs:{"slot":"footer"},slot:"footer"},[_c('el-button',{on:{"click":function($event){_vm.diaDangerFormVisible = false}}},[_vm._v("关闭")]),_vm._v(" "),_c('el-button',{attrs:{"type":"primary"},on:{"click":function($event){_vm.setDetermineDialog()}}},[_vm._v("确定")])],1)],1),_vm._v(" "),_c('el-dialog',{staticClass:"dialog-danger",attrs:{"width":"700px","close-on-click-modal":false,"title":"指派人员","visible":_vm.diaPeopleFormVisible},on:{"update:visible":function($event){_vm.diaPeopleFormVisible=$event}}},[_c('el-form',{ref:"peopleRulesRef",staticClass:"el-form-custom",attrs:{"model":_vm.peopleData,"rules":_vm.peopleRules}},[_c('el-form-item',{attrs:{"label":"指派人员：","prop":"user_id"}},[_c('el-select',{model:{value:(_vm.peopleData.user_id),callback:function ($$v) {_vm.$set(_vm.peopleData, "user_id", $$v)},expression:"peopleData.user_id"}},_vm._l((this.assignersList),function(item){return _c('el-option',{key:item.id,attrs:{"label":item.name,"value":item.id}})}))],1),_vm._v(" "),_c('el-form-item',{attrs:{"label":"相关图片："}},[_c('p',{staticStyle:{"color":"#3655a5"}},[_vm._v("最多可以上传3张图片，支持格式 jpg png gif，大小不能超过 2MB。")]),_vm._v(" "),_c('el-upload',{ref:"uploadthree",staticClass:"uploaderthree el-upload-list--picture-card",attrs:{"action":_vm.uploadAction,"limit":3,"list-type":"picture-card","auto-upload":true,"before-upload":_vm.uploadBefore,"on-exceed":_vm.uploadThreeExceed,"on-success":_vm.uploadThreeSuccess}},[_c('i',{staticClass:"el-icon-plus"})]),_vm._v(" "),_c('el-dialog',{attrs:{"visible":_vm.dialogVisible},on:{"update:visible":function($event){_vm.dialogVisible=$event}}},[_c('img',{attrs:{"width":"100%","src":_vm.dialogImageUrl,"alt":""}})])],1),_vm._v(" "),_c('el-form-item',{attrs:{"label":"备注描述：","prop":"remark"}},[_c('el-input',{attrs:{"type":"textarea"},model:{value:(_vm.peopleData.remark),callback:function ($$v) {_vm.$set(_vm.peopleData, "remark", $$v)},expression:"peopleData.remark"}})],1),_vm._v(" "),_c('div',{staticClass:"blank"})],1),_vm._v(" "),_c('div',{staticClass:"dialog-footer",attrs:{"slot":"footer"},slot:"footer"},[_c('el-button',{on:{"click":function($event){_vm.diaPeopleFormVisible = false}}},[_vm._v("关闭")]),_vm._v(" "),_c('el-button',{attrs:{"type":"primary"},on:{"click":function($event){_vm.saveAssignDialog()}}},[_vm._v("确定")])],1)],1)],1)])}
 var staticRenderFns = []
 var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ var datav_diagrama = (esExports);
-// CONCATENATED MODULE: ./src/views/datav/diagrama.vue
+/* harmony default export */ var views_security = (esExports);
+// CONCATENATED MODULE: ./src/views/security/index.vue
 function injectStyle (ssrContext) {
-  __webpack_require__("21Hu")
+  __webpack_require__("yzHY")
 }
 var normalizeComponent = __webpack_require__("VU/8")
 /* script */
@@ -1316,16 +922,30 @@ var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
-  diagrama,
-  datav_diagrama,
+  security,
+  views_security,
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
   __vue_module_identifier__
 )
 
-/* harmony default export */ var views_datav_diagrama = __webpack_exports__["default"] = (Component.exports);
+/* harmony default export */ var src_views_security = __webpack_exports__["default"] = (Component.exports);
 
+
+/***/ }),
+
+/***/ "yzHY":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("0QOC");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__("rjj0")("ecce7228", content, true);
 
 /***/ })
 

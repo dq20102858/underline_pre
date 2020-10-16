@@ -1,60 +1,12 @@
 webpackJsonp([35],{
 
-/***/ "4+MY":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("zxUM");
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__("rjj0")("2796ce26", content, true);
-
-/***/ }),
-
-/***/ "Dt0U":
+/***/ "0qre":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
-// CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./src/views/set/slope.vue
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+// CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./src/views/admin/postlist.vue
 //
 //
 //
@@ -219,244 +171,171 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ var slope = ({
+/* harmony default export */ var postlist = ({
   data: function data() {
     return {
-      diaLogFormVisible: false,
-      diaLogTitle: "添加信息",
-
-      formData: { type: 1 },
-      formRules: {
-        line_type: [{ required: true, message: "请选择线别", trigger: "change" }],
-        height: [{
+      postLists: [],
+      post_search_pid: "",
+      postPage_size: 20,
+      postPage_cur: 1,
+      postPage_items: 0,
+      postPage_total: 0,
+      postDialogVisible: false,
+      postDialogTitle: "",
+      postData: {},
+      postAddRules: {
+        pid: [{
           required: true,
-          message: "请输入高度",
+          message: "请选择公司",
+          trigger: "change"
+        }],
+        sub_pid: [{
+          required: true,
+          message: "请选择部门",
+          trigger: "change"
+        }],
+        name: [{
+          required: true,
+          message: "请输入职位名称2~20个字符",
           trigger: "blur"
-        }, {
-          pattern: /^\d+(\.\d{0,2})?$/,
-          message: "请输入整数或保留两位小数的数字",
+        }, { min: 2, max: 20, message: "长度在2到20个字符", trigger: "blur" }, {
+          pattern: /(^\S+).*(\S+$)/,
+          message: "开始和结尾不能有空格",
           trigger: "blur"
         }],
-        start_flag: [{
-          required: true,
-          message: "请输入开始公里",
-          trigger: "blur"
-        }, {
-          pattern: /^\d{1,3}$/,
-          message: "输入1-3位整数",
-          trigger: "blur"
-        }],
-        start_length: [{
-          required: true,
-          message: "请输入开始米",
-          trigger: "blur"
-        }, {
-          pattern: /^\d{1,3}$/,
-          message: "输入1-3位整数",
-          trigger: "blur"
-        }],
-        end_flag: [{
-          required: true,
-          message: "请输入结束公里",
-          trigger: "blur"
-        }, {
-          pattern: /^\d{1,3}$/,
-          message: "输入1-3位整数",
-          trigger: "blur"
-        }],
-        end_length: [{
-          required: true,
-          message: "请输入结束米",
-          trigger: "blur"
-        }, {
-          pattern: /^\d{1,3}$/,
-          message: "输入1-3位整数",
-          trigger: "blur"
-        }]
+        description: [{ min: 2, max: 30, message: "长度在2到30个字符", trigger: "blur" }]
       },
-      page_cur: 1,
-      page_data_total: 0,
-      page_size: 20,
-      page_total: 0,
-      dataList: [],
-      search_line_type: "",
-      lineTypeStart: "",
-      lineTypeEnd: "",
-      lineTypeDes: "",
-      lineTypeList: []
+      search_pid: "",
+      search_departid: "",
+      companySelectList: [],
+      departSelectList: [],
+      postSelectList: []
     };
   },
   mounted: function mounted() {
-    document.querySelector("#app-menu-items #menu_set").classList.add("is-active");
+    document.querySelector("#app-menu-items #menu_admin").classList.add("is-active");
   },
   created: function created() {
-    this.getLineTypeLists();
-    this.getDataList();
+    this.getCompanyLists();
+    this.getPageLists();
   },
 
   methods: {
-    getDataList: function getDataList() {
+    getPageLists: function getPageLists() {
       var _this = this;
 
-      var page = this.page_cur;
-      var line_type = this.search_line_type;
-      var road_type = 3; //1桥，2隧道，3坡度，4防区，5限速
+      //type  1 公司  2 部门 3 职位
+      var type = 3;
+      var page = this.postPage_cur;
+      console.log(this.search_departid);
+      var pid = 0;
+      if (this.search_departid == "" && this.search_pid != "") {
+        pid = this.search_pid;
+        //type=2;
+      } else {
+        pid = this.search_departid;
+      }
       this.request({
-        url: "/search/getRoadDevicePages",
+        url: "/company/getPageLists",
         method: "get",
-        params: {
-          page: page,
-          line_type: line_type,
-          road_type: road_type
-        }
-      }).then(function (res) {
-        var data = res.data;
-        if (data.status == 1) {
-          _this.dataList = data.data.data;
-          _this.page_cur = parseInt(data.data.current_page);
-          _this.page_total = data.data.last_page;
-          _this.page_data_total = data.data.total;
-          _this.page_size = data.data.per_page;
-        }
-      });
-    },
-    pageChange: function pageChange(value) {
-      this.page_cur = value;
-      this.getDataList();
-    },
-    pageToFirst: function pageToFirst() {
-      this.page_cur = 1;
-      this.getDataList();
-    },
-    pageToLast: function pageToLast() {
-      this.page_cur = this.page_total;
-      this.getDataList();
-    },
-    searchEvent: function searchEvent() {
-      this.page_cur = 1;
-      this.getDataList();
-    },
-    getLineTypeLists: function getLineTypeLists() {
-      var _this2 = this;
-
-      this.request({
-        url: "/common/getLineType",
-        method: "get"
+        params: { page: page, type: type, pid: pid }
       }).then(function (response) {
         var data = response.data;
         if (data.status == 1) {
-          var lineJson = data.data;
-          var newArr = new Array();
-          for (var i = 0; i < lineJson.length; i++) {
-            var j = lineJson[i];
-            if (j.id != 3 && j.id != 4) {
-              newArr.push(j);
-            }
-          }
-          _this2.lineTypeList = newArr;
+          _this.postLists = data.data.data;
+          _this.departPage_size = data.data.per_page;
+          _this.postPage_cur = parseInt(data.data.current_page);
+          _this.postPage_items = data.data.total;
+          _this.postPage_total = data.data.last_page;
         }
       });
     },
-    selectLineType: function selectLineType(value) {
-      var that = this;
-      this.lineTypeList.map(function (item, index) {
-        if (item.id == value) {
-          that.lineTypeDes = "里程范围：" + item.tip;
-          that.lineTypeStart = item.start;
-          that.lineTypeEnd = item.end;
-        }
-      });
-      console.log(this.lineTypeDes);
+
+
+    //职位
+    postChangePage: function postChangePage(value) {
+      this.postPage_cur = value;
+      this.getPageLists();
     },
-    goAdd: function goAdd() {
+    postFirstPage: function postFirstPage() {
+      this.postPage_cur = 1;
+      this.getPageLists();
+    },
+    postLastPage: function postLastPage() {
+      this.postPage_cur = this.postPage_total;
+      this.getPageLists();
+    },
+    postSearchPage: function postSearchPage() {
+      this.postPage_cur = 1;
+      this.getPageLists();
+    },
+    resetSerach: function resetSerach() {
+      this.search_pid = "";
+      this.search_departid = "";
+      this.departSelectList = [];
+      this.getPageLists();
+    },
+    openAddPost: function openAddPost() {
+      var _this2 = this;
+
+      this.postDialogTitle = "添加职位信息";
+      this.postDialogVisible = true;
+      this.$nextTick(function () {
+        _this2.$refs["postRulesForm"].clearValidate();
+      });
+      this.postData = {};
+    },
+    addPost: function addPost(type) {
       var _this3 = this;
 
-      this.formData = { type: 1 };
-      this.diaLogTitle = "添加信息";
-      this.diaLogFormVisible = true;
-      this.$nextTick(function () {
-        _this3.$refs["formRules"].clearValidate();
-      });
-      this.lineTypeDes = "";
-    },
-    addOrEditDialog: function addOrEditDialog() {
-      var _this4 = this;
-
-      var that = this;
-      this.$refs["formRules"].validate(function (valid) {
+      this.$refs["postRulesForm"].validate(function (valid) {
         if (valid) {
-          var data = that.formData;
-          _this4.formData.road_type = 3; //1桥，2隧道，3坡度，4防区，5限速
-          _this4.formData.name = "坡度";
-          // //里程判断
-          var startTotal = parseInt(data.start_flag * 1000) + parseInt(data.start_length);
-          var endTotal = parseInt(data.end_flag * 1000) + parseInt(data.end_length);
-          var lineStartTotal = that.lineTypeStart * 1000;
-          var lineEndTotal = that.lineTypeEnd * 1000;
-          if (parseInt(startTotal) < parseInt(lineStartTotal)) {
-            _this4.$message.error("输入的开始里程不在里程范围内");
-            return false;
+          var data = _this3.postData;
+          _this3.postData.type = 3;
+          var url = "/company/addCompanyDo";
+          var baseid = _this3.postData.id;
+          if (typeof baseid != "undefined") {
+            url = "/company/editCompany";
           }
-          if (parseInt(endTotal) > parseInt(lineEndTotal)) {
-            _this4.$message.error("输入的结束里程不在里程范围内");
-            return false;
-          }
-          if (parseInt(endTotal) < parseInt(startTotal)) {
-            _this4.$message.error("输入的结束里程不能小于结束里程");
-            return false;
-          }
-          _this4.formData.length = endTotal - startTotal;
-          _this4.request({
-            url: "/search/addOrEditRoadDevice",
+          _this3.request({
+            url: url,
             method: "post",
             data: data
           }).then(function (response) {
             var data = response.data;
             if (data.status == 1) {
-              _this4.diaLogFormVisible = false;
-              _this4.formData.name = "";
-              _this4.getDataList();
-              _this4.$message({
+              _this3.postDialogVisible = false;
+              _this3.$message({
                 type: "success",
                 message: "保存成功！"
               });
+              _this3.getPageLists();
             }
           });
-        } else {
-          console.log("操作失败！");
-          return false;
         }
       });
     },
-    goEdit: function goEdit(id) {
-      var _this5 = this;
+    detailPost: function detailPost(id) {
+      var _this4 = this;
 
-      this.diaLogTitle = "修改信息";
-      this.diaLogFormVisible = true;
+      this.postDialogTitle = "修改职位信息";
+      this.postDialogVisible = true;
       this.$nextTick(function () {
-        _this5.$refs["formRules"].clearValidate();
+        _this4.$refs["postRulesForm"].clearValidate();
       });
       this.request({
-        url: "/search/getRoadDeviceDetail",
+        url: "/company/getDepartDetail",
         method: "get",
         params: { id: id }
       }).then(function (response) {
         var data = response.data;
         if (data.status == 1) {
-          _this5.formData = data.data;
-          _this5.lineTypeList.map(function (item, index) {
-            if (item.id == data.data.line_type) {
-              _this5.lineTypeDes = "里程范围：" + item.tip;
-              _this5.lineTypeStart = item.start;
-              _this5.lineTypeEnd = item.end;
-              _this5.formData.height = parseFloat(data.data.height);
-            }
-          });
+          _this4.postData = data.data;
         }
       });
     },
-    goDel: function goDel(id) {
-      var _this6 = this;
+    delPost: function delPost(id) {
+      var _this5 = this;
 
       this.$confirm("您确定要删除？删除后不能恢复！", "提示", {
         confirmButtonText: "确定",
@@ -464,43 +343,65 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         type: "warning",
         customClass: "el-message-box-new"
       }).then(function () {
-        _this6.request({
-          url: "/search/deleteRoadDevice",
+        _this5.request({
+          url: "/company/deleteCompany",
           method: "post",
           data: { id: id }
         }).then(function (res) {
           var data = res.data;
           if (data.status == 1) {
-            _this6.$message({
+            _this5.$message({
               type: "success",
               message: "删除成功！"
             });
-            _this6.getDataList();
+            _this5.getPageLists();
           }
         });
       }).catch(function () {});
     },
-    timestampToTime: function timestampToTime(time) {
-      // let time = row[column.property];
-      if (time == null) {
-        return null;
-      }
-      var date = new Date(time * 1000);
-      var tt = [date.getFullYear(), date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1, date.getDate() < 10 ? "0" + date.getDate() : date.getDate()].join("-") + "  " + [date.getHours() < 10 ? "0" + date.getHours() : date.getHours(), date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes(), date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds()].join(":");
-      return tt;
-    }
-    //
 
+    //公司 部门
+    getCompanyLists: function getCompanyLists() {
+      var _this6 = this;
+
+      this.request({
+        url: "/company/getDepartLists",
+        method: "get",
+        params: { pid: 0, type: 1 }
+      }).then(function (response) {
+        var data = response.data;
+        if (data.status == 1) {
+          _this6.companySelectList = data.data;
+        }
+      });
+    },
+    getDepartLists: function getDepartLists(val) {
+      var _this7 = this;
+
+      this.search_departid = "";
+      this.$set(this.postData, "sub_pid", "");
+      this.request({
+        url: "/company/getDepartLists",
+        method: "get",
+        params: { pid: val, type: 2 }
+      }).then(function (response) {
+        var data = response.data;
+        if (data.status == 1) {
+          _this7.departSelectList = data.data;
+        }
+      });
+    }
   }
+  //
 });
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-459aebf8","hasScoped":false,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/views/set/slope.vue
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"monitor"}},[_c('div',{staticClass:"el-menu-top"},[_c('el-menu',{attrs:{"router":"","default-active":"slope","mode":"horizontal"}},[_c('li',{staticClass:"ptitle"},[_c('img',{attrs:{"src":__webpack_require__("qyEk")}}),_vm._v("设置\n      ")]),_vm._v(" "),_c('el-menu-item',{attrs:{"index":"set"}},[_vm._v("站点设置")]),_vm._v(" "),_c('el-menu-item',{attrs:{"index":"speed"}},[_vm._v("限速设置")]),_vm._v(" "),_c('el-menu-item',{attrs:{"index":"alerts"}},[_vm._v("防区设置")]),_vm._v(" "),_c('el-menu-item',{attrs:{"index":"bridge"}},[_vm._v("桥设置")]),_vm._v(" "),_c('el-menu-item',{attrs:{"index":"tunnel"}},[_vm._v("隧道设置")]),_vm._v(" "),_c('el-menu-item',{attrs:{"index":"slope"},on:{"click":_vm.pageToFirst}},[_vm._v("坡度设置")]),_vm._v(" "),_c('el-menu-item',{attrs:{"index":"process"}},[_vm._v("项目工序")])],1)],1),_vm._v(" "),_c('div',{staticClass:"app-page"},[_c('div',{staticClass:"app-page-container"},[_c('div',{staticClass:"app-page-select"},[_c('el-form',{attrs:{"inline":true}},[_c('el-form-item',[_c('el-button',{attrs:{"type":"primary","icon":"el-icon-plus"},on:{"click":_vm.goAdd}},[_vm._v("添加坡度")])],1),_vm._v(" "),_c('div',{staticClass:"el-serach"},[_c('el-select',{attrs:{"placeholder":"请选择线别","clearable":""},model:{value:(_vm.search_line_type),callback:function ($$v) {_vm.search_line_type=$$v},expression:"search_line_type"}},_vm._l((_vm.lineTypeList),function(item){return _c('el-option',{key:item.id,attrs:{"label":item.name,"value":item.id}})})),_vm._v(" "),_c('el-button',{on:{"click":_vm.searchEvent}},[_vm._v("查询")])],1)],1)],1),_vm._v(" "),_c('div',{staticClass:"app-table"},[_c('el-table',{attrs:{"data":_vm.dataList}},[_c('el-table-column',{attrs:{"label":"序号"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_c('span',[_vm._v(_vm._s(scope.$index+(_vm.page_cur - 1) * _vm.page_size + 1))])]}}])}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"line","label":"线别"}}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"name","label":"坡度类型"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [(scope.row.type==1)?_c('span',[_vm._v("上坡")]):_vm._e(),_vm._v(" "),(scope.row.type==2)?_c('span',[_vm._v("平坡")]):_vm._e(),_vm._v(" "),(scope.row.type==3)?_c('span',[_vm._v("下坡")]):_vm._e()]}}])}),_vm._v(" "),_c('el-table-column',{attrs:{"label":"起始里程(米)"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_c('b',[_vm._v("DK")]),_vm._v("\n              "+_vm._s(scope.row.start_flag)+" + "+_vm._s(scope.row.start_length)+"\n            ")]}}])}),_vm._v(" "),_c('el-table-column',{attrs:{"label":"结束里程(米)"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_c('b',[_vm._v("DK")]),_vm._v("\n              "+_vm._s(scope.row.end_flag)+" + "+_vm._s(scope.row.end_length)+"\n            ")]}}])}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"height","label":"高度(米)"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_vm._v(_vm._s(parseFloat(scope.row.height)))]}}])}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"length","label":"长度(米)"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_vm._v(_vm._s(parseFloat(scope.row.length)))]}}])}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"create_time","label":"创建时间"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_c('span',{staticClass:"time-warp"},[_vm._v(_vm._s(scope.row.create_time))])]}}])}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"update_time","label":"修改时间"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_c('span',{staticClass:"time-warp"},[_vm._v(_vm._s(_vm.timestampToTime(scope.row.update_time)))])]}}])}),_vm._v(" "),_c('el-table-column',{attrs:{"label":"操作","width":"120"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_c('div',{staticClass:"app-operation"},[_c('el-button',{staticClass:"btn-blue",attrs:{"size":"mini"},on:{"click":function($event){_vm.goEdit(scope.row.id)}}},[_vm._v("修改")]),_vm._v(" "),_c('el-button',{staticClass:"btn-red",attrs:{"size":"mini"},on:{"click":function($event){_vm.goDel(scope.row.id)}}},[_vm._v("删除")])],1)]}}])})],1),_vm._v(" "),_c('div',{staticClass:"app-pagination"},[(_vm.dataList.length !== 0)?_c('el-pagination',{staticClass:"pagination",attrs:{"layout":"slot,prev, pager, next,slot,total","page-size":this.page_size,"current-page":this.page_cur,"total":this.page_data_total,"prev-text":"上一页","next-text":"下一页"},on:{"current-change":_vm.pageChange}},[_c('button',{staticClass:"btn-first",attrs:{"type":"button"},on:{"click":_vm.pageToFirst}},[_c('span',[_vm._v("首页")])]),_vm._v(" "),_c('button',{staticClass:"btn-last",attrs:{"type":"button"},on:{"click":_vm.pageToLast}},[_c('span',[_vm._v("尾页")])])]):_vm._e()],1)],1),_vm._v(" "),_c('el-dialog',{staticClass:"dialog-station",attrs:{"width":"700px","close-on-click-modal":false,"title":this.diaLogTitle,"visible":_vm.diaLogFormVisible},on:{"update:visible":function($event){_vm.diaLogFormVisible=$event}}},[_c('el-form',{ref:"formRules",staticClass:"el-form-custom",attrs:{"model":_vm.formData,"rules":_vm.formRules}},[_c('el-form-item',{attrs:{"label":"线别：","prop":"line_type"}},[_c('el-select',{attrs:{"placeholder":"请选择"},on:{"change":function($event){_vm.selectLineType($event)}},model:{value:(_vm.formData.line_type),callback:function ($$v) {_vm.$set(_vm.formData, "line_type", $$v)},expression:"formData.line_type"}},_vm._l((_vm.lineTypeList),function(item){return _c('el-option',{key:item.id,attrs:{"label":item.name,"value":item.id}})})),_vm._v(" "),_c('div',{staticClass:"el-form-item__error"},[_vm._v(_vm._s(_vm.lineTypeDes))])],1),_vm._v(" "),_c('el-form-item',{attrs:{"label":"类型："}},[_c('el-select',{model:{value:(_vm.formData.type),callback:function ($$v) {_vm.$set(_vm.formData, "type", $$v)},expression:"formData.type"}},[_c('el-option',{attrs:{"label":"上坡","value":1}}),_vm._v(" "),_c('el-option',{attrs:{"label":"平坡","value":2}}),_vm._v(" "),_c('el-option',{attrs:{"label":"下坡","value":3}})],1)],1),_vm._v(" "),_c('el-form-item',{attrs:{"label":"高度：","prop":"height"}},[_c('el-input',{attrs:{"autocomplete":"off","placeholder":"请输入高度米","maxlength":"6"},model:{value:(_vm.formData.height),callback:function ($$v) {_vm.$set(_vm.formData, "height", $$v)},expression:"formData.height"}})],1),_vm._v(" "),_c('el-form-item',{staticClass:"el-form-item-dk is-required",attrs:{"label":"开始里程："}},[_c('el-form-item',{attrs:{"prop":"start_flag"}},[_c('el-input',{attrs:{"autocomplete":"off","placeholder":"公里","maxlength":"3"},model:{value:(_vm.formData.start_flag),callback:function ($$v) {_vm.$set(_vm.formData, "start_flag", $$v)},expression:"formData.start_flag"}},[_c('template',{slot:"prepend"},[_vm._v("DK")])],2)],1),_vm._v(" "),_c('el-form-item',{staticClass:"errorss",attrs:{"prop":"start_length"}},[_c('b',[_vm._v("+")]),_vm._v(" "),_c('el-input',{attrs:{"autocomplete":"off","placeholder":"米","maxlength":"3"},model:{value:(_vm.formData.start_length),callback:function ($$v) {_vm.$set(_vm.formData, "start_length", $$v)},expression:"formData.start_length"}})],1)],1),_vm._v(" "),_c('el-form-item',{staticClass:"el-form-item-dk is-required",attrs:{"label":"结束里程："}},[_c('el-form-item',{attrs:{"prop":"end_flag"}},[_c('el-input',{attrs:{"autocomplete":"off","placeholder":"公里","maxlength":"3"},model:{value:(_vm.formData.end_flag),callback:function ($$v) {_vm.$set(_vm.formData, "end_flag", $$v)},expression:"formData.end_flag"}},[_c('template',{slot:"prepend"},[_vm._v("DK")])],2)],1),_vm._v(" "),_c('el-form-item',{staticClass:"errorss",attrs:{"prop":"end_length"}},[_c('b',[_vm._v("+")]),_vm._v(" "),_c('el-input',{attrs:{"autocomplete":"off","placeholder":"米","maxlength":"3"},model:{value:(_vm.formData.end_length),callback:function ($$v) {_vm.$set(_vm.formData, "end_length", $$v)},expression:"formData.end_length"}})],1)],1),_vm._v(" "),_c('div',{staticClass:"blank"})],1),_vm._v(" "),_c('div',{staticClass:"dialog-footer",attrs:{"slot":"footer"},slot:"footer"},[_c('el-button',{on:{"click":function($event){_vm.diaLogFormVisible = false}}},[_vm._v("关闭")]),_vm._v(" "),_c('el-button',{attrs:{"type":"primary"},on:{"click":function($event){_vm.addOrEditDialog()}}},[_vm._v("确定")])],1)],1)],1)])])}
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-3e3c2584","hasScoped":false,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/views/admin/postlist.vue
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"admins"}},[_c('div',{staticClass:"el-menu-top"},[_c('el-menu',{attrs:{"router":"","default-active":"postlist","mode":"horizontal"}},[_c('li',{staticClass:"ptitle"},[_c('img',{attrs:{"src":__webpack_require__("xX+s")}}),_vm._v("人员管理\n      ")]),_vm._v(" "),_c('el-menu-item',{attrs:{"index":"admin"}},[_vm._v("公司列表")]),_vm._v(" "),_c('el-menu-item',{attrs:{"index":"departlist"}},[_vm._v("部门列表")]),_vm._v(" "),_c('el-menu-item',{attrs:{"index":"postlist"},on:{"click":_vm.postFirstPage}},[_vm._v("职位列表")]),_vm._v(" "),_c('el-menu-item',{attrs:{"index":"userlist"}},[_vm._v("人员列表")])],1)],1),_vm._v(" "),_c('div',{staticClass:"app-page"},[_c('div',{staticClass:"app-page-container"},[_c('div',{staticClass:"app-page-select"},[_c('el-form',{attrs:{"inline":true}},[_c('el-form-item',{staticClass:"form-add-item"},[_c('el-button',{attrs:{"type":"primary","icon":"el-icon-plus"},on:{"click":_vm.openAddPost}},[_vm._v("添加职位")])],1),_vm._v(" "),_c('el-form-item',{attrs:{"label":"公司"}},[_c('el-select',{attrs:{"placeholder":"请选择公司","clearable":""},on:{"change":function($event){_vm.getDepartLists($event)}},model:{value:(_vm.search_pid),callback:function ($$v) {_vm.search_pid=$$v},expression:"search_pid"}},_vm._l((this.companySelectList),function(item){return _c('el-option',{key:item.id,attrs:{"label":item.name,"value":item.id}})}))],1),_vm._v(" "),_c('el-form-item',{attrs:{"label":"部门"}},[_c('el-select',{ref:"departselectClear",attrs:{"placeholder":"请选择部门","clearable":""},model:{value:(_vm.search_departid),callback:function ($$v) {_vm.search_departid=$$v},expression:"search_departid"}},_vm._l((this.departSelectList),function(item){return _c('el-option',{key:item.id,attrs:{"label":item.name,"value":item.id}})}))],1),_vm._v(" "),_c('el-form-item',{staticClass:"form-so"},[_c('label',{staticClass:"el-form-item__label"}),_vm._v(" "),_c('el-button',{attrs:{"size":"small","icon":"el-icon-search","type":"primary"},on:{"click":_vm.postSearchPage}},[_vm._v("查询")]),_vm._v(" "),_c('el-button',{attrs:{"size":"small","plain":""},on:{"click":_vm.resetSerach}},[_vm._v("重置")])],1)],1)],1),_vm._v(" "),_c('div',{staticClass:"app-table"},[_c('el-table',{ref:"multipleTable",attrs:{"data":_vm.postLists}},[_c('el-table-column',{attrs:{"label":"序号","width":"100"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_c('span',[_vm._v(_vm._s(scope.$index+(_vm.postPage_cur - 1) * _vm.postPage_size + 1))])]}}])}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"company","label":"公司名称"}}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"depart","label":"部门名称"}}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"name","label":"职位名称"}}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"description","label":"职位详情","show-overflow-tooltip":""}}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"create_time","label":"创建时间"}}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"update_time","label":"修改时间"}}),_vm._v(" "),_c('el-table-column',{attrs:{"label":"操作","width":"120"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_c('div',{staticClass:"app-operation"},[_c('el-button',{staticClass:"btn-blue",attrs:{"size":"mini"},on:{"click":function($event){_vm.detailPost(scope.row.id)}}},[_vm._v("修改")]),_vm._v(" "),_c('el-button',{staticClass:"btn-red",attrs:{"size":"mini"},on:{"click":function($event){_vm.delPost(scope.row.id)}}},[_vm._v("删除")])],1)]}}])})],1),_vm._v(" "),_c('div',{staticClass:"app-pagination"},[(_vm.postLists.length !== 0)?_c('el-pagination',{staticClass:"pagination",attrs:{"layout":"slot,prev, pager, next,slot,total","page-size":_vm.postPage_size,"current-page":this.postPage_cur,"total":this.postPage_items,"prev-text":"上一页","next-text":"下一页"},on:{"current-change":_vm.postChangePage}},[_c('button',{staticClass:"btn-first",attrs:{"type":"button"},on:{"click":_vm.postFirstPage}},[_c('span',[_vm._v("首页")])]),_vm._v(" "),_c('button',{staticClass:"btn-last",attrs:{"type":"button"},on:{"click":_vm.postLastPage}},[_c('span',[_vm._v("尾页")])])]):_vm._e()],1)],1),_vm._v(" "),_c('el-dialog',{staticClass:"dialog-company",attrs:{"width":"580px","title":"添加职位信息","close-on-click-modal":false,"visible":_vm.postDialogVisible},on:{"update:visible":function($event){_vm.postDialogVisible=$event}}},[_c('el-form',{ref:"postRulesForm",staticClass:"el-form-custom",attrs:{"model":_vm.postData,"rules":_vm.postAddRules}},[(_vm.postDialogTitle=='添加职位信息')?_c('el-form-item',{attrs:{"label":"公司名称：","prop":"pid"}},[_c('el-select',{on:{"change":function($event){_vm.getDepartLists($event)}},model:{value:(_vm.postData.pid),callback:function ($$v) {_vm.$set(_vm.postData, "pid", $$v)},expression:"postData.pid"}},_vm._l((this.companySelectList),function(item){return _c('el-option',{key:item.id,attrs:{"label":item.name,"value":item.id}})}))],1):_vm._e(),_vm._v(" "),(_vm.postDialogTitle=='添加职位信息')?_c('el-form-item',{ref:"departselectClear",attrs:{"label":"部门名称：","prop":"sub_pid"}},[_c('el-select',{model:{value:(_vm.postData.sub_pid),callback:function ($$v) {_vm.$set(_vm.postData, "sub_pid", $$v)},expression:"postData.sub_pid"}},_vm._l((this.departSelectList),function(item){return _c('el-option',{key:item.id,attrs:{"label":item.name,"value":item.id}})}))],1):_vm._e(),_vm._v(" "),_c('el-form-item',{attrs:{"label":"职位名称：","prop":"name"}},[_c('el-input',{attrs:{"autocomplete":"off","maxlength":"20","show-word-limit":""},model:{value:(_vm.postData.name),callback:function ($$v) {_vm.$set(_vm.postData, "name", $$v)},expression:"postData.name"}})],1),_vm._v(" "),_c('el-form-item',{attrs:{"label":"职位简介：","prop":"description"}},[_c('el-input',{attrs:{"autocomplete":"off","type":"textarea","maxlength":"30","show-word-limit":""},model:{value:(_vm.postData.description),callback:function ($$v) {_vm.$set(_vm.postData, "description", $$v)},expression:"postData.description"}})],1)],1),_vm._v(" "),_c('div',{staticClass:"dialog-footer",attrs:{"slot":"footer"},slot:"footer"},[_c('el-button',{on:{"click":function($event){_vm.postDialogVisible = false}}},[_vm._v("取 消")]),_vm._v(" "),_c('el-button',{attrs:{"type":"primary"},on:{"click":function($event){_vm.addPost(3)}}},[_vm._v("确 定")])],1)],1)],1)])])}
 var staticRenderFns = []
 var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ var set_slope = (esExports);
-// CONCATENATED MODULE: ./src/views/set/slope.vue
+/* harmony default export */ var admin_postlist = (esExports);
+// CONCATENATED MODULE: ./src/views/admin/postlist.vue
 function injectStyle (ssrContext) {
-  __webpack_require__("4+MY")
+  __webpack_require__("bH3Y")
 }
 var normalizeComponent = __webpack_require__("VU/8")
 /* script */
@@ -516,20 +417,20 @@ var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
-  slope,
-  set_slope,
+  postlist,
+  admin_postlist,
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
   __vue_module_identifier__
 )
 
-/* harmony default export */ var views_set_slope = __webpack_exports__["default"] = (Component.exports);
+/* harmony default export */ var views_admin_postlist = __webpack_exports__["default"] = (Component.exports);
 
 
 /***/ }),
 
-/***/ "zxUM":
+/***/ "I14l":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("FZ+f")(false);
@@ -537,10 +438,24 @@ exports = module.exports = __webpack_require__("FZ+f")(false);
 
 
 // module
-exports.push([module.i, "\n.dialog-station .el-textarea__inner {\r\n  border: 1px #9db9fa solid;\r\n  color: #4b6eca;\r\n  height: 100px;\n}\n.dialog-station .el-textarea {\r\n  width: 100% !important;\n}\n.dialog-station .el-form-item__label {\r\n  width: 110px;\n}\n.dialog-station .el-form-item__content {\r\n  margin-left: 110px;\n}\n.dialog-station .el-form-item-inline .el-input--medium {\r\n  display: inline-block;\r\n  width: 80px;\r\n  text-align: center;\n}\n.dialog-station .el-form-item-inline input {\r\n  display: inline-block;\r\n  width: 80px;\r\n  text-align: center;\n}\n.dialog-station .el-select {\r\n  width: 100%;\n}\n.el-form-item-inline input {\r\n  display: inline-block;\r\n  width: 80px;\r\n  text-align: center;\n}\r\n", ""]);
+exports.push([module.i, "\n.admins .el-dialog {\r\n  width: 500px !important;\n}\n.dialog-company .el-textarea {\r\n  width: 100% !important;\n}\n.dialog-company .el-textarea__inner {\r\n  height: 80px;\n}\n.dialog-company .el-form-item__label {\r\n  width: 110px;\n}\n.dialog-company .el-form-item__content {\r\n  margin-left: 110px;\n}\n.dialog-company .el-input--medium {\r\n  width: 100%;\n}\n.dialog-company .el-select {\r\n  width: 100%;\n}\r\n", ""]);
 
 // exports
 
+
+/***/ }),
+
+/***/ "bH3Y":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("I14l");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__("rjj0")("3a9dc67c", content, true);
 
 /***/ })
 
