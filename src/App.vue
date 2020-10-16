@@ -28,6 +28,7 @@
     };
 </script>
 <style>
+html {width: 100%;height: 100%;padding: 0px;margin: 0px;}
 body{background: #E7EEFF; height: 100%; width: 100%; font-size: 14px;margin: 0;padding: 0; }
 p,div,h1,h2,h3,h4,ul,li,span{margin: 0;padding: 0;}
 ul,li{list-style-type: none}

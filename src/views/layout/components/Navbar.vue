@@ -16,7 +16,7 @@
 
       <el-dropdown class="avatar-container right-menu-item" trigger="click">
         <div class="avatar-wrapper">
-          <a class="dapin" target="_blank" href="#/datav/" style="display:none">大屏</a>
+          <a class="dapin" target="_blank" href="#/datav/">大屏</a>
           <!-- <img class="user-avatar" :src="avatar" /> -->
           <span>欢迎您，{{ name }}</span>
 

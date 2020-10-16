@@ -1,19 +1,19 @@
 <template>
   <div id="personnel">
     <div class="datav-ptitle"><h3>人员进出</h3></div>
-    <div class="scroll-board">
-      <!-- <dv-scroll-board :config="config" /> -->
-    </div>
+    <!-- <div class="scroll-board">
+    </div> -->
     <div class="user-box">
       <div class="u-left">
         <h3>王小二</h3>
-        <p><span>ID：</span>7899908</p>
-        <p><span>电话：</span>1876666666</p>
+        <p><span>ID：</span>325</p>
+        <p><span>电话：</span>18766666666</p>
         <p><span>到访时间：</span>12:00</p>
         <p><span>身份：</span>工程师</p>
       </div>
       <div class="u-right">
-        <el-scrollbar style="height:100%">
+        <dv-scroll-board :config="config" />
+        <!-- <el-scrollbar style="height:100%">
           <ul>
             <li>
               <div>王小二</div>
@@ -51,7 +51,7 @@
               <div>12:00</div>
             </li>
           </ul>
-        </el-scrollbar>
+        </el-scrollbar> -->
       </div>
     </div>
   </div>
@@ -63,24 +63,30 @@ export default {
     return {
       peopleList: [],
       config: {
-        header: ["ID", "电话", "到访时间", "身份"],
+        header: ["ID", "姓名", "电话", "到访", "身份"],
         data: [
-          ["7899908", "1876666666", "12:00", "工程师"],
-          ["7899908", "1876666666", "12:00", "工程师"],
-          ["7899908", "1876666666", "12:00", "工程师"],
-          ["7899908", "1876666666", "12:00", "工程师"],
-          ["7899908", "1876666666", "12:00", "工程师"],
-          ["7899908", "1876666666", "12:00", "工程师"],
-          ["7899908", "1876666666", "12:00", "工程师"]
+          ["325", "万小龙", "18766666666", "12:00", "工程师"],
+          ["325", "李云", "18766666666", "12:00", "工程师"],
+          ["325", "李云", "18766666666", "12:00", "工程师"],
+          ["325", "李云", "18766666666", "12:00", "工程师"],
+          ["325", "李云", "18766666666", "12:00", "工程师"],
+          ["325", "李云", "18766666666", "12:00", "工程师"],
+          ["325", "李云", "18766666666", "12:00", "工程师"],
+          ["325", "李云", "18766666666", "12:00", "工程师"],
+          ["325", "李云", "18766666666", "12:00", "工程师"],
+          ["325", "李云", "18766666666", "12:00", "工程师"],
+          ["325", "李云", "18766666666", "12:00", "工程师"],
+          ["325", "李云", "18766666666", "12:00", "工程师"],
+          ["325", "李云", "18766666666", "12:00", "工程师"]
         ],
-        index: true,
-       columnWidth: [50],
-        align: ["center"],
-        rowNum: 7,
-        headerBGC: "#1981f6",
+        // indexHeader:'序号',
+        // index: true,
+        columnWidth: [70, 70,120],
+        rowNum: 5,
+        headerBGC: "#01023a",
         headerHeight: 45,
-        oddRowBGC: "rgba(0, 44, 81, 0.8)",
-        evenRowBGC: "rgba(10, 29, 50, 0.8)"
+        oddRowBGC: "#01023a",
+        evenRowBGC: "#06074b"
       }
     };
   },
@@ -88,9 +94,7 @@ export default {
     this.getPeopleList();
   },
   methods: {
-    scrll(){
-
-    },
+    scrll() {},
     getPeopleList() {
       this.request({
         url: "/location/getPeopleLists",
@@ -106,21 +110,11 @@ export default {
 };
 </script>
 <style>
-.scroll-board {
-
- padding: 20px;
-  box-sizing: border-box;
-}
-
-#data-view .el-scrollbar__wrap {
-  overflow-x: hidden;
-  border: 0;
-  margin-right: -18px !important;
-}
 #personnel {
   background: #01023a;
   color: #fff;
   width: 33.3%;
+  height: 33.3%;
   position: relative;
 }
 .user-box {
@@ -132,6 +126,7 @@ export default {
   width: 30%;
   background: url(~@/assets/image/card-bg.png) no-repeat;
   background-size: 100% auto;
+  min-height: 225px;
 }
 .u-left h3 {
   text-align: center;
