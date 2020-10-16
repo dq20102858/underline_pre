@@ -499,15 +499,21 @@ export default {
           context.beginPath();
           //画水平直线
           if (json[i].line_type == 1) {
-            context.moveTo(startX + offsetX, axis_LeftLine.y);
+            if (startX == 0) {
+              startX = 30;
+            }
+            context.moveTo(startX, axis_LeftLine.y);
             context.lineTo(endX, axis_LeftLine.y);
             context.fillRect(centerX, axis_LeftLine.y, 2, 30);
-            context.fillText(desc, centerX-45, axis_LeftLine.y + 42);
+            context.fillText(desc, centerX - 45, axis_LeftLine.y + 42);
           } else if (json[i].line_type == 2) {
+            if (startX == 0) {
+              startX = 30;
+            }
             context.moveTo(startX, axis_LeftLine_Two.y);
             context.lineTo(endX, axis_LeftLine_Two.y);
             context.fillRect(centerX, axis_LeftLine_Two.y, 2, 30);
-            context.fillText(desc, centerX-45, axis_LeftLine_Two.y + 42);
+            context.fillText(desc, centerX - 45, axis_LeftLine_Two.y + 42);
           }
           context.stroke();
         }
@@ -533,20 +539,21 @@ export default {
           let centerX = (endX + startX) / 2; //开始结束平均值
           //画水平直线
           if (json[i].line_type == 1) {
+            if (startX == 0) {
+              startX = 30;
+            }
             context.moveTo(startX, axis_LeftLine.y);
             context.lineTo(endX, axis_LeftLine.y);
             context.fillRect(centerX, axis_LeftLine.y, 2, 30);
             context.fillText(desc, centerX - 24, axis_LeftLine.y + 42);
           } else if (json[i].line_type == 2) {
-            if (start == 0) {
-              startX = 0;
-              endX = end * everys;
+            if (startX == 0) {
+              startX = 30;
             }
-
             context.moveTo(startX, axis_LeftLine_Two.y);
             context.lineTo(endX, axis_LeftLine_Two.y);
             context.fillRect(centerX, axis_LeftLine_Two.y, 2, 30);
-            context.fillText(desc, centerX -24, axis_LeftLine_Two.y + 42);
+            context.fillText(desc, centerX - 24, axis_LeftLine_Two.y + 42);
           }
           context.stroke();
         }
@@ -578,11 +585,17 @@ export default {
           let endX = (end - lineTypeMinMileage) * everys;
           let centerX = (endX + startX) / 2; //开始结束平均值
           if (json[i].line_type == 1) {
+            if (startX == 0) {
+              startX = 30;
+            }
             context.moveTo(startX, axis_LeftLine.y);
             context.lineTo(endX, axis_LeftLine.y);
             context.fillRect(centerX, axis_LeftLine.y, 2, 30);
             context.fillText(desc, centerX - 80, axis_LeftLine.y + 42);
           } else if (json[i].line_type == 2) {
+            if (startX == 0) {
+              startX = 30;
+            }
             context.moveTo(startX, axis_LeftLine_Two.y);
             context.lineTo(endX, axis_LeftLine_Two.y);
             context.fillRect(centerX, axis_LeftLine_Two.y, 2, 30);
@@ -592,9 +605,7 @@ export default {
           //
         }
       }
-
       //绘制请点
-
       function drawAxesApply(jsonData) {
         let json = jsonData;
         let json1 = [
@@ -1088,7 +1099,7 @@ CanvasRenderingContext2D.prototype.fillTextVertical = function(text, x, y) {
 <style>
 #diagram {
   position: absolute;
-  width: 100%;
+  width: 66.6%;
   height: 100%;
   background: #01023a;
 }

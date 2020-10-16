@@ -1,6 +1,9 @@
 <template>
   <div id="personnel">
     <div class="datav-ptitle"><h3>人员进出</h3></div>
+    <div class="scroll-board">
+      <!-- <dv-scroll-board :config="config" /> -->
+    </div>
     <div class="user-box">
       <div class="u-left">
         <h3>王小二</h3>
@@ -42,7 +45,7 @@
               <div>工程师</div>
               <div>12:00</div>
             </li>
-          <li>
+            <li>
               <div>王小二7</div>
               <div>工程师</div>
               <div>12:00</div>
@@ -58,13 +61,36 @@ export default {
   name: "Personnel",
   data() {
     return {
-      peopleList: []
+      peopleList: [],
+      config: {
+        header: ["ID", "电话", "到访时间", "身份"],
+        data: [
+          ["7899908", "1876666666", "12:00", "工程师"],
+          ["7899908", "1876666666", "12:00", "工程师"],
+          ["7899908", "1876666666", "12:00", "工程师"],
+          ["7899908", "1876666666", "12:00", "工程师"],
+          ["7899908", "1876666666", "12:00", "工程师"],
+          ["7899908", "1876666666", "12:00", "工程师"],
+          ["7899908", "1876666666", "12:00", "工程师"]
+        ],
+        index: true,
+       columnWidth: [50],
+        align: ["center"],
+        rowNum: 7,
+        headerBGC: "#1981f6",
+        headerHeight: 45,
+        oddRowBGC: "rgba(0, 44, 81, 0.8)",
+        evenRowBGC: "rgba(10, 29, 50, 0.8)"
+      }
     };
   },
   created() {
     this.getPeopleList();
   },
   methods: {
+    scrll(){
+
+    },
     getPeopleList() {
       this.request({
         url: "/location/getPeopleLists",
@@ -80,6 +106,12 @@ export default {
 };
 </script>
 <style>
+.scroll-board {
+
+ padding: 20px;
+  box-sizing: border-box;
+}
+
 #data-view .el-scrollbar__wrap {
   overflow-x: hidden;
   border: 0;
@@ -106,7 +138,8 @@ export default {
   padding-top: 15px;
   margin-bottom: 30px;
 }
-.u-left p {  text-align: center;
+.u-left p {
+  text-align: center;
   padding-bottom: 15px;
 }
 .u-left p span {
