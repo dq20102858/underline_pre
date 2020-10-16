@@ -115,7 +115,7 @@ export default {
 }
 .block-diagram {
   display: block;
-  height: 45%;
+  height: 42%;
   width: 100%;
 }
 .block-diagram-content {
