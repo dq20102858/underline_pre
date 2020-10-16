@@ -48,7 +48,6 @@ export default {
 }
 #videolist .videos .grid-content img {
   width: 100%;
-  min-height: 180px;
 }
 #scroll-board {
   box-sizing: border-box;
