@@ -2,7 +2,7 @@
   <div id="diagram">
     <div class="datav-ptitle" style="padding-top:0"><h3>施工形象图</h3></div>
     <div class="station" ref="canvasWrapper">
-      <canvas id="canvasStation" height="240" ref="canvasStation">
+      <canvas id="canvasStation" height="220" ref="canvasStation">
         <p>您的系统不支持此程序!</p>
       </canvas>
     </div>
@@ -77,7 +77,7 @@
 <script>
 let canvas;
 let context;
-let axis_Height = 240;
+let axis_Height = 220;
 let offsetX = 0;
 let tick_Spacing = 100;
 let tick_Height = 8; //刻度线高度
@@ -88,7 +88,7 @@ let axis_LeftLine = {
 };
 let axis_LeftLine_Two = {
   x: 30,
-  y: 180
+  y: 150
 };
 //出入场线
 let axis_OutLine = {
@@ -1129,7 +1129,7 @@ CanvasRenderingContext2D.prototype.fillTextVertical = function(text, x, y) {
 }
 /*check-list*/
 .check-lists {
-  margin: 20px 30px 0 30px;
+  margin: 0px 30px 0 30px;
 }
 .check-lists .namess {
   color: #fff;

@@ -14,7 +14,7 @@
           class="item"
           :class="'p' + index"
           v-for="(item, index) in dataList"
-          v-if="index < 8"
+          v-if="index < 6"
         >
           <i></i>
           <div>{{ item.number }}</div>

@@ -10,12 +10,12 @@
               <diagram></diagram>
             </div>
             <div class="block-diagram-content">
-              <videolist></videolist>
-              <operation />
+               <videolist></videolist>
+               <operation></operation>
             </div>
           </div>
         </div>
-        <div class="block-two-content">
+        <div class="bottom-content">
           <schedule></schedule>
           <personnel></personnel>
           <monitors></monitors>
@@ -70,7 +70,7 @@ export default {
   text-align: center;
 }
 #data-view .dv-scroll-board .header div {
-  text-align: left;
+  text-align: left;font-size: 14px;    color: #00d9ff;
 }
 
 .datav-ptitle {
@@ -115,18 +115,18 @@ export default {
 }
 .block-diagram {
   display: block;
-  height: 50%;
+  height: 45%;
   width: 100%;
 }
 .block-diagram-content {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 50%;
+  height: 52%;
   overflow: hidden;
 }
 
-.block-two-content {
+.bottom-content {
   height: 33%;
   display: flex;
   padding-bottom: 20px;

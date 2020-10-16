@@ -230,7 +230,7 @@ export default {
   height: 28px;
   line-height: 28px;
   padding: 0 10px;
-  color: #fff;
+  color: #fff!important;
   border-radius: 3px;
 }
 .dapin:hover {

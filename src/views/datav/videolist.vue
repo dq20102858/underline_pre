@@ -36,8 +36,8 @@ export default {
   display: flex;
   flex-wrap: wrap;
   height: 100%;
-  padding-left: 25px;
-  padding-top: 25px;
+  padding-left: 20px;
+  padding-top: 20px; padding-right: 20px;
 }
 #videolist .videos .grid-content {
   width: 50%;
