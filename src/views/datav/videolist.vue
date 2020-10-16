@@ -2,16 +2,16 @@
   <div id="videolist">
     <div class="videos">
       <div class="grid-content">
-        <img :src="require('@/assets/image/video.jpg')" />
+        <img :src="require('@/assets/image/video1.png')" />
       </div>
       <div class="grid-content">
-        <img :src="require('@/assets/image/video.jpg')" />
+        <img :src="require('@/assets/image/video2.png')" />
       </div>
       <div class="grid-content">
-        <img :src="require('@/assets/image/video.jpg')" />
+        <img :src="require('@/assets/image/video3.png')" />
       </div>
       <div class="grid-content">
-        <img :src="require('@/assets/image/video.jpg')" />
+        <img :src="require('@/assets/image/video4.png')" />
       </div>
     </div>
   </div>

@@ -409,7 +409,7 @@ CanvasRenderingContext2D.prototype.fillTextVertical = function(text, x, y) {
 <style>
 #schedule {
   width: 33.3%;
-  height: 100%;
+  height: 33.3%;
 }
 #progress {
   width: 100%;

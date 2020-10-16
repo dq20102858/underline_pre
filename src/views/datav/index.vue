@@ -53,10 +53,8 @@ export default {
   mounted() {
     // this.fatherWidth = document.getElementById("diagram").clientWidth;
   },
-  created() {
- },
-  methods: {
-  }
+  created() {},
+  methods: {}
 };
 </script>
 <style>
@@ -65,6 +63,14 @@ export default {
   height: 100%;
   background: #01023a;
   color: #fff;
+}
+#data-view .dv-scroll-board .rows .row-item {
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+#data-view .dv-scroll-board .header div {
+  text-align: left;
 }
 
 .datav-ptitle {

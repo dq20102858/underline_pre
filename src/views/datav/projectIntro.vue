@@ -28,9 +28,9 @@
         <div class="dname1">刘潭</div>
         <div class="dot dot2"><i></i></div>
         <div class="dname2">广石路</div>
-        <div class="dot dot3"><i></i></div>
+        <div class="v-dot3"><i></i></div>
         <div class="dname3">黄巷站</div>
-        <div class="dot dot4"><i></i></div>
+        <div class="v-dot4"><i></i></div>
         <div class="dname4">盛岸站</div>
         <div class="dot dot5"><i></i></div>
         <div class="dname5">惠山古镇站</div>
@@ -167,6 +167,19 @@ export default {
   border-radius: 100%;
   display: block;
 }
+.subwap .dots {
+  padding: 2px;
+  border-radius: 100%;
+  border: 1px #f7de0f solid;
+  position: absolute;
+}
+.subwap .dots i {
+  height: 5px;
+  width: 5px;
+  background: #f7de0f;
+  border-radius: 100%;
+  display: block;
+}
 .dot1 {
   left: 192px;
   top: 28px;
@@ -194,9 +207,50 @@ export default {
   top: 93px;
   left: 156px;
 }
+.v-dot3 {
+  top: 96px;
+  left: 136px;
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background-color: #ffff00;
+  border-radius: 50%;
+
+}
+.v-dot3:before {
+  content: "";
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  opacity: 0.7;
+  background-color: #ffff00;
+   animation: scaless 1s infinite cubic-bezier(0, 0, 0.49, 1.02);
+}
+.v-dot4 {
+   top: 136px;
+  left: 100px;
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background-color: #ffff00;
+  border-radius: 50%;
+
+}
+.v-dot4:before {
+  content: "";
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  opacity: 0.7;
+  background-color: #ffff00;
+   animation: scaless 1s infinite cubic-bezier(0, 0, 0.49, 1.02);
+}
 .dot4 {
   top: 136px;
   left: 100px;
+ 
 }
 .dname4 {
   position: absolute;
@@ -328,5 +382,36 @@ export default {
   position: absolute;
   top: 530px;
   left: 244px;
+}
+
+@keyframes scales {
+  0% {
+    transform: scale(1);
+  }
+
+  50%,
+  75% {
+    transform: scale(2);
+  }
+
+  78%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes scaless {
+  0% {
+    transform: scale(1);
+  }
+
+  50%,
+  75% {
+    transform: scale(3);
+  }
+
+  78%,
+  100% {
+    opacity: 0;
+  }
 }
 </style>
