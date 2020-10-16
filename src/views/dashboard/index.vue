@@ -44,7 +44,7 @@ export default {
     });
   },
     mounted() {
-     window.open("https://192.168.5.2/doc/page/login.asp");
+     window.open("http://192.168.5.2/doc/page/login.asp");
   },
   created() {
     this.getVideos();

@@ -372,6 +372,7 @@ CanvasRenderingContext2D.prototype.fillTextVertical = function(text, x, y) {
   width: 100%;
   height: 100%;
   background: #081c33;
+  min-height: 95vh;
 }
 .progress {
   background: #081c33;
