@@ -1,20 +1,6 @@
 webpackJsonp([26],{
 
-/***/ "3p6z":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("K49U");
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__("rjj0")("f8af8d44", content, true);
-
-/***/ }),
-
-/***/ "K49U":
+/***/ "CQ20":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("FZ+f")(false);
@@ -22,61 +8,34 @@ exports = module.exports = __webpack_require__("FZ+f")(false);
 
 
 // module
-exports.push([module.i, "\n.dialog-jiju .el-textarea__inner {\r\n  border: 1px #9db9fa solid;\r\n  color: #4b6eca;\r\n  height: 100px;\n}\n.dialog-jiju .el-textarea {\r\n  width: 100% !important;\n}\n.dialog-jiju .el-select {\r\n  width: 100%;\n}\n.dialog-jiju .el-form-item__label {\r\n  width: 110px;\n}\n.dialog-jiju .el-form-item__content {\r\n  margin-left: 110px;\n}\r\n", ""]);
+exports.push([module.i, "\n#personnel {\r\n  background: #01023a;\r\n  color: #fff;\r\n  width: 33.3%;\r\n  height: 33.3%;\r\n  position: relative;\n}\n.user-box {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: justify;\r\n      -ms-flex-pack: justify;\r\n          justify-content: space-between;\r\n  padding: 20px;\n}\n.u-left {\r\n  width: 30%;\r\n  background: url(" + __webpack_require__("9d41") + ") no-repeat;\r\n  background-size: 100% auto;\r\n  min-height: 225px;\n}\n.u-left h3 {\r\n  text-align: center;\r\n  padding-top: 15px;\r\n  margin-bottom: 30px;\n}\n.u-left p {\r\n  text-align: center;\r\n  padding-bottom: 15px;\n}\n.u-left p span {\r\n  display: inline-block;\n}\n.u-right {\r\n  width: 65%;\n}\n.u-right li {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: justify;\r\n      -ms-flex-pack: justify;\r\n          justify-content: space-between;\r\n  -webkit-box-orient: horizontal;\r\n  -webkit-box-direction: normal;\r\n      -ms-flex-direction: row;\r\n          flex-direction: row;\r\n  text-align: center;\r\n  border-top: 1px #204f96 dashed;\r\n  height: 39px;\r\n  line-height: 39px;\r\n  margin-right: 20px;\n}\n.u-right .header div {\r\n  text-align: center;\r\n  width: 20%;\r\n  font-size: 16px;\n}\n.u-right li.item div {\r\n  width: 30%;\r\n  overflow: hidden;\r\n  text-overflow: ellipsis;\n}\n.u-right li.p0 div {\r\n  background: #06074b;\n}\n.u-right li.p2 div {\r\n  background: #06074b;\n}\n.u-right li.p4 div {\r\n  background: #06074b;\n}\n.u-right li.p6 div {\r\n  background: #06074b;\n}\r\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ "ZFGK":
+/***/ "IY7T":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("CQ20");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__("rjj0")("50914377", content, true);
+
+/***/ }),
+
+/***/ "MK4H":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
-// CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./src/views/location/device.vue
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+// CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./src/views/datav/personnel.vue
 //
 //
 //
@@ -136,190 +95,54 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ var device = ({
+/* harmony default export */ var personnel = ({
+  name: "Personnel",
   data: function data() {
     return {
-      diaLogFormVisible: false,
-      diaLogTitle: "添加信息",
-      companyList: [],
-      deviceData: {},
-      deviceRules: {
-        depart_id: [{ required: true, message: "请选择公司", trigger: "change" }],
-        name: [{
-          required: true,
-          message: "请输入机具名称2~20个字符",
-          trigger: "blur"
-        }, { min: 2, max: 20, message: "长度在2到20个字符", trigger: "blur" }, {
-          pattern: /(^\S+).*(\S+$)/,
-          message: "开始和结尾不能有空格",
-          trigger: "blur"
-        }],
-        description: [{ min: 0, max: 50, message: "长度在0到50个字符", trigger: "blur" }]
-      },
-      page_cur: 1,
-      pageTotal: 0,
-      page_size: 20,
-      page_total: 0,
-      dataList: []
+      peopleList: [],
+      config: {
+        header: ["ID", "姓名", "电话", "到访", "身份"],
+        data: [["325", "万小龙", "18766666666", "12:00", "工程师"], ["325", "李云", "18766666666", "12:00", "工程师"], ["325", "李云", "18766666666", "12:00", "工程师"], ["325", "李云", "18766666666", "12:00", "工程师"], ["325", "李云", "18766666666", "12:00", "工程师"], ["325", "李云", "18766666666", "12:00", "工程师"], ["325", "李云", "18766666666", "12:00", "工程师"], ["325", "李云", "18766666666", "12:00", "工程师"], ["325", "李云", "18766666666", "12:00", "工程师"], ["325", "李云", "18766666666", "12:00", "工程师"], ["325", "李云", "18766666666", "12:00", "工程师"], ["325", "李云", "18766666666", "12:00", "工程师"], ["325", "李云", "18766666666", "12:00", "工程师"]],
+        // indexHeader:'序号',
+        // index: true,
+        columnWidth: [70, 70, 120],
+        rowNum: 5,
+        headerBGC: "#01023a",
+        headerHeight: 45,
+        oddRowBGC: "#01023a",
+        evenRowBGC: "#06074b"
+      }
     };
   },
-  mounted: function mounted() {
-    document.querySelector("#app-menu-items #menu_location").classList.add("is-active");
-  },
   created: function created() {
-    this.getCompanyList();
-    this.getDataList();
+    this.getPeopleList();
   },
 
   methods: {
-    getCompanyList: function getCompanyList() {
+    scrll: function scrll() {},
+    getPeopleList: function getPeopleList() {
       var _this = this;
 
       this.request({
-        url: "/apply/getCompanyLists",
+        url: "/location/getPeopleLists",
         method: "get"
       }).then(function (res) {
         var data = res.data;
         if (data.status == 1) {
-          _this.companyList = data.data;
+          _this.peopleList = data.data;
         }
       });
-    },
-    getDataList: function getDataList() {
-      var _this2 = this;
-
-      var page = this.page_cur;
-      this.request({
-        url: "/location/getDevicePages",
-        method: "get",
-        params: {
-          page: page
-        }
-      }).then(function (res) {
-        var data = res.data;
-        if (data.status == 1) {
-          _this2.dataList = data.data.data;
-          _this2.page_cur = parseInt(data.data.current_page);
-          _this2.pageTotal = data.data.total;
-          _this2.page_size = data.data.per_page;
-          _this2.page_total = data.data.last_page;
-        }
-      });
-    },
-    pageChange: function pageChange(value) {
-      this.page_cur = value;
-      this.getDataList();
-    },
-    pageToFirst: function pageToFirst() {
-      this.pageChange(1);
-    },
-    pageToLast: function pageToLast() {
-      this.page_cur = this.page_total;
-      this.pageChange(this.page_total);
-    },
-    addDialogInfo: function addDialogInfo() {
-      var _this3 = this;
-
-      this.deviceData = {
-        depart_id: "",
-        name: "",
-        description: ""
-      };
-      this.diaLogTitle = "添加机具信息";
-      this.diaLogFormVisible = true;
-      this.$nextTick(function () {
-        _this3.$refs["deviceRulesRef"].clearValidate();
-      });
-    },
-    addOrEditDialog: function addOrEditDialog() {
-      var _this4 = this;
-
-      this.$refs["deviceRulesRef"].validate(function (valid) {
-        if (valid) {
-          var data = _this4.deviceData;
-          if (_this4.deviceData.description == "") {
-            _this4.deviceData.description = "暂无";
-          }
-          _this4.request({
-            url: "/location/addOrEditDevice",
-            method: "post",
-            data: data
-          }).then(function (response) {
-            var data = response.data;
-            if (data.status == 1) {
-              _this4.diaLogFormVisible = false;
-              _this4.$message({
-                type: "success",
-                message: "保存成功！"
-              });
-              _this4.getDataList();
-            }
-          });
-        } else {
-          console.log("操作失败！");
-          return false;
-        }
-      });
-    },
-    goEdit: function goEdit(id) {
-      var _this5 = this;
-
-      this.diaLogTitle = "修改机具信息";
-      this.diaLogFormVisible = true;
-      this.$nextTick(function () {
-        _this5.$refs["deviceRulesRef"].clearValidate();
-      });
-      this.request({
-        url: "/location/getDevice",
-        method: "get",
-        params: { id: id }
-      }).then(function (response) {
-        var data = response.data;
-        if (data.status == 1) {
-          _this5.deviceData = data.data;
-          if (data.data.description == "暂无") {
-            _this5.deviceData.description = "";
-          }
-        }
-      });
-    },
-    goDel: function goDel(id) {
-      var _this6 = this;
-
-      this.$confirm("您确定要删除？删除后不能恢复！", "提示", {
-        confirmButtonText: "确定",
-        cancelButtonText: "取消",
-        type: "warning",
-        customClass: "el-message-box-new"
-      }).then(function () {
-        _this6.request({
-          url: "/location/deleteDevice",
-          method: "post",
-          data: { id: id }
-        }).then(function (res) {
-          var data = res.data;
-          if (data.status == 1) {
-            _this6.$message({
-              type: "success",
-              message: "删除成功！"
-            });
-            _this6.getDataList();
-          }
-        });
-      }).catch(function () {});
     }
-    //
-
   }
 });
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-6730415a","hasScoped":false,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/views/location/device.vue
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"location"}},[_c('div',{staticClass:"el-menu-top"},[_c('el-menu',{attrs:{"router":"","default-active":"device","mode":"horizontal"}},[_c('li',{staticClass:"ptitle"},[_c('img',{attrs:{"src":__webpack_require__("1xgB")}}),_vm._v("定位管理\n      ")]),_vm._v(" "),_c('el-menu-item',{attrs:{"index":"location"}},[_vm._v("人员定位统计")]),_vm._v(" "),_c('el-menu-item',{attrs:{"index":"walldetector"}},[_vm._v("信号基站")]),_vm._v(" "),_c('el-menu-item',{attrs:{"index":"cardetector"}},[_vm._v("车载探测器")]),_vm._v(" "),_c('el-menu-item',{attrs:{"index":"locationbind"}},[_vm._v("定位从设备")]),_vm._v(" "),_c('el-menu-item',{attrs:{"index":"device"},on:{"click":_vm.pageToFirst}},[_vm._v("机具")])],1)],1),_vm._v(" "),_c('div',{staticClass:"app-page"},[_c('div',{staticClass:"app-page-container"},[_c('div',{staticClass:"app-page-select"},[_c('el-form',{attrs:{"inline":true}},[_c('el-form-item',[_c('el-button',{attrs:{"type":"primary","icon":"el-icon-plus"},on:{"click":_vm.addDialogInfo}},[_vm._v("添加机具")])],1)],1)],1),_vm._v(" "),_c('div',{staticClass:"app-table"},[_c('el-table',{attrs:{"data":_vm.dataList}},[_c('el-table-column',{attrs:{"label":"序号","width":"100"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_c('span',[_vm._v(_vm._s(scope.$index+(_vm.page_cur - 1) * _vm.page_size + 1))])]}}])}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"name","label":"名称"}}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"description","label":"详情","show-overflow-tooltip":""}}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"company","label":"公司名称"}}),_vm._v(" "),_c('el-table-column',{attrs:{"label":"操作","width":"120"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_c('div',{staticClass:"app-operation"},[_c('el-button',{staticClass:"btn-blue",attrs:{"size":"mini"},on:{"click":function($event){_vm.goEdit(scope.row.id)}}},[_vm._v("修改")]),_vm._v(" "),_c('el-button',{staticClass:"btn-red",attrs:{"size":"mini"},on:{"click":function($event){_vm.goDel(scope.row.id)}}},[_vm._v("删除")])],1)]}}])})],1),_vm._v(" "),_c('div',{staticClass:"app-pagination"},[(_vm.dataList.length !== 0)?_c('el-pagination',{staticClass:"pagination",attrs:{"layout":"slot,prev, pager, next,slot,total","page-size":this.page_size,"current-page":this.page_cur,"total":this.pageTotal,"prev-text":"上一页","next-text":"下一页"},on:{"current-change":_vm.pageChange}},[_c('button',{staticClass:"btn-first",attrs:{"type":"button"},on:{"click":_vm.pageToFirst}},[_c('span',[_vm._v("首页")])]),_vm._v(" "),_c('button',{staticClass:"btn-last",attrs:{"type":"button"},on:{"click":_vm.pageToLast}},[_c('span',[_vm._v("尾页")])])]):_vm._e()],1)],1)])]),_vm._v(" "),_c('el-dialog',{staticClass:"dialog-jiju",attrs:{"width":"700px","close-on-click-modal":false,"title":this.diaLogTitle,"visible":_vm.diaLogFormVisible},on:{"update:visible":function($event){_vm.diaLogFormVisible=$event}}},[_c('el-form',{ref:"deviceRulesRef",staticClass:"el-form-custom",attrs:{"model":_vm.deviceData,"rules":_vm.deviceRules}},[_c('el-form-item',{attrs:{"label":"公司名称：","prop":"depart_id"}},[_c('el-select',{attrs:{"placeholder":"请选择公司","clearable":""},model:{value:(_vm.deviceData.depart_id),callback:function ($$v) {_vm.$set(_vm.deviceData, "depart_id", $$v)},expression:"deviceData.depart_id"}},_vm._l((_vm.companyList),function(item){return _c('el-option',{key:item.id,attrs:{"label":item.name,"value":item.id}})}))],1),_vm._v(" "),_c('el-form-item',{attrs:{"label":"机具名称：","prop":"name"}},[_c('el-input',{attrs:{"autocomplete":"off","maxlength":"20","show-word-limit":""},model:{value:(_vm.deviceData.name),callback:function ($$v) {_vm.$set(_vm.deviceData, "name", $$v)},expression:"deviceData.name"}})],1),_vm._v(" "),_c('el-form-item',{attrs:{"label":"详情：","prop":"description"}},[_c('el-input',{attrs:{"type":"textarea","maxlength":"50","show-word-limit":""},model:{value:(_vm.deviceData.description),callback:function ($$v) {_vm.$set(_vm.deviceData, "description", $$v)},expression:"deviceData.description"}})],1),_vm._v(" "),_c('div',{staticClass:"blank"})],1),_vm._v(" "),_c('div',{staticClass:"dialog-footer",attrs:{"slot":"footer"},slot:"footer"},[_c('el-button',{on:{"click":function($event){_vm.diaLogFormVisible = false}}},[_vm._v("关闭")]),_vm._v(" "),_c('el-button',{attrs:{"type":"primary"},on:{"click":function($event){_vm.addOrEditDialog()}}},[_vm._v("确定")])],1)],1)],1)}
-var staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-62df0a6e","hasScoped":false,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/views/datav/personnel.vue
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"personnel"}},[_vm._m(0),_vm._v(" "),_c('div',{staticClass:"user-box"},[_vm._m(1),_vm._v(" "),_c('div',{staticClass:"u-right"},[_c('dv-scroll-board',{attrs:{"config":_vm.config}})],1)])])}
+var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"datav-ptitle"},[_c('h3',[_vm._v("人员进出")])])},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"u-left"},[_c('h3',[_vm._v("王小二")]),_vm._v(" "),_c('p',[_c('span',[_vm._v("ID：")]),_vm._v("325")]),_vm._v(" "),_c('p',[_c('span',[_vm._v("电话：")]),_vm._v("18766666666")]),_vm._v(" "),_c('p',[_c('span',[_vm._v("到访时间：")]),_vm._v("12:00")]),_vm._v(" "),_c('p',[_c('span',[_vm._v("身份：")]),_vm._v("工程师")])])}]
 var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ var location_device = (esExports);
-// CONCATENATED MODULE: ./src/views/location/device.vue
+/* harmony default export */ var datav_personnel = (esExports);
+// CONCATENATED MODULE: ./src/views/datav/personnel.vue
 function injectStyle (ssrContext) {
-  __webpack_require__("3p6z")
+  __webpack_require__("IY7T")
 }
 var normalizeComponent = __webpack_require__("VU/8")
 /* script */
@@ -335,15 +158,15 @@ var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
-  device,
-  location_device,
+  personnel,
+  datav_personnel,
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
   __vue_module_identifier__
 )
 
-/* harmony default export */ var views_location_device = __webpack_exports__["default"] = (Component.exports);
+/* harmony default export */ var views_datav_personnel = __webpack_exports__["default"] = (Component.exports);
 
 
 /***/ })

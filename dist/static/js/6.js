@@ -1,4 +1,18 @@
-webpackJsonp([6,12,17,25],{
+webpackJsonp([6,13,17,26],{
+
+/***/ "+/Dh":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("ezQS");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__("rjj0")("b632f23e", content, true);
+
+/***/ }),
 
 /***/ "+qFp":
 /***/ (function(module, exports, __webpack_require__) {
@@ -389,14 +403,14 @@ CanvasRenderingContext2D.prototype.fillTextVertical = function (text, x, y) {
   context.textAlign = align;
   context.textBaseline = baseline;
 };
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-6af831e2","hasScoped":false,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/views/datav/schedule.vue
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-28024896","hasScoped":false,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/views/datav/schedule.vue
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"schedule"}},[_vm._m(0),_vm._v(" "),_c('div',{ref:"proWrapper",style:(_vm.conheight),attrs:{"id":"progress"}},[_c('table',{staticClass:"lineTable zylineTable"},[_c('tr',{staticClass:"linebar"},[_vm._m(1),_vm._v(" "),_c('td',{staticClass:"tdbar"},[_c('div',{staticClass:"bar"},[_c('em',{style:({ width: _vm.cwidth + 'px' })})])])]),_vm._v(" "),_c('tr',{staticClass:"linebar"},[_vm._m(2),_vm._v(" "),_c('td',{staticClass:"tdbar"},[_c('div',{staticClass:"bar"},[_c('em',{style:({ width: _vm.cwidth + 'px' })})])])])]),_vm._v(" "),_c('div',{staticClass:"station"},[_c('canvas',{ref:"canvasStation",attrs:{"id":"canvasStation","height":"50"}},[_c('p',[_vm._v("您的系统不支持此程序!")])])]),_vm._v(" "),_c('div',{ref:"reflinebox",staticClass:"linebox"},[_c('table',{staticClass:"lineTable"},_vm._l((_vm.listSchedule),function(item,index){return (index < 3)?_c('tr',{key:item.id,staticClass:"linebar"},[_c('td',{staticStyle:{"width":"90px"}},[_c('div',{staticClass:"tdtitle",attrs:{"title":item.name}},[_vm._v(_vm._s(item.name))])]),_vm._v(" "),_c('td',{staticClass:"tdbar"},_vm._l((item.lines),function(lines){return _c('div',{key:lines.id,staticClass:"bar"},[_c('em',{style:({ width: _vm.cwidth + 'px' }),domProps:{"innerHTML":_vm._s(_vm.lineFill(lines.lists, lines.name))}},[_c('b',[_vm._v(_vm._s(lines.name))])]),_vm._v(" "),_c('span',[_vm._v(_vm._s(lines.name))])])}))]):_vm._e()})),_vm._v(" "),_c('div',{staticClass:"clear"})]),_vm._v(" "),_vm._m(3)])])}
 var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"datav-ptitle"},[_c('h3',[_vm._v("项目进度")])])},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('td',{staticStyle:{"width":"90px"}},[_c('div',{staticClass:"tdtitle",attrs:{"title":"左线"}},[_vm._v("左线")])])},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('td',{staticStyle:{"width":"90px"}},[_c('div',{staticClass:"tdtitle",attrs:{"title":"右线"}},[_vm._v("右线")])])},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"lineboxwel"},[_c('span',[_c('em',{staticClass:"a1"}),_vm._v("轨道线")]),_vm._v(" "),_c('span',[_c('em',{staticClass:"a2"}),_vm._v("施工完成")]),_vm._v(" "),_c('span',[_c('em',{staticClass:"a3"}),_vm._v("施工未完成")])])}]
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ var datav_schedule = (esExports);
 // CONCATENATED MODULE: ./src/views/datav/schedule.vue
 function injectStyle (ssrContext) {
-  __webpack_require__("oLdN")
+  __webpack_require__("x23C")
 }
 var normalizeComponent = __webpack_require__("VU/8")
 /* script */
@@ -769,14 +783,14 @@ var monitors_Component = monitors_normalizeComponent(
 
   }
 });
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-5c102288","hasScoped":false,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/views/datav/projectIntro.vue
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-da5a513c","hasScoped":false,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/views/datav/projectIntro.vue
 var projectIntro_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"project-intro"}},[_c('div',{staticClass:"intro-box"},[_vm._m(0),_vm._v(" "),_c('div',{staticClass:"intro-info"},[_c('el-scrollbar',{staticStyle:{"height":"100%"}},[_vm._v("\n        无锡地铁4号线一期工程起自刘潭站，串联了\n        城北商务区、河埒商务区、蠡湖新城和太湖\n        新城，穿越惠山区、梁溪区、滨湖区三个板\n        块，至博览中心站，线路全长24.4km，全部 为地下线，设站 18\n        座。线路北端设天河停车 场，南端设具区路车辆段，在金匮公园设一\n        座主变电所。已于2017年全面开工，预计 2021年开通运营。")])],1),_vm._v(" "),_vm._m(1),_vm._v(" "),_vm._m(2)]),_vm._v(" "),_vm._m(3)])}
-var projectIntro_staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"datav-ptitle",staticStyle:{"padding-top":"0"}},[_c('h3',[_vm._v("项目介绍")])])},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"datav-ptitle"},[_c('h3',[_vm._v("项目概况")])])},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"intro-item"},[_c('p',[_c('i'),_vm._v("项目位置："),_c('span',[_vm._v("无锡")])]),_vm._v(" "),_c('p',[_c('i'),_vm._v("建设单位："),_c('span',[_vm._v("中铁十七局")])]),_vm._v(" "),_c('p',[_c('i'),_vm._v("设计单位："),_c('span',[_vm._v("中铁十七局")])]),_vm._v(" "),_c('p',[_c('i'),_vm._v("监管单位："),_c('span',[_vm._v("无锡电信")])]),_vm._v(" "),_c('p',[_c('i'),_vm._v("总包单位："),_c('span',[_vm._v("纳新科技")])]),_vm._v(" "),_c('p',[_c('i'),_vm._v("建筑面积："),_c('span',[_vm._v("18万平方米")])])])},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"intro-box"},[_c('div',{staticClass:"subwap"},[_c('div',{staticClass:"dot dot1"},[_c('i')]),_vm._v(" "),_c('div',{staticClass:"dname1"},[_vm._v("刘潭")]),_vm._v(" "),_c('div',{staticClass:"dot dot2"},[_c('i')]),_vm._v(" "),_c('div',{staticClass:"dname2"},[_vm._v("广石路")]),_vm._v(" "),_c('div',{staticClass:"dot dot3"},[_c('i')]),_vm._v(" "),_c('div',{staticClass:"dname3"},[_vm._v("黄巷站")]),_vm._v(" "),_c('div',{staticClass:"dot dot4"},[_c('i')]),_vm._v(" "),_c('div',{staticClass:"dname4"},[_vm._v("盛岸站")]),_vm._v(" "),_c('div',{staticClass:"dot dot5"},[_c('i')]),_vm._v(" "),_c('div',{staticClass:"dname5"},[_vm._v("惠山古镇站")]),_vm._v(" "),_c('div',{staticClass:"dot dot6"},[_c('i')]),_vm._v(" "),_c('div',{staticClass:"dname6"},[_vm._v("青山湾荣院站")]),_vm._v(" "),_c('div',{staticClass:"dot dot7"},[_c('i')]),_vm._v(" "),_c('div',{staticClass:"dname7"},[_vm._v("河埒口站")]),_vm._v(" "),_c('div',{staticClass:"dot dot8"},[_c('i')]),_vm._v(" "),_c('div',{staticClass:"dname8"},[_vm._v("西园弄站")]),_vm._v(" "),_c('div',{staticClass:"dot dot9"},[_c('i')]),_vm._v(" "),_c('div',{staticClass:"dname9"},[_vm._v("体育中心站")]),_vm._v(" "),_c('div',{staticClass:"dot dot10"},[_c('i')]),_vm._v(" "),_c('div',{staticClass:"dname10"},[_vm._v("夏家边站")]),_vm._v(" "),_c('div',{staticClass:"dot dot11"},[_c('i')]),_vm._v(" "),_c('div',{staticClass:"dname11"},[_vm._v("蠡湖大桥站")]),_vm._v(" "),_c('div',{staticClass:"dot dot12"},[_c('i')]),_vm._v(" "),_c('div',{staticClass:"dname12"},[_vm._v("大剧院站")]),_vm._v(" "),_c('div',{staticClass:"dot dot13"},[_c('i')]),_vm._v(" "),_c('div',{staticClass:"dname13"},[_vm._v("五湖大道站")]),_vm._v(" "),_c('div',{staticClass:"dot dot14"},[_c('i')]),_vm._v(" "),_c('div',{staticClass:"dname14"},[_vm._v("周新苑站")]),_vm._v(" "),_c('div',{staticClass:"dot dot15"},[_c('i')]),_vm._v(" "),_c('div',{staticClass:"dname15"},[_vm._v("市民中心站")]),_vm._v(" "),_c('div',{staticClass:"dot dot16"},[_c('i')]),_vm._v(" "),_c('div',{staticClass:"dname16"},[_vm._v("吴都路站")]),_vm._v(" "),_c('div',{staticClass:"dot dot17"},[_c('i')]),_vm._v(" "),_c('div',{staticClass:"dname17"},[_vm._v("丰润道站")]),_vm._v(" "),_c('div',{staticClass:"dot dot18"},[_c('i')]),_vm._v(" "),_c('div',{staticClass:"dname18"},[_vm._v("博览中心站")])])])}]
+var projectIntro_staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"datav-ptitle",staticStyle:{"padding-top":"0"}},[_c('h3',[_vm._v("项目介绍")])])},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"datav-ptitle"},[_c('h3',[_vm._v("项目概况")])])},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"intro-item"},[_c('p',[_c('i'),_vm._v("项目位置："),_c('span',[_vm._v("无锡")])]),_vm._v(" "),_c('p',[_c('i'),_vm._v("建设单位："),_c('span',[_vm._v("中铁十七局")])]),_vm._v(" "),_c('p',[_c('i'),_vm._v("设计单位："),_c('span',[_vm._v("中铁十七局")])]),_vm._v(" "),_c('p',[_c('i'),_vm._v("监管单位："),_c('span',[_vm._v("无锡电信")])]),_vm._v(" "),_c('p',[_c('i'),_vm._v("总包单位："),_c('span',[_vm._v("纳新科技")])]),_vm._v(" "),_c('p',[_c('i'),_vm._v("建筑面积："),_c('span',[_vm._v("18万平方米")])])])},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"intro-box"},[_c('div',{staticClass:"subwap"},[_c('div',{staticClass:"dot dot1"},[_c('i')]),_vm._v(" "),_c('div',{staticClass:"dname1"},[_vm._v("刘潭")]),_vm._v(" "),_c('div',{staticClass:"dot dot2"},[_c('i')]),_vm._v(" "),_c('div',{staticClass:"dname2"},[_vm._v("广石路")]),_vm._v(" "),_c('div',{staticClass:"v-dot3"},[_c('i')]),_vm._v(" "),_c('div',{staticClass:"dname3"},[_vm._v("黄巷站")]),_vm._v(" "),_c('div',{staticClass:"v-dot4"},[_c('i')]),_vm._v(" "),_c('div',{staticClass:"dname4"},[_vm._v("盛岸站")]),_vm._v(" "),_c('div',{staticClass:"dot dot5"},[_c('i')]),_vm._v(" "),_c('div',{staticClass:"dname5"},[_vm._v("惠山古镇站")]),_vm._v(" "),_c('div',{staticClass:"dot dot6"},[_c('i')]),_vm._v(" "),_c('div',{staticClass:"dname6"},[_vm._v("青山湾荣院站")]),_vm._v(" "),_c('div',{staticClass:"dot dot7"},[_c('i')]),_vm._v(" "),_c('div',{staticClass:"dname7"},[_vm._v("河埒口站")]),_vm._v(" "),_c('div',{staticClass:"dot dot8"},[_c('i')]),_vm._v(" "),_c('div',{staticClass:"dname8"},[_vm._v("西园弄站")]),_vm._v(" "),_c('div',{staticClass:"dot dot9"},[_c('i')]),_vm._v(" "),_c('div',{staticClass:"dname9"},[_vm._v("体育中心站")]),_vm._v(" "),_c('div',{staticClass:"dot dot10"},[_c('i')]),_vm._v(" "),_c('div',{staticClass:"dname10"},[_vm._v("夏家边站")]),_vm._v(" "),_c('div',{staticClass:"dot dot11"},[_c('i')]),_vm._v(" "),_c('div',{staticClass:"dname11"},[_vm._v("蠡湖大桥站")]),_vm._v(" "),_c('div',{staticClass:"dot dot12"},[_c('i')]),_vm._v(" "),_c('div',{staticClass:"dname12"},[_vm._v("大剧院站")]),_vm._v(" "),_c('div',{staticClass:"dot dot13"},[_c('i')]),_vm._v(" "),_c('div',{staticClass:"dname13"},[_vm._v("五湖大道站")]),_vm._v(" "),_c('div',{staticClass:"dot dot14"},[_c('i')]),_vm._v(" "),_c('div',{staticClass:"dname14"},[_vm._v("周新苑站")]),_vm._v(" "),_c('div',{staticClass:"dot dot15"},[_c('i')]),_vm._v(" "),_c('div',{staticClass:"dname15"},[_vm._v("市民中心站")]),_vm._v(" "),_c('div',{staticClass:"dot dot16"},[_c('i')]),_vm._v(" "),_c('div',{staticClass:"dname16"},[_vm._v("吴都路站")]),_vm._v(" "),_c('div',{staticClass:"dot dot17"},[_c('i')]),_vm._v(" "),_c('div',{staticClass:"dname17"},[_vm._v("丰润道站")]),_vm._v(" "),_c('div',{staticClass:"dot dot18"},[_c('i')]),_vm._v(" "),_c('div',{staticClass:"dname18"},[_vm._v("博览中心站")])])])}]
 var projectIntro_esExports = { render: projectIntro_render, staticRenderFns: projectIntro_staticRenderFns }
 /* harmony default export */ var datav_projectIntro = (projectIntro_esExports);
 // CONCATENATED MODULE: ./src/views/datav/projectIntro.vue
 function projectIntro_injectStyle (ssrContext) {
-  __webpack_require__("tPyl")
+  __webpack_require__("y0fz")
 }
 var projectIntro_normalizeComponent = __webpack_require__("VU/8")
 /* script */
@@ -930,14 +944,14 @@ var operation_Component = operation_normalizeComponent(
 
   methods: {}
 });
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-78baee1d","hasScoped":false,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/views/datav/videolist.vue
-var videolist_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"videolist"}},[_c('div',{staticClass:"videos"},[_c('div',{staticClass:"grid-content"},[_c('img',{attrs:{"src":__webpack_require__("BYZm")}})]),_vm._v(" "),_c('div',{staticClass:"grid-content"},[_c('img',{attrs:{"src":__webpack_require__("BYZm")}})]),_vm._v(" "),_c('div',{staticClass:"grid-content"},[_c('img',{attrs:{"src":__webpack_require__("BYZm")}})]),_vm._v(" "),_c('div',{staticClass:"grid-content"},[_c('img',{attrs:{"src":__webpack_require__("BYZm")}})])])])}
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-5a7975ba","hasScoped":false,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/views/datav/videolist.vue
+var videolist_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"videolist"}},[_c('div',{staticClass:"videos"},[_c('div',{staticClass:"grid-content"},[_c('img',{attrs:{"src":__webpack_require__("HnX2")}})]),_vm._v(" "),_c('div',{staticClass:"grid-content"},[_c('img',{attrs:{"src":__webpack_require__("HRsq")}})]),_vm._v(" "),_c('div',{staticClass:"grid-content"},[_c('img',{attrs:{"src":__webpack_require__("44+u")}})]),_vm._v(" "),_c('div',{staticClass:"grid-content"},[_c('img',{attrs:{"src":__webpack_require__("/m6F")}})])])])}
 var videolist_staticRenderFns = []
 var videolist_esExports = { render: videolist_render, staticRenderFns: videolist_staticRenderFns }
 /* harmony default export */ var datav_videolist = (videolist_esExports);
 // CONCATENATED MODULE: ./src/views/datav/videolist.vue
 function videolist_injectStyle (ssrContext) {
-  __webpack_require__("9NAf")
+  __webpack_require__("dBn7")
 }
 var videolist_normalizeComponent = __webpack_require__("VU/8")
 /* script */
@@ -1026,14 +1040,14 @@ var diagram = __webpack_require__("xmk4");
 
   methods: {}
 });
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-da18b850","hasScoped":false,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/views/datav/index.vue
-var datav_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"data-view"}},[_c('dv-full-screen-container',[_c('top-header')],1)],1)}
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-2c6c83ab","hasScoped":false,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/views/datav/index.vue
+var datav_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"data-view"}},[_c('dv-full-screen-container',[_c('top-header'),_vm._v(" "),_c('div',{staticClass:"main-content"},[_c('div',{staticClass:"block-left-right-content"},[_c('project-intro'),_vm._v(" "),_c('div',{staticClass:"block-top-bottom-content"},[_c('div',{staticClass:"block-diagram"},[_c('diagram')],1),_vm._v(" "),_c('div',{staticClass:"block-diagram-content"},[_c('videolist'),_vm._v(" "),_c('operation')],1)])],1),_vm._v(" "),_c('div',{staticClass:"block-two-content"},[_c('schedule'),_vm._v(" "),_c('personnel'),_vm._v(" "),_c('monitors')],1)])],1)],1)}
 var datav_staticRenderFns = []
 var datav_esExports = { render: datav_render, staticRenderFns: datav_staticRenderFns }
 /* harmony default export */ var views_datav = (datav_esExports);
 // CONCATENATED MODULE: ./src/views/datav/index.vue
 function datav_injectStyle (ssrContext) {
-  __webpack_require__("UH3z")
+  __webpack_require__("+/Dh")
 }
 var datav_normalizeComponent = __webpack_require__("VU/8")
 /* script */
@@ -1077,24 +1091,18 @@ exports.push([module.i, "\n#monitors {  width: 33.3%;\r\n  position: relative;\n
 
 /***/ }),
 
-/***/ "9NAf":
+/***/ "CQ20":
 /***/ (function(module, exports, __webpack_require__) {
 
-// style-loader: Adds some css to the DOM by adding a <style> tag
+exports = module.exports = __webpack_require__("FZ+f")(false);
+// imports
 
-// load the styles
-var content = __webpack_require__("WVAZ");
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__("rjj0")("6a63e6d3", content, true);
 
-/***/ }),
+// module
+exports.push([module.i, "\n#personnel {\r\n  background: #01023a;\r\n  color: #fff;\r\n  width: 33.3%;\r\n  height: 33.3%;\r\n  position: relative;\n}\n.user-box {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: justify;\r\n      -ms-flex-pack: justify;\r\n          justify-content: space-between;\r\n  padding: 20px;\n}\n.u-left {\r\n  width: 30%;\r\n  background: url(" + __webpack_require__("9d41") + ") no-repeat;\r\n  background-size: 100% auto;\r\n  min-height: 225px;\n}\n.u-left h3 {\r\n  text-align: center;\r\n  padding-top: 15px;\r\n  margin-bottom: 30px;\n}\n.u-left p {\r\n  text-align: center;\r\n  padding-bottom: 15px;\n}\n.u-left p span {\r\n  display: inline-block;\n}\n.u-right {\r\n  width: 65%;\n}\n.u-right li {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: justify;\r\n      -ms-flex-pack: justify;\r\n          justify-content: space-between;\r\n  -webkit-box-orient: horizontal;\r\n  -webkit-box-direction: normal;\r\n      -ms-flex-direction: row;\r\n          flex-direction: row;\r\n  text-align: center;\r\n  border-top: 1px #204f96 dashed;\r\n  height: 39px;\r\n  line-height: 39px;\r\n  margin-right: 20px;\n}\n.u-right .header div {\r\n  text-align: center;\r\n  width: 20%;\r\n  font-size: 16px;\n}\n.u-right li.item div {\r\n  width: 30%;\r\n  overflow: hidden;\r\n  text-overflow: ellipsis;\n}\n.u-right li.p0 div {\r\n  background: #06074b;\n}\n.u-right li.p2 div {\r\n  background: #06074b;\n}\n.u-right li.p4 div {\r\n  background: #06074b;\n}\n.u-right li.p6 div {\r\n  background: #06074b;\n}\r\n", ""]);
 
-/***/ "BYZm":
-/***/ (function(module, exports, __webpack_require__) {
+// exports
 
-module.exports = __webpack_require__.p + "static/img/video.1f0b155.jpg";
 
 /***/ }),
 
@@ -1110,6 +1118,20 @@ exports.push([module.i, "\n#diagram {\r\n  position: absolute;\r\n  width: 66.6%
 
 // exports
 
+
+/***/ }),
+
+/***/ "IY7T":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("CQ20");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__("rjj0")("50914377", content, true);
 
 /***/ }),
 
@@ -1185,16 +1207,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     return {
       peopleList: [],
       config: {
-        header: ["ID", "电话", "到访时间", "身份"],
-        data: [["7899908", "1876666666", "12:00", "工程师"], ["7899908", "1876666666", "12:00", "工程师"], ["7899908", "1876666666", "12:00", "工程师"], ["7899908", "1876666666", "12:00", "工程师"], ["7899908", "1876666666", "12:00", "工程师"], ["7899908", "1876666666", "12:00", "工程师"], ["7899908", "1876666666", "12:00", "工程师"]],
-        index: true,
-        columnWidth: [50],
-        align: ["center"],
-        rowNum: 7,
-        headerBGC: "#1981f6",
+        header: ["ID", "姓名", "电话", "到访", "身份"],
+        data: [["325", "万小龙", "18766666666", "12:00", "工程师"], ["325", "李云", "18766666666", "12:00", "工程师"], ["325", "李云", "18766666666", "12:00", "工程师"], ["325", "李云", "18766666666", "12:00", "工程师"], ["325", "李云", "18766666666", "12:00", "工程师"], ["325", "李云", "18766666666", "12:00", "工程师"], ["325", "李云", "18766666666", "12:00", "工程师"], ["325", "李云", "18766666666", "12:00", "工程师"], ["325", "李云", "18766666666", "12:00", "工程师"], ["325", "李云", "18766666666", "12:00", "工程师"], ["325", "李云", "18766666666", "12:00", "工程师"], ["325", "李云", "18766666666", "12:00", "工程师"], ["325", "李云", "18766666666", "12:00", "工程师"]],
+        // indexHeader:'序号',
+        // index: true,
+        columnWidth: [70, 70, 120],
+        rowNum: 5,
+        headerBGC: "#01023a",
         headerHeight: 45,
-        oddRowBGC: "rgba(0, 44, 81, 0.8)",
-        evenRowBGC: "rgba(10, 29, 50, 0.8)"
+        oddRowBGC: "#01023a",
+        evenRowBGC: "#06074b"
       }
     };
   },
@@ -1219,14 +1241,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     }
   }
 });
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-6b16e5a0","hasScoped":false,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/views/datav/personnel.vue
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"personnel"}},[_vm._m(0),_vm._v(" "),_c('div',{staticClass:"scroll-board"}),_vm._v(" "),_c('div',{staticClass:"user-box"},[_vm._m(1),_vm._v(" "),_c('div',{staticClass:"u-right"},[_c('el-scrollbar',{staticStyle:{"height":"100%"}},[_c('ul',[_c('li',[_c('div',[_vm._v("王小二")]),_vm._v(" "),_c('div',[_vm._v("工程师")]),_vm._v(" "),_c('div',[_vm._v("12:00")])]),_vm._v(" "),_c('li',[_c('div',[_vm._v("王小二2")]),_vm._v(" "),_c('div',[_vm._v("工程师")]),_vm._v(" "),_c('div',[_vm._v("12:00")])]),_vm._v(" "),_c('li',[_c('div',[_vm._v("王小二3")]),_vm._v(" "),_c('div',[_vm._v("工程师")]),_vm._v(" "),_c('div',[_vm._v("12:00")])]),_vm._v(" "),_c('li',[_c('div',[_vm._v("王小二4")]),_vm._v(" "),_c('div',[_vm._v("工程师")]),_vm._v(" "),_c('div',[_vm._v("12:00")])]),_vm._v(" "),_c('li',[_c('div',[_vm._v("王小二5")]),_vm._v(" "),_c('div',[_vm._v("工程师")]),_vm._v(" "),_c('div',[_vm._v("12:00")])]),_vm._v(" "),_c('li',[_c('div',[_vm._v("王小二6")]),_vm._v(" "),_c('div',[_vm._v("工程师")]),_vm._v(" "),_c('div',[_vm._v("12:00")])]),_vm._v(" "),_c('li',[_c('div',[_vm._v("王小二7")]),_vm._v(" "),_c('div',[_vm._v("工程师")]),_vm._v(" "),_c('div',[_vm._v("12:00")])])])])],1)])])}
-var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"datav-ptitle"},[_c('h3',[_vm._v("人员进出")])])},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"u-left"},[_c('h3',[_vm._v("王小二")]),_vm._v(" "),_c('p',[_c('span',[_vm._v("ID：")]),_vm._v("7899908")]),_vm._v(" "),_c('p',[_c('span',[_vm._v("电话：")]),_vm._v("1876666666")]),_vm._v(" "),_c('p',[_c('span',[_vm._v("到访时间：")]),_vm._v("12:00")]),_vm._v(" "),_c('p',[_c('span',[_vm._v("身份：")]),_vm._v("工程师")])])}]
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-62df0a6e","hasScoped":false,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/views/datav/personnel.vue
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"personnel"}},[_vm._m(0),_vm._v(" "),_c('div',{staticClass:"user-box"},[_vm._m(1),_vm._v(" "),_c('div',{staticClass:"u-right"},[_c('dv-scroll-board',{attrs:{"config":_vm.config}})],1)])])}
+var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"datav-ptitle"},[_c('h3',[_vm._v("人员进出")])])},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"u-left"},[_c('h3',[_vm._v("王小二")]),_vm._v(" "),_c('p',[_c('span',[_vm._v("ID：")]),_vm._v("325")]),_vm._v(" "),_c('p',[_c('span',[_vm._v("电话：")]),_vm._v("18766666666")]),_vm._v(" "),_c('p',[_c('span',[_vm._v("到访时间：")]),_vm._v("12:00")]),_vm._v(" "),_c('p',[_c('span',[_vm._v("身份：")]),_vm._v("工程师")])])}]
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ var datav_personnel = (esExports);
 // CONCATENATED MODULE: ./src/views/datav/personnel.vue
 function injectStyle (ssrContext) {
-  __webpack_require__("kAKD")
+  __webpack_require__("IY7T")
 }
 var normalizeComponent = __webpack_require__("VU/8")
 /* script */
@@ -1255,7 +1277,7 @@ var Component = normalizeComponent(
 
 /***/ }),
 
-/***/ "Psoz":
+/***/ "Q9zW":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("FZ+f")(false);
@@ -1263,7 +1285,7 @@ exports = module.exports = __webpack_require__("FZ+f")(false);
 
 
 // module
-exports.push([module.i, "\n#project-intro {\r\n  position: relative;\r\n  width: 33.3%;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-orient: horizontal;\r\n  -webkit-box-direction: normal;\r\n      -ms-flex-direction: row;\r\n          flex-direction: row;\r\n  -webkit-box-pack: justify;\r\n      -ms-flex-pack: justify;\r\n          justify-content: space-between;\n}\n.intro-box {\r\n  width: 50%;\r\n  -webkit-box-flex: 1;\r\n      -ms-flex: 1;\r\n          flex: 1;\n}\n.intro-info {\r\n  height: 40%;\r\n  overflow: hidden;\r\n  margin: 15px 30px;\r\n  background: rgba(8, 19, 87, 0.6);\r\n  padding: 15px;\r\n  line-height: 1.8;\n}\n.intro-item {\r\n  overflow: hidden;\r\n  margin: 15px 30px;\r\n  background: rgba(8, 19, 87, 0.3);\r\n  padding: 15px;\r\n  line-height: 1.8;\n}\n.intro-item i {\r\n  display: inline-block;\r\n  height: 5px;\r\n  width: 5px;\r\n  border-radius: 100%;\r\n  vertical-align: middle;\r\n  background: #15e4ff;\r\n  margin-right: 5px;\n}\n#project-intro .el-scrollbar__wrap {\r\n  overflow-x: hidden;\n}\n.subwap {\r\n  position: relative;\r\n  z-index: 1000;\r\n  height: 600px;\r\n  background: url(" + __webpack_require__("M73T") + ") no-repeat 50px center;\r\n  background-size: auto 550px;\n}\n.subwap .dot {\r\n  padding: 2px;\r\n  border-radius: 100%;\r\n  border: 1px rgba(255, 255, 255, 0.5) solid;\r\n  position: absolute;\n}\n.subwap .dot i {\r\n  height: 5px;\r\n  width: 5px;\r\n  background: #fff;\r\n  border-radius: 100%;\r\n  display: block;\n}\n.dot1 {\r\n  left: 192px;\r\n  top: 28px;\n}\n.dname1 {\r\n  position: absolute;\r\n  left: 210px;\r\n  top: 25px;\n}\n.dot2 {\r\n  left: 160px;\r\n  top: 46px;\n}\n.dname2 {\r\n  position: absolute;\r\n  left: 100px;\r\n  top: 42px;\n}\n.dot3 {\r\n  top: 96px;\r\n  left: 136px;\n}\n.dname3 {\r\n  position: absolute;\r\n  top: 93px;\r\n  left: 156px;\n}\n.dot4 {\r\n  top: 136px;\r\n  left: 100px;\n}\n.dname4 {\r\n  position: absolute;\r\n  top: 132px;\r\n  left: 50px;\n}\n.dot5 {\r\n  top: 170px;\r\n  left: 108px;\n}\n.dname5 {\r\n  position: absolute;\r\n  top: 168px;\r\n  left: 25px;\n}\n.dot6 {\r\n  top: 220px;\r\n  left: 95px;\n}\n.dname6 {\r\n  position: absolute;\r\n  top: 216px;\r\n  left: 115px;\n}\n.dot7 {\r\n  top: 260px;\r\n  left: 70px;\n}\n.dname7 {\r\n  position: absolute;\r\n  top: 258px;\r\n  left: 5px;\n}\n.dot8 {\r\n  top: 300px;\r\n  left: 69px;\n}\n.dname8 {\r\n  position: absolute;\r\n  top: 298px;\r\n  left: 5px;\n}\n.dot9 {\r\n  top: 330px;\r\n  left: 70px;\n}\n.dname9 {\r\n  position: absolute;\r\n  top: 328px;\r\n  left: 90px;\n}\n.dot10 {\r\n  top: 365px;\r\n  left: 63px;\n}\n.dname10 {\r\n  position: absolute;\r\n  top: 360px;\r\n  left: 0px;\n}\n.dot11 {\r\n  top: 392px;\r\n  left: 82px;\n}\n.dname11 {\r\n  position: absolute;\r\n  top: 400px;\r\n  left: 10px;\n}\n.dot12 {\r\n  top: 418px;\r\n  left: 124px;\n}\n.dname12 {\r\n  position: absolute;\r\n  top: 414px;\r\n  left: 144px;\n}\n.dot13 {\r\n  top: 444px;\r\n  left: 154px;\n}\n.dname13 {\r\n  position: absolute;\r\n  top: 454px;\r\n  left: 84px;\n}\n.dot14 {\r\n  top: 455px;\r\n  left: 188px;\n}\n.dname14 {\r\n  position: absolute;\r\n  top: 453px;\r\n  left: 212px;\n}\n.dot15 {\r\n  top: 490px;\r\n  left: 204px;\n}\n.dname15 {\r\n  position: absolute;\r\n  top: 487px;\r\n  left: 121px;\n}\n.dot16 {\r\n  top: 520px;\r\n  left: 209px;\n}\n.dname16 {\r\n  position: absolute;\r\n  top: 517px;\r\n  left: 144px;\n}\n.dot17 {\r\n  top: 558px;\r\n  left: 224px;\n}\n.dname17 {\r\n  position: absolute;\r\n  top: 557px;\r\n  left: 160px;\n}\n.dot18 {\r\n  top: 555px;\r\n  left: 249px;\n}\n.dname18 {\r\n  position: absolute;\r\n  top: 530px;\r\n  left: 244px;\n}\r\n", ""]);
+exports.push([module.i, "\n#project-intro {\r\n  position: relative;\r\n  width: 33.3%;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-orient: horizontal;\r\n  -webkit-box-direction: normal;\r\n      -ms-flex-direction: row;\r\n          flex-direction: row;\r\n  -webkit-box-pack: justify;\r\n      -ms-flex-pack: justify;\r\n          justify-content: space-between;\n}\n.intro-box {\r\n  width: 50%;\r\n  -webkit-box-flex: 1;\r\n      -ms-flex: 1;\r\n          flex: 1;\n}\n.intro-info {\r\n  height: 40%;\r\n  overflow: hidden;\r\n  margin: 15px 30px;\r\n  background: rgba(8, 19, 87, 0.6);\r\n  padding: 15px;\r\n  line-height: 1.8;\n}\n.intro-item {\r\n  overflow: hidden;\r\n  margin: 15px 30px;\r\n  background: rgba(8, 19, 87, 0.3);\r\n  padding: 15px;\r\n  line-height: 1.8;\n}\n.intro-item i {\r\n  display: inline-block;\r\n  height: 5px;\r\n  width: 5px;\r\n  border-radius: 100%;\r\n  vertical-align: middle;\r\n  background: #15e4ff;\r\n  margin-right: 5px;\n}\n#project-intro .el-scrollbar__wrap {\r\n  overflow-x: hidden;\n}\n.subwap {\r\n  position: relative;\r\n  z-index: 1000;\r\n  height: 600px;\r\n  background: url(" + __webpack_require__("M73T") + ") no-repeat 50px center;\r\n  background-size: auto 550px;\n}\n.subwap .dot {\r\n  padding: 2px;\r\n  border-radius: 100%;\r\n  border: 1px rgba(255, 255, 255, 0.5) solid;\r\n  position: absolute;\n}\n.subwap .dot i {\r\n  height: 5px;\r\n  width: 5px;\r\n  background: #fff;\r\n  border-radius: 100%;\r\n  display: block;\n}\n.subwap .dots {\r\n  padding: 2px;\r\n  border-radius: 100%;\r\n  border: 1px #f7de0f solid;\r\n  position: absolute;\n}\n.subwap .dots i {\r\n  height: 5px;\r\n  width: 5px;\r\n  background: #f7de0f;\r\n  border-radius: 100%;\r\n  display: block;\n}\n.dot1 {\r\n  left: 192px;\r\n  top: 28px;\n}\n.dname1 {\r\n  position: absolute;\r\n  left: 210px;\r\n  top: 25px;\n}\n.dot2 {\r\n  left: 160px;\r\n  top: 46px;\n}\n.dname2 {\r\n  position: absolute;\r\n  left: 100px;\r\n  top: 42px;\n}\n.dot3 {\r\n  top: 96px;\r\n  left: 136px;\n}\n.dname3 {\r\n  position: absolute;\r\n  top: 93px;\r\n  left: 156px;\n}\n.v-dot3 {\r\n  top: 96px;\r\n  left: 136px;\r\n  position: absolute;\r\n  width: 14px;\r\n  height: 14px;\r\n  background-color: #ffff00;\r\n  border-radius: 50%;\n}\n.v-dot3:before {\r\n  content: \"\";\r\n  display: block;\r\n  width: 14px;\r\n  height: 14px;\r\n  border-radius: 50%;\r\n  opacity: 0.7;\r\n  background-color: #ffff00;\r\n   -webkit-animation: scaless 1s infinite cubic-bezier(0, 0, 0.49, 1.02);\r\n           animation: scaless 1s infinite cubic-bezier(0, 0, 0.49, 1.02);\n}\n.v-dot4 {\r\n   top: 136px;\r\n  left: 100px;\r\n  position: absolute;\r\n  width: 14px;\r\n  height: 14px;\r\n  background-color: #ffff00;\r\n  border-radius: 50%;\n}\n.v-dot4:before {\r\n  content: \"\";\r\n  display: block;\r\n  width: 14px;\r\n  height: 14px;\r\n  border-radius: 50%;\r\n  opacity: 0.7;\r\n  background-color: #ffff00;\r\n   -webkit-animation: scaless 1s infinite cubic-bezier(0, 0, 0.49, 1.02);\r\n           animation: scaless 1s infinite cubic-bezier(0, 0, 0.49, 1.02);\n}\n.dot4 {\r\n  top: 136px;\r\n  left: 100px;\n}\n.dname4 {\r\n  position: absolute;\r\n  top: 132px;\r\n  left: 50px;\n}\n.dot5 {\r\n  top: 170px;\r\n  left: 108px;\n}\n.dname5 {\r\n  position: absolute;\r\n  top: 168px;\r\n  left: 25px;\n}\n.dot6 {\r\n  top: 220px;\r\n  left: 95px;\n}\n.dname6 {\r\n  position: absolute;\r\n  top: 216px;\r\n  left: 115px;\n}\n.dot7 {\r\n  top: 260px;\r\n  left: 70px;\n}\n.dname7 {\r\n  position: absolute;\r\n  top: 258px;\r\n  left: 5px;\n}\n.dot8 {\r\n  top: 300px;\r\n  left: 69px;\n}\n.dname8 {\r\n  position: absolute;\r\n  top: 298px;\r\n  left: 5px;\n}\n.dot9 {\r\n  top: 330px;\r\n  left: 70px;\n}\n.dname9 {\r\n  position: absolute;\r\n  top: 328px;\r\n  left: 90px;\n}\n.dot10 {\r\n  top: 365px;\r\n  left: 63px;\n}\n.dname10 {\r\n  position: absolute;\r\n  top: 360px;\r\n  left: 0px;\n}\n.dot11 {\r\n  top: 392px;\r\n  left: 82px;\n}\n.dname11 {\r\n  position: absolute;\r\n  top: 400px;\r\n  left: 10px;\n}\n.dot12 {\r\n  top: 418px;\r\n  left: 124px;\n}\n.dname12 {\r\n  position: absolute;\r\n  top: 414px;\r\n  left: 144px;\n}\n.dot13 {\r\n  top: 444px;\r\n  left: 154px;\n}\n.dname13 {\r\n  position: absolute;\r\n  top: 454px;\r\n  left: 84px;\n}\n.dot14 {\r\n  top: 455px;\r\n  left: 188px;\n}\n.dname14 {\r\n  position: absolute;\r\n  top: 453px;\r\n  left: 212px;\n}\n.dot15 {\r\n  top: 490px;\r\n  left: 204px;\n}\n.dname15 {\r\n  position: absolute;\r\n  top: 487px;\r\n  left: 121px;\n}\n.dot16 {\r\n  top: 520px;\r\n  left: 209px;\n}\n.dname16 {\r\n  position: absolute;\r\n  top: 517px;\r\n  left: 144px;\n}\n.dot17 {\r\n  top: 558px;\r\n  left: 224px;\n}\n.dname17 {\r\n  position: absolute;\r\n  top: 557px;\r\n  left: 160px;\n}\n.dot18 {\r\n  top: 555px;\r\n  left: 249px;\n}\n.dname18 {\r\n  position: absolute;\r\n  top: 530px;\r\n  left: 244px;\n}\n@-webkit-keyframes scales {\n0% {\r\n    -webkit-transform: scale(1);\r\n            transform: scale(1);\n}\n50%,\r\n  75% {\r\n    -webkit-transform: scale(2);\r\n            transform: scale(2);\n}\n78%,\r\n  100% {\r\n    opacity: 0;\n}\n}\n@keyframes scales {\n0% {\r\n    -webkit-transform: scale(1);\r\n            transform: scale(1);\n}\n50%,\r\n  75% {\r\n    -webkit-transform: scale(2);\r\n            transform: scale(2);\n}\n78%,\r\n  100% {\r\n    opacity: 0;\n}\n}\n@-webkit-keyframes scaless {\n0% {\r\n    -webkit-transform: scale(1);\r\n            transform: scale(1);\n}\n50%,\r\n  75% {\r\n    -webkit-transform: scale(3);\r\n            transform: scale(3);\n}\n78%,\r\n  100% {\r\n    opacity: 0;\n}\n}\n@keyframes scaless {\n0% {\r\n    -webkit-transform: scale(1);\r\n            transform: scale(1);\n}\n50%,\r\n  75% {\r\n    -webkit-transform: scale(3);\r\n            transform: scale(3);\n}\n78%,\r\n  100% {\r\n    opacity: 0;\n}\n}\r\n", ""]);
 
 // exports
 
@@ -1299,20 +1321,6 @@ var update = __webpack_require__("rjj0")("3d8ee93c", content, true);
 
 /***/ }),
 
-/***/ "UH3z":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("WI0n");
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__("rjj0")("f1b5ca08", content, true);
-
-/***/ }),
-
 /***/ "VaHm":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1327,22 +1335,21 @@ var update = __webpack_require__("rjj0")("4965a7d6", content, true);
 
 /***/ }),
 
-/***/ "WI0n":
+/***/ "dBn7":
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__("FZ+f")(false);
-// imports
+// style-loader: Adds some css to the DOM by adding a <style> tag
 
-
-// module
-exports.push([module.i, "\n#data-view {\r\n  width: 100%;\r\n  height: 100%;\r\n  background: #01023a;\r\n  color: #fff;\n}\n.datav-ptitle {\r\n  padding: 30px 0 0 30px;\n}\n.datav-ptitle h3 {\r\n  border-left: 5px solid #15e4ff;\r\n  color: #15e4ff;\r\n  font-size: 20px;\r\n  font-weight: 700;\r\n  padding-left: 10px;\n}\n.datav-list {\r\n  padding: 20px 30px;\r\n  overflow: hidden;\n}\n#dv-full-screen-container {\r\n  background: #01023a url(" + __webpack_require__("K2Vy") + ") no-repeat 60px 70px;\r\n  background-size: 800px;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-orient: vertical;\r\n  -webkit-box-direction: normal;\r\n      -ms-flex-direction: column;\r\n          flex-direction: column;\n}\n.main-content {\r\n  -webkit-box-flex: 1;\r\n      -ms-flex: 1;\r\n          flex: 1;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-orient: vertical;\r\n  -webkit-box-direction: normal;\r\n      -ms-flex-direction: column;\r\n          flex-direction: column;\n}\n.block-left-right-content {\r\n  -webkit-box-flex: 1;\r\n      -ms-flex: 1;\r\n          flex: 1;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  margin-top: 20px;\n}\n.block-top-bottom-content {\r\n  -webkit-box-flex: 1;\r\n      -ms-flex: 1;\r\n          flex: 1;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-orient: vertical;\r\n  -webkit-box-direction: normal;\r\n      -ms-flex-direction: column;\r\n          flex-direction: column;\r\n  -webkit-box-sizing: border-box;\r\n          box-sizing: border-box;\n}\n.block-diagram {\r\n  display: block;\r\n  height: 50%;\r\n  width: 100%;\n}\n.block-diagram-content {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-orient: horizontal;\r\n  -webkit-box-direction: normal;\r\n      -ms-flex-direction: row;\r\n          flex-direction: row;\r\n  -webkit-box-pack: justify;\r\n      -ms-flex-pack: justify;\r\n          justify-content: space-between;\r\n  height: 50%;\r\n  overflow: hidden;\n}\n.block-two-content {\r\n  height: 33%;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  padding-bottom: 20px;\n}\n.threebox {\r\n  width: 33.333%;\r\n  float: left;\n}\r\n", ""]);
-
-// exports
-
+// load the styles
+var content = __webpack_require__("jIx0");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__("rjj0")("82472f6a", content, true);
 
 /***/ }),
 
-/***/ "WVAZ":
+/***/ "ezQS":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("FZ+f")(false);
@@ -1350,22 +1357,7 @@ exports = module.exports = __webpack_require__("FZ+f")(false);
 
 
 // module
-exports.push([module.i, "\n#videolist {\r\n  position: relative;\r\n  width: 50%;\n}\n#videolist .videos {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -ms-flex-wrap: wrap;\r\n      flex-wrap: wrap;\r\n  height: 100%;\r\n  padding-left: 25px;\r\n  padding-top: 25px;\n}\n#videolist .videos .grid-content {\r\n  width: 50%;\r\n  height: 49.6%;\r\n  padding: 5px;\r\n  overflow: hidden;\r\n  display: block;\n}\n#videolist .videos .grid-content img {\r\n  width: 100%;\n}\n#scroll-board {\r\n  -webkit-box-sizing: border-box;\r\n          box-sizing: border-box;\r\n  margin-left: 20px;\r\n  height: 100%;\r\n  overflow: hidden;\n}\r\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ "XNQx":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("FZ+f")(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.scroll-board {\r\n\r\n padding: 20px;\r\n  -webkit-box-sizing: border-box;\r\n          box-sizing: border-box;\n}\n#data-view .el-scrollbar__wrap {\r\n  overflow-x: hidden;\r\n  border: 0;\r\n  margin-right: -18px !important;\n}\n#personnel {\r\n  background: #01023a;\r\n  color: #fff;\r\n  width: 33.3%;\r\n  position: relative;\n}\n.user-box {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: justify;\r\n      -ms-flex-pack: justify;\r\n          justify-content: space-between;\r\n  padding: 20px;\n}\n.u-left {\r\n  width: 30%;\r\n  background: url(" + __webpack_require__("9d41") + ") no-repeat;\r\n  background-size: 100% auto;\n}\n.u-left h3 {\r\n  text-align: center;\r\n  padding-top: 15px;\r\n  margin-bottom: 30px;\n}\n.u-left p {\r\n  text-align: center;\r\n  padding-bottom: 15px;\n}\n.u-left p span {\r\n  display: inline-block;\n}\n.u-right {\r\n  width: 65%;\n}\n.u-right li {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: justify;\r\n      -ms-flex-pack: justify;\r\n          justify-content: space-between;\r\n  -webkit-box-orient: horizontal;\r\n  -webkit-box-direction: normal;\r\n      -ms-flex-direction: row;\r\n          flex-direction: row;\r\n  text-align: center;\r\n  border-top: 1px #204f96 dashed;\r\n  height: 39px;\r\n  line-height: 39px;\r\n  margin-right: 20px;\n}\n.u-right .header div {\r\n  text-align: center;\r\n  width: 20%;\r\n  font-size: 16px;\n}\n.u-right li.item div {\r\n  width: 30%;\r\n  overflow: hidden;\r\n  text-overflow: ellipsis;\n}\n.u-right li.p0 div {\r\n  background: #06074b;\n}\n.u-right li.p2 div {\r\n  background: #06074b;\n}\n.u-right li.p4 div {\r\n  background: #06074b;\n}\n.u-right li.p6 div {\r\n  background: #06074b;\n}\r\n", ""]);
+exports.push([module.i, "\n#data-view {\r\n  width: 100%;\r\n  height: 100%;\r\n  background: #01023a;\r\n  color: #fff;\n}\n#data-view .dv-scroll-board .rows .row-item {\r\n  height: 40px;\r\n  line-height: 40px;\r\n  text-align: center;\n}\n#data-view .dv-scroll-board .header div {\r\n  text-align: left;\n}\n.datav-ptitle {\r\n  padding: 30px 0 0 30px;\n}\n.datav-ptitle h3 {\r\n  border-left: 5px solid #15e4ff;\r\n  color: #15e4ff;\r\n  font-size: 20px;\r\n  font-weight: 700;\r\n  padding-left: 10px;\n}\n.datav-list {\r\n  padding: 20px 30px;\r\n  overflow: hidden;\n}\n#dv-full-screen-container {\r\n  background: #01023a url(" + __webpack_require__("K2Vy") + ") no-repeat 60px 70px;\r\n  background-size: 800px;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-orient: vertical;\r\n  -webkit-box-direction: normal;\r\n      -ms-flex-direction: column;\r\n          flex-direction: column;\n}\n.main-content {\r\n  -webkit-box-flex: 1;\r\n      -ms-flex: 1;\r\n          flex: 1;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-orient: vertical;\r\n  -webkit-box-direction: normal;\r\n      -ms-flex-direction: column;\r\n          flex-direction: column;\n}\n.block-left-right-content {\r\n  -webkit-box-flex: 1;\r\n      -ms-flex: 1;\r\n          flex: 1;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  margin-top: 20px;\n}\n.block-top-bottom-content {\r\n  -webkit-box-flex: 1;\r\n      -ms-flex: 1;\r\n          flex: 1;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-orient: vertical;\r\n  -webkit-box-direction: normal;\r\n      -ms-flex-direction: column;\r\n          flex-direction: column;\r\n  -webkit-box-sizing: border-box;\r\n          box-sizing: border-box;\n}\n.block-diagram {\r\n  display: block;\r\n  height: 50%;\r\n  width: 100%;\n}\n.block-diagram-content {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-orient: horizontal;\r\n  -webkit-box-direction: normal;\r\n      -ms-flex-direction: row;\r\n          flex-direction: row;\r\n  -webkit-box-pack: justify;\r\n      -ms-flex-pack: justify;\r\n          justify-content: space-between;\r\n  height: 50%;\r\n  overflow: hidden;\n}\n.block-two-content {\r\n  height: 33%;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  padding-bottom: 20px;\n}\n.threebox {\r\n  width: 33.333%;\r\n  float: left;\n}\r\n", ""]);
 
 // exports
 
@@ -1387,45 +1379,33 @@ exports.push([module.i, "\n#operation {\r\n  position: relative;\r\n  width:50%;
 
 /***/ }),
 
-/***/ "kAKD":
+/***/ "jIx0":
 /***/ (function(module, exports, __webpack_require__) {
 
-// style-loader: Adds some css to the DOM by adding a <style> tag
+exports = module.exports = __webpack_require__("FZ+f")(false);
+// imports
 
-// load the styles
-var content = __webpack_require__("XNQx");
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__("rjj0")("307eee49", content, true);
+
+// module
+exports.push([module.i, "\n#videolist {\r\n  position: relative;\r\n  width: 50%;\n}\n#videolist .videos {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -ms-flex-wrap: wrap;\r\n      flex-wrap: wrap;\r\n  height: 100%;\r\n  padding-left: 25px;\r\n  padding-top: 25px;\n}\n#videolist .videos .grid-content {\r\n  width: 50%;\r\n  height: 49.6%;\r\n  padding: 5px;\r\n  overflow: hidden;\r\n  display: block;\n}\n#videolist .videos .grid-content img {\r\n  width: 100%;\n}\n#scroll-board {\r\n  -webkit-box-sizing: border-box;\r\n          box-sizing: border-box;\r\n  margin-left: 20px;\r\n  height: 100%;\r\n  overflow: hidden;\n}\r\n", ""]);
+
+// exports
+
 
 /***/ }),
 
-/***/ "oLdN":
+/***/ "mPO2":
 /***/ (function(module, exports, __webpack_require__) {
 
-// style-loader: Adds some css to the DOM by adding a <style> tag
+exports = module.exports = __webpack_require__("FZ+f")(false);
+// imports
 
-// load the styles
-var content = __webpack_require__("wfw/");
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__("rjj0")("160f85fc", content, true);
 
-/***/ }),
+// module
+exports.push([module.i, "\n#schedule {\r\n  width: 33.3%;\r\n  height: 33.3%;\n}\n#progress {\r\n  width: 100%;\r\n  height: 100%;\r\n  background: #01023a;\n}\n.progress {\r\n  background: #01023a;\r\n  padding-bottom: 30px;\n}\n.station {\r\n  margin: 0px 0px 0px 90px;\r\n  position: relative;\r\n  z-index: 999;\n}\n#schedule .linebox {\r\n  position: relative;\r\n  margin-top: -7px;\n}\n.zylineTable {\r\n  margin-top: 20px;\r\n  margin-bottom:10px;\n}\n.zylineTable .bar em {\r\n  height: 10px;\r\n  background: #fff;\r\n  border: 1px #fff solid !important;\n}\r\n/* lineTable */\n#schedule .lineTable {\r\n  width: 100%;\r\n  border-collapse: collapse;\n}\n#schedule .lineTable td {\r\n  color: #fff;\n}\n#schedule .lineTable .linebar {\n}\n#schedule .lineTable .tdtitle {\r\n  text-align: center;\r\n  overflow: hidden;\r\n  height: 12px;\r\n  padding-left: 5px;\r\n  width: 92px;\r\n  font-size: 12px;\r\n  line-height: 12px;\r\n  white-space: nowrap;\r\n  text-overflow: ellipsis;\n}\n#schedule .tdbar .bar {\r\n  height: 14px;\r\n  overflow: hidden;\r\n  margin-bottom: 5px;\n}\n#schedule .tdbar .bar:last-child {\r\n  border-bottom: 0;\n}\n#schedule .tdbar .bar span {\r\n  font-size: 12px;\r\n  color: #fff;\r\n  line-height: 12px;\r\n  text-align: center;\n}\n#schedule .tdbar .bar em {\r\n  height: 10px;\r\n  display: inline-block;\r\n  position: relative;\r\n  overflow: hidden;\r\n  border: 1px #1a9417 solid;\n}\n#schedule .tdbar .bar em i {\r\n  position: absolute;\r\n  top: 0;\r\n  background: #27db07;\r\n  height: 12px;\r\n  display: inline-block;\r\n  overflow: hidden;\n}\n.tdbar .bar em i:first-child {\r\n  border-left: 0;\n}\n.tdbar .bar em i:last-child {\r\n  border-left: 0;\n}\n.clear {\r\n  clear: both;\n}\n.lineboxwel {\r\n  text-align: right;\r\n  padding-top:20px;\r\n  padding-right: 5px;\n}\n.lineboxwel span {\r\n  text-align: center;\r\n  display: inline-block;\r\n  color: #fff; margin-right: 30px;\r\n  font-size: 12px;\n}\n.lineboxwel em {\r\n  height: 6px;\r\n  width: 60px;\r\n  display: block;\r\n  margin-bottom: 5px;\n}\n.lineboxwel em.a1 {\r\n  background: #fff;\n}\n.lineboxwel em.a2 {\r\n  background: #27db07;\n}\n.lineboxwel em.a3 {\r\n  border: 1px #1a9417 solid;\n}\r\n/* //#27DB07 */\r\n", ""]);
 
-/***/ "tPyl":
-/***/ (function(module, exports, __webpack_require__) {
+// exports
 
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("Psoz");
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__("rjj0")("4cc1ec7b", content, true);
 
 /***/ }),
 
@@ -1436,18 +1416,17 @@ module.exports = __webpack_require__.p + "static/img/staxs.b12aa2f.jpg";
 
 /***/ }),
 
-/***/ "wfw/":
+/***/ "x23C":
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__("FZ+f")(false);
-// imports
+// style-loader: Adds some css to the DOM by adding a <style> tag
 
-
-// module
-exports.push([module.i, "\n#schedule {\r\n  width: 33.3%;\r\n  height: 100%;\n}\n#progress {\r\n  width: 100%;\r\n  height: 100%;\r\n  background: #01023a;\n}\n.progress {\r\n  background: #01023a;\r\n  padding-bottom: 30px;\n}\n.station {\r\n  margin: 0px 0px 0px 90px;\r\n  position: relative;\r\n  z-index: 999;\n}\n#schedule .linebox {\r\n  position: relative;\r\n  margin-top: -7px;\n}\n.zylineTable {\r\n  margin-top: 20px;\r\n  margin-bottom:10px;\n}\n.zylineTable .bar em {\r\n  height: 10px;\r\n  background: #fff;\r\n  border: 1px #fff solid !important;\n}\r\n/* lineTable */\n#schedule .lineTable {\r\n  width: 100%;\r\n  border-collapse: collapse;\n}\n#schedule .lineTable td {\r\n  color: #fff;\n}\n#schedule .lineTable .linebar {\n}\n#schedule .lineTable .tdtitle {\r\n  text-align: center;\r\n  overflow: hidden;\r\n  height: 12px;\r\n  padding-left: 5px;\r\n  width: 92px;\r\n  font-size: 12px;\r\n  line-height: 12px;\r\n  white-space: nowrap;\r\n  text-overflow: ellipsis;\n}\n#schedule .tdbar .bar {\r\n  height: 14px;\r\n  overflow: hidden;\r\n  margin-bottom: 5px;\n}\n#schedule .tdbar .bar:last-child {\r\n  border-bottom: 0;\n}\n#schedule .tdbar .bar span {\r\n  font-size: 12px;\r\n  color: #fff;\r\n  line-height: 12px;\r\n  text-align: center;\n}\n#schedule .tdbar .bar em {\r\n  height: 10px;\r\n  display: inline-block;\r\n  position: relative;\r\n  overflow: hidden;\r\n  border: 1px #1a9417 solid;\n}\n#schedule .tdbar .bar em i {\r\n  position: absolute;\r\n  top: 0;\r\n  background: #27db07;\r\n  height: 12px;\r\n  display: inline-block;\r\n  overflow: hidden;\n}\n.tdbar .bar em i:first-child {\r\n  border-left: 0;\n}\n.tdbar .bar em i:last-child {\r\n  border-left: 0;\n}\n.clear {\r\n  clear: both;\n}\n.lineboxwel {\r\n  text-align: right;\r\n  padding-top:20px;\r\n  padding-right: 5px;\n}\n.lineboxwel span {\r\n  text-align: center;\r\n  display: inline-block;\r\n  color: #fff; margin-right: 30px;\r\n  font-size: 12px;\n}\n.lineboxwel em {\r\n  height: 6px;\r\n  width: 60px;\r\n  display: block;\r\n  margin-bottom: 5px;\n}\n.lineboxwel em.a1 {\r\n  background: #fff;\n}\n.lineboxwel em.a2 {\r\n  background: #27db07;\n}\n.lineboxwel em.a3 {\r\n  border: 1px #1a9417 solid;\n}\r\n/* //#27DB07 */\r\n", ""]);
-
-// exports
-
+// load the styles
+var content = __webpack_require__("mPO2");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__("rjj0")("004a247b", content, true);
 
 /***/ }),
 
@@ -2470,6 +2449,20 @@ var Component = normalizeComponent(
 
 /* harmony default export */ var views_datav_diagram = __webpack_exports__["default"] = (Component.exports);
 
+
+/***/ }),
+
+/***/ "y0fz":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("Q9zW");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__("rjj0")("9725bc1a", content, true);
 
 /***/ })
 

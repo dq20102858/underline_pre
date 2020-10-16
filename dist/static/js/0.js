@@ -7,6 +7,13 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAiCAYAAABM
 
 /***/ }),
 
+/***/ "/m6F":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/img/video4.5a24183.png";
+
+/***/ }),
+
 /***/ "0Emz":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -25,6 +32,13 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAAAUCAYAAABf
 /***/ (function(module, exports) {
 
 module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAmCAYAAAClI5npAAAB7ElEQVRYhc1Wy5GCQBAlBEMwBELYqw2UE4IBOB8PVHGTDNwM1gzWDOQ6tNSQgWagGbiHLRRLYXqQqd2umhsz7/Xr100HATFYbiawwnkicRNz3IPUx0iU10iUV5D6GHPcJxI3sMI59U0acGamES+/YonnBtB2YonnROKGZWb6FjiIak0F7SIColoPy1qW5h3whyNLw3IzoWWdmtBFbic1UhNaM/cB3jZrpxIsN5NRZe8px0sCsdK5d/CmHErnz6ZzfYTrGgQWILCIuD65+uGhRRNVbqmXE1VuX/U3y8zU5Z2bCiw3E4rxgOOFKfzodXEQBLPlgQHHC0WF2wUKYwp4E6CqBflNUIdPiuxU8CYioXekMoDAwsp0wEyH1ITWsgosAlv9Y65rV/C7CgQCpI8GBkXdf0DAMkRA6uNQAlYTcl17MyGlvUFg4a0NY457UhtSBxGoakEFpw6i2fLAfpdN4uikkKCCA8dL65K9DPeL+vvVZgMrnFNkf5C/CZaZKUWFZxfj3gW0nf3TZvSnC8mNBNe1b/DewUY15ODMua6t6zmkJnRdsUiH65N1LW8rMWY5SJn7IgECC2fwNgnKv6LrDBnhL8Nl2x0dfAiJ0cFdSHgDp5DwDh4Efd2hd97Bu0gM6vMxSES8UhGv1DvgP2onGRHi6UNDAAAAAElFTkSuQmCC"
+
+/***/ }),
+
+/***/ "44+u":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/img/video3.f438250.png";
 
 /***/ }),
 
@@ -93,6 +107,20 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAe8AAAAZCAYAAAAY
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "static/img/A3.997bce3.png";
+
+/***/ }),
+
+/***/ "HRsq":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/img/video2.546c8e6.png";
+
+/***/ }),
+
+/***/ "HnX2":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/img/video1.1370c9a.png";
 
 /***/ }),
 
@@ -336,7 +364,11 @@ var map = {
 	"./stasm.png": "JBQT",
 	"./staxs.png": "RX0U",
 	"./subline.png": "M73T",
-	"./user.png": "Ctr9"
+	"./user.png": "Ctr9",
+	"./video1.png": "HnX2",
+	"./video2.png": "HRsq",
+	"./video3.png": "44+u",
+	"./video4.png": "/m6F"
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
