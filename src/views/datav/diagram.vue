@@ -2,7 +2,7 @@
   <div id="diagram">
     <div class="datav-ptitle" style="padding-top:0"><h3>施工形象图</h3></div>
     <div class="station" ref="canvasWrapper">
-      <canvas id="canvasStation" height="220" ref="canvasStation">
+      <canvas id="canvasStation" height="200" ref="canvasStation">
         <p>您的系统不支持此程序!</p>
       </canvas>
     </div>
@@ -77,14 +77,14 @@
 <script>
 let canvas;
 let context;
-let axis_Height = 220;
+let axis_Height = 200;
 let offsetX = 0;
 let tick_Spacing = 100;
 let tick_Height = 8; //刻度线高度
 //标尺起点
 let axis_LeftLine = {
   x: 30,
-  y: 75
+  y: 70
 };
 let axis_LeftLine_Two = {
   x: 30,
@@ -278,7 +278,7 @@ export default {
             if (startLineX == 0) {
               startLineX = axis_LeftLine.x;
             }
-            context.drawImage(img, startLineX - 5, 40, 12, 30);
+            context.drawImage(img, startLineX - 5, 35, 12, 30);
             // //站名
             context.font = "12px Microsoft Yahei";
             context.fillStyle = "#fff";
@@ -499,10 +499,11 @@ export default {
           context.beginPath();
           //画水平直线
           if (json[i].line_type == 1) {
-            if (startX == 0) {
-              startX = 30;
-            }
-            context.moveTo(startX, axis_LeftLine.y);
+           // alert(startX)
+          
+              //startX =40;
+          
+            context.moveTo(startX+30, axis_LeftLine.y);
             context.lineTo(endX, axis_LeftLine.y);
             context.fillRect(centerX, axis_LeftLine.y, 2, 30);
             context.fillText(desc, centerX - 45, axis_LeftLine.y + 42);

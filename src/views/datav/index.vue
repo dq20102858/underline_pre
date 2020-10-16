@@ -74,7 +74,7 @@ export default {
 }
 
 .datav-ptitle {
-  padding: 30px 0 0 30px;
+  padding: 0px 0 0 30px;
 }
 .datav-ptitle h3 {
   border-left: 5px solid #15e4ff;
@@ -104,7 +104,7 @@ export default {
 .block-left-right-content {
   flex: 1;
   display: flex;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .block-top-bottom-content {
