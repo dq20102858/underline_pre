@@ -37,17 +37,17 @@ export default {
   flex-wrap: wrap;
   height: 100%;
   padding-left: 20px;
-  padding-top: 20px; padding-right: 20px;
+  padding-top: 0px; 
 }
 #videolist .videos .grid-content {
   width: 50%;
-  height: 49.6%;
+  height: 50%;
   padding: 5px;
   overflow: hidden;
   display: block;
 }
 #videolist .videos .grid-content img {
-  width: 100%;
+  width: 100%; min-height: 180px;
 }
 #scroll-board {
   box-sizing: border-box;
