@@ -172,10 +172,6 @@ const constantRouterMap = [
         component: () => import('@/views/datav/diagram')
       },
       {
-        path: '/datav/diagrama',
-        component: () => import('@/views/datav/diagrama')
-      },
-      {
         path: '/datav/personnel',
         component: () => import('@/views/datav/personnel')
       },
