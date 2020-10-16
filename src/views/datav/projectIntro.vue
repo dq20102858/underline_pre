@@ -24,15 +24,15 @@
     </div>
     <div class="intro-box">
       <div class="subwap">
-        <div class="dot dot1"><i></i></div>
+        <div class="v-dot1"><i></i></div>
         <div class="dname1">刘潭</div>
-        <div class="dot dot2"><i></i></div>
+        <div class="v-dot2"><i></i></div>
         <div class="dname2">广石路</div>
-        <div class="v-dot3"><i></i></div>
+        <div class="dot dot3"><i></i></div>
         <div class="dname3">黄巷站</div>
-        <div class="v-dot4"><i></i></div>
+        <div class="dot dot4"><i></i></div>
         <div class="dname4">盛岸站</div>
-        <div class="dot dot5"><i></i></div>
+        <div class="v-dot5"><i></i></div>
         <div class="dname5">惠山古镇站</div>
         <div class="dot dot6"><i></i></div>
         <div class="dname6">青山湾荣院站</div>
@@ -207,50 +207,9 @@ export default {
   top: 93px;
   left: 156px;
 }
-.v-dot3 {
-  top: 96px;
-  left: 136px;
-  position: absolute;
-  width: 14px;
-  height: 14px;
-  background-color: #ffff00;
-  border-radius: 50%;
-
-}
-.v-dot3:before {
-  content: "";
-  display: block;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  opacity: 0.7;
-  background-color: #ffff00;
-   animation: scaless 1s infinite cubic-bezier(0, 0, 0.49, 1.02);
-}
-.v-dot4 {
-   top: 136px;
-  left: 100px;
-  position: absolute;
-  width: 14px;
-  height: 14px;
-  background-color: #ffff00;
-  border-radius: 50%;
-
-}
-.v-dot4:before {
-  content: "";
-  display: block;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  opacity: 0.7;
-  background-color: #ffff00;
-   animation: scaless 1s infinite cubic-bezier(0, 0, 0.49, 1.02);
-}
 .dot4 {
   top: 136px;
   left: 100px;
- 
 }
 .dname4 {
   position: absolute;
@@ -383,7 +342,63 @@ export default {
   top: 530px;
   left: 244px;
 }
-
+.v-dot1 {
+  left: 192px;
+  top: 28px;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #ffff00;
+  border-radius: 50%;
+}
+.v-dot1:before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  opacity: 0.7;
+  background-color: #ffff00;
+  animation: scaless 1s infinite cubic-bezier(0, 0, 0.49, 1.02);
+}
+.v-dot2 {
+  left: 160px;
+  top: 46px;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #ffff00;
+  border-radius: 50%;
+}
+.v-dot2:before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  opacity: 0.7;
+  background-color: #ffff00;
+  animation: scaless 1s infinite cubic-bezier(0, 0, 0.49, 1.02);
+}
+.v-dot5 {
+  top: 170px;
+  left: 108px;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #ffff00;
+  border-radius: 50%;
+}
+.v-dot5:before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  opacity: 0.7;
+  background-color: #ffff00;
+  animation: scaless 1s infinite cubic-bezier(0, 0, 0.49, 1.02);
+}
 @keyframes scales {
   0% {
     transform: scale(1);
