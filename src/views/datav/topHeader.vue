@@ -1,7 +1,10 @@
 <template>
   <div id="top-header">
     <div id="top-times" class="top-times">{{ times }}</div>
-    <div class="center-title">无锡地铁四号线施工大数据平台</div>
+    <div class="center-title">无锡地铁四号线施工大数据平台
+      <dv-decoration-3 style="width:420px;height:15px;" />
+
+    </div>
   </div>
 </template>
 <script>
