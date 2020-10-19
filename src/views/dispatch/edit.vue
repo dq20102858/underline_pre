@@ -412,9 +412,10 @@ export default {
                 message: "恭喜您，删除成功",
                 type: "success"
               });
-            } else {
-              this.$message.error("删除失败");
-            }
+            } 
+            // else {
+            //   this.$message.error("删除失败");
+            // }
           });
         })
         .catch(() => {});
