@@ -207,7 +207,9 @@
                     <b>审批人：</b>
                   </td>
                   <td>
-                    <span class="clblue">{{dataInfo.approver}}</span>
+                    <span class="clblue">{{dataInfo.approver}}
+                    </span>
+                     <img v-if="dataInfo.status==2"  style="height:120px; width: 120px;display: inline-block;vertical-align: middle;" :src="require('@/assets/image/approve.png')" />
                   </td>
                   <td colspan="2">
                     <b>审批时间：</b>
@@ -412,14 +414,14 @@
             >
               <div class="item">
                 <div class="itemconn">兹审批此许可证生效，或按红笔修改的执行。</div>
-                <div class="singn">
+                <div class="singn" >
                   <span class="pull-left">
                     审批负责人（签名）
                     <b>{{dataInfo.approver}}</b>
                   </span>
                   <span class="pull-right">{{dataInfo.approve_time}}</span>
-                </div>
-              </div>
+                    <img v-if="dataInfo.status==2"  style="position: absolute;width: 120px;top:-10px" :src="require('@/assets/image/approve.png')" />
+             </div> </div>
             </el-timeline-item>
             <el-timeline-item
               class="el-timeline-item-line"

@@ -1210,6 +1210,7 @@ CanvasRenderingContext2D.prototype.fillTextVertical = function(text, x, y) {
 }
 .check-lists .buildchk.is-checked .el-checkbox__label {
   color: #08ce80;
+  
 }
 </style>
 
