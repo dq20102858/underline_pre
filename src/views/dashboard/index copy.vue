@@ -1,8 +1,6 @@
 <template>
   <div class="app-video">
-
-<iframe src="http://10.100.103.203:8083/player/%e5%88%98%e6%bd%ad%e7%ab%99%e9%81%93%e5%b2%941" height="600px" width="100%"></iframe>
-    <!-- <div class="el-menu-top">
+    <div class="el-menu-top">
       <el-menu mode="horizontal">
         <li class="ptitle">
           <img :src="require('@/assets/image/icon-dashboard.png')" />视频监控
@@ -28,7 +26,7 @@
           </div>
         </el-col>
       </el-row>
-    </div> -->
+    </div>
   </div>
 </template>
 <script>
