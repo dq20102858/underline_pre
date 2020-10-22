@@ -1640,15 +1640,6 @@ export default {
           //判断是否点击鼠标左键
           gapX = event.clientX;
           startx = document.querySelector(".group-canvas").scrollLeft; // document.documentElement.scrollLeft; // scroll的初始位置
-          // console.log(
-          //   "a：" +
-          //     event.clientX +
-          //     "_" +
-          //     document.documentElement.scrollLeft +
-          //     "_" +
-          //     event.screenX
-          // );
-          //movemove事件必须绑定到$(document)上，鼠标移动是在整个屏幕上的 此处的$(document)可以改为obj
           document.addEventListener("mousemove", move);
           document.addEventListener("mouseup", stop);
         }
