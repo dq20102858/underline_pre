@@ -7,9 +7,9 @@
         </li>
         <el-menu-item index="location">人员定位统计</el-menu-item>
         <el-menu-item index="walldetector" @click="resetSerach">信号基站</el-menu-item>
-        <el-menu-item index="cardetector">车载探测器</el-menu-item>
+        <!-- <el-menu-item index="cardetector">车载探测器</el-menu-item> -->
         <el-menu-item index="locationbind">定位从设备</el-menu-item>
-        <el-menu-item index="device">机具</el-menu-item>
+        <!-- <el-menu-item index="device">机具</el-menu-item> -->
       </el-menu>
     </div>
     <div class="app-page">
@@ -41,21 +41,21 @@
             <el-table-column prop="name" label="名称"></el-table-column>
             <el-table-column prop="number" label="设备编号"></el-table-column>
             <el-table-column prop="location" label="位置"></el-table-column>
-            <el-table-column prop="is_enter" label="是否在出入口">
+            <el-table-column prop="type" label="网关或基站">
               <template slot-scope="scope">
                 <span
                   style="background: #5cb85c;color: #fff;border-radius: 3px;padding: 1px 4px;"
-                  v-if="scope.row.is_enter==1"
-                >是</span>
+                  v-if="scope.row.type==1"
+                >网关</span>
                 <span
                   style="background: #d9534f;color: #fff;border-radius: 3px;padding: 1px 4px;"
                   v-else
-                >否</span>
+                >基站</span>
               </template>
             </el-table-column>
             <el-table-column prop="line" label="线路"></el-table-column>
             <el-table-column prop="company" label="公司名称"></el-table-column>
-            <el-table-column prop="ip" label="IP地址"></el-table-column>
+            <!-- <el-table-column prop="ip" label="IP地址"></el-table-column> -->
             <el-table-column prop="create_time" label="创建时间">
               <template slot-scope="scope">
                 <p v-html="changeTime(scope.row.create_time)"></p>
@@ -123,9 +123,9 @@
         <el-form-item label="设备编号：" prop="number">
           <el-input v-model="detectorData.number" autocomplete="off" maxlength="20" show-word-limit></el-input>
         </el-form-item>
-        <el-form-item label="IP地址：" prop="ip">
+        <!-- <el-form-item label="IP地址：" prop="ip">
           <el-input v-model="detectorData.ip" autocomplete="off"></el-input>
-        </el-form-item>
+        </el-form-item> -->
         <el-form-item label="设定线路" prop="line_type">
           <el-select
             v-model="detectorData.line_type"
@@ -162,13 +162,13 @@
               placeholder="米"
               maxlength="3"
             >
-            
+
             </el-input>
           </el-form-item>
         </el-form-item>
-        <el-form-item label="设备是否装在出入口：" prop="is_enter">
-          <el-radio v-model="detectorData.is_enter" :label="1">是</el-radio>
-          <el-radio v-model="detectorData.is_enter" :label="0">否</el-radio>
+        <el-form-item label="网关或基站：" prop="type">
+          <el-radio v-model="detectorData.type" :label="1">网关</el-radio>
+          <el-radio v-model="detectorData.type" :label="2">基站</el-radio>
         </el-form-item>
         <div class="blank"></div>
       </el-form>
@@ -215,19 +215,19 @@ export default {
         line_type: [
           { required: true, message: "请选择线路", trigger: "change" }
         ],
-        ip: [
-          {
-            required: true,
-            message: "请输入IP地址",
-            trigger: "blur"
-          },
-          {
-            pattern:
-              "^((25[0-5]|2[0-4]\\d|[1]{1}\\d{1}\\d{1}|[1-9]{1}\\d{1}|\\d{1})($|(?!\\.$)\\.)){4}$",
-            message: "请输入正确的IP地址",
-            trigger: "blur"
-          }
-        ],
+        // ip: [
+        //   {
+        //     required: true,
+        //     message: "请输入IP地址",
+        //     trigger: "blur"
+        //   },
+        //   {
+        //     pattern:
+        //       "^((25[0-5]|2[0-4]\\d|[1]{1}\\d{1}\\d{1}|[1-9]{1}\\d{1}|\\d{1})($|(?!\\.$)\\.)){4}$",
+        //     message: "请输入正确的IP地址",
+        //     trigger: "blur"
+        //   }
+        // ],
         start_flag: [
           {
             required: true,
