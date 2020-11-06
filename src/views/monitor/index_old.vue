@@ -3,33 +3,28 @@
     <div class="progress">
       <div class="starte-top">
         <div class="sleft">
-          {{ firstStation }}方向
+          {{firstStation}}方向
           <i class="line-a"></i>
         </div>
         <div class="scenter">
           <div class="stations">
             <i class="el-icon-arrow-left" @click="stationLeftMove"></i>
-            <div class="item" :style="{ width: scrollwidth + 'px' }">
+            <div class="item" :style="{width:scrollwidth  + 'px'}">
               <ul
-                :style="{
-                  width: stationList.length * 100 + 'px',
-                  'margin-left': wdpx * 100 + 'px'
-                }"
+                :style="{width: stationList.length * 100 + 'px','margin-left': wdpx * 100 + 'px'}"
               >
                 <li
-                  @click="scrollPosition(item.start_flag, item.start_length)"
+                  @click="scrollPosition(item.start_flag,item.start_length)"
                   v-for="item in stationList"
                   :key="item.id"
-                >
-                  {{ item.name }}
-                </li>
+                >{{item.name}}</li>
               </ul>
             </div>
             <i class="el-icon-arrow-right" @click="stationRightMove"></i>
           </div>
         </div>
         <div class="sright">
-          {{ lastStation }}方向
+          {{lastStation}}方向
           <i class="line-b"></i>
         </div>
       </div>
@@ -78,12 +73,7 @@
           @change="slopeCheckSelect"
           label="坡度"
         ></el-checkbox>
-        <el-checkbox
-          class="daocchk"
-          v-model="daocCheckValue"
-          @change="daocCheckSelect"
-          label="道岔"
-        ></el-checkbox>
+        <el-checkbox class="daocchk" v-model="daocCheckValue" @change="daocCheckSelect" label="道岔"></el-checkbox>
         <el-checkbox
           class="speedchk"
           v-model="speedCheckValue"
@@ -97,57 +87,31 @@
           label="施工地段"
         ></el-checkbox>
       </div>
-      <div class="progresslist" v-if="this.progressCheckValue != ''">
+      <div class="progresslist" v-if="this.progressCheckValue !=''">
         <span class="namess">施工进度：</span>
-        <el-radio-group
-          v-model="progressCheckValue"
-          @change="progressCheckSelect"
-        >
-          <el-radio
-            v-for="item in progressList"
-            :key="item.name"
-            :label="item.name"
-            >{{ item.name }}</el-radio
-          >
+        <el-radio-group v-model="progressCheckValue" @change="progressCheckSelect">
+          <el-radio v-for="item in progressList" :key="item.name" :label="item.name">{{item.name}}</el-radio>
         </el-radio-group>
       </div>
       <div class="cartablebox">
-        <div @click="showCarList" class="cartitle">{{ cartableShowText }}</div>
+        <div @click="showCarList" class="cartitle">{{cartableShowText}}</div>
         <el-table :data="locationRealtime" v-show="cartableShow">
           <el-table-column prop="id" label="编号" width="60"></el-table-column>
-          <el-table-column
-            prop="name"
-            label="列车名称"
-            width="80"
-          ></el-table-column>
+          <el-table-column prop="name" label="列车名称" width="80"></el-table-column>
           <el-table-column label="当前速度" width="100"></el-table-column>
           <el-table-column label="当前位置" width="100">
-            <template slot-scope="scope"
-              >DK{{ scope.row.start_flag }} +
-              {{ scope.row.start_length }}</template
-            >
+            <template slot-scope="scope">DK{{scope.row.start_flag}} + {{scope.row.start_length}}</template>
           </el-table-column>
-          <el-table-column
-            prop="line_type_desc"
-            label="线别"
-            width="100"
-          ></el-table-column>
+          <el-table-column prop="line_type_desc" label="线别" width="100"></el-table-column>
           <el-table-column prop="is_online" label="状态" width="100">
             <template slot-scope="scope">
-              <span class="statused" v-if="scope.row.is_online == '1'"
-                >在线</span
-              >
-              <span class="statused" v-if="scope.row.is_online == '0'"
-                >离线</span
-              >
+              <span class="statused" v-if="scope.row.is_online=='1'">在线</span>
+              <span class="statused" v-if="scope.row.is_online=='0'">离线</span>
             </template>
           </el-table-column>
           <el-table-column prop label="司机"></el-table-column>
           <el-table-column prop label="车长"></el-table-column>
-          <el-table-column
-            prop="create_time"
-            label="最后更新时间"
-          ></el-table-column>
+          <el-table-column prop="create_time" label="最后更新时间"></el-table-column>
           <el-table-column></el-table-column>
         </el-table>
       </div>
@@ -557,62 +521,42 @@ export default {
         let json = [
           {
             id: 1,
-            type: 2,
-            start_flag: 0,
-            start_length: 300,
-            end_flag: 0,
-            end_length: 450
+            type: 1,
+            start_flag: 15,
+            start_length: 400,
+            end_flag: 15,
+            end_length: 900
           },
           {
             id: 1,
             type: 1,
-            start_flag: 1,
-            start_length: 850,
-            end_flag: 2,
-            end_length:10
-          },
-          {
-            id: 1,
-            type: 1,
-            start_flag: 5,
-            start_length: 300,
-            end_flag: 5,
-            end_length: 450
-          },
-          {
-            id: 1,
-            type: 1,
-            start_flag: 6,
-            start_length: 800,
-            end_flag:6,
-            end_length: 950
+            start_flag: 31,
+            start_length: 400,
+            end_flag: 32,
+            end_length: 200
           }
         ];
-        for (let i = 0; i < json.length; i++) {
-          let start =
-            parseInt(json[i].start_flag) * 1000 +
-            parseInt(json[i].start_length);
-          let end =
-            parseInt(json[i].end_flag) * 1000 + parseInt(json[i].end_length);
-          context.strokeStyle = "#107af7";
-          context.lineWidth = 3;
-          context.fillStyle = "#107af7";
-          context.font = "12px Microsoft Yahei";
-          context.beginPath();
-
-          let startX = (start - leftLineMinMileage) * everys;
-          let endX = (end - leftLineMinMileage) * everys;
-          let centerX = (endX + startX) / 2; //开始结束平均值
-          context.moveTo(startX + offsetX, 90);
-          context.lineTo(endX + offsetX, 90);
-          context.moveTo(startX + offsetX, 130);
-          context.lineTo(endX + offsetX, 130);
-          context.moveTo(startX + offsetX + 10, 90);
-          context.lineTo(endX + offsetX - 10, 130);
-          context.moveTo(startX + offsetX + 10, 130);
-          context.lineTo(endX + offsetX - 10, 90);
-          context.stroke();
-        }
+        let img = new Image();
+        img.src = require("@/assets/image/icon-dc.png");
+        img.onload = function() {
+          let start = 0;
+          for (let i = 0; i < json.length; i++) {
+            let start =
+              parseInt(json[i].start_flag) * 1000 +
+              parseInt(json[i].start_length);
+            let end =
+              parseInt(json[i].end_flag) * 1000 + parseInt(json[i].end_length);
+            let betweenMeters = (end - start) * everys; //两点之间距离米
+            let startX = (start - leftLineMinMileage) * everys;
+            context.drawImage(
+              img,
+              startX + offsetXLine + 13,
+              axis_LeftLine.y + 5,
+              betweenMeters + 20,
+              196
+            );
+          }
+        };
       }
       //绘制桥
       function drawBridgeAxis(bridgeListJson) {
@@ -788,22 +732,47 @@ export default {
             let startX = (start - leftLineMinMileage) * everys;
             let endX = (end - leftLineMinMileage) * everys;
             let centerX = (endX + startX) / 2; //开始结束平均值
-            context.fillRect(centerX + offsetX, axis_LeftLine.y + 7, 2, 25);
-            context.moveTo(startX + offsetX, axis_LeftLine.y + 7);
-            context.lineTo(endX + offsetX, axis_LeftLine.y + 7);
+            context.fillRect(centerX + offsetX, axis_LeftLine.y, 2, 30);
+            context.moveTo(startX + offsetX, axis_LeftLine.y+5);
+            context.lineTo(endX + offsetX, axis_LeftLine.y+5);
             context.fillText(desc, centerX + offsetX, axis_LeftLine.y + 35);
           } else if (json[i].line_type == 2) {
             let startX = (start - leftLineMinMileage) * everys;
             let endX = (end - leftLineMinMileage) * everys;
             let centerX = (endX + startX) / 2;
+
             if (start == 0) {
               startX = 0;
               endX = end * everys;
             }
-            context.fillRect(centerX + offsetX, axis_LeftLine_Two.y + 7, 2, 25);
-            context.moveTo(startX + offsetX, axis_LeftLine_Two.y + 7);
-            context.lineTo(endX + offsetX, axis_LeftLine_Two.y + 7);
+            context.fillRect(centerX + offsetX, axis_LeftLine_Two.y, 2, 30);
+            context.moveTo(startX + offsetX, axis_LeftLine_Two.y);
+            context.lineTo(endX + offsetX, axis_LeftLine_Two.y);
             context.fillText(desc, centerX + offsetX, axis_LeftLine_Two.y + 35);
+          } else if (json[i].line_type == 3) {
+            let startX = (start - enterLineMinMileage) * everys;
+            let endX = (end - enterLineMinMileage) * everys;
+            let centerX = (endX + startX) / 2;
+            if (start == 0) {
+              startX = 0;
+              endX = end * everys;
+            }
+            context.fillRect(centerX + offsetX, axis_OutLine.y, 2, 30);
+            context.moveTo(startX + offsetX, axis_OutLine.y);
+            context.lineTo(endX + offsetX, axis_OutLine.y);
+            context.fillText(desc, centerX + offsetX, axis_OutLine.y + 35);
+          } else if (json[i].line_type == 4) {
+            let startX = (start - outLineMinMileage) * everys;
+            let endX = (end - outLineMinMileage) * everys;
+            let centerX = (endX + startX) / 2;
+            if (start == 0) {
+              startX = 0;
+              endX = end * everys;
+            }
+            context.fillRect(centerX + offsetX, axis_OutLine_Two.y, 2, 30);
+            context.moveTo(startX + offsetX, axis_OutLine_Two.y);
+            context.lineTo(endX + offsetX, axis_OutLine_Two.y);
+            context.fillText(desc, centerX + offsetX, axis_OutLine_Two.y + 35);
           }
           context.stroke();
         }
@@ -818,7 +787,7 @@ export default {
           let end =
             parseInt(json[i].end_flag) * 1000 + parseInt(json[i].end_length);
           context.strokeStyle = "#08ce80";
-          context.lineWidth = 2;
+          context.lineWidth = 10;
           context.fillStyle = "#08ce80";
           context.font = "12px Microsoft Yahei";
           let desc = json[i].name;
@@ -828,9 +797,9 @@ export default {
             let startX = (start - leftLineMinMileage) * everys;
             let endX = (end - leftLineMinMileage) * everys;
             let centerX = (endX + startX) / 2; //开始结束平均值
-            context.fillRect(centerX + offsetX, axis_LeftLine.y + 15, 2, 15);
-            context.moveTo(startX + offsetX, axis_LeftLine.y + 15);
-            context.lineTo(endX + offsetX, axis_LeftLine.y + 15);
+            context.fillRect(centerX + offsetX, axis_LeftLine.y, 2, 30);
+            context.moveTo(startX + offsetX, axis_LeftLine.y);
+            context.lineTo(endX + offsetX, axis_LeftLine.y);
             context.fillText(desc, centerX + offsetX, axis_LeftLine.y + 35);
           } else if (json[i].line_type == 2) {
             let startX = (start - leftLineMinMileage) * everys;
@@ -841,15 +810,34 @@ export default {
               startX = 0;
               endX = end * everys;
             }
-            context.fillRect(
-              centerX + offsetX,
-              axis_LeftLine_Two.y + 15,
-              2,
-              15
-            );
-            context.moveTo(startX + offsetX, axis_LeftLine_Two.y + 15);
-            context.lineTo(endX + offsetX, axis_LeftLine_Two.y + 15);
+            context.fillRect(centerX + offsetX, axis_LeftLine_Two.y, 2, 30);
+            context.moveTo(startX + offsetX, axis_LeftLine_Two.y);
+            context.lineTo(endX + offsetX, axis_LeftLine_Two.y);
             context.fillText(desc, centerX + offsetX, axis_LeftLine_Two.y + 35);
+          } else if (json[i].line_type == 3) {
+            let startX = (start - enterLineMinMileage) * everys;
+            let endX = (end - enterLineMinMileage) * everys;
+            let centerX = (endX + startX) / 2;
+            if (start == 0) {
+              startX = 0;
+              endX = end * everys;
+            }
+            context.fillRect(centerX + offsetX, axis_OutLine.y, 2, 30);
+            context.moveTo(startX + offsetX, axis_OutLine.y);
+            context.lineTo(endX + offsetX, axis_OutLine.y);
+            context.fillText(desc, centerX + offsetX, axis_OutLine.y + 35);
+          } else if (json[i].line_type == 4) {
+            let startX = (start - outLineMinMileage) * everys;
+            let endX = (end - outLineMinMileage) * everys;
+            let centerX = (endX + startX) / 2;
+            if (start == 0) {
+              startX = 0;
+              endX = end * everys;
+            }
+            context.fillRect(centerX + offsetX, axis_OutLine_Two.y, 2, 30);
+            context.moveTo(startX + offsetX, axis_OutLine_Two.y);
+            context.lineTo(endX + offsetX, axis_OutLine_Two.y);
+            context.fillText(desc, centerX + offsetX, axis_OutLine_Two.y + 35);
           }
           context.stroke();
         }
@@ -881,23 +869,42 @@ export default {
             let startX = (start - leftLineMinMileage) * everys;
             let endX = (end - leftLineMinMileage) * everys;
             let centerX = (endX + startX) / 2; //开始结束平均值
-            context.fillRect(centerX + offsetX, axis_LeftLine.y + 10, 2, 20);
-            context.moveTo(startX + offsetX, axis_LeftLine.y + 10);
-            context.lineTo(endX + offsetX, axis_LeftLine.y + 10);
+            context.fillRect(centerX + offsetX, axis_LeftLine.y, 2, 30);
+            context.moveTo(startX + offsetX, axis_LeftLine.y);
+            context.lineTo(endX + offsetX, axis_LeftLine.y);
             context.fillText(desc, centerX + 100, axis_LeftLine.y + 35);
           } else if (json[i].line_type == 2) {
             let startX = (start - leftLineMinMileage) * everys;
             let endX = (end - leftLineMinMileage) * everys;
             let centerX = (endX + startX) / 2;
-            context.fillRect(
-              centerX + offsetX,
-              axis_LeftLine_Two.y + 10,
-              2,
-              20
-            );
-            context.moveTo(startX + offsetX, axis_LeftLine_Two.y + 10);
-            context.lineTo(endX + offsetX, axis_LeftLine_Two.y + 10);
+            context.fillRect(centerX + offsetX, axis_LeftLine_Two.y, 2, 30);
+            context.moveTo(startX + offsetX, axis_LeftLine_Two.y);
+            context.lineTo(endX + offsetX, axis_LeftLine_Two.y);
             context.fillText(desc, centerX + 100, axis_LeftLine_Two.y + 35);
+          } else if (json[i].line_type == 3) {
+            let startX = (start - enterLineMinMileage) * everys;
+            let endX = (end - enterLineMinMileage) * everys;
+            let centerX = (endX + startX) / 2; //开始结束平均值
+            if (start == 0) {
+              startX = 0;
+              endX = end * everys;
+            }
+            context.fillRect(centerX + offsetX, axis_OutLine.y, 2, 30);
+            context.moveTo(startX + offsetX, axis_OutLine.y);
+            context.lineTo(endX + offsetX, axis_OutLine.y);
+            context.fillText(desc, centerX + 100, axis_OutLine.y + 35);
+          } else if (json[i].line_type == 4) {
+            let startX = (start - outLineMinMileage) * everys;
+            let endX = (end - outLineMinMileage) * everys;
+            let centerX = (endX + startX) / 2; //开始结束平均值
+            if (start == 0) {
+              startX = 0;
+              endX = end * everys;
+            }
+            context.fillRect(centerX + offsetX, axis_OutLine_Two.y, 2, 30);
+            context.moveTo(startX + offsetX, axis_OutLine_Two.y);
+            context.lineTo(endX + offsetX, axis_OutLine_Two.y);
+            context.fillText(desc, centerX + 100, axis_OutLine_Two.y + 35);
           }
           context.stroke();
           //
