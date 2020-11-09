@@ -1534,9 +1534,7 @@ export default {
               data: trueLineData[k].lists
             });
           }
-
           //   console.log("seriesLineData" + JSON.stringify(trueLineData));
-          //    console.log("seriesLineData" + JSON.stringify(seriesData));
           //时间
           let dataMin = new Date(
             this.todayValue.getTime() - 24 * 60 * 60 * 1000
