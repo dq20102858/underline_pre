@@ -9,7 +9,7 @@
         <el-menu-item index="walldetector">信号基站</el-menu-item>
         <!-- <el-menu-item index="cardetector" @click="toFirstPage">车载探测器</el-menu-item> -->
         <el-menu-item index="locationbind">定位从设备</el-menu-item>
-        <!-- <el-menu-item index="device">机具</el-menu-item> -->
+        <el-menu-item index="device">机具</el-menu-item>
       </el-menu>
     </div>
     <div class="app-page">

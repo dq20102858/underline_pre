@@ -9,7 +9,7 @@
         <el-menu-item index="walldetector">信号基站</el-menu-item>
         <!-- <el-menu-item index="cardetector">车载探测器</el-menu-item> -->
         <el-menu-item index="locationbind">定位从设备</el-menu-item>
-        <!-- <el-menu-item index="device" @click="pageToFirst">机具</el-menu-item> -->
+        <el-menu-item index="device" @click="pageToFirst">机具</el-menu-item>
       </el-menu>
     </div>
     <div class="app-page">
@@ -29,6 +29,7 @@
               </template>
             </el-table-column>
             <el-table-column prop="name" label="名称"></el-table-column>
+            <el-table-column prop="type" label="类型"></el-table-column>
             <el-table-column prop="description" label="详情" show-overflow-tooltip></el-table-column>
             <el-table-column prop="company" label="公司名称"></el-table-column>
             <el-table-column label="操作" width="120">
@@ -84,6 +85,14 @@
         </el-form-item>
         <el-form-item label="机具名称：" prop="name">
           <el-input v-model="deviceData.name" autocomplete="off" maxlength="20" show-word-limit></el-input>
+        </el-form-item>
+        <el-form-item label="机具类型：" prop="type">
+          <el-select v-model="deviceData.type" placeholder="请选择">
+            <el-option label="小型机具" :value="2"></el-option>
+            <el-option label="小平板车" :value="3"></el-option>
+            <el-option label="梯车" :value="4"></el-option>
+            <el-option label="梯子" :value="5"></el-option>
+          </el-select>
         </el-form-item>
         <el-form-item label="详情：" prop="description">
           <el-input type="textarea" v-model="deviceData.description" maxlength="50" show-word-limit></el-input>
