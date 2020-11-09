@@ -1,18 +1,26 @@
 <template>
   <div id="app-monitor-chart">
-    <div class="maintitle">{{todayPreValue}} — {{todayNextValue}} 轨行区作业分布图</div>
+    <div class="maintitle">
+      {{ todayPreValue }} — {{ todayNextValue }} 轨行区作业分布图
+    </div>
 
     <div class="app-page">
       <div class="app-page-container">
         <div class="app-page-adds">
           <div class="btnitem">
-            <el-button @click="planAddDiaLog" type="primary" plain>编制日班计划图</el-button>
+            <el-button @click="planAddDiaLog" type="primary" plain
+              >编制日班计划图</el-button
+            >
           </div>
           <div class="btnitem">
-            <el-button @click="planEditDiaLog" type="primary " plain>编制日班实际图</el-button>
+            <el-button @click="planEditDiaLog" type="primary " plain
+              >编制日班实际图</el-button
+            >
           </div>
           <div class="btnitem">
-            <el-button @click="refreshPage" type="primary" plain>刷新</el-button>
+            <el-button @click="refreshPage" type="primary" plain
+              >刷新</el-button
+            >
           </div>
           <div class="btnitem">
             <el-date-picker
@@ -74,7 +82,12 @@
         ref="formRules"
       >
         <el-form-item label="日班计划编号：" prop="number">
-          <el-input v-model="formData.number" autocomplete="off" maxlength="20" show-word-limit></el-input>
+          <el-input
+            v-model="formData.number"
+            autocomplete="off"
+            maxlength="20"
+            show-word-limit
+          ></el-input>
         </el-form-item>
         <el-form-item>
           <el-select v-model="formData.plan_type">
@@ -83,14 +96,25 @@
             <el-option label="施工计划" :value="3"></el-option>-->
           </el-select>
         </el-form-item>
-        <fieldset v-if="formData.plan_type!=3">
+        <fieldset v-if="formData.plan_type != 3">
           <legend>列车信息</legend>
-          <el-form-item label="列车类型：" label-width="100px" style="display:none">
-            <el-select v-model="formData.car_type" placeholder="请选择"></el-select>
+          <el-form-item
+            label="列车类型："
+            label-width="100px"
+            style="display:none"
+          >
+            <el-select
+              v-model="formData.car_type"
+              placeholder="请选择"
+            ></el-select>
           </el-form-item>
           <div class="el-form-item-block">
             <el-form-item label="出发车次：" label-width="100px">
-              <el-input v-model="formData.out_car" autocomplete="off" maxlength="20"></el-input>
+              <el-input
+                v-model="formData.out_car"
+                autocomplete="off"
+                maxlength="20"
+              ></el-input>
             </el-form-item>
             <el-form-item label="本务：">
               <el-select v-model="formData.out_business_loco">
@@ -157,15 +181,26 @@
               </el-select>
             </el-form-item>
             <el-form-item label="编组：">
-              <el-input v-model="formData.out_marshalling" autocomplete="off" maxlength="20"></el-input>
+              <el-input
+                v-model="formData.out_marshalling"
+                autocomplete="off"
+                maxlength="20"
+              ></el-input>
             </el-form-item>
           </div>
           <div class="el-form-item-block">
             <el-form-item label="返回车次：" label-width="100px">
-              <el-input v-model="formData.back_car" autocomplete="off" maxlength="20"></el-input>
+              <el-input
+                v-model="formData.back_car"
+                autocomplete="off"
+                maxlength="20"
+              ></el-input>
             </el-form-item>
             <el-form-item label="本务：">
-              <el-select v-model="formData.back_business_loco" placeholder="请选择">
+              <el-select
+                v-model="formData.back_business_loco"
+                placeholder="请选择"
+              >
                 <el-option
                   v-for="item in locoList"
                   :key="item.id"
@@ -229,15 +264,23 @@
               </el-select>
             </el-form-item>
             <el-form-item label="编组：">
-              <el-input v-model="formData.back_marshalling" maxlength="20" autocomplete="off"></el-input>
+              <el-input
+                v-model="formData.back_marshalling"
+                maxlength="20"
+                autocomplete="off"
+              ></el-input>
             </el-form-item>
           </div>
         </fieldset>
         <!---2 -->
-        <fieldset v-if="formData.plan_type!=2">
+        <fieldset v-if="formData.plan_type != 2">
           <legend>计划施工信息</legend>
           <div class="el-form-item-block">
-            <el-form-item label="开始时间：" label-width="100px" prop="start_time">
+            <el-form-item
+              label="开始时间："
+              label-width="100px"
+              prop="start_time"
+            >
               <el-date-picker
                 v-model="formData.start_time"
                 type="datetime"
@@ -267,7 +310,11 @@
             </el-form-item>
           </div>
           <div class="el-form-item-block">
-            <el-form-item label="作业类型：" label-width="100px" prop="work_type">
+            <el-form-item
+              label="作业类型："
+              label-width="100px"
+              prop="work_type"
+            >
               <el-select
                 v-model="formData.work_type"
                 placeholder="请选择"
@@ -322,7 +369,11 @@
             </el-form-item>
           </div>
           <div class="el-form-item-block">
-            <el-form-item label="工点：" label-width="100px" prop="start_station">
+            <el-form-item
+              label="工点："
+              label-width="100px"
+              prop="start_station"
+            >
               <el-select
                 v-model="formData.start_station"
                 placeholder="请选择"
@@ -351,7 +402,10 @@
                 ></el-option>
               </el-select>
             </el-form-item>
-            <el-form-item label="里程：" class="el-form-item-inlines is-required">
+            <el-form-item
+              label="里程："
+              class="el-form-item-inlines is-required"
+            >
               <el-form-item prop="start_flag">
                 <el-input
                   v-model="formData.start_flag"
@@ -390,7 +444,12 @@
             </el-form-item>
           </div>
         </fieldset>
-        <el-form-item class="istextarea" label="计划内容：" label-width="110px" prop="description">
+        <el-form-item
+          class="istextarea"
+          label="计划内容："
+          label-width="110px"
+          prop="description"
+        >
           <el-input
             v-model="formData.description"
             autocomplete="off"
@@ -433,17 +492,33 @@
         </el-form-item>
         <el-form-item label="记录人：" label-width="130px" prop="record_id">
           <el-select v-model="formEditData.record_id">
-            <el-option v-for="item in userList" :key="item.id" :label="item.name" :value="item.id"></el-option>
+            <el-option
+              v-for="item in userList"
+              :key="item.id"
+              :label="item.name"
+              :value="item.id"
+            ></el-option>
           </el-select>
         </el-form-item>
-        <fieldset v-if="formEditData.plan_type!=3">
+        <fieldset v-if="formEditData.plan_type != 3">
           <legend>列车信息</legend>
-          <el-form-item label="列车类型：" label-width="100px" style="display:none">
-            <el-select v-model="formEditData.car_type" placeholder="请选择"></el-select>
+          <el-form-item
+            label="列车类型："
+            label-width="100px"
+            style="display:none"
+          >
+            <el-select
+              v-model="formEditData.car_type"
+              placeholder="请选择"
+            ></el-select>
           </el-form-item>
           <div class="el-form-item-block">
             <el-form-item label="出发车次：" label-width="100px">
-              <el-input v-model="formEditData.out_car" autocomplete="off" maxlength="20"></el-input>
+              <el-input
+                v-model="formEditData.out_car"
+                autocomplete="off"
+                maxlength="20"
+              ></el-input>
             </el-form-item>
             <el-form-item label="本务：">
               <el-select v-model="formEditData.out_business_loco">
@@ -480,7 +555,10 @@
           </div>
           <div class="el-form-item-block">
             <el-form-item label="出发级别：" label-width="100px">
-              <el-select v-model="formEditData.out_line_type" placeholder="请选择">
+              <el-select
+                v-model="formEditData.out_line_type"
+                placeholder="请选择"
+              >
                 <el-option
                   v-for="item in lineTypeList"
                   :key="item.id"
@@ -490,7 +568,10 @@
               </el-select>
             </el-form-item>
             <el-form-item label="车长：">
-              <el-select v-model="formEditData.out_master_id" placeholder="请选择">
+              <el-select
+                v-model="formEditData.out_master_id"
+                placeholder="请选择"
+              >
                 <el-option
                   v-for="item in masterList"
                   :key="item.id"
@@ -500,7 +581,10 @@
               </el-select>
             </el-form-item>
             <el-form-item label="司机：">
-              <el-select v-model="formEditData.out_driver_id" placeholder="请选择">
+              <el-select
+                v-model="formEditData.out_driver_id"
+                placeholder="请选择"
+              >
                 <el-option
                   v-for="item in driverList"
                   :key="item.id"
@@ -510,15 +594,26 @@
               </el-select>
             </el-form-item>
             <el-form-item label="编组：">
-              <el-input v-model="formEditData.out_marshalling" autocomplete="off" maxlength="20"></el-input>
+              <el-input
+                v-model="formEditData.out_marshalling"
+                autocomplete="off"
+                maxlength="20"
+              ></el-input>
             </el-form-item>
           </div>
           <div class="el-form-item-block">
             <el-form-item label="返回车次：" label-width="100px">
-              <el-input v-model="formEditData.back_car" autocomplete="off" maxlength="20"></el-input>
+              <el-input
+                v-model="formEditData.back_car"
+                autocomplete="off"
+                maxlength="20"
+              ></el-input>
             </el-form-item>
             <el-form-item label="本务：">
-              <el-select v-model="formEditData.back_business_loco" placeholder="请选择">
+              <el-select
+                v-model="formEditData.back_business_loco"
+                placeholder="请选择"
+              >
                 <el-option
                   v-for="item in locoList"
                   :key="item.id"
@@ -552,7 +647,10 @@
           </div>
           <div class="el-form-item-block">
             <el-form-item label="返回线别：" label-width="100px">
-              <el-select v-model="formEditData.back_line_type" placeholder="请选择">
+              <el-select
+                v-model="formEditData.back_line_type"
+                placeholder="请选择"
+              >
                 <el-option
                   v-for="item in lineTypeList"
                   :key="item.id"
@@ -562,7 +660,10 @@
               </el-select>
             </el-form-item>
             <el-form-item label="车长：">
-              <el-select v-model="formEditData.back_master_id" placeholder="请选择">
+              <el-select
+                v-model="formEditData.back_master_id"
+                placeholder="请选择"
+              >
                 <el-option
                   v-for="item in masterList"
                   :key="item.id"
@@ -572,7 +673,10 @@
               </el-select>
             </el-form-item>
             <el-form-item label="司机：">
-              <el-select v-model="formEditData.back_driver_id" placeholder="请选择">
+              <el-select
+                v-model="formEditData.back_driver_id"
+                placeholder="请选择"
+              >
                 <el-option
                   v-for="item in driverList"
                   :key="item.id"
@@ -582,15 +686,23 @@
               </el-select>
             </el-form-item>
             <el-form-item label="编组：">
-              <el-input v-model="formEditData.back_marshalling" maxlength="20" autocomplete="off"></el-input>
+              <el-input
+                v-model="formEditData.back_marshalling"
+                maxlength="20"
+                autocomplete="off"
+              ></el-input>
             </el-form-item>
           </div>
         </fieldset>
         <!---2 -->
-        <fieldset v-if="formEditData.plan_type!=2">
+        <fieldset v-if="formEditData.plan_type != 2">
           <legend>计划施工信息</legend>
           <div class="el-form-item-block">
-            <el-form-item label="开始时间：" label-width="100px" prop="start_time">
+            <el-form-item
+              label="开始时间："
+              label-width="100px"
+              prop="start_time"
+            >
               <el-date-picker
                 disabled
                 v-model="formEditData.start_time"
@@ -609,7 +721,10 @@
               ></el-date-picker>
             </el-form-item>
             <el-form-item label="施工作业队：" label-width="100px">
-              <el-select v-model="formEditData.work_plan_id" placeholder="请选择">
+              <el-select
+                v-model="formEditData.work_plan_id"
+                placeholder="请选择"
+              >
                 <el-option
                   v-for="item in departLists"
                   :key="item.id"
@@ -672,7 +787,11 @@
             </el-form-item>
           </div>
           <div class="el-form-item-block">
-            <el-form-item label="工点：" label-width="100px" prop="start_station">
+            <el-form-item
+              label="工点："
+              label-width="100px"
+              prop="start_station"
+            >
               <el-select
                 disabled
                 v-model="formEditData.start_station"
@@ -703,7 +822,10 @@
                 ></el-option>
               </el-select>
             </el-form-item>
-            <el-form-item label="里程：" class="el-form-item-inlines is-required">
+            <el-form-item
+              label="里程："
+              class="el-form-item-inlines is-required"
+            >
               <el-form-item prop="start_flag">
                 <el-input
                   disabled
@@ -746,7 +868,12 @@
             </el-form-item>
           </div>
         </fieldset>
-        <el-form-item class="istextarea" label="计划内容：" label-width="110px" prop="description">
+        <el-form-item
+          class="istextarea"
+          label="计划内容："
+          label-width="110px"
+          prop="description"
+        >
           <el-input
             v-model="formEditData.description"
             autocomplete="off"
@@ -758,7 +885,11 @@
         <fieldset>
           <legend>实际施工信息</legend>
           <div class="el-form-item-block">
-            <el-form-item label="实际开始时间：" label-width="120px" prop="true_start_time">
+            <el-form-item
+              label="实际开始时间："
+              label-width="120px"
+              prop="true_start_time"
+            >
               <el-date-picker
                 v-model="formEditData.true_start_time"
                 type="datetime"
@@ -801,7 +932,10 @@
                 ></el-input>
               </el-form-item>
             </el-form-item>
-            <el-form-item label="结束里程(DK)：" class="el-form-item-inlines is-required">
+            <el-form-item
+              label="结束里程(DK)："
+              class="el-form-item-inlines is-required"
+            >
               <el-form-item prop="true_end_flag">
                 <el-input
                   v-model="formEditData.true_end_flag"
@@ -822,7 +956,11 @@
             </el-form-item>
           </div>
           <div class="el-form-item-block dateinput">
-            <el-form-item label="完成长度(公里)：" label-width="120px" prop="finish_num">
+            <el-form-item
+              label="完成长度(公里)："
+              label-width="120px"
+              prop="finish_num"
+            >
               <el-input
                 v-model="formEditData.finish_num"
                 autocomplete="off"
@@ -831,7 +969,9 @@
               ></el-input>
             </el-form-item>
             <el-form-item>
-              <el-checkbox v-model="formEditData.status" @change="formStatus">完成</el-checkbox>
+              <el-checkbox v-model="formEditData.status" @change="formStatus"
+                >完成</el-checkbox
+              >
             </el-form-item>
           </div>
           <div class="el-form-item-block">
@@ -1272,6 +1412,10 @@ export default {
           seriesData.push({
             name: "车站",
             type: "line",
+            tooltip: {
+              show: true,
+              trigger: "item"
+            },
             markLine: {
               silent: true,
               data: this.mark_line,
@@ -1335,7 +1479,8 @@ export default {
             seriesData.push({
               name: planLineData[k].names,
               type: "line",
-              symbol: "none",
+               symbolSize: 10,
+              symbol: "circle",
               itemStyle: { normal: { color: planLineData[k].color } },
               data: planLineData[k].lists
             });
@@ -1383,12 +1528,13 @@ export default {
             seriesData.push({
               name: trueLineData[k].names,
               type: "line",
-              symbol: "none",
+              symbolSize: 10,
+              symbol: "circle",
               itemStyle: { normal: { color: trueLineData[k].color } },
               data: trueLineData[k].lists
             });
           }
-          //  console.log("seriesLineData" + JSON.stringify(planLineData));
+
           //   console.log("seriesLineData" + JSON.stringify(trueLineData));
           //    console.log("seriesLineData" + JSON.stringify(seriesData));
           //时间
@@ -1408,7 +1554,9 @@ export default {
               color: "#1D397A"
             },
             tooltip: {
-              trigger: "none",
+              show: true,
+              trigger: "item",
+              // trigger: "none",
               axisPointer: {
                 type: "cross",
                 label: {
@@ -1480,14 +1628,14 @@ export default {
               min: minLineNum,
               max: maxLineNum
             },
-            dataZoom: [
-              {
-                startValue: "2020-06-04"
-              },
-              {
-                type: "inside"
-              }
-            ],
+            // dataZoom: [
+            //   {
+            //     startValue: "2020-06-04"
+            //   },
+            //   {
+            //     type: "inside"
+            //   }
+            // ],
             dataZoom: [
               {
                 type: "slider",
@@ -1518,7 +1666,58 @@ export default {
             //   }
             // ],
             series: seriesData
+            // series: [
+            //   {
+            //     name: "车站",
+            //     type: "line",
+            //     tooltip: { show: true, trigger: "item" },
+            //     markLine: {
+            //       silent: true,
+            //       data: [
+            //         { name: "刘潭站 DK 0 + 257", yAxis: 0.257 },
+            //         { name: "广石路站 DK 1 + 804", yAxis: 1.804 },
+            //         { name: "黄巷站 DK 4 + 232", yAxis: 4.232 },
+            //         { name: "盛岸站 DK 5 + 249", yAxis: 5.249 },
+            //         { name: "惠山古镇站 DK 6 + 736", yAxis: 6.736 },
+            //         {
+            //           name: "青山湾荣院站 DK 8 + 694",
+            //           yAxis: 8.693999999999999
+            //         },
+            //         { name: "河埒口站 DK 9 + 808", yAxis: 9.808 },
+            //         { name: "西园弄站 DK 11 + 271", yAxis: 11.271 }
+            //       ],
+            //       symbol: ["none"],
+            //       label: { show: false, normal: { position: "left" } },
+            //       lineStyle: { normal: { type: "solid", color: "#1D397A" } }
+            //     }
+            //   },
+            //   {
+            //     name: "计划左线",
+            //     type: "line",
+            //     symbolSize: 10,
+            //     symbol: "circle",
+            //     itemStyle: { normal: { color: "#467aff" } },
+
+            //     data: [
+            //       ["2020-11-06 00:00:00", 1.804],
+            //       ["2020-11-07 00:00:00", 4.232]
+            //     ]
+            //   },
+            //   {
+            //     name: "实际左线",
+            //     type: "line",
+            //     symbol: "circle",
+            //     symbolSize: 5,
+            //     itemStyle: { normal: { color: "green" } },
+            //     data: [
+            //       ["2020-11-06 00:00:00", 1.804],
+            //       ["2020-11-07 00:00:00", 4]
+            //     ]
+            //   }
+            // ]
           };
+
+          console.log("dd" + JSON.stringify(seriesData));
           // 使用刚指定的配置项和数据显示图表。
           myChart.setOption(option, true);
           myChart.resize();
@@ -2122,7 +2321,7 @@ export default {
       //alert(this.select_line_type);
       this.getChart();
     }
-   
+
     //
   }
 };

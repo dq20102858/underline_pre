@@ -746,10 +746,11 @@ export default {
               endX = end * everys;
             }
             context.fillRect(centerX + offsetX, axis_LeftLine_Two.y, 2, 30);
-            context.moveTo(startX + offsetX, axis_LeftLine_Two.y);
-            context.lineTo(endX + offsetX, axis_LeftLine_Two.y);
+            context.moveTo(startX + offsetX, axis_LeftLine_Two.y+5);
+            context.lineTo(endX + offsetX, axis_LeftLine_Two.y+5);
             context.fillText(desc, centerX + offsetX, axis_LeftLine_Two.y + 35);
-          } else if (json[i].line_type == 3) {
+          }
+           else if (json[i].line_type == 3) {
             let startX = (start - enterLineMinMileage) * everys;
             let endX = (end - enterLineMinMileage) * everys;
             let centerX = (endX + startX) / 2;
