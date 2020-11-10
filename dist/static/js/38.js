@@ -1,6 +1,20 @@
 webpackJsonp([38],{
 
-/***/ "CSzI":
+/***/ "/2vr":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("6xkJ");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__("rjj0")("3fbf9070", content, true);
+
+/***/ }),
+
+/***/ "6xkJ":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("FZ+f")(false);
@@ -8,83 +22,20 @@ exports = module.exports = __webpack_require__("FZ+f")(false);
 
 
 // module
-exports.push([module.i, "\n#diagram {\r\n  position: absolute;\r\n  width: 66.6%;\r\n  height: 100%;\r\n  background: #01023a;\n}\n#diagram .station {\r\n  margin: 10px 0 0 0;\r\n  position: relative;\r\n  z-index: 999;\n}\n#diagram .progresslist {\r\n  display: none;\r\n  padding-top: 20px;\r\n  padding-left: 30px;\r\n  color: #fff;\n}\n#diagram .progresslist .namess {\r\n  padding-bottom: 10px;\r\n  display: inline-block;\r\n  padding-right: 14px;\n}\n#diagram .progresslist .el-radio__label {\r\n  color: #fff;\n}\n.clear {\r\n  clear: both;\n}\r\n\r\n/*check-list*/\n.check-lists {\r\n  margin: 0px 30px 0 30px;\n}\n.check-lists .namess {\r\n  color: #fff;\r\n  margin-right: 15px;\n}\n.check-lists .el-checkbox__label {\r\n  color: #fff;\r\n  font-size: 14px;\n}\n.check-lists .bridgechk.is-checked {\r\n  border-color: #cdaa7d !important;\n}\n.check-lists .bridgechk .el-checkbox__input.is-checked .el-checkbox__inner {\r\n  background-color: #cdaa7d;\r\n  border-color: #cdaa7d;\n}\n.check-lists .bridgechk.is-checked .el-checkbox__label {\r\n  color: #cdaa7d;\n}\n.check-lists .tunnelchk.is-checked {\r\n  border-color: #25bfdb !important;\n}\n.check-lists .tunnelchk .el-checkbox__input.is-checked .el-checkbox__inner {\r\n  background-color: #25bfdb;\r\n  border-color: #25bfdb;\n}\n.check-lists .tunnelchk.is-checked .el-checkbox__label {\r\n  color: #25bfdb;\n}\n.check-lists .speedchk.is-checked {\r\n  border-color: #ff9900 !important;\n}\n.check-lists .speedchk .el-checkbox__input.is-checked .el-checkbox__inner {\r\n  background-color: #ff9900;\r\n  border-color: #ff9900;\n}\n.check-lists .speedchk.is-checked .el-checkbox__label {\r\n  color: #ff9900;\n}\n.check-lists .slopechk.is-checked {\r\n  border-color: #6e7b8b !important;\n}\n.check-lists .slopechk .el-checkbox__input.is-checked .el-checkbox__inner {\r\n  background-color: #6e7b8b;\r\n  border-color: #6e7b8b;\n}\n.check-lists .slopechk.is-checked .el-checkbox__label {\r\n  color: #6e7b8b;\n}\n.check-lists .alertchk.is-checked {\r\n  border-color: #e53636 !important;\n}\n.check-lists .alertchk .el-checkbox__input.is-checked .el-checkbox__inner {\r\n  background-color: #e53636;\r\n  border-color: #e53636;\n}\n.check-lists .alertchk.is-checked .el-checkbox__label {\r\n  color: #e53636;\n}\n.check-lists .daocchk.is-checked {\r\n  border-color: #107af7 !important;\n}\n.check-lists .daocchk .el-checkbox__input.is-checked .el-checkbox__inner {\r\n  background-color: #107af7;\r\n  border-color: #107af7;\n}\n.check-lists .daocchk.is-checked .el-checkbox__label {\r\n  color: #107af7;\n}\n.check-lists .buildchk.is-checked {\r\n  border-color: #08ce80 !important;\n}\n.check-lists .buildchk .el-checkbox__input.is-checked .el-checkbox__inner {\r\n  background-color: #08ce80;\r\n  border-color: #08ce80;\n}\n.check-lists .buildchk.is-checked .el-checkbox__label {\r\n  color: #08ce80;\n}\r\n", ""]);
+exports.push([module.i, "\n.sttitle {\r\n  color: #fff;\r\n  padding: 22px 0 0 25px;\r\n  font-size: 24px;\r\n  text-align: center;\n}\n#progress {\r\n  position: absolute;\r\n  width: 100%;\r\n  height: 100%;\r\n  background: #081c33;\r\n  min-height: 95vh;\n}\n.progress {\r\n  background: #081c33;\r\n  padding-bottom: 30px;\n}\n@media (max-width: 1024px) {\n#progress {\r\n    width: 1024px;\n}\n}\n.station {\r\n  margin: 50px 0px 0px 230px;\r\n  position: relative;\r\n  z-index: 999;\n}\n.stationlineleft {\r\n  min-height: 188px;\r\n  width: 1px;\r\n  background: #fff;\r\n  position: absolute;\r\n  left: 8px;\r\n  top: 215px;\r\n  z-index: 1000;\n}\n.stationlineright {\r\n  min-height: 188px;\r\n  width: 1px;\r\n  background: #fff;\r\n  position: absolute;\r\n  right: 40px;\r\n  top: 215px;\r\n  z-index: 1000;\n}\n.linebox {\r\n  margin-left: 30px;\r\n  margin-right: 40px;\r\n  border-top: 0;\r\n  overflow: hidden;\r\n  clear: both;\n}\r\n/* lineTable */\n.lineTable {\r\n  width: 100%;\r\n  border: 1px #fff solid;\r\n  border-collapse: collapse;\n}\n.lineTable td {\r\n  color: #fff;\r\n  border: 1px solid #fff;\n}\n.lineTable .tdtitle {\r\n  text-align: center;\r\n  overflow: hidden;\r\n  height: 18px;\r\n  padding-left: 5px;\r\n  width: 125px;\r\n  font-size: 12px;\r\n  line-height: 18px;\r\n  white-space: nowrap;\r\n  text-overflow: ellipsis;\n}\n.tdbar .bar {\r\n  border-bottom: 1px solid #fff;\r\n  height: 18px;\r\n  overflow: hidden;\n}\n.tdbar .bar:last-child {\r\n  border-bottom: 0;\n}\n.tdbar .bar span {\r\n  font-size: 12px;\r\n  color: #fff;\r\n  width: 78px;\r\n  float: left;\r\n  line-height: 18px;\r\n  text-align: center;\r\n  border-right: 0px #fff solid;\n}\n.tdbar .bar em {\r\n  height: 20px;\r\n  display: inline-block;\r\n  position: relative;\r\n  overflow: hidden;\n}\n.tdbar .bar em i {\r\n  position: absolute;\r\n  top: 0;\r\n  background: #27db07;\r\n  height: 18px;\r\n  display: inline-block;\r\n  overflow: hidden;\n}\n.tdbar .bar em i:first-child {\r\n  border-left: 0;\n}\n.tdbar .bar em i:last-child {\r\n  border-left: 0;\n}\n.clear {\r\n  clear: both;\n}\r\n/* //#27DB07 */\r\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ "wT29":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("CSzI");
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__("rjj0")("1d279daa", content, true);
-
-/***/ }),
-
-/***/ "xmk4":
+/***/ "naN1":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
-// EXTERNAL MODULE: ./node_modules/babel-runtime/core-js/get-iterator.js
-var get_iterator = __webpack_require__("BO1k");
-var get_iterator_default = /*#__PURE__*/__webpack_require__.n(get_iterator);
-
-// CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./src/views/datav/diagram.vue
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+// CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./src/views/progress/index.vue
 //
 //
 //
@@ -118,41 +69,7 @@ var get_iterator_default = /*#__PURE__*/__webpack_require__.n(get_iterator);
 //
 //
 
-var diagram_canvas = void 0;
-var diagram_context = void 0;
-var axis_Height = 200;
-var offsetX = 0;
-var tick_Spacing = 100;
-var tick_Height = 8; //刻度线高度
-//标尺起点
-var axis_LeftLine = {
-  x: 30,
-  y: 70
-};
-var axis_LeftLine_Two = {
-  x: 30,
-  y: 150
-};
-//出入场线
-var axis_OutLine = {
-  x: 30,
-  y: axis_Height - 160
-};
-var axis_OutLine_Two = {
-  x: 30,
-  y: axis_Height - 50
-};
-
-var axis_Applay = {
-  x: 30,
-  y: axis_Height - 450
-};
-var axis_Applay_two = {
-  x: 30,
-  y: axis_Height - 330
-};
-var applyClickXY = [];
-/* harmony default export */ var diagram = ({
+/* harmony default export */ var progress = ({
   data: function data() {
     return {
       conheight: {
@@ -164,42 +81,20 @@ var applyClickXY = [];
       listSchedule: [],
       stationlineHeight: 0,
       stationlineTwoHeight: 0,
-      everys: 0,
+      every: 0,
+      everyLineType: 0,
       lineTypeMinMileage: 0,
       lineTypeMaxMileage: 0,
       lineTypeEnterMinMileage: 0,
-      lineTypeOutMinMileage: 0,
-      applyList: [],
-      bridgeCheckValue: true,
-      bridgeList: [],
-      tunnelCheckValue: true,
-      tunnelList: [],
-      speedCheckValue: true,
-      speedList: [],
-      buildCheckValue: true,
-      buildList: [],
-      alertCheckValue: true,
-      alertList: [],
-      slopeCheckValue: true,
-      slopeList: [],
-      daocCheckValue: true,
-      daocList: [],
-      progressList: [],
-      progressListItem: [],
-      progressCheckValue: 0
+      lineTypeOutMinMileage: 0
     };
   },
-
-  props: ["fatherWidth"],
-  updated: function updated() {},
+  updated: function updated() {
+    this.getStationList();
+    this.stationlineHeight = 188 + this.$refs.reflinebox.offsetHeight;
+  },
   created: function created() {
     this.getProjectProcessMap();
-  },
-  mounted: function mounted() {
-    window.addEventListener("resize", this.initCanvas);
-  },
-  destroyed: function destroyed() {
-    window.removeEventListener("resize", this.initCanvas);
   },
 
   methods: {
@@ -207,7 +102,7 @@ var applyClickXY = [];
       var _this = this;
 
       this.request({
-        url: "/monitor/getMointorDatas",
+        url: "/project/projectProcessMap",
         method: "get"
       }).then(function (response) {
         var data = response.data;
@@ -225,728 +120,173 @@ var applyClickXY = [];
               _this.lineTypeOutMinMileage = parseInt(linetypeJson[i].start_flag) * 1000 + parseInt(linetypeJson[i].start_length);
             }
           }
-          //请点
-          _this.applyList = data.data.apply_lists;
-          _this.speedList = data.data.speed_lists; //限速区
-          _this.buildList = data.data.work_lists; //施工地段
-          _this.alertList = data.data.alert_lists; //防区
-          //施工进度
-          if (data.data.project.length > 0) {
-            _this.progressList = data.data.project;
-            _this.progressCheckValue = data.data.project[0]["name"];
-            _this.progressListItem = data.data.project[0].list;
-          }
-          _this.initCanvas();
-          //
+          _this.listSchedule = data.data.datas;
         }
       });
     },
-    initCanvas: function initCanvas() {
-      var that = this;
-      var canvasWidth = this.$refs.canvasWrapper.clientWidth - 30;
-      this.cwidth = canvasWidth;
+    getStationList: function getStationList() {
+      var clientWidth = this.$refs.proWrapper.clientWidth;
+      var canvasWidth = clientWidth - 270;
+      this.cwidth = canvasWidth - 10;
       var lineTypeBetwentMileage = this.lineTypeMaxMileage - this.lineTypeMinMileage;
       var lineTypeTotalMileage = this.lineTypeMaxMileage + this.lineTypeMinMileage;
-      this.everys = (parseInt(this.cwidth) / lineTypeBetwentMileage).toFixed(5);
-      console.log("canvasWidth：" + this.cwidth + "_" + this.everys);
-
-      var lineTypeMinMileage = this.lineTypeMinMileage;
-      var everys = this.everys; //每米长度等于px
-      // console.log("everys" + everys);
+      this.everyLineType = (parseInt(this.cwidth) / lineTypeBetwentMileage).toFixed(5);
+      this.every = (parseInt(canvasWidth) / lineTypeBetwentMileage).toFixed(5);
+      // console.log("cwidth" + this.cwidth + "_" + this.everyLineType);
 
       var canvas = this.$refs.canvasStation;
-      var context = canvas.getContext("2d");
+      var cansText = canvas.getContext("2d");
       canvas.width = canvasWidth;
-      //console.log("lineTypeMinMileage：" + lineTypeMinMileage);
-      //左右线
-      function drawAxesLine(lineJson) {
-        context.beginPath();
-        context.strokeStyle = "#fff";
-        context.fillStyle = "#fff";
-        context.font = "13px Microsoft Yahei";
-        context.lineWidth = 10;
-        var lineData = [];
-        for (var i = 0; i < lineJson.length; i++) {
-          lineData.push(lineJson[i]);
-          var tfrom = lineJson[i].name + " " + "DK" + lineJson[i].start_flag + "+" + lineJson[i].start_length,
-              tend = "DK" + lineJson[i].end_flag + "+" + lineJson[i].end_length;
 
-          //   let startLength = context.measureText(tfrom).width,
-          //    endLength = context.measureText(tend).width;
+      cansText.moveTo(9, 220);
+      cansText.lineTo(canvasWidth, 220);
+      cansText.strokeStyle = "#fff";
+      cansText.lineWidth = 10;
+      cansText.stroke();
+      cansText.moveTo(9, 270);
+      cansText.lineTo(canvasWidth, 270);
+      cansText.stroke();
 
-          var starttotal = parseInt(lineJson[i].start_total);
-          var endtotal = parseInt(lineJson[i].end_total);
-          var startX = (starttotal - lineTypeMinMileage) * everys;
-
-          if (lineJson[i].id == 1) {
-            context.moveTo(axis_LeftLine.x, axis_LeftLine.y);
-            context.lineTo(canvasWidth, axis_LeftLine.y);
-            context.fillText(tfrom, 30, axis_LeftLine.y + 25);
-            context.fillText(tend, canvasWidth - 75, axis_LeftLine.y + 25);
-          } else if (lineJson[i].id == 2) {
-            context.moveTo(axis_LeftLine.x, axis_LeftLine_Two.y);
-            context.lineTo(canvasWidth, axis_LeftLine_Two.y);
-            context.fillText(tfrom, 30, axis_LeftLine_Two.y + 25);
-            context.fillText(tend, canvasWidth - 75, axis_LeftLine_Two.y + 25);
-          }
-        }
-        context.stroke();
-      }
-      //站点
-      function drawAxesStationList(jsonData) {
-        var json = jsonData;
-        var img = new Image();
-        img.src = __webpack_require__("RX0U");
-        img.onload = function () {
-          var start = 0;
-          for (var i = 0; i < json.length; i++) {
-            // 绘制站点图
-            var total = parseInt(json[i].start_flag) * 1000 + parseInt(json[i].start_length);
-            var startLineX = (total - lineTypeMinMileage) * everys;
-            if (startLineX == 0) {
-              startLineX = axis_LeftLine.x;
-            }
-            context.drawImage(img, startLineX - 5, 35, 12, 30);
-            // //站名
-            context.font = "12px Microsoft Yahei";
-            context.fillStyle = "#fff";
-            var origin = json[i].name;
-            context.fillText(origin, startLineX, 15);
-            // context.font = "18px Microsoft Yahei";
-            // context.fillStyle = "#fff";
-            // let origin = json[i].name.split("");
-            // for (let x = 0; x < origin.length; x++) {
-            //   context.fillText(
-            //     origin[x],
-            //     startLineX - 8,
-            //     axis_LeftLine.y - 85 - origin.length * 20 + 20 * x
-            //   );
-            // }
-            //DK
-            var codes = "DK" + json[i].start_flag + " +" + json[i].start_length;
-            context.fillStyle = "#5f88f9";
-            context.font = "12px  Microsoft Yahei";
-            context.fillText(codes, startLineX, 30);
-          }
-        };
-        context.stroke();
-      }
-      //车定位
-      function drawAxesCar(jsonData) {
-        context.beginPath();
-        var jsonCar = [{
-          id: 1,
-          name: "ZY01",
-          start_flag: 0,
-          start_length: 257,
-          line_type: 1
-        }, {
-          id: 1,
-          name: "ZY01",
-          start_flag: 7,
-          start_length: 300,
-          line_type: 2
-        }, {
-          id: 2,
-          name: "ZY02",
-          start_flag: 3,
-          start_length: 430,
-          line_type: 2
-        }];
-        var imgcar = new Image();
-        imgcar.src = __webpack_require__("1Dh/");
-        imgcar.onload = function () {
-          var start = 0;
-
-          for (var i = 0; i < jsonCar.length; i++) {
-            context.fillStyle = "#fafafa";
-            context.font = " 11px";
-            if (jsonCar[i].line_type == 1) {
-              var total = parseInt(jsonCar[i].start_flag) * 1000 + parseInt(jsonCar[i].start_length);
-              var startLineX = (total - lineTypeMinMileage) * everys;
-              if (jsonCar[i].start_flag == 0) {
-                startLineX = axis_LeftLine.x;
-              }
-              context.drawImage(imgcar, startLineX, axis_LeftLine.y - 25, 140, 20);
-              //DK
-              var codes = jsonCar[i].name + " [ ZDK" + jsonCar[i].start_flag + " +" + jsonCar[i].start_length + " ]";
-              context.fillText(codes, startLineX + 18, axis_LeftLine.y - 30);
-            } else if (jsonCar[i].line_type == 2) {
-              // 绘制站点图
-              var _total = parseInt(jsonCar[i].start_flag) * 1000 + parseInt(jsonCar[i].start_length);
-              var _startLineX = (_total - lineTypeMinMileage) * everys;
-              context.drawImage(imgcar, _startLineX, axis_LeftLine_Two.y - 25, 140, 20);
-              //DK
-              var _codes = jsonCar[i].name + " [ YDK" + jsonCar[i].start_flag + " +" + jsonCar[i].start_length + " ]";
-              context.fillText(_codes, _startLineX + 18, axis_LeftLine_Two.y - 30);
-            } //
-          }
-        };
-        context.stroke();
-      }
-      //人定位
-      function drawAxesPeple(jsonData) {
-        var jsonCar = [{
-          id: 1,
-          name: "R",
-          start_flag: 8,
-          start_length: 300,
-          line_type: 1
-        }, {
-          id: 1,
-          name: "R",
-          start_flag: 4,
-          start_length: 232,
-          line_type: 1
-        }, {
-          id: 1,
-          name: "Y",
-          start_flag: 1,
-          start_length: 300,
-          line_type: 2
-        }, {
-          id: 1,
-          name: "Y",
-          start_flag: 6,
-          start_length: 300,
-          line_type: 2
-        }];
-
-        var imgcar = new Image();
-        imgcar.src = __webpack_require__("+IES");
-        imgcar.onload = function () {
-          var start = 0;
-          context.fillStyle = "#fff ";
-          context.font = "12px  Microsoft Yahei";
-          for (var i = 0; i < jsonCar.length; i++) {
-            if (jsonCar[i].line_type == 1) {
-              var total = parseInt(jsonCar[i].start_flag) * 1000 + parseInt(jsonCar[i].start_length);
-              var startLineX = (total - lineTypeMinMileage) * everys;
-              context.drawImage(imgcar, startLineX - 16, axis_LeftLine.y - 39, 36, 36);
-              //DK
-              var codes = " [ ZDK" + jsonCar[i].start_flag + " +" + jsonCar[i].start_length + " ]";
-
-              context.fillText(codes, startLineX + 5, axis_LeftLine.y - 39);
-            } else if (jsonCar[i].line_type == 2) {
-              var _total2 = parseInt(jsonCar[i].start_flag) * 1000 + parseInt(jsonCar[i].start_length);
-              var _startLineX2 = (_total2 - lineTypeMinMileage) * everys;
-              context.drawImage(imgcar, _startLineX2 - 16, axis_LeftLine_Two.y - 39, 36, 36);
-              //DK
-              var _codes2 = " [ YDK" + jsonCar[i].start_flag + " +" + jsonCar[i].start_length + " ]";
-              context.fillText(_codes2, _startLineX2 + 5, axis_LeftLine_Two.y - 39);
-            } //
-          }
-        };
-      }
-      //绘制限速区
-      function drawSpeedAxis(speedListJson) {
-        var json = speedListJson;
+      //Station=====================Station
+      var json = this.stationList;
+      var lineTypeMinMileage = this.lineTypeMinMileage;
+      var lineTypeMaxMileage = this.lineTypeMaxMileage;
+      var every = this.every; //每米长度等于px
+      //console.log("every：" + every);
+      //
+      var img = new Image();
+      img.src = __webpack_require__("JBQT");
+      img.onload = function () {
+        var start = 0;
         for (var i = 0; i < json.length; i++) {
-          context.strokeStyle = "#ff9900";
-          context.lineWidth = 10;
-          context.fillStyle = "#ff9900";
-          context.font = "12px Microsoft Yahei";
-          var start = parseInt(json[i].start_flag) * 1000 + parseInt(json[i].start_length);
-          var end = parseInt(json[i].end_flag) * 1000 + parseInt(json[i].end_length);
-          var startX = (start - lineTypeMinMileage) * everys;
-          var endX = (end - lineTypeMinMileage) * everys;
-          var centerX = (endX + startX) / 2; //开始结束平均值
-
-          var desc = "限速" + json[i].speed + "公里/小时";
-          context.beginPath();
-          //画水平直线
-          if (json[i].line_type == 1) {
-            // alert(startX)
-
-            //startX =40;
-
-            context.moveTo(startX + 30, axis_LeftLine.y);
-            context.lineTo(endX, axis_LeftLine.y);
-            context.fillRect(centerX, axis_LeftLine.y, 2, 30);
-            context.fillText(desc, centerX - 45, axis_LeftLine.y + 42);
-          } else if (json[i].line_type == 2) {
-            if (startX == 0) {
-              startX = 30;
-            }
-            context.moveTo(startX, axis_LeftLine_Two.y);
-            context.lineTo(endX, axis_LeftLine_Two.y);
-            context.fillRect(centerX, axis_LeftLine_Two.y, 2, 30);
-            context.fillText(desc, centerX - 45, axis_LeftLine_Two.y + 42);
+          // 绘制站点图
+          var total = parseInt(json[i].start_flag) * 1000 + parseInt(json[i].start_length);
+          var startLineX = (total - lineTypeMinMileage) * every;
+          // 计算当前站点的x轴
+          cansText.drawImage(img, startLineX, 126, 18, 90);
+          var endLineX = lineTypeMaxMileage - total;
+          // //站名
+          cansText.font = "18px Microsoft Yahei";
+          cansText.fillStyle = "#fff";
+          var origin = json[i].name.split("");
+          for (var x = 0; x < origin.length; x++) {
+            cansText.fillText(origin[x], startLineX, 138 - origin.length * 20 + 20 * x);
           }
-          context.stroke();
+          //DK
+          var codes = "DK" + json[i].start_flag + " +" + json[i].start_length;
+          cansText.fillStyle = "#5f88f9";
+          cansText.font = "12px  Microsoft Yahei";
+          if (endLineX < 400) {
+            cansText.fillTextVertical(codes, startLineX - 1, 156);
+          } else {
+            cansText.fillTextVertical(codes, startLineX + 15, 156);
+          }
+
+          console.log(endLineX);
         }
-      }
-      //绘制施工路段
-      function drawBuildAxis(listJson) {
-        var json = listJson;
-        for (var i = 0; i < json.length; i++) {
-          var start = parseInt(json[i].start_flag) * 1000 + parseInt(json[i].start_length);
-          var end = parseInt(json[i].end_flag) * 1000 + parseInt(json[i].end_length);
-          context.strokeStyle = "#08ce80";
-          context.lineWidth = 10;
-          context.fillStyle = "#08ce80";
-          context.font = "12px Microsoft Yahei";
-          var desc = json[i].name;
-          context.beginPath();
+      };
+      //Line=====================
+      var lineJson = this.lineTypeList;
+      var lineData = [];
+      for (var i = 0; i < lineJson.length; i++) {
+        lineData.push(lineJson[i]);
+        var tfrom = lineJson[i].name + "   " + "DK" + lineJson[i].start_flag + "+" + lineJson[i].start_length,
+            tend = "DK" + lineJson[i].end_flag + "+" + lineJson[i].end_length;
+        var startLength = cansText.measureText(tfrom).width,
+            endLength = cansText.measureText(tend).width;
 
-          var startX = (start - lineTypeMinMileage) * everys;
-          var endX = (end - lineTypeMinMileage) * everys;
-          var centerX = (endX + startX) / 2; //开始结束平均值
-          //画水平直线
-          if (json[i].line_type == 1) {
-            if (startX == 0) {
-              startX = 30;
-            }
-            context.moveTo(startX, axis_LeftLine.y);
-            context.lineTo(endX, axis_LeftLine.y);
-            context.fillRect(centerX, axis_LeftLine.y, 2, 30);
-            context.fillText(desc, centerX - 24, axis_LeftLine.y + 42);
-          } else if (json[i].line_type == 2) {
-            if (startX == 0) {
-              startX = 30;
-            }
-            context.moveTo(startX, axis_LeftLine_Two.y);
-            context.lineTo(endX, axis_LeftLine_Two.y);
-            context.fillRect(centerX, axis_LeftLine_Two.y, 2, 30);
-            context.fillText(desc, centerX - 24, axis_LeftLine_Two.y + 42);
+        cansText.font = "12px Microsoft Yahei";
+        cansText.fillStyle = "#E8C640";
+        var starttotal = parseInt(lineJson[i].start_flag) * 1000 + parseInt(lineJson[i].start_length);
+        var endtotal = parseInt(lineJson[i].end_flag) * 1000 + parseInt(lineJson[i].end_length);
+        if (lineJson[i].id == 1) {
+          cansText.fillText(tfrom, 15, 240);
+          cansText.fillText(tend, parseInt(endLength + canvasWidth - 115), 240);
+        } else if (lineJson[i].id == 2) {
+          cansText.fillText(tfrom, 15, 290);
+          cansText.fillText(tend, parseInt(endLength + canvasWidth - 125), 290);
+          //3
+        } else if (lineJson[i].id == 3) {
+          if (starttotal == 0) {
+            starttotal = this.lineTypeMinMileage;
           }
-          context.stroke();
-        }
-      }
-      //绘制防区
-      function drawAlertAxis(alertListJson) {
-        var json = alertListJson;
-        for (var i = 0; i < json.length; i++) {
-          var start = parseInt(json[i].start_flag) * 1000 + parseInt(json[i].start_length);
-          var end = parseInt(json[i].end_flag) * 1000 + parseInt(json[i].end_length);
-          context.strokeStyle = "#e53636";
-          context.lineWidth = 10;
-          context.fillStyle = "#e53636";
-          context.font = "12px Microsoft Yahei";
-          var desc = "防区 DK" + json[i].start_flag + "+" + json[i].start_length + "- DK" + json[i].end_flag + "+" + json[i].end_length;
-          context.beginPath();
-          var startX = (start - lineTypeMinMileage) * everys;
-          var endX = (end - lineTypeMinMileage) * everys;
-          var centerX = (endX + startX) / 2; //开始结束平均值
-          if (json[i].line_type == 1) {
-            if (startX == 0) {
-              startX = 30;
-            }
-            context.moveTo(startX, axis_LeftLine.y);
-            context.lineTo(endX, axis_LeftLine.y);
-            context.fillRect(centerX, axis_LeftLine.y, 2, 30);
-            context.fillText(desc, centerX - 80, axis_LeftLine.y + 42);
-          } else if (json[i].line_type == 2) {
-            if (startX == 0) {
-              startX = 30;
-            }
-            context.moveTo(startX, axis_LeftLine_Two.y);
-            context.lineTo(endX, axis_LeftLine_Two.y);
-            context.fillRect(centerX, axis_LeftLine_Two.y, 2, 30);
-            context.fillText(desc, centerX - 80, axis_LeftLine_Two.y + 42);
-          }
-          context.stroke();
+          var startZB = (starttotal - this.lineTypeMinMileage) * every + 9;
+          var endZB = parseFloat((endtotal - starttotal) * every) + parseFloat(startZB);
+          cansText.moveTo(startZB, 320);
+          cansText.lineTo(endZB, 320);
+          cansText.stroke();
           //
-        }
-      }
-      //绘制请点
-      function drawAxesApply(jsonData) {
-        var json = jsonData;
-        var json1 = [{
-          line_type: 1,
-          number: "A1-2-007-1",
-          command_num: "(2020)\u5B57\u7B2C04.21-007-2",
-          description: "\u98CE\u98CE\u5149\u5149",
-          work_area: "DK0+600\u81F3DK1+804",
-          start_time: "2020-04-28 00:00:00",
-          end_time: "2020-04-28 23:59:59",
-          start_flag: "0",
-          start_length: "600",
-          end_flag: "1",
-          end_length: "804",
-          type: "A1",
-          start_total: 600,
-          end_total: 10604
-        }, {
-          line_type: 1,
-          number: "A4-2-007-1",
-          command_num: "(2020)\u5B57\u7B2C04.21-007-2",
-          description: "\u98CE\u98CE\u5149\u5149",
-          work_area: "DK4+232\u81F3DK5+245",
-          start_time: "2020-04-28 00:00:00",
-          end_time: "2020-04-28 23:59:59",
-          start_flag: "4",
-          start_length: "232",
-          end_flag: "5",
-          end_length: "245",
-          type: "A4",
-          start_total: 40232,
-          end_total: 50245
-        }, {
-          line_type: 2,
-          number: "A3-2-007-1",
-          command_num: "(2020)\u5B57\u7B2C04.21-007-2",
-          description: "\u98CE\u98CE\u5149\u5149",
-          work_area: "DK14+160\u81F3DK21+370",
-          start_time: "2020-04-28 00:00:00",
-          end_time: "2020-04-28 23:59:59",
-          start_flag: "6",
-          start_length: "736",
-          end_flag: "9",
-          end_length: "808",
-          type: "A3",
-          start_total: 14600,
-          end_total: 21370
-        }];
-        //  let clickXYApplyList = [];
-
-        var _loop = function _loop(i) {
-          var start = parseInt(json[i].start_flag) * 1000 + parseInt(json[i].start_length);
-          var end = parseInt(json[i].end_flag) * 1000 + parseInt(json[i].end_length);
-          var dksatrt = "YDK" + json[i].start_flag + " +" + json[i].start_length;
-          var dkend = "YDK" + json[i].end_flag + " +" + json[i].end_length;
-          var startX = (start - lineTypeMinMileage) * everys;
-          if (parseInt(json[i].start_flag) == 0) {
-            startX = startX + axis_LeftLine.x;
-          }
-          var endX = (end - lineTypeMinMileage) * everys;
-          var centerX = (endX + startX) / 2; //开始结束平均值
-
-          //  startX=startX+axis_LeftLine.x;
-          console.log("startX：" + startX);
-
-          var desc = json[i].type;
-          context.lineWidth = 2;
-          //context.fillStyle = "#ffff00";
-          // context.strokeStyle = "#ffff00";
-          if (json[i].type == "A1") {
-            context.fillStyle = "#f14e0e";
-            context.strokeStyle = "#f14e0e";
-          } else if (json[i].type == "A2") {
-            context.fillStyle = "#fd7510";
-            context.strokeStyle = "#fd7510";
-          } else if (json[i].type == "A3") {
-            context.fillStyle = "#fda328";
-            context.strokeStyle = "#fda328";
-          } else if (json[i].type == "A4") {
-            context.fillStyle = "#f2c136";
-            context.strokeStyle = "#f2c136";
-          }
-          context.beginPath();
-          if (json[i].line_type == 1) {
-            //画水平直线
-            context.fillRect(startX, axis_Applay.y - 8, 2, 15);
-            context.fillRect(endX, axis_Applay.y - 8, 2, 15);
-            context.moveTo(startX, axis_Applay.y);
-            context.lineTo(endX + 1, axis_Applay.y);
-            //文字
-            //context.fillRect(centerX - 29, axis_Applay.y - 55, 60, 54);
-            applyClickXY.push({
-              x: centerX - 29,
-              y: axis_Applay.y - 55,
-              w: 60,
-              h: 54,
-              i: json[i]
-            });
-
-            var img = new Image();
-            img.src = __webpack_require__("nDGB")("./" + desc + ".png");
-            img.onload = function () {
-              context.drawImage(img, centerX - 29, axis_Applay.y - 56, 60, 54);
-            };
-          } else if (json[i].line_type == 2) {
-            //画水平直线
-            context.fillRect(startX, axis_Applay_two.y - 8, 2, 15);
-            context.fillRect(endX, axis_Applay_two.y - 8, 2, 15);
-            context.moveTo(startX, axis_Applay_two.y);
-            context.lineTo(endX + 1, axis_Applay_two.y);
-            //文字
-            applyClickXY.push({
-              x: centerX - 29,
-              y: axis_Applay_two.y - 55,
-              w: 60,
-              h: 54,
-              i: json[i]
-            });
-            var _img = new Image();
-            _img.src = __webpack_require__("nDGB")("./" + desc + ".png");
-            _img.onload = function () {
-              context.drawImage(_img, centerX - 29, axis_Applay_two.y - 56, 60, 54);
-            };
-          }
-          context.stroke();
+          cansText.fillText(tfrom, startZB + 5, 340);
+          cansText.fillText(tend, endZB - 60, 340);
+          //4
+        } else if (lineJson[i].id == 4) {
+          var _startZB = (starttotal - this.lineTypeMinMileage) * every + 10;
+          var _endZB = parseFloat((endtotal - starttotal) * every) + parseFloat(_startZB);
+          cansText.moveTo(_startZB, 370);
+          cansText.lineTo(_endZB, 370);
+          cansText.stroke();
           //
-        };
-
-        for (var i = 0; i < json.length; i++) {
-          _loop(i);
-        }
-        canvas.onclick = function (event) {
-          var x = event.pageX - canvas.getBoundingClientRect().left;
-          var y = event.pageY - canvas.getBoundingClientRect().top;
-
-          console.log("X：" + x + "_" + y);
-          //console.log("clickXY：" + JSON.stringify(applyClickXY));
-          var _iteratorNormalCompletion = true;
-          var _didIteratorError = false;
-          var _iteratorError = undefined;
-
-          try {
-            for (var _iterator = get_iterator_default()(applyClickXY), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-              var item = _step.value;
-
-              if (x >= item.x && x <= item.x + item.w && y >= item.y && y <= item.y + item.h) {
-                var infos = item.i;
-                that.$confirm("<p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>作业编号：</span>" + infos.number + "</p><p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>作业令号</span>：" + infos.command_num + "</p>" + "<p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>开始时间：</span>" + infos.start_time + "</p><p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>结束时间：</span>" + infos.end_time + "</p>" + "<p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>施工区间：</span>" + infos.work_area + "</p><p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>施工内容：</span>" + infos.description + "</p>", {
-                  distinguishCancelAndClose: true,
-                  dangerouslyUseHTMLString: true,
-                  showCancelButton: false,
-                  showConfirmButton: false
-                }).catch(function () {});
-                break;
-              }
-            }
-          } catch (err) {
-            _didIteratorError = true;
-            _iteratorError = err;
-          } finally {
-            try {
-              if (!_iteratorNormalCompletion && _iterator.return) {
-                _iterator.return();
-              }
-            } finally {
-              if (_didIteratorError) {
-                throw _iteratorError;
-              }
-            }
+          var beteew = _endZB - _startZB;
+          if (beteew < 160) {
+            cansText.fillText(tfrom, _startZB - 160, 390);
+            cansText.fillText(tend, _endZB - 80, 390);
+          } else {
+            cansText.fillText(tfrom, _startZB, 390);
+            cansText.fillText(tend, _endZB - 55, 390);
           }
-        };
+        }
       }
-      //绘制施工进度
-      function drawProgressAxis(sprogressListJson) {
-        var json = sprogressListJson;
-        console.log(sprogressListJson);
-        var json1 = [{
-          id: 233,
-          pro_id: 110,
-          pro_name: "\u6D4B\u8BD52",
-          line_type: 1,
-          start_flag: "0",
-          start_length: "257",
-          end_flag: "0",
-          end_length: "300",
-          line: "\u5DE6\u7EBF"
-        }];
-        for (var i = 0; i < json.length; i++) {
-          if (json[i].start_flag != null) {
-            var start = parseInt(json[i].start_flag) * 1000 + parseInt(json[i].start_length);
-            var end = parseInt(json[i].end_flag) * 1000 + parseInt(json[i].end_length);
+      //
+    },
 
-            var _startX = axis_LeftLine.x + (start - lineTypeMinMileage) * everys;
-            var _endX = axis_LeftLine.x + (end - lineTypeMinMileage) * everys;
-            // console.log(
-            //   "startX：" + startX + " endX：" + endX + "_" + lineTypeMinMileage
-            // );
-            context.lineWidth = 10;
-            context.strokeStyle = "#27DB07";
-            context.beginPath();
-            if (json[i].line_type == 1) {
-              context.moveTo(_startX, axis_LeftLine.y);
-              context.lineTo(_endX + 1, axis_LeftLine.y);
-            } else if (json[i].line_type == 2) {
-              context.moveTo(_startX, axis_LeftLine_Two.y);
-              context.lineTo(_endX + 1, axis_LeftLine_Two.y);
-            } else if (json[i].line_type == 3) {
-              if (start == 0) {
-                _startX = 0;
-                _endX = end * everys;
-              }
-              context.moveTo(_startX, axis_OutLine.y);
-              context.lineTo(_endX + 1, axis_OutLine.y);
-            } else if (json[i].line_type == 4) {
-              if (start == 0) {
-                _startX = 0;
-                _endX = end * everys;
-              }
-              context.moveTo(_startX, axis_OutLine_Two.y);
-              context.lineTo(_endX + 1, axis_OutLine_Two.y);
-            }
-            context.stroke();
-          }
-          //
-        }
-      }
-      //====================================
-      drawAxesLine(this.lineTypeList);
-      drawAxesStationList(this.stationList);
-      //限速区
-      if (this.speedCheckValue) {
-        drawSpeedAxis(this.speedList);
-      }
-      //施工路段
-      if (this.buildCheckValue) {
-        drawBuildAxis(this.buildList);
-      }
-      //防区
-      if (this.alertList.length > 0) {
-        if (this.alertCheckValue) {
-          drawAlertAxis(this.alertList);
-        }
-      }
-      //施工进度
-      // if (this.progressCheckValue) {
-      //   drawProgressAxis(this.progressListItem);
-      // }
-      // drawAxesCar(this.applyList);
-      // drawAxesPeple(this.applyList);
-      //作业
-      //  if (this.applyList.length > 0) {
-      //drawAxesApply(this.applyList);
+    lineFill: function lineFill(paras, linename) {
+      // paras = [
+      //   {
+      //     id: 69,
+      //     pro_id: 65,
+      //     pro_name:
+      //       "\u91cc\u7a0b\u4f5c\u4e1a0424\u4f5c\u4e1a\u540d\u79f0\u4f5c\u4e1a\u540d\u79f0\u4f5c\u4e1a\u540d\u79f0",
+      //     line_type: 3,
+      //     start_flag: "12",
+      //     start_length: "400",
+      //     end_flag: "18",
+      //     end_length: "600"
       //   }
+      // ];
+      var result = "";
+      var start = 0;
+      for (var i = 0; i < paras.length; i++) {
+        var starMileage = parseInt(paras[i].start_flag) * 1000 + parseInt(paras[i].start_length);
+        var endMileage = parseInt(paras[i].end_flag) * 1000 + parseInt(paras[i].end_length);
+        var leftPosition = parseFloat(starMileage - this.lineTypeMinMileage) * this.everyLineType;
+        var widthPosition = parseFloat(endMileage - starMileage) * this.everyLineType;
 
-      function drawAxisTicksNum(start, startLen, end, endLen, axis_Width, axis_Line_X, axis_Line_y, axis_DK) {
-        //查找起始坐标
-        var first = darpNum(startLen);
-        var last = darpNum(endLen);
-        var lastMileage = end + endLen;
-        //
-        context.beginPath();
-        context.font = "12px Microsoft Yahei";
-        context.lineWidth = 10;
-        context.strokeStyle = "#ffffff";
-        context.moveTo(axis_Line_X, axis_Line_y);
-        context.lineTo(axis_Width + axis_Line_X + 1, axis_Line_y);
-        context.stroke();
-        //
-        context.beginPath();
-        context.fillStyle = "white";
-        context.textAlign = "center";
-        context.textBaseline = "top";
-        context.lineWidth = 2;
-        context.strokeStyle = "white";
-        var num_Ticks = axis_Width;
-        //起点
-        var startTicksNum = axis_DK + start / 1000 + " + " + startLen;
-        context.fillText(startTicksNum, axis_Line_X, axis_Line_y + 30);
-        context.moveTo(offsetX + 1, axis_Line_y + 5);
-        context.lineTo(offsetX + 1, axis_Line_y + 20);
-        //
-        //终点
-        var endTicksNum = axis_DK + end / 1000 + " + " + endLen;
-        //alert(endTicksNum);
-        context.fillText(endTicksNum, axis_Width + axis_Line_X, //guohonglin add
-        axis_Line_y + 30);
-        context.moveTo(axis_Width + axis_Line_X, //guohonglin add
-        axis_Line_y + 5);
-        context.lineTo(axis_Width + axis_Line_X, //guohonglin add
-        axis_Line_y + 20);
-        context.stroke();
-
-        //中间
-
-        axis_Line_X = (parseInt(first) - parseInt(startLen)) * everys;
-        var num = 0;
-        var minKm = start / 1000;
-        for (var i = 1; i <= axis_Width; i++) {
-          var nums = parseInt(first) + parseInt(200 * num);
-          var endFlagNum = parseInt(minKm * 1000) + parseInt(nums);
-          if (endFlagNum < lastMileage) {
-            if (nums == 1000) {
-              minKm++;
-              //画数字
-              context.fillText(axis_DK + minKm + " + 000", axis_Line_X + i * tick_Spacing, axis_Line_y + 20);
-              num = 0;
-              first = 200;
-              //画小标
-              context.moveTo(axis_Line_X + i * tick_Spacing, axis_Line_y + 5);
-              context.lineTo(axis_Line_X + i * tick_Spacing, axis_Line_y + 15);
-              //
-            } else {
-              num++;
-              nums = parseInt(first) + parseInt(200 * (num - 1));
-              //画数字
-
-              context.fillText(nums, axis_Line_X + i * tick_Spacing, axis_Line_y + 20);
-              //画小标
-              context.moveTo(axis_Line_X + i * tick_Spacing, axis_Line_y + 5);
-              context.lineTo(axis_Line_X + i * tick_Spacing, axis_Line_y + 10);
-            }
-          }
-          //
+        // if (linename == "入场线") {
+        //   let enterMinMileage = this.lineTypeEnterMinMileage;
+        //   if (enterMinMileage == 0) {
+        //      leftPosition =parseFloat(starMileage - this.lineTypeMinMileage) *this.everyLineType;
+        //      widthPosition =parseFloat(endMileage - starMileage) * this.everyLineType;
+        //   }
+        //   else{
+        //      leftPosition =parseFloat(starMileage - this.lineTypeEnterMinMileage) *this.everyLineType;
+        //      widthPosition =parseFloat(endMileage - starMileage) * this.everyLineType;
+        //   }
+        if (starMileage == 0) {
+          leftPosition = 0;
+          widthPosition = parseFloat(endMileage - this.lineTypeMinMileage) * this.everyLineType;
         }
-        //结束
-        context.stroke();
+        var titles = "DK " + paras[i].start_flag + "+" + paras[i].start_length + "~" + paras[i].end_flag + "+" + paras[i].end_length;
+        result += "<i title='" + titles + "' style='width:" + widthPosition + "px;left:" + leftPosition + "px'></i>";
       }
-
-      function darpNum(startLen) {
-        var nums = void 0;
-        var startLens = parseInt(startLen);
-        if (startLens >= 0 && startLens < 200) {
-          nums = 200;
-        } else if (startLens >= 200 && startLens < 400) {
-          nums = 400;
-        } else if (startLens >= 400 && startLens < 600) {
-          nums = 600;
-        } else if (startLens >= 600 && startLens < 800) {
-          nums = 800;
-        } else if (startLens >= 800 && startLens <= 1000) {
-          nums = 1000;
-        }
-        return nums;
-      }
-    },
-
-    //=====================================
-    progressCheckSelect: function progressCheckSelect(val) {
-      var _this2 = this;
-
-      this.progressList.map(function (item) {
-        if (item.name == val) {
-          _this2.progressListItem = item.list;
-        }
-      });
-      this.initCanvas();
-    },
-
-    //桥
-    bridgeCheckSelect: function bridgeCheckSelect() {
-      diagram_context.clearRect(0, 0, diagram_canvas.width, diagram_canvas.height);
-      this.initCanvas();
-    },
-
-    //隧道
-    tunnelCheckSelect: function tunnelCheckSelect() {
-      this.initCanvas();
-    },
-
-    //防区
-    alertCheckSelect: function alertCheckSelect() {
-      if (this.alertList.length > 0) {
-        this.initCanvas();
-      }
-    },
-
-    //限速区
-    speedCheckSelect: function speedCheckSelect() {
-      this.initCanvas();
-    },
-
-    //施工路段
-    buildCheckSelect: function buildCheckSelect() {
-      this.initCanvas();
-    },
-
-    //坡度
-    slopeCheckSelect: function slopeCheckSelect() {
-      this.initCanvas();
-    },
-
-    //道岔
-    daocCheckSelect: function daocCheckSelect() {
-      this.initCanvas();
+      return result;
     }
+  },
+  mounted: function mounted() {
+    window.addEventListener("resize", this.getStationList);
+  },
+  destroyed: function destroyed() {
+    window.removeEventListener("resize", this.getStationList);
   }
-  //进度
 });
 
 //prototype
@@ -1002,14 +342,14 @@ CanvasRenderingContext2D.prototype.fillTextVertical = function (text, x, y) {
   context.textAlign = align;
   context.textBaseline = baseline;
 };
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-3749dadc","hasScoped":false,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/views/datav/diagram.vue
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"diagram"}},[_vm._m(0),_vm._v(" "),_c('div',{ref:"canvasWrapper",staticClass:"station"},[_c('canvas',{ref:"canvasStation",attrs:{"id":"canvasStation","height":"200"}},[_c('p',[_vm._v("您的系统不支持此程序!")])])]),_vm._v(" "),_c('div',{staticClass:"check-lists"},[_c('span',{staticClass:"namess"},[_vm._v("显示图形：")]),_vm._v(" "),_c('el-checkbox',{staticClass:"bridgechk",attrs:{"label":"桥"},on:{"change":_vm.bridgeCheckSelect},model:{value:(_vm.bridgeCheckValue),callback:function ($$v) {_vm.bridgeCheckValue=$$v},expression:"bridgeCheckValue"}}),_vm._v(" "),_c('el-checkbox',{staticClass:"tunnelchk",attrs:{"label":"隧道"},on:{"change":_vm.tunnelCheckSelect},model:{value:(_vm.tunnelCheckValue),callback:function ($$v) {_vm.tunnelCheckValue=$$v},expression:"tunnelCheckValue"}}),_vm._v(" "),_c('el-checkbox',{staticClass:"alertchk",attrs:{"label":"防区"},on:{"change":_vm.alertCheckSelect},model:{value:(_vm.alertCheckValue),callback:function ($$v) {_vm.alertCheckValue=$$v},expression:"alertCheckValue"}}),_vm._v(" "),_c('el-checkbox',{staticClass:"slopechk",attrs:{"label":"坡度"},on:{"change":_vm.slopeCheckSelect},model:{value:(_vm.slopeCheckValue),callback:function ($$v) {_vm.slopeCheckValue=$$v},expression:"slopeCheckValue"}}),_vm._v(" "),_c('el-checkbox',{staticClass:"daocchk",attrs:{"label":"道岔"},on:{"change":_vm.daocCheckSelect},model:{value:(_vm.daocCheckValue),callback:function ($$v) {_vm.daocCheckValue=$$v},expression:"daocCheckValue"}}),_vm._v(" "),_c('el-checkbox',{staticClass:"speedchk",attrs:{"label":"限速区"},on:{"change":_vm.speedCheckSelect},model:{value:(_vm.speedCheckValue),callback:function ($$v) {_vm.speedCheckValue=$$v},expression:"speedCheckValue"}}),_vm._v(" "),_c('el-checkbox',{staticClass:"buildchk",attrs:{"label":"施工地段"},on:{"change":_vm.buildCheckSelect},model:{value:(_vm.buildCheckValue),callback:function ($$v) {_vm.buildCheckValue=$$v},expression:"buildCheckValue"}})],1),_vm._v(" "),(this.progressCheckValue != '')?_c('div',{staticClass:"progresslist"},[_c('span',{staticClass:"namess"},[_vm._v("施工进度：")]),_vm._v(" "),_c('el-radio-group',{on:{"change":_vm.progressCheckSelect},model:{value:(_vm.progressCheckValue),callback:function ($$v) {_vm.progressCheckValue=$$v},expression:"progressCheckValue"}},_vm._l((_vm.progressList),function(item){return _c('el-radio',{key:item.name,attrs:{"label":item.name}},[_vm._v(_vm._s(item.name))])}),1)],1):_vm._e()])}
-var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"datav-ptitle",staticStyle:{"padding-top":"0"}},[_c('h3',[_vm._v("施工形象图")])])}]
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-38a32a94","hasScoped":false,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/views/progress/index.vue
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"proWrapper",style:(_vm.conheight),attrs:{"id":"progress"}},[_c('div',{staticClass:"progress"},[_c('div',{staticClass:"sttitle"},[_vm._v("施工形象进度图")]),_vm._v(" "),_c('div',{staticClass:"station"},[_c('div',{staticClass:"stationlineleft",style:({height:_vm.stationlineHeight  + 'px'})}),_vm._v(" "),_c('div',{staticClass:"stationlineright",style:({height:_vm.stationlineHeight  + 'px'})}),_vm._v(" "),_c('canvas',{ref:"canvasStation",attrs:{"id":"canvasStation","height":"400"}},[_c('p',[_vm._v("您的系统不支持此程序!")])])]),_vm._v(" "),_c('div',{ref:"reflinebox",staticClass:"linebox"},[_c('table',{staticClass:"lineTable"},_vm._l((_vm.listSchedule),function(item){return _c('tr',{key:item.id,staticClass:"linebar"},[_c('td',[_c('div',{staticClass:"tdtitle",attrs:{"title":item.name}},[_vm._v(_vm._s(item.name))])]),_vm._v(" "),_c('td',{staticClass:"tdbar"},_vm._l((item.lines),function(lines){return _c('div',{key:lines.id,staticClass:"bar"},[_c('span',[_vm._v(_vm._s(lines.name))]),_vm._v(" "),_c('em',{style:({width: _vm.cwidth + 'px' }),domProps:{"innerHTML":_vm._s(_vm.lineFill(lines.lists,lines.name))}})])}),0)])}),0),_vm._v(" "),_c('div',{staticClass:"clear"})])])])}
+var staticRenderFns = []
 var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ var datav_diagram = (esExports);
-// CONCATENATED MODULE: ./src/views/datav/diagram.vue
+/* harmony default export */ var views_progress = (esExports);
+// CONCATENATED MODULE: ./src/views/progress/index.vue
 function injectStyle (ssrContext) {
-  __webpack_require__("wT29")
+  __webpack_require__("/2vr")
 }
 var normalizeComponent = __webpack_require__("VU/8")
 /* script */
@@ -1025,15 +365,15 @@ var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
-  diagram,
-  datav_diagram,
+  progress,
+  views_progress,
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
   __vue_module_identifier__
 )
 
-/* harmony default export */ var views_datav_diagram = __webpack_exports__["default"] = (Component.exports);
+/* harmony default export */ var src_views_progress = __webpack_exports__["default"] = (Component.exports);
 
 
 /***/ })

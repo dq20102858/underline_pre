@@ -9,7 +9,7 @@
         <el-menu-item index="walldetector">信号基站</el-menu-item>
         <!-- <el-menu-item index="cardetector">车载探测器</el-menu-item> -->
         <el-menu-item index="locationbind" @click="resetSerach">定位从设备</el-menu-item>
-        <!-- <el-menu-item index="device">机具</el-menu-item> -->
+        <el-menu-item index="device">机具</el-menu-item>
       </el-menu>
     </div>
     <div class="app-page">
@@ -31,9 +31,9 @@
             </el-form-item>
             <el-form-item>
               <el-select v-model="searchForm.type" placeholder="请选择类型" clearable>
-                <el-option label="人" value="1"></el-option>
-                <el-option label="车" value="2"></el-option>
-                <!-- <el-option label="机具" value="3"></el-option> -->
+                <el-option label="人员" value="1"></el-option>
+                <el-option label="轨道车" value="2"></el-option>
+                <el-option label="机具" value="3"></el-option>
               </el-select>
             </el-form-item>
             <el-form-item label>
@@ -61,7 +61,7 @@
             </el-table-column>
             <el-table-column prop="number" label="设备编号"></el-table-column>
             <el-table-column prop="type" label="类型"></el-table-column>
-            <!-- <el-table-column prop="bind_obj" label="被绑定对象"></el-table-column> -->
+            <el-table-column prop="bind_obj" label="被绑定对象"></el-table-column>
             <el-table-column prop="company" label="公司名称"></el-table-column>
             <el-table-column prop="create_time" label="创建时间">
               <template slot-scope="scope">
@@ -125,9 +125,9 @@
         <div v-if="locationData.id>0">
           <el-form-item label="设备类型：" prop="type">
             <el-select v-model="locationData.type" placeholder="请选择" disabled>
-              <el-option label="人" :value="1"></el-option>
-              <el-option label="车" :value="2"></el-option>
-              <!-- <el-option label="机具" :value="3"></el-option> -->
+              <el-option label="人员" :value="1"></el-option>
+              <el-option label="轨道车" :value="2"></el-option>
+              <el-option label="机具" :value="3"></el-option>
             </el-select>
           </el-form-item>
           <el-form-item label="被绑定对象：" prop="bind_obj">
@@ -149,9 +149,9 @@
               clearable
               @change="selectDeviceType($event)"
             >
-              <el-option label="人" :value="1"></el-option>
-              <el-option label="车" :value="2"></el-option>
-              <!-- <el-option label="机具" :value="3"></el-option> -->
+              <el-option label="人员" :value="1"></el-option>
+              <el-option label="轨道车" :value="2"></el-option>
+              <el-option label="机具" :value="3"></el-option>
             </el-select>
           </el-form-item>
 

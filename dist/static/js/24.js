@@ -1,178 +1,329 @@
 webpackJsonp([24],{
 
-/***/ "7Zec":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("KAKH");
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__("rjj0")("4ef55094", content, true);
-
-/***/ }),
-
-/***/ "KAKH":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("FZ+f")(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.login-container {\r\n  position: fixed;\r\n  height: 100%;\r\n  width: 100%;\r\n  background-color: #2d3a4b;\n}\n.mod-new-reg-bg {\r\n  position: fixed;\r\n  left: 0;\r\n  right: 0;\r\n  top: 0;\r\n  bottom: 0;\r\n  background-size: cover;\r\n  background: none\\9;\r\n  *background: 0 0;\n}\n.login-container .login-form {\r\n  position: absolute;\r\n  left: 0;\r\n  right: 0;\r\n  width: 360px;\r\n  padding: 35px 50px 30px 50px;\r\n  margin: 200px auto;\r\n  background: #fff;\r\n  border-radius: 12px;\n}\n.login-container .title-container {\r\n  text-align: center;\r\n  margin-bottom: 35px;\n}\n.login-container .title-container img {\r\n  margin: 0 auto;\r\n  width: 88px;\n}\n.login-container .el-form-item {\r\n  margin-bottom: 30px;\n}\n.login-container .el-input-group__prepend {\r\n  border: 1px #4b6eca solid;\r\n  background: #fff;\r\n  padding: 0 5px;\r\n  border-right: 0;\n}\n.login-container .el-input-group__prepend img {\r\n  width: 32px;\n}\n.login-container .is-error .el-input-group__prepend {\r\n  border: 1px #f56c6c solid;\r\n  border-right: 0;\n}\n.login-container .el-input__inner {\r\n  background: #fff !important;\r\n  border: 6px;\r\n  padding: 0 5px 0 1px;\r\n  color: #4b6eca;\r\n  height: 45px;\r\n  border: 1px #4b6eca solid;\r\n  border-left: 0;\n}\n.login-container input:-webkit-autofill {\r\n  -webkit-box-shadow: 0 0 0px 1000px white inset !important;\r\n          box-shadow: 0 0 0px 1000px white inset !important;\n}\n.login-container .el-form-item__error {\r\n  padding-top: 5px;\n}\n.login-container .el-button:hover {\r\nbackground: #4b6eca;\r\nborder-color:#4b6eca;\n}\n.login-container .el-button:focus {\r\nbackground: #4b6eca;\r\nborder-color:#4b6eca;\n}\r\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ "T+/8":
+/***/ "Sp6l":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
-// EXTERNAL MODULE: ./src/api/login/login.js + 1 modules
-var login = __webpack_require__("owW+");
+// CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./src/views/location/index.vue
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
-// CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./src/views/login/index.vue
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-// import { isvalidUsername } from '@/utils/validate'
-
-/* harmony default export */ var views_login = ({
-  name: "login",
+/* harmony default export */ var views_location = ({
   data: function data() {
+    var _this = this;
 
     return {
-      loginForm: {
-        username: "",
-        password: ""
+      pickerOptionsStart: {
+        disabledDate: function disabledDate(time) {
+          if (_this.searchForm.end_time) {
+            return time.getTime() > new Date(_this.searchForm.end_time).getTime();
+          }
+        }
       },
-
-      loginRules: {
-        username: [{
-          required: true,
-          message: "请输入用户名",
-          trigger: "blur"
-        }, {
-          pattern: /^[\u4e00-\u9fa5A-Za-z0-9\_]*$/,
-          message: "请输入正确的用户名",
-          trigger: "blur"
-        }],
-        password: [{
-          required: true,
-          message: "请输入密码",
-          trigger: "blur"
-        }, {
-          min: 2,
-          max: 14,
-          message: "请输入密码长度6到14个字符",
-          trigger: "blur"
-        }]
+      pickerOptionsEnd: {
+        disabledDate: function disabledDate(time) {
+          if (_this.searchForm.start_time) {
+            return time.getTime() < new Date(_this.searchForm.start_time).getTime();
+          }
+        }
       },
-      passwordType: "password",
-      loading: false,
-      showDialog: false
+      page_cur: 1,
+      pageTotal: 0,
+      page_size: 20,
+      page_total: 0,
+      dataList: [],
+      companyList: [],
+      objSelectLists: [],
+      linTypeList: [],
+      searchForm: {}
     };
   },
-  created: function created() {},
+  created: function created() {
+    this.getCompanyList();
+    this.getLiTypeList();
+    this.getDataList();
+  },
 
   methods: {
-    handleLoginBlur: function handleLoginBlur(id, val) {
-      this.disabled = !this.disabled;
-    },
-    handleLogin: function handleLogin() {
-      var _this = this;
+    getCompanyList: function getCompanyList() {
+      var _this2 = this;
 
-      this.$refs.loginForm.validate(function (valid) {
-        if (valid) {
-          if (_this.loginForm.username == "") {
-            _this.$message({
-              type: "error",
-              message: "请输入用户名"
-            });
-            return false;
-          }
-          if (_this.loginForm.password == "") {
-            _this.$message({
-              type: "error",
-              message: "请输入密码"
-            });
-            return false;
-          }
-          _this.loading = true;
-          _this.$store.dispatch("LoginByUsername", _this.loginForm).then(function () {
-            _this.loading = false;
-            _this.$router.push({ path: "/" });
-          }).catch(function () {
-            _this.loading = false;
-            return false;
-          });
-        } else {
-          console.log("error submit!!");
-          return false;
+      this.request({
+        url: "/apply/getCompanyLists",
+        method: "get"
+      }).then(function (res) {
+        var data = res.data;
+        if (data.status == 1) {
+          _this2.companyList = data.data;
         }
       });
+    },
+    selectCompanyList: function selectCompanyList(val) {
+      var _this3 = this;
+
+      this.$set(this.searchForm, "name", "");
+      this.request({
+        url: "/user/getUserByDepart",
+        method: "get",
+        params: { id: val, type: 1 }
+      }).then(function (response) {
+        var data = response.data;
+        if (data.status == 1) {
+          _this3.objSelectLists = data.data;
+        }
+      });
+    },
+    getLiTypeList: function getLiTypeList() {
+      var _this4 = this;
+
+      this.request({
+        url: "/common/getLineType",
+        method: "get"
+      }).then(function (res) {
+        var data = res.data;
+        if (data.status == 1) {
+          _this4.linTypeList = data.data;
+        }
+      });
+    },
+    getDataList: function getDataList() {
+      var _this5 = this;
+
+      var page = this.page_cur;
+      var depart_id = this.searchForm.depart_id;
+      var name = this.searchForm.name;
+      var line_type = this.searchForm.line_type;
+      var start_time = this.searchForm.start_time;
+      var end_time = this.searchForm.end_time;
+      var start_flag = this.searchForm.start_flag;
+      var start_length = this.searchForm.start_length;
+      var end_flag = this.searchForm.end_flag;
+      var end_length = this.searchForm.end_length;
+      this.request({
+        url: "/location/getLocationStatisticPages",
+        method: "get",
+        params: {
+          page: page,
+          depart_id: depart_id,
+          name: name,
+          line_type: line_type,
+          start_time: start_time,
+          end_time: end_time,
+          start_flag: start_flag,
+          start_length: start_length,
+          end_flag: end_flag,
+          end_length: end_length
+        }
+      }).then(function (res) {
+        var data = res.data;
+        if (data.status == 1) {
+          _this5.dataList = data.data.data;
+          _this5.page_cur = parseInt(data.data.current_page);
+          _this5.pageTotal = data.data.total;
+          _this5.page_size = data.data.per_page;
+          _this5.page_total = data.data.last_page;
+        }
+      });
+    },
+    pageChange: function pageChange(value) {
+      this.page_cur = value;
+      this.getDataList();
+    },
+    pageToFirst: function pageToFirst() {
+      this.pageChange(1);
+    },
+    pageToLast: function pageToLast() {
+      this.page_cur = this.page_total;
+      this.pageChange(this.page_total);
+    },
+    searchEvent: function searchEvent() {
+      this.page_cur = 1;
+      this.getDataList();
+    },
+    resetSerach: function resetSerach() {
+      this.searchForm = {
+        depart_id: "",
+        name: "",
+        line_type: "",
+        start_flag: "",
+        start_length: "",
+        end_flag: "",
+        end_length: "",
+        start_time: "",
+        end_time: ""
+      };
+      this.objSelectLists = [];
+      this.getDataList();
     }
+    //
+
   }
 });
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-621098e8","hasScoped":false,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/views/login/index.vue
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"login-container"},[_c('div',{staticClass:"mod-new-reg-bg",style:({backgroundImage:'url('+__webpack_require__("ZoK1")+')'})}),_vm._v(" "),_c('div',{staticClass:"login-form"},[_c('div',{staticClass:"title-container"},[_c('img',{attrs:{"src":__webpack_require__("KItN")}})]),_vm._v(" "),_c('el-form',{ref:"loginForm",attrs:{"autocomplete":"off","model":_vm.loginForm,"rules":_vm.loginRules}},[_c('el-form-item',{attrs:{"prop":"username"}},[_c('el-input',{attrs:{"placeholder":"用户名","autocomplete":"new-password","clearable":""},model:{value:(_vm.loginForm.username),callback:function ($$v) {_vm.$set(_vm.loginForm, "username", $$v)},expression:"loginForm.username"}},[_c('template',{slot:"prepend"},[_c('img',{attrs:{"src":__webpack_require__("6wsJ")}})])],2)],1),_vm._v(" "),_c('el-form-item',{attrs:{"prop":"password"}},[_c('el-input',{attrs:{"type":"password","placeholder":"登录密码","autocomplete":"new-password","clearable":""},model:{value:(_vm.loginForm.password),callback:function ($$v) {_vm.$set(_vm.loginForm, "password", $$v)},expression:"loginForm.password"}},[_c('template',{slot:"prepend"},[_c('img',{attrs:{"src":__webpack_require__("YAVh")}})])],2)],1),_vm._v(" "),_c('el-button',{staticStyle:{"width":"100%","margin-bottom":"30px","padding":"15px"},attrs:{"type":"primary","loading":_vm.loading},nativeOn:{"click":function($event){$event.preventDefault();return _vm.handleLogin($event)}}},[_vm._v("登录")])],1)],1)])}
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-62a5201e","hasScoped":false,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/views/location/index.vue
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"location"}},[_c('div',{staticClass:"el-menu-top"},[_c('el-menu',{attrs:{"router":"","default-active":"location","mode":"horizontal"}},[_c('li',{staticClass:"ptitle"},[_c('img',{attrs:{"src":__webpack_require__("1xgB")}}),_vm._v("定位管理\n      ")]),_vm._v(" "),_c('el-menu-item',{attrs:{"index":"location"},on:{"click":_vm.resetSerach}},[_vm._v("人员定位统计")]),_vm._v(" "),_c('el-menu-item',{attrs:{"index":"walldetector"}},[_vm._v("信号基站")]),_vm._v(" "),_c('el-menu-item',{attrs:{"index":"locationbind"}},[_vm._v("定位从设备")])],1)],1),_vm._v(" "),_c('div',{staticClass:"app-page"},[_c('div',{staticClass:"app-page-container"},[_c('div',{staticClass:"app-page-select"},[_c('el-form',{attrs:{"model":_vm.searchForm,"inline":true}},[_c('el-form-item',{attrs:{"label":"公司"}},[_c('el-select',{attrs:{"placeholder":"请选择公司","clearable":""},on:{"change":function($event){return _vm.selectCompanyList($event)}},model:{value:(_vm.searchForm.depart_id),callback:function ($$v) {_vm.$set(_vm.searchForm, "depart_id", $$v)},expression:"searchForm.depart_id"}},_vm._l((_vm.companyList),function(item){return _c('el-option',{key:item.id,attrs:{"label":item.name,"value":item.id}})}),1)],1),_vm._v(" "),_c('el-form-item',{attrs:{"label":"姓名"}},[_c('el-select',{attrs:{"filterable":"","placeholder":"请选择人员姓名","clearable":""},model:{value:(_vm.searchForm.name),callback:function ($$v) {_vm.$set(_vm.searchForm, "name", $$v)},expression:"searchForm.name"}},_vm._l((_vm.objSelectLists),function(item){return _c('el-option',{key:item.id,attrs:{"label":item.name,"value":item.id}})}),1)],1),_vm._v(" "),_c('el-form-item',{attrs:{"label":"线别"}},[_c('el-select',{attrs:{"placeholder":"请选择线别","clearable":""},model:{value:(_vm.searchForm.line_type),callback:function ($$v) {_vm.$set(_vm.searchForm, "line_type", $$v)},expression:"searchForm.line_type"}},_vm._l((_vm.linTypeList),function(item){return _c('el-option',{key:item.id,attrs:{"label":item.name,"value":item.id}})}),1)],1),_vm._v(" "),_c('el-form-item',{staticClass:"el-form-item-inline",attrs:{"label":"开始位置"}},[_c('b',[_vm._v("DK")]),_vm._v(" "),_c('el-input',{attrs:{"autocomplete":"off","placeholder":"公里","title":"请输入数字","maxlength":"3","oninput":"value=value.replace(/[^\\d]/g,'')"},model:{value:(_vm.searchForm.start_flag),callback:function ($$v) {_vm.$set(_vm.searchForm, "start_flag", $$v)},expression:"searchForm.start_flag"}}),_vm._v(" "),_c('b',[_vm._v("+")]),_vm._v(" "),_c('el-input',{attrs:{"autocomplete":"off","placeholder":"米","maxlength":"3","title":"请输入数字","oninput":"value=value.replace(/[^\\d]/g,'')"},model:{value:(_vm.searchForm.start_length),callback:function ($$v) {_vm.$set(_vm.searchForm, "start_length", $$v)},expression:"searchForm.start_length"}})],1),_vm._v(" "),_c('el-form-item',{staticClass:"el-form-item-inline",attrs:{"label":"结束位置"}},[_c('b',[_vm._v("DK")]),_vm._v(" "),_c('el-input',{attrs:{"autocomplete":"off","placeholder":"公里","maxlength":"3","title":"请输入数字","oninput":"value=value.replace(/[^\\d]/g,'')"},model:{value:(_vm.searchForm.end_flag),callback:function ($$v) {_vm.$set(_vm.searchForm, "end_flag", $$v)},expression:"searchForm.end_flag"}}),_vm._v(" "),_c('b',[_vm._v("+")]),_vm._v(" "),_c('el-input',{attrs:{"autocomplete":"off","placeholder":"米","maxlength":"3","title":"请输入数字","oninput":"value=value.replace(/[^\\d]/g,'')"},model:{value:(_vm.searchForm.end_length),callback:function ($$v) {_vm.$set(_vm.searchForm, "end_length", $$v)},expression:"searchForm.end_length"}})],1),_vm._v(" "),_c('el-form-item',{attrs:{"label":"开始时间"}},[_c('el-date-picker',{attrs:{"picker-options":_vm.pickerOptionsStart,"type":"datetime","clearable":""},model:{value:(_vm.searchForm.start_time),callback:function ($$v) {_vm.$set(_vm.searchForm, "start_time", $$v)},expression:"searchForm.start_time"}})],1),_vm._v(" "),_c('el-form-item',{attrs:{"label":"结束时间"}},[_c('el-date-picker',{attrs:{"picker-options":_vm.pickerOptionsEnd,"type":"datetime","clearable":""},model:{value:(_vm.searchForm.end_time),callback:function ($$v) {_vm.$set(_vm.searchForm, "end_time", $$v)},expression:"searchForm.end_time"}})],1),_vm._v(" "),_c('el-form-item',{staticClass:"form-so"},[_c('label',{staticClass:"el-form-item__label"}),_vm._v(" "),_c('el-button',{attrs:{"size":"small","icon":"el-icon-search","type":"primary"},on:{"click":_vm.searchEvent}},[_vm._v("查询")]),_vm._v(" "),_c('el-button',{attrs:{"size":"small","plain":""},on:{"click":_vm.resetSerach}},[_vm._v("重置")])],1)],1)],1),_vm._v(" "),_c('div',{staticClass:"app-table"},[_c('el-table',{attrs:{"data":_vm.dataList}},[_c('el-table-column',{attrs:{"prop":"id","label":"序号","width":"100"}}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"name","label":"姓名"}}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"company","label":"公司名称"}}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"line","label":"线别"}}),_vm._v(" "),_c('el-table-column',{attrs:{"label":"开始位置"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_c('span',[_vm._v("DK"+_vm._s(scope.row.start_flag)+" + "+_vm._s(scope.row.start_length))])]}}])}),_vm._v(" "),_c('el-table-column',{attrs:{"label":"结束位置"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_c('span',[_vm._v("DK"+_vm._s(scope.row.end_flag)+" + "+_vm._s(scope.row.end_length))])]}}])}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"time_length","label":"在线时长"}}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"create_time","label":"入场时间"}})],1),_vm._v(" "),_c('div',{staticClass:"app-pagination"},[(_vm.dataList.length !== 0)?_c('el-pagination',{staticClass:"pagination",attrs:{"layout":"slot,prev, pager, next,slot,total","page-size":this.page_size,"current-page":this.page_cur,"total":this.pageTotal,"prev-text":"上一页","next-text":"下一页"},on:{"current-change":_vm.pageChange}},[_c('button',{staticClass:"btn-first",attrs:{"type":"button"},on:{"click":_vm.pageToFirst}},[_c('span',[_vm._v("首页")])]),_vm._v(" "),_c('button',{staticClass:"btn-last",attrs:{"type":"button"},on:{"click":_vm.pageToLast}},[_c('span',[_vm._v("尾页")])])]):_vm._e()],1)],1)])])])}
 var staticRenderFns = []
 var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ var selectortype_template_index_0_src_views_login = (esExports);
-// CONCATENATED MODULE: ./src/views/login/index.vue
+/* harmony default export */ var selectortype_template_index_0_src_views_location = (esExports);
+// CONCATENATED MODULE: ./src/views/location/index.vue
 function injectStyle (ssrContext) {
-  __webpack_require__("7Zec")
+  __webpack_require__("Wd7G")
 }
 var normalizeComponent = __webpack_require__("VU/8")
 /* script */
@@ -188,15 +339,44 @@ var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
-  views_login,
-  selectortype_template_index_0_src_views_login,
+  views_location,
+  selectortype_template_index_0_src_views_location,
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
   __vue_module_identifier__
 )
 
-/* harmony default export */ var src_views_login = __webpack_exports__["default"] = (Component.exports);
+/* harmony default export */ var src_views_location = __webpack_exports__["default"] = (Component.exports);
+
+
+/***/ }),
+
+/***/ "Wd7G":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("z8F9");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__("rjj0")("997a7dae", content, true);
+
+/***/ }),
+
+/***/ "z8F9":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("FZ+f")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.app-page-select .el-form-item-inline .el-input--medium {\r\n  display: inline-block;\r\n  width: 80px;\r\n  text-align: center;\n}\n.app-page-select .el-form-item-inline input {\r\n  display: inline-block;\r\n  width: 80px;\r\n  text-align: center;\n}\n.app-page-select b {\r\n  color: #999;\n}\n.dialog-loction .el-textarea__inner {\r\n  border: 1px #9db9fa solid;\r\n  color: #4b6eca;\r\n  height: 100px;\n}\n.dialog-loction .el-textarea {\r\n  width: 100% !important;\n}\n.dialog-loction .el-form-item__label {\r\n  width: 170px;\n}\n.dialog-loction .el-form-item__content {\r\n  margin-left: 170px;\n}\n.dialog-loction .el-select {\r\n  width: 100%;\n}\r\n", ""]);
+
+// exports
 
 
 /***/ })
