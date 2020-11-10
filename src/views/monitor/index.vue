@@ -229,6 +229,8 @@ export default {
       progressListItem: [],
       progressCheckValue: 0,
       applyList: [],
+      peopleLocation: [],
+      carLocation: [],
       lineTypeList: [],
       every: 0.5,
       minKM: 0,
@@ -294,6 +296,8 @@ export default {
 
           this.alertList = data.data.alert_lists; //防区
           this.slopeList = data.data.slope_lists; //坡度
+          this.peopleLocation = data.data.people_location;
+          this.carLocation = data.data.real_location;
           //施工进度
           if (data.data.project.length > 0) {
             this.progressList = data.data.project;
@@ -557,23 +561,23 @@ export default {
         let json = [
           {
             id: 1,
-            type: 2,
+            type: 1,
             start_flag: 0,
-            start_length: 300,
+            start_length: 600,
             end_flag: 0,
-            end_length: 450
+            end_length: 700
           },
           {
             id: 1,
-            type: 1,
-            start_flag: 1,
-            start_length: 850,
+            type: 2,
+            start_flag: 2,
+            start_length: 400,
             end_flag: 2,
-            end_length:10
+            end_length: 600
           },
           {
             id: 1,
-            type: 1,
+            type: 3,
             start_flag: 5,
             start_length: 300,
             end_flag: 5,
@@ -581,11 +585,11 @@ export default {
           },
           {
             id: 1,
-            type: 1,
-            start_flag: 6,
-            start_length: 800,
-            end_flag:6,
-            end_length: 950
+            type: 4,
+            start_flag: 7,
+            start_length: 200,
+            end_flag: 7,
+            end_length: 350
           }
         ];
         for (let i = 0; i < json.length; i++) {
@@ -602,15 +606,46 @@ export default {
 
           let startX = (start - leftLineMinMileage) * everys;
           let endX = (end - leftLineMinMileage) * everys;
-          let centerX = (endX + startX) / 2; //开始结束平均值
-          context.moveTo(startX + offsetX, 90);
-          context.lineTo(endX + offsetX, 90);
-          context.moveTo(startX + offsetX, 130);
-          context.lineTo(endX + offsetX, 130);
-          context.moveTo(startX + offsetX + 10, 90);
-          context.lineTo(endX + offsetX - 10, 130);
-          context.moveTo(startX + offsetX + 10, 130);
-          context.lineTo(endX + offsetX - 10, 90);
+          if (json[i].type == 1) {
+            context.moveTo(startX + offsetX, 90);
+            context.lineTo(endX + offsetX, 90);
+            context.moveTo(startX + offsetX, 130);
+            context.lineTo(endX + offsetX, 130);
+            context.moveTo(startX + offsetX + 5, 90);
+            context.lineTo(endX + offsetX - 5, 130);
+            context.moveTo(startX + offsetX + 5, 130);
+            context.lineTo(endX + offsetX - 5, 90);
+          } else if (json[i].type == 2) {
+              context.moveTo(startX + offsetX, 90);
+              context.lineTo(endX + offsetX, 90);
+              context.moveTo(startX + offsetX, 130);
+              context.lineTo(endX + offsetX, 130);
+              context.moveTo(startX + offsetX +60, 90);
+              context.lineTo(endX + offsetX+20, 150);
+              context.moveTo(startX + offsetX + 60, 130);
+             context.lineTo(endX + offsetX+20, 70);
+          } else if (json[i].type == 4) {
+              context.moveTo(startX + offsetX, 90);
+            context.lineTo(endX + offsetX, 90);
+            context.moveTo(startX + offsetX, 130);
+            context.lineTo(endX + offsetX, 130);
+
+            context.moveTo(startX + offsetX,65);
+            context.lineTo(startX + offsetX+20, 90);
+             context.moveTo(startX + offsetX +20, 130);
+            context.lineTo(startX + offsetX,152);
+            context.moveTo(startX + offsetX + 60, 90);
+            context.lineTo(endX + offsetX + 20, 150);
+            context.moveTo(startX + offsetX + 60, 130);
+            context.lineTo(endX + offsetX + 20, 70);
+          } else if (json[i].type == 3) {
+            context.moveTo(startX + offsetX, 90);
+            context.lineTo(endX + offsetX, 90);
+            context.moveTo(startX + offsetX, 130);
+            context.lineTo(endX + offsetX, 130);
+            context.moveTo(startX + offsetX + 5, 130);
+            context.lineTo(endX + offsetX - 5, 90);
+          }
           context.stroke();
         }
       }
@@ -1109,7 +1144,6 @@ export default {
         }
       }
       //绘制请点
-
       function drawAxesApply(applyListJson) {
         let json = applyListJson;
         let json1 = [
@@ -1320,50 +1354,30 @@ export default {
       };
       //车定位
       function drawAxesCar(jsonData) {
-        let jsonCar = [
-          {
-            id: 1,
-            name: "ZY01",
-            start_flag: 1,
-            start_length: 300,
-            line_type: 1
-          },
-          {
-            id: 1,
-            name: "ZY01",
-            start_flag: 6,
-            start_length: 300,
-            line_type: 1
-          },
-          {
-            id: 2,
-            name: "ZY02",
-            start_flag: 1,
-            start_length: 430,
-            line_type: 2
-          },
-          {
-            id: 1,
-            name: "ZY01",
-            start_flag: 7,
-            start_length: 300,
-            line_type: 2
-          },
-          {
-            id: 1,
-            name: "ZY01",
-            start_flag: 5,
-            start_length: 300,
-            line_type: 2
-          },
-          {
-            id: 2,
-            name: "ZY02",
-            start_flag: 3,
-            start_length: 430,
-            line_type: 2
-          }
-        ];
+        let jsonCar = jsonData;
+        //  [
+        //   {
+        //     id: 1,
+        //     name: "ZY01",
+        //     start_flag: 1,
+        //     start_length: 300,
+        //     line_type: 1
+        //   },
+        //   {
+        //     id: 1,
+        //     name: "ZY01",
+        //     start_flag: 5,
+        //     start_length: 300,
+        //     line_type: 2
+        //   },
+        //   {
+        //     id: 2,
+        //     name: "ZY02",
+        //     start_flag: 3,
+        //     start_length: 430,
+        //     line_type: 2
+        //   }
+        // ];
 
         let imgcar = new Image();
         imgcar.src = require("@/assets/image/icon-car.png");
@@ -1430,48 +1444,17 @@ export default {
       }
       //人定位
       function drawAxesPeple(jsonData) {
-        let jsonCar = [
-          {
-            id: 1,
-            name: "R",
-            start_flag: 5,
-            start_length: 300,
-            line_type: 1
-          },
-          {
-            id: 1,
-            name: "R",
-            start_flag: 3,
-            start_length: 300,
-            line_type: 1
-          },
-          {
-            id: 1,
-            name: "R",
-            start_flag: 8,
-            start_length: 300,
-            line_type: 2
-          },
-          {
-            id: 1,
-            name: "R",
-            start_flag: 6,
-            start_length: 300,
-            line_type: 2
-          }
-        ];
-
         let imgcar = new Image();
         imgcar.src = require("@/assets/image/m_apply.png");
         imgcar.onload = function() {
           let start = 0;
           context.fillStyle = "#fff ";
           context.font = "12px  Microsoft Yahei";
-          for (let i = 0; i < jsonCar.length; i++) {
-            if (jsonCar[i].line_type == 1) {
+          for (let i = 0; i < jsonData.length; i++) {
+            if (jsonData[i].line_type == 1) {
               let total =
-                parseInt(jsonCar[i].start_flag) * 1000 +
-                parseInt(jsonCar[i].start_length);
+                parseInt(jsonData[i].start_flag) * 1000 +
+                parseInt(jsonData[i].start_length);
               let startLineX = (total - leftLineMinMileage) * everys;
               context.drawImage(
                 imgcar,
@@ -1482,21 +1465,23 @@ export default {
               );
               //DK
               let codes =
-                " [ ZDK" +
-                jsonCar[i].start_flag +
+                " [" +
+                jsonData[i].name +
+                "  ZDK" +
+                jsonData[i].start_flag +
                 " +" +
-                jsonCar[i].start_length +
+                jsonData[i].start_length +
                 " ]";
 
               context.fillText(
                 codes,
-                startLineX + offsetX + 15,
-                axis_LeftLine.y - 50
+                startLineX + offsetX + 20,
+                axis_LeftLine.y - 35
               );
-            } else if (jsonCar[i].line_type == 2) {
+            } else if (jsonData[i].line_type == 2) {
               let total =
-                parseInt(jsonCar[i].start_flag) * 1000 +
-                parseInt(jsonCar[i].start_length);
+                parseInt(jsonData[i].start_flag) * 1000 +
+                parseInt(jsonData[i].start_length);
               let startLineX = (total - leftLineMinMileage) * everys;
               context.drawImage(
                 imgcar,
@@ -1507,15 +1492,17 @@ export default {
               );
               //DK
               let codes =
-                " [ YDK" +
-                jsonCar[i].start_flag +
+                " [" +
+                jsonData[i].name +
+                "  YDK" +
+                jsonData[i].start_flag +
                 " +" +
-                jsonCar[i].start_length +
+                jsonData[i].start_length +
                 " ]";
               context.fillText(
                 codes,
-                startLineX + offsetX + 15,
-                axis_LeftLine_Two.y - 50
+                startLineX + offsetX + 20,
+                axis_LeftLine_Two.y - 35
               );
             } //
           }
@@ -1563,8 +1550,8 @@ export default {
         drawDaocha();
       }
       //定位人和车
-      drawAxesPeple(this.applyList);
-      drawAxesCar(this.applyList);
+      drawAxesCar(this.carLocation);
+      drawAxesPeple(this.peopleLocation);
     },
     // ===================================桥 隧道 限速区 防区 道岔 坡度 施工进度
     //进度
