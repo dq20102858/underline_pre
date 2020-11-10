@@ -629,7 +629,6 @@ export default {
             context.lineTo(endX + offsetX, 90);
             context.moveTo(startX + offsetX, 130);
             context.lineTo(endX + offsetX, 130);
-
             context.moveTo(startX + offsetX,65);
             context.lineTo(startX + offsetX+20, 90);
              context.moveTo(startX + offsetX +20, 130);
