@@ -296,8 +296,8 @@ export default {
 
           this.alertList = data.data.alert_lists; //防区
           this.slopeList = data.data.slope_lists; //坡度
-          this.peopleLocation = data.data.people_location;
-          this.carLocation = data.data.real_location;
+          this.peopleLocation = data.data.people_location; //人员定位
+          this.carLocation = data.data.real_location; //车辆定位
           //施工进度
           if (data.data.project.length > 0) {
             this.progressList = data.data.project;
@@ -563,25 +563,25 @@ export default {
             id: 1,
             type: 1,
             start_flag: 0,
-            start_length: 600,
+            start_length: 400,
             end_flag: 0,
-            end_length: 700
+            end_length: 500
           },
           {
             id: 1,
             type: 2,
             start_flag: 2,
-            start_length: 400,
+            start_length: 100,
             end_flag: 2,
-            end_length: 600
+            end_length: 300
           },
           {
             id: 1,
             type: 3,
             start_flag: 5,
-            start_length: 300,
+            start_length: 500,
             end_flag: 5,
-            end_length: 450
+            end_length: 600
           },
           {
             id: 1,
@@ -607,43 +607,46 @@ export default {
           let startX = (start - leftLineMinMileage) * everys;
           let endX = (end - leftLineMinMileage) * everys;
           if (json[i].type == 1) {
-            context.moveTo(startX + offsetX, 90);
-            context.lineTo(endX + offsetX, 90);
-            context.moveTo(startX + offsetX, 130);
-            context.lineTo(endX + offsetX, 130);
-            context.moveTo(startX + offsetX + 5, 90);
-            context.lineTo(endX + offsetX - 5, 130);
-            context.moveTo(startX + offsetX + 5, 130);
-            context.lineTo(endX + offsetX - 5, 90);
+            context.moveTo(startX + offsetX, 30);
+            context.lineTo(endX + offsetX, 30);
+            context.moveTo(startX + offsetX, 60);
+            context.lineTo(endX + offsetX, 60);
+            context.moveTo(startX + offsetX + 5, 30);
+            context.lineTo(endX + offsetX - 5, 60);
+            context.moveTo(startX + offsetX + 5, 60);
+            context.lineTo(endX + offsetX - 5, 30);
           } else if (json[i].type == 2) {
-              context.moveTo(startX + offsetX, 90);
-              context.lineTo(endX + offsetX, 90);
-              context.moveTo(startX + offsetX, 130);
-              context.lineTo(endX + offsetX, 130);
-              context.moveTo(startX + offsetX +60, 90);
-              context.lineTo(endX + offsetX+20, 150);
-              context.moveTo(startX + offsetX + 60, 130);
-             context.lineTo(endX + offsetX+20, 70);
-          } else if (json[i].type == 4) {
-              context.moveTo(startX + offsetX, 90);
-            context.lineTo(endX + offsetX, 90);
-            context.moveTo(startX + offsetX, 130);
-            context.lineTo(endX + offsetX, 130);
-            context.moveTo(startX + offsetX,65);
-            context.lineTo(startX + offsetX+20, 90);
-             context.moveTo(startX + offsetX +20, 130);
-            context.lineTo(startX + offsetX,152);
-            context.moveTo(startX + offsetX + 60, 90);
-            context.lineTo(endX + offsetX + 20, 150);
-            context.moveTo(startX + offsetX + 60, 130);
-            context.lineTo(endX + offsetX + 20, 70);
+            context.moveTo(startX + offsetX, 30);
+            context.lineTo(endX + offsetX, 30);
+            context.moveTo(startX + offsetX, 60);
+            context.lineTo(endX + offsetX, 60);
+            context.moveTo(startX + offsetX + 60, 30);
+            context.lineTo(endX + offsetX + 20, 75);
+            context.moveTo(startX + offsetX + 60, 60);
+            context.lineTo(endX + offsetX + 20, 15);
           } else if (json[i].type == 3) {
-            context.moveTo(startX + offsetX, 90);
-            context.lineTo(endX + offsetX, 90);
-            context.moveTo(startX + offsetX, 130);
-            context.lineTo(endX + offsetX, 130);
-            context.moveTo(startX + offsetX + 5, 130);
-            context.lineTo(endX + offsetX - 5, 90);
+            context.moveTo(startX + offsetX, 30);
+            context.lineTo(endX + offsetX, 30);
+            context.moveTo(startX + offsetX, 60);
+            context.lineTo(endX + offsetX, 60);
+            context.moveTo(startX + offsetX + 5, 60);
+            context.lineTo(endX + offsetX - 5, 30);
+          } else if (json[i].type == 4) {
+            context.moveTo(startX + offsetX, 30);
+            context.lineTo(endX + offsetX, 30);
+            context.moveTo(startX + offsetX, 60);
+            context.lineTo(endX + offsetX, 60);
+
+            context.moveTo(startX + offsetX, 10);
+            context.lineTo(startX + offsetX + 20, 30);
+
+            context.moveTo(startX + offsetX + 20, 60);
+            context.lineTo(startX + offsetX + 0, 85);
+
+            context.moveTo(endX + offsetX - 20, 30);
+            context.lineTo(endX + offsetX + 20, 90);
+            context.moveTo(endX + offsetX - 20, 60);
+            context.lineTo(endX + offsetX + 20, 0);
           }
           context.stroke();
         }

@@ -143,7 +143,9 @@ export default {
       daocList: [],
       progressList: [],
       progressListItem: [],
-      progressCheckValue: 0
+      progressCheckValue: 0,
+      peopleLocation: [],
+      carLocation: []
     };
   },
   props: ["fatherWidth"],
@@ -191,6 +193,8 @@ export default {
           this.speedList = data.data.speed_lists; //限速区
           this.buildList = data.data.work_lists; //施工地段
           this.alertList = data.data.alert_lists; //防区
+          this.peopleLocation = data.data.people_location; //人员定位
+          this.carLocation = data.data.real_location; //车辆定位
           //施工进度
           if (data.data.project.length > 0) {
             this.progressList = data.data.project;
@@ -305,8 +309,8 @@ export default {
       }
       //车定位
       function drawAxesCar(jsonData) {
-        context.beginPath();
-        let jsonCar = [
+        let jsonCar = jsonData;
+        let jsonCar1 = [
           {
             id: 1,
             name: "ZY01",
@@ -356,7 +360,9 @@ export default {
               //DK
               let codes =
                 jsonCar[i].name +
-                " [ ZDK" +
+                " [  " +
+                jsoPeple[i].name +
+                " ZDK" +
                 jsonCar[i].start_flag +
                 " +" +
                 jsonCar[i].start_length +
@@ -378,7 +384,9 @@ export default {
               //DK
               let codes =
                 jsonCar[i].name +
-                " [ YDK" +
+                " [  " +
+                jsoPeple[i].name +
+                " YDK" +
                 jsonCar[i].start_flag +
                 " +" +
                 jsonCar[i].start_length +
@@ -395,14 +403,8 @@ export default {
       }
       //人定位
       function drawAxesPeple(jsonData) {
-        let jsonCar = [
-          {
-            id: 1,
-            name: "R",
-            start_flag: 8,
-            start_length: 300,
-            line_type: 1
-          },
+        let jsoPeple = jsonData;
+        let jsoPeple2 = [
           {
             id: 1,
             name: "R",
@@ -413,15 +415,8 @@ export default {
           {
             id: 1,
             name: "Y",
-            start_flag: 1,
-            start_length: 300,
-            line_type: 2
-          },
-          {
-            id: 1,
-            name: "Y",
-            start_flag: 6,
-            start_length: 300,
+            start_flag: 4,
+            start_length: 232,
             line_type: 2
           }
         ];
@@ -432,11 +427,11 @@ export default {
           let start = 0;
           context.fillStyle = "#fff ";
           context.font = "12px  Microsoft Yahei";
-          for (let i = 0; i < jsonCar.length; i++) {
-            if (jsonCar[i].line_type == 1) {
+          for (let i = 0; i < jsoPeple.length; i++) {
+            if (jsoPeple[i].line_type == 1) {
               let total =
-                parseInt(jsonCar[i].start_flag) * 1000 +
-                parseInt(jsonCar[i].start_length);
+                parseInt(jsoPeple[i].start_flag) * 1000 +
+                parseInt(jsoPeple[i].start_length);
               let startLineX = (total - lineTypeMinMileage) * everys;
               context.drawImage(
                 imgcar,
@@ -447,17 +442,19 @@ export default {
               );
               //DK
               let codes =
-                " [ ZDK" +
-                jsonCar[i].start_flag +
+                " [ " +
+                jsoPeple[i].name +
+                " ZDK" +
+                jsoPeple[i].start_flag +
                 " +" +
-                jsonCar[i].start_length +
+                jsoPeple[i].start_length +
                 " ]";
 
               context.fillText(codes, startLineX + 5, axis_LeftLine.y - 39);
-            } else if (jsonCar[i].line_type == 2) {
+            } else if (jsoPeple[i].line_type == 2) {
               let total =
-                parseInt(jsonCar[i].start_flag) * 1000 +
-                parseInt(jsonCar[i].start_length);
+                parseInt(jsoPeple[i].start_flag) * 1000 +
+                parseInt(jsoPeple[i].start_length);
               let startLineX = (total - lineTypeMinMileage) * everys;
               context.drawImage(
                 imgcar,
@@ -468,10 +465,12 @@ export default {
               );
               //DK
               let codes =
-                " [ YDK" +
-                jsonCar[i].start_flag +
+                " [  " +
+                jsoPeple[i].name +
+                " YDK" +
+                jsoPeple[i].start_flag +
                 " +" +
-                jsonCar[i].start_length +
+                jsoPeple[i].start_length +
                 " ]";
               context.fillText(codes, startLineX + 5, axis_LeftLine_Two.y - 39);
             } //
@@ -499,11 +498,11 @@ export default {
           context.beginPath();
           //画水平直线
           if (json[i].line_type == 1) {
-           // alert(startX)
-          
-              //startX =40;
-          
-            context.moveTo(startX+30, axis_LeftLine.y);
+            // alert(startX)
+
+            //startX =40;
+
+            context.moveTo(startX + 30, axis_LeftLine.y);
             context.lineTo(endX, axis_LeftLine.y);
             context.fillRect(centerX, axis_LeftLine.y, 2, 30);
             context.fillText(desc, centerX - 45, axis_LeftLine.y + 42);
@@ -873,8 +872,8 @@ export default {
       // if (this.progressCheckValue) {
       //   drawProgressAxis(this.progressListItem);
       // }
-      // drawAxesCar(this.applyList);
-      // drawAxesPeple(this.applyList);
+      drawAxesCar(this.carLocation);
+      drawAxesPeple(this.peopleLocation);
       //作业
       //  if (this.applyList.length > 0) {
       //drawAxesApply(this.applyList);
@@ -1210,7 +1209,6 @@ CanvasRenderingContext2D.prototype.fillTextVertical = function(text, x, y) {
 }
 .check-lists .buildchk.is-checked .el-checkbox__label {
   color: #08ce80;
-  
 }
 </style>
 
