@@ -266,7 +266,7 @@
                     />
                   </td>
                   <td  colspan="2">
-                     <div v-if="dataInfo.advice.length>0">
+                     <div>
                     <b>审批备注：</b>
                     <span class="clblue">{{ dataInfo.advice }}</span>
                   </div>
@@ -479,7 +479,7 @@
                       </div>
                       <div class="singn">
                         <span class="pull-left">
-                          工点负责人（签名）
+                          工点负责人（签名）：
                           <b>{{ dataInfo.p_in_charge }}</b>
                         </span>
                         <span class="pull-right">{{
@@ -504,7 +504,7 @@
                 </div>
                 <div class="singn">
                   <span class="pull-left">
-                    审批负责人（签名）
+                    审批负责人（签名）：
                     <b>{{ dataInfo.approver }}</b>
                   </span>
                   <span class="pull-right">{{ dataInfo.approve_time }}</span>
@@ -515,7 +515,7 @@
                   />
                 </div>
                 <div class="itemconn" style="float:left;width:100%;">
-                  审批负责人（备注） {{ dataInfo.advice }}</div>
+                  审批负责人（备注）： {{ dataInfo.advice }}</div>
               </div>
             </el-timeline-item>
             <el-timeline-item
@@ -534,7 +534,7 @@
                 </div>
                 <div class="singn">
                   <span class="pull-left">
-                    销点负责人（签名）
+                    销点负责人（签名）：
                     <b>{{ dataInfo.logout }}</b>
                   </span>
                   <span class="pull-right">{{ dataInfo.logout_time }}</span>
@@ -555,7 +555,7 @@
                 </div>
                 <div class="singn">
                   <span class="pull-left">
-                    注销负责人（签名）
+                    注销负责人（签名）：
                     <b>{{ dataInfo.logoff }}</b>
                   </span>
                   <span class="pull-right">{{ dataInfo.logoff_time }}</span>

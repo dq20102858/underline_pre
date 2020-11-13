@@ -1,14 +1,14 @@
 <template>
   <div id="project-intro">
     <div class="intro-box">
-      <div class="datav-ptitle" ><h3>项目介绍</h3></div>
+      <div class="datav-ptitle" ><h3>工程概况</h3></div>
       <div class="intro-info">
         <el-scrollbar style="height:100%">
          无锡地铁4号线一期工程轨道系统施工工程项目01标段施工内容包括正线、配线、场段线及与在建3号线的联络线（从3号线岔心后66.043m为4号线施工范围）的轨道工程。正线刘潭站至西园弄站（含），共8站7区间，里程为DK0+257.300～DK11+455.670，正线及配线双线长度25.054km,含单开道岔11组，交叉渡线3组；场段线包括天河停车场及其出入场线,铺轨长度5.403km,含单开道岔14组，交叉渡线1组。
 主要施工内容包括轨道系统设备及材料的供货、运输、安装、测试、试验、交验、试运行、试运营、缺陷责任期内的工程缺陷修复等。</el-scrollbar
         >
       </div>
-      <div class="datav-ptitle"><h3>项目概况</h3></div>
+      <div class="datav-ptitle"><h3>参建单位</h3></div>
       <div class="intro-item">
         <p><i></i>项目位置：<span>无锡</span></p>
         <p><i></i>建设单位：<span>中铁十七局</span></p>

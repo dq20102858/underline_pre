@@ -273,6 +273,7 @@ export default {
         img.src = require("@/assets/image/staxs.png");
         img.onload = function () {
           let start = 0;
+          let jsonlen = json.length;
           for (let i = 0; i < json.length; i++) {
             // 绘制站点图
             let total =
@@ -287,22 +288,21 @@ export default {
             context.font = "12px Microsoft Yahei";
             context.fillStyle = "#fff";
             let origin = json[i].name;
-            context.fillText(origin, startLineX, 15);
-            // context.font = "18px Microsoft Yahei";
-            // context.fillStyle = "#fff";
-            // let origin = json[i].name.split("");
-            // for (let x = 0; x < origin.length; x++) {
-            //   context.fillText(
-            //     origin[x],
-            //     startLineX - 8,
-            //     axis_LeftLine.y - 85 - origin.length * 20 + 20 * x
-            //   );
-            // }
+            if (i > 0) {
+              context.fillText(origin, startLineX - 20, 15);
+            } else {
+              context.fillText(origin, startLineX, 15);
+            }
             //DK
             let codes = "DK" + json[i].start_flag + " +" + json[i].start_length;
             context.fillStyle = "#5f88f9";
             context.font = "12px  Microsoft Yahei";
-            context.fillText(codes, startLineX, 30);
+
+            if (i > 0) {
+              context.fillText(codes, startLineX - 20, 30);
+            } else {
+              context.fillText(codes, startLineX, 30);
+            }
           }
         };
         context.stroke();
@@ -470,150 +470,35 @@ export default {
             type: 1,
             start_flag: 0,
             start_length: 800,
-            end_flag: 0,
-            end_length: 900,
           },
           {
             id: 1,
             type: 2,
             start_flag: 2,
-            start_length: 200,
-            end_flag: 2,
-            end_length: 400,
+            start_length: 100
           },
           {
             id: 1,
             type: 3,
             start_flag: 5,
-            start_length: 650,
-            end_flag: 5,
-            end_length: 850,
+            start_length: 500
           },
           {
             id: 1,
             type: 4,
             start_flag: 7,
-            start_length: 250,
-            end_flag: 7,
-            end_length: 650,
+            start_length: 100,
           },
         ];
-               let start = 0;
+        let start = 0;
         for (let i = 0; i < json.length; i++) {
-          let start =
-            parseInt(json[i].start_flag) * 1000 +
-            parseInt(json[i].start_length);
-          let end =
-            parseInt(json[i].end_flag) * 1000 + parseInt(json[i].end_length);
-          let betweenMeters = (end - start) * everys; //两点之间距离米
+          let start =parseInt(json[i].start_flag) * 1000 +parseInt(json[i].start_length);
           let startX = (start - lineTypeMinMileage) * everys;
           let img = new Image();
-          img.src = require("@/assets/image/icon-dc"+i+".png");
+          img.src = require("@/assets/image/icon-dc" + i + ".png");
           img.onload = function () {
-            context.drawImage(
-              img,startX,0,42,30);
+            context.drawImage(img, startX, 0, 48, 35);
           };
-        }
-      }
-      function drawDaochas() {
-        // let json1 = ListJson;
-        let json = [
-          {
-            id: 1,
-            type: 1,
-            start_flag: 0,
-            start_length: 800,
-            end_flag: 0,
-            end_length: 900,
-          },
-          {
-            id: 1,
-            type: 2,
-            start_flag: 2,
-            start_length: 200,
-            end_flag: 2,
-            end_length: 400,
-          },
-          {
-            id: 1,
-            type: 3,
-            start_flag: 5,
-            start_length: 650,
-            end_flag: 5,
-            end_length: 850,
-          },
-          {
-            id: 1,
-            type: 4,
-            start_flag: 7,
-            start_length: 250,
-            end_flag: 7,
-            end_length: 650,
-          },
-        ];
-        for (let i = 0; i < json.length; i++) {
-          let start =
-            parseInt(json[i].start_flag) * 1000 +
-            parseInt(json[i].start_length);
-          let end =
-            parseInt(json[i].end_flag) * 1000 + parseInt(json[i].end_length);
-          context.strokeStyle = "#107af7";
-          context.lineWidth = 2;
-          context.fillStyle = "#107af7";
-          context.font = "12px Microsoft Yahei";
-          context.beginPath();
-
-          let startX = (start - lineTypeMinMileage) * everys;
-          let endX = (end - lineTypeMinMileage) * everys;
-          if (json[i].type == 1) {
-            context.moveTo(startX + offsetX, 10);
-            context.lineTo(endX + offsetX, 10);
-            context.moveTo(startX + offsetX, 30);
-            context.lineTo(endX + offsetX, 30);
-            context.moveTo(startX + offsetX + 5, 10);
-            context.lineTo(endX + offsetX - 5, 30);
-            context.moveTo(startX + offsetX + 5, 30);
-            context.lineTo(endX + offsetX - 5, 10);
-          } else if (json[i].type == 2) {
-            context.moveTo(startX + offsetX, 10);
-            context.lineTo(endX + offsetX, 10);
-            context.moveTo(startX + offsetX, 30);
-            context.lineTo(endX + offsetX, 30);
-            context.moveTo(startX + offsetX + 20, 10);
-            context.lineTo(endX + offsetX + 5, 38);
-            context.moveTo(startX + offsetX + 20, 30);
-            context.lineTo(endX + offsetX + 5, 0);
-          } else if (json[i].type == 3) {
-            context.moveTo(startX + offsetX, 10);
-            context.lineTo(endX + offsetX, 10);
-            context.moveTo(startX + offsetX, 30);
-            context.lineTo(endX + offsetX, 30);
-            context.moveTo(startX + offsetX + 5, 30);
-            context.lineTo(endX + offsetX - 5, 10);
-          } else if (json[i].type == 4) {
-            let img = new Image();
-            img.src = require("@/assets/image/icon-dc.png");
-            img.onload = function () {
-              context.drawImage(img, startX, startX + 200, 80, 34);
-            };
-
-            // context.moveTo(startX + offsetX, 10);
-            // context.lineTo(endX + offsetX, 10);
-            // context.moveTo(startX + offsetX, 30);
-            // context.lineTo(endX + offsetX, 30);
-
-            // context.moveTo(startX + offsetX-10, 0);
-            // context.lineTo(startX + offsetX + 20, 10);
-
-            // context.moveTo(startX + offsetX + 20, 30);
-            // context.lineTo(startX + offsetX + 5, 50);
-
-            // context.moveTo(endX + offsetX - 20, 30);
-            // context.lineTo(endX + offsetX + 20, 90);
-            // context.moveTo(endX + offsetX - 20, 60);
-            // context.lineTo(endX + offsetX + 20, 0);
-          }
-          context.stroke();
         }
       }
       //绘制限速区
