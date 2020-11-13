@@ -265,9 +265,14 @@
                       :src="require('@/assets/image/approve.png')"
                     />
                   </td>
-                  <td colspan="2">
+                  <td  colspan="2">
+                     <div v-if="dataInfo.advice.length>0">
+                    <b>审批备注：</b>
+                    <span class="clblue">{{ dataInfo.advice }}</span>
+                  </div>
                     <b>审批时间：</b>
                     <span class="clblue">{{ dataInfo.approve_time }}</span>
+                  
                   </td>
                 </tr>
                 <tr>

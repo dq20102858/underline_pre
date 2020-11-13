@@ -903,6 +903,7 @@ export default {
           this.dialogVisible = false;
           this.dialogVisibleOk = false;
           this.dialogVisibleNo = false;
+          this.advice="";
           this.getDataList();
         } else {
           this.$message({
