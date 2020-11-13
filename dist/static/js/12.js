@@ -176,6 +176,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       img.src = __webpack_require__("u8rS");
       img.onload = function () {
         var start = 0;
+        var distance = [0, 20, 20, 20, 40, 60, 30, 40, 30];
         for (var i = 0; i < json.length; i++) {
           // 绘制站点图
           var total = parseInt(json[i].start_flag) * 1000 + parseInt(json[i].start_length);
@@ -187,23 +188,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           cansText.font = "12px Microsoft Yahei";
           cansText.fillStyle = "#fff";
           var origin = json[i].name;
-          cansText.fillText(origin, startLineX, 15);
-          // for (let x = 0; x < origin.length; x++) {
-          //   cansText.fillText(
-          //     origin[x],
-          //     startLineX,
-          //     138 - origin.length * 20 + 20 * x
-          //   );
-          // }
-          //DK
-          // let codes = "DK" + json[i].start_flag + " +" + json[i].start_length;
-          // cansText.fillStyle = "#5f88f9";
-          // cansText.font = "12px  Microsoft Yahei";
-          // if (endLineX < 400) {
-          //   cansText.fillText(codes, startLineX - 10, 36);
-          // } else {
-          //   cansText.fillText(codes, startLineX, 36);
-          // }
+
+          cansText.fillText(origin, startLineX - distance[i], 15);
         }
       };
       //Line=====================
@@ -375,14 +361,14 @@ CanvasRenderingContext2D.prototype.fillTextVertical = function (text, x, y) {
   context.textAlign = align;
   context.textBaseline = baseline;
 };
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-28024896","hasScoped":false,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/views/datav/schedule.vue
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-0e625407","hasScoped":false,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/views/datav/schedule.vue
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"schedule"}},[_vm._m(0),_vm._v(" "),_c('div',{ref:"proWrapper",style:(_vm.conheight),attrs:{"id":"progress"}},[_c('table',{staticClass:"lineTable zylineTable"},[_c('tr',{staticClass:"linebar"},[_vm._m(1),_vm._v(" "),_c('td',{staticClass:"tdbar"},[_c('div',{staticClass:"bar"},[_c('em',{style:({ width: _vm.cwidth + 'px' })})])])]),_vm._v(" "),_c('tr',{staticClass:"linebar"},[_vm._m(2),_vm._v(" "),_c('td',{staticClass:"tdbar"},[_c('div',{staticClass:"bar"},[_c('em',{style:({ width: _vm.cwidth + 'px' })})])])])]),_vm._v(" "),_c('div',{staticClass:"station"},[_c('canvas',{ref:"canvasStation",attrs:{"id":"canvasStation","height":"50"}},[_c('p',[_vm._v("您的系统不支持此程序!")])])]),_vm._v(" "),_c('div',{ref:"reflinebox",staticClass:"linebox"},[_c('table',{staticClass:"lineTable"},_vm._l((_vm.listSchedule),function(item,index){return (index < 3)?_c('tr',{key:item.id,staticClass:"linebar"},[_c('td',{staticStyle:{"width":"90px"}},[_c('div',{staticClass:"tdtitle",attrs:{"title":item.name}},[_vm._v(_vm._s(item.name))])]),_vm._v(" "),_c('td',{staticClass:"tdbar"},_vm._l((item.lines),function(lines){return _c('div',{key:lines.id,staticClass:"bar"},[_c('em',{style:({ width: _vm.cwidth + 'px' }),domProps:{"innerHTML":_vm._s(_vm.lineFill(lines.lists, lines.name))}},[_c('b',[_vm._v(_vm._s(lines.name))])]),_vm._v(" "),_c('span',[_vm._v(_vm._s(lines.name))])])}),0)]):_vm._e()}),0),_vm._v(" "),_c('div',{staticClass:"clear"})]),_vm._v(" "),_vm._m(3)])])}
 var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"datav-ptitle"},[_c('h3',[_vm._v("项目进度")])])},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('td',{staticStyle:{"width":"90px"}},[_c('div',{staticClass:"tdtitle",attrs:{"title":"左线"}},[_vm._v("左线")])])},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('td',{staticStyle:{"width":"90px"}},[_c('div',{staticClass:"tdtitle",attrs:{"title":"右线"}},[_vm._v("右线")])])},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"lineboxwel"},[_c('span',[_c('em',{staticClass:"a1"}),_vm._v("轨道线")]),_vm._v(" "),_c('span',[_c('em',{staticClass:"a2"}),_vm._v("施工完成")]),_vm._v(" "),_c('span',[_c('em',{staticClass:"a3"}),_vm._v("施工未完成")])])}]
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ var datav_schedule = (esExports);
 // CONCATENATED MODULE: ./src/views/datav/schedule.vue
 function injectStyle (ssrContext) {
-  __webpack_require__("x23C")
+  __webpack_require__("F10Q")
 }
 var normalizeComponent = __webpack_require__("VU/8")
 /* script */
@@ -411,7 +397,21 @@ var Component = normalizeComponent(
 
 /***/ }),
 
-/***/ "mPO2":
+/***/ "F10Q":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("Rjfu");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__("rjj0")("4f04d5e6", content, true);
+
+/***/ }),
+
+/***/ "Rjfu":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("FZ+f")(false);
@@ -419,7 +419,7 @@ exports = module.exports = __webpack_require__("FZ+f")(false);
 
 
 // module
-exports.push([module.i, "\n#schedule {\r\n  width: 33.3%;\r\n  height: 33.3%;\n}\n#progress {\r\n  width: 100%;\r\n  height: 100%;\r\n  background: #01023a;\n}\n.progress {\r\n  background: #01023a;\r\n  padding-bottom: 30px;\n}\n.station {\r\n  margin: 0px 0px 0px 90px;\r\n  position: relative;\r\n  z-index: 999;\n}\n#schedule .linebox {\r\n  position: relative;\r\n  margin-top: -7px;\n}\n.zylineTable {\r\n  margin-top: 20px;\r\n  margin-bottom:10px;\n}\n.zylineTable .bar em {\r\n  height: 10px;\r\n  background: #fff;\r\n  border: 1px #fff solid !important;\n}\r\n/* lineTable */\n#schedule .lineTable {\r\n  width: 100%;\r\n  border-collapse: collapse;\n}\n#schedule .lineTable td {\r\n  color: #fff;\n}\n#schedule .lineTable .linebar {\n}\n#schedule .lineTable .tdtitle {\r\n  text-align: center;\r\n  overflow: hidden;\r\n  height: 12px;\r\n  padding-left: 5px;\r\n  width: 92px;\r\n  font-size: 12px;\r\n  line-height: 12px;\r\n  white-space: nowrap;\r\n  text-overflow: ellipsis;\n}\n#schedule .tdbar .bar {\r\n  height: 14px;\r\n  overflow: hidden;\r\n  margin-bottom: 5px;\n}\n#schedule .tdbar .bar:last-child {\r\n  border-bottom: 0;\n}\n#schedule .tdbar .bar span {\r\n  font-size: 12px;\r\n  color: #fff;\r\n  line-height: 12px;\r\n  text-align: center;\n}\n#schedule .tdbar .bar em {\r\n  height: 10px;\r\n  display: inline-block;\r\n  position: relative;\r\n  overflow: hidden;\r\n  border: 1px #1a9417 solid;\n}\n#schedule .tdbar .bar em i {\r\n  position: absolute;\r\n  top: 0;\r\n  background: #27db07;\r\n  height: 12px;\r\n  display: inline-block;\r\n  overflow: hidden;\n}\n.tdbar .bar em i:first-child {\r\n  border-left: 0;\n}\n.tdbar .bar em i:last-child {\r\n  border-left: 0;\n}\n.clear {\r\n  clear: both;\n}\n.lineboxwel {\r\n  text-align: right;\r\n  padding-top:20px;\r\n  padding-right: 5px;\n}\n.lineboxwel span {\r\n  text-align: center;\r\n  display: inline-block;\r\n  color: #fff; margin-right: 30px;\r\n  font-size: 12px;\n}\n.lineboxwel em {\r\n  height: 6px;\r\n  width: 60px;\r\n  display: block;\r\n  margin-bottom: 5px;\n}\n.lineboxwel em.a1 {\r\n  background: #fff;\n}\n.lineboxwel em.a2 {\r\n  background: #27db07;\n}\n.lineboxwel em.a3 {\r\n  border: 1px #1a9417 solid;\n}\r\n/* //#27DB07 */\r\n", ""]);
+exports.push([module.i, "\n#schedule {\r\n  width: 50%;\r\n  height: 33.3%;\n}\n#progress {\r\n  width: 100%;\r\n  height: 100%;\r\n  background: #01023a;\n}\n.progress {\r\n  background: #01023a;\r\n  padding-bottom: 30px;\n}\n.station {\r\n  margin: 0px 0px 0px 90px;\r\n  position: relative;\r\n  z-index: 999;\n}\n#schedule .linebox {\r\n  position: relative;\r\n  margin-top: -7px;\n}\n.zylineTable {\r\n  margin-top: 20px;\r\n  margin-bottom:10px;\n}\n.zylineTable .bar em {\r\n  height: 10px;\r\n  background: #fff;\r\n  border: 1px #fff solid !important;\n}\r\n/* lineTable */\n#schedule .lineTable {\r\n  width: 100%;\r\n  border-collapse: collapse;\n}\n#schedule .lineTable td {\r\n  color: #fff;\n}\n#schedule .lineTable .tdtitle {\r\n  text-align: center;\r\n  overflow: hidden;\r\n  height: 12px;\r\n  padding-left: 5px;\r\n  width: 92px;\r\n  font-size: 12px;\r\n  line-height: 12px;\r\n  white-space: nowrap;\r\n  text-overflow: ellipsis;\n}\n#schedule .tdbar .bar {\r\n  height: 14px;\r\n  overflow: hidden;\r\n  margin-bottom: 5px;\n}\n#schedule .tdbar .bar:last-child {\r\n  border-bottom: 0;\n}\n#schedule .tdbar .bar span {\r\n  font-size: 12px;\r\n  color: #fff;\r\n  line-height: 12px;\r\n  text-align: center;\n}\n#schedule .tdbar .bar em {\r\n  height: 10px;\r\n  display: inline-block;\r\n  position: relative;\r\n  overflow: hidden;\r\n  border: 1px #1a9417 solid;\n}\n#schedule .tdbar .bar em i {\r\n  position: absolute;\r\n  top: 0;\r\n  background: #27db07;\r\n  height: 12px;\r\n  display: inline-block;\r\n  overflow: hidden;\n}\n.tdbar .bar em i:first-child {\r\n  border-left: 0;\n}\n.tdbar .bar em i:last-child {\r\n  border-left: 0;\n}\n.clear {\r\n  clear: both;\n}\n.lineboxwel {\r\n  text-align: right;\r\n  padding-top:20px;\r\n  padding-right: 5px;\n}\n.lineboxwel span {\r\n  text-align: center;\r\n  display: inline-block;\r\n  color: #fff; margin-right: 30px;\r\n  font-size: 12px;\n}\n.lineboxwel em {\r\n  height: 6px;\r\n  width: 60px;\r\n  display: block;\r\n  margin-bottom: 5px;\n}\n.lineboxwel em.a1 {\r\n  background: #fff;\n}\n.lineboxwel em.a2 {\r\n  background: #27db07;\n}\n.lineboxwel em.a3 {\r\n  border: 1px #1a9417 solid;\n}\r\n/* //#27DB07 */\r\n", ""]);
 
 // exports
 
@@ -430,20 +430,6 @@ exports.push([module.i, "\n#schedule {\r\n  width: 33.3%;\r\n  height: 33.3%;\n}
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "static/img/staxs.b12aa2f.jpg";
-
-/***/ }),
-
-/***/ "x23C":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("mPO2");
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__("rjj0")("004a247b", content, true);
 
 /***/ })
 
