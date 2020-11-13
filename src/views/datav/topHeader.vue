@@ -3,13 +3,11 @@
     <div id="top-times" class="top-times">{{ times }}</div>
     <div class="center-title">无锡地铁四号线施工大数据平台
       <dv-decoration-3 style="width:420px;height:15px;" />
-
     </div>
   </div>
 </template>
 <script>
 export default {
-  name: "TopHeader",
   data() {
     return { timer: "", times: "" };
   },
@@ -63,7 +61,7 @@ export default {
 </script>
 <style>
 #top-header {
-  background: #01023a url("~@/assets/image/datav-head-bg.png") no-repeat bottom
+  background: url("~@/assets/image/datav-head-bg.png") no-repeat bottom
     center;
   background-size: 100% auto;
   height: 80px;

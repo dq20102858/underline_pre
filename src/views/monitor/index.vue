@@ -13,7 +13,7 @@
               <ul
                 :style="{
                   width: stationList.length * 100 + 'px',
-                  'margin-left': wdpx * 100 + 'px'
+                  'margin-left': wdpx * 100 + 'px',
                 }"
               >
                 <li
@@ -162,29 +162,29 @@ let axis_Height = "680";
 //左右线标尺起点
 let axis_LeftLine = {
   x: 100,
-  y: axis_Height - 490
+  y: axis_Height - 490,
 };
 let axis_LeftLine_Two = {
   x: 100,
-  y: axis_Height - 285
+  y: axis_Height - 285,
 };
 //出入场线
 let axis_OutLine = {
   x: 100,
-  y: axis_Height - 150
+  y: axis_Height - 150,
 };
 let axis_OutLine_Two = {
   x: 100,
-  y: axis_Height - 80
+  y: axis_Height - 80,
 };
 //请点标尺起点
 let axis_applay = {
   x: 100,
-  y: axis_Height - 535
+  y: axis_Height - 535,
 };
 let axis_applay_two = {
   x: 100,
-  y: axis_Height - 345
+  y: axis_Height - 345,
 };
 //刻度的间隔
 let tick_Spacing = 100;
@@ -203,7 +203,7 @@ export default {
       endX: 0,
       slideStyle: {
         left: 0,
-        transition: "none"
+        transition: "none",
       },
       wdpx: 0,
       stationList: [],
@@ -244,7 +244,7 @@ export default {
       outLineMaxMileage: 0,
       cartableShowText: "隐藏机车列表信息",
       cartableShow: true,
-      locationRealtime: []
+      locationRealtime: [],
     };
   },
   updated() {
@@ -258,8 +258,8 @@ export default {
     getProjectProcessMap() {
       this.request({
         url: "/monitor/getMointorDatas",
-        method: "get"
-      }).then(response => {
+        method: "get",
+      }).then((response) => {
         let data = response.data;
         if (data.status == 1) {
           //线别
@@ -528,7 +528,7 @@ export default {
         let json = stationListJson;
         let img = new Image();
         img.src = require("@/assets/image/sta.png");
-        img.onload = function() {
+        img.onload = function () {
           let start = 0;
           for (let i = 0; i < json.length; i++) {
             // 绘制站点图
@@ -557,6 +557,49 @@ export default {
       }
       //绘制道岔
       function drawDaocha() {
+        let json = [
+          {
+            id: 1,
+            type: 1,
+            start_flag: 0,
+            start_length: 600,
+          },
+          {
+            id: 1,
+            type: 2,
+            start_flag: 2,
+            start_length: 200,
+          },
+          {
+            id: 1,
+            type: 3,
+            start_flag: 5,
+            start_length: 600,
+          },
+          {
+            id: 1,
+            type: 4,
+            start_flag: 7,
+            start_length: 200,
+          },
+        ];
+        let start = 0;
+        for (let i = 0; i < json.length; i++) {
+          let start =
+            parseInt(json[i].start_flag) * 1000 +
+            parseInt(json[i].start_length);
+          let end =
+            parseInt(json[i].end_flag) * 1000 + parseInt(json[i].end_length);
+          let betweenMeters = (end - start) * everys; //两点之间距离米
+          let startX = (start - leftLineMinMileage) * everys;
+          let img = new Image();
+          img.src = require("@/assets/image/icon-dc" + i + ".png");
+          img.onload = function () {
+            context.drawImage(img, startX, 10, 69, 50);
+          };
+        }
+      }
+      function drawDaochas() {
         // let json1 = ListJson;
         let json = [
           {
@@ -565,7 +608,7 @@ export default {
             start_flag: 0,
             start_length: 400,
             end_flag: 0,
-            end_length: 500
+            end_length: 500,
           },
           {
             id: 1,
@@ -573,7 +616,7 @@ export default {
             start_flag: 2,
             start_length: 100,
             end_flag: 2,
-            end_length: 300
+            end_length: 300,
           },
           {
             id: 1,
@@ -581,7 +624,7 @@ export default {
             start_flag: 5,
             start_length: 500,
             end_flag: 5,
-            end_length: 600
+            end_length: 600,
           },
           {
             id: 1,
@@ -589,8 +632,8 @@ export default {
             start_flag: 7,
             start_length: 200,
             end_flag: 7,
-            end_length: 350
-          }
+            end_length: 350,
+          },
         ];
         for (let i = 0; i < json.length; i++) {
           let start =
@@ -1163,7 +1206,7 @@ export default {
             end_length: "804",
             type: "A4",
             start_total: 14600,
-            end_total: 26410
+            end_total: 26410,
           },
           {
             line_type: 1,
@@ -1179,7 +1222,7 @@ export default {
             end_length: "232",
             type: "A4",
             start_total: 14600,
-            end_total: 26410
+            end_total: 26410,
           },
           {
             line_type: 1,
@@ -1195,7 +1238,7 @@ export default {
             end_length: "808",
             type: "A3",
             start_total: 14600,
-            end_total: 21370
+            end_total: 21370,
           },
           {
             line_type: 2,
@@ -1211,8 +1254,8 @@ export default {
             end_length: "808",
             type: "A3",
             start_total: 14600,
-            end_total: 21370
-          }
+            end_total: 21370,
+          },
         ];
         for (let i = 0; i < json.length; i++) {
           let start =
@@ -1259,7 +1302,7 @@ export default {
 
             let img = new Image();
             img.src = require("@/assets/image/" + descType + ".png");
-            img.onload = function() {
+            img.onload = function () {
               context.drawImage(
                 img,
                 centerX + offsetX - 30,
@@ -1273,7 +1316,7 @@ export default {
               y: axis_applay.y - 55,
               w: 60,
               h: 54,
-              i: json[i]
+              i: json[i],
             });
           } else if (json[i].line_type == 2) {
             let startX = (start - leftLineMinMileage) * everys;
@@ -1290,7 +1333,7 @@ export default {
             context.lineTo(endX + offsetX, axis_applay_two.y);
             let img = new Image();
             img.src = require("@/assets/image/" + descType + ".png");
-            img.onload = function() {
+            img.onload = function () {
               context.drawImage(
                 img,
                 centerX + offsetX - 30,
@@ -1304,14 +1347,14 @@ export default {
               y: axis_applay_two.y - 55,
               w: 60,
               h: 54,
-              i: json[i]
+              i: json[i],
             });
           }
           context.stroke();
           //
         }
       }
-      canvas.onclick = function(event) {
+      canvas.onclick = function (event) {
         var x = event.pageX - canvas.getBoundingClientRect().left;
         var y = event.pageY - canvas.getBoundingClientRect().top;
         //console.log("X：" + x + "_" + y);
@@ -1346,7 +1389,7 @@ export default {
                   distinguishCancelAndClose: true,
                   dangerouslyUseHTMLString: true,
                   showCancelButton: false,
-                  showConfirmButton: false
+                  showConfirmButton: false,
                 }
               )
               .catch(() => {});
@@ -1383,7 +1426,7 @@ export default {
 
         let imgcar = new Image();
         imgcar.src = require("@/assets/image/icon-car.png");
-        imgcar.onload = function() {
+        imgcar.onload = function () {
           let start = 0;
 
           for (let i = 0; i < jsonCar.length; i++) {
@@ -1448,7 +1491,7 @@ export default {
       function drawAxesPeple(jsonData) {
         let imgcar = new Image();
         imgcar.src = require("@/assets/image/m_apply.png");
-        imgcar.onload = function() {
+        imgcar.onload = function () {
           let start = 0;
           context.fillStyle = "#fff ";
           context.font = "12px  Microsoft Yahei";
@@ -1558,7 +1601,7 @@ export default {
     // ===================================桥 隧道 限速区 防区 道岔 坡度 施工进度
     //进度
     progressCheckSelect(val) {
-      this.progressList.map(item => {
+      this.progressList.map((item) => {
         if (item.name == val) {
           this.progressListItem = item.list;
         }
@@ -1617,7 +1660,7 @@ export default {
       let gapX = 0;
       let startx = 0;
       let obj = document.getElementById("scrollbar"); //
-      obj.addEventListener("mousedown", function(event) {
+      obj.addEventListener("mousedown", function (event) {
         if (event.button == 0) {
           //判断是否点击鼠标左键
           gapX = event.clientX;
@@ -1651,14 +1694,14 @@ export default {
     getLocationRealtime() {
       this.request({
         url: "/monitor/getLocationRealtime",
-        method: "get"
-      }).then(response => {
+        method: "get",
+      }).then((response) => {
         var data = response.data;
         if (data.status == 1) {
           this.locationRealtime = data.data;
         }
       });
-    }
+    },
 
     //
   },
@@ -1667,7 +1710,7 @@ export default {
     window.addEventListener("resize", () => {
       this.scrollwidth = document.documentElement.clientWidth - 640;
     });
-  }
+  },
 };
 </script>
 
