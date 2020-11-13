@@ -507,7 +507,6 @@ export default {
             parseInt(json[i].end_flag) * 1000 + parseInt(json[i].end_length);
           let betweenMeters = (end - start) * everys; //两点之间距离米
           let startX = (start - lineTypeMinMileage) * everys;
-
           let img = new Image();
           img.src = require("@/assets/image/icon-dc"+i+".png");
           img.onload = function () {
