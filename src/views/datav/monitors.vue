@@ -33,7 +33,7 @@
       </div>
       <div class="progress-txt">离场人数/<em>总人数</em></div>
       <div class="progress-item">
-        <div class="atxt">安全帽</div>
+        <div class="atxt">&nbsp;&nbsp;&nbsp;&nbsp;安全帽</div>
         <el-progress
           :percentage="50"
           color="#2e92ff"
