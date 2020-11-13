@@ -10,12 +10,11 @@
       </div>
       <div class="datav-ptitle"><h3>参建单位</h3></div>
       <div class="intro-item">
-        <p><i></i>项目位置：<span>无锡</span></p>
-        <p><i></i>建设单位：<span>中铁十七局</span></p>
-        <p><i></i>设计单位：<span>中铁十七局</span></p>
-        <p><i></i>监管单位：<span>无锡电信</span></p>
-        <p><i></i>总包单位：<span>纳新科技</span></p>
-        <p><i></i>建筑面积：<span>18万平方米</span></p>
+        <p><i></i>建设单位：<span>无锡地铁集团有限公司</span></p>
+        <p><i></i>设计单位：<span>北京城建设计发展集团股份有限公司</span></p>
+        <p><i></i>监理单位：<span>重庆赛迪工程咨询有限公司</span></p>
+        <p><i></i>施工单位：<span>中铁十七局集团有限公司</span></p>
+        <p><i></i>合作单位：<span>中国电信有限公司无锡分公司</span></p>
       </div>
     </div>
     <div class="intro-box">
