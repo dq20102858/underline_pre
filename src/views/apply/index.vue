@@ -268,7 +268,7 @@
       width="400px"
       center
     >
-      <span style="margin-bottom: 10px; display: block">请选择审批状态？</span>
+      <!-- <span style="margin-bottom: 10px; display: block">请选择审批状态？</span> -->
       <el-input
         type="textarea"
         :rows="4"
