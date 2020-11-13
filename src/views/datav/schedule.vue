@@ -408,7 +408,7 @@ CanvasRenderingContext2D.prototype.fillTextVertical = function(text, x, y) {
 </script>
 <style>
 #schedule {
-  width: 33.3%;
+  width: 50%;
   height: 33.3%;
 }
 #progress {
@@ -445,8 +445,6 @@ CanvasRenderingContext2D.prototype.fillTextVertical = function(text, x, y) {
 }
 #schedule .lineTable td {
   color: #fff;
-}
-#schedule .lineTable .linebar {
 }
 #schedule .lineTable .tdtitle {
   text-align: center;

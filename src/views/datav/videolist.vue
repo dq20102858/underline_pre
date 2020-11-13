@@ -1,18 +1,6 @@
 <template>
   <div id="videolist">
     <div class="videos" style="float: left;padding-right: 10px;">
-      <!-- <div class="grid-content">
-        <img :src="require('@/assets/image/video1.png')" />
-      </div>
-      <div class="grid-content">
-        <img :src="require('@/assets/image/video2.png')" />
-      </div>
-      <div class="grid-content">
-        <img :src="require('@/assets/image/video3.png')" />
-      </div>
-      <div class="grid-content">
-        <img :src="require('@/assets/image/video4.png')" />
-      </div> -->
 	  <iframe src="http://10.100.103.203:8083/single/%e5%88%98%e6%bd%ad%e7%ab%99%e5%8f%b3%e7%ba%bf%e6%b4%9e%e5%8f%a3" scrolling="no" ></iframe>
     <iframe src="http://10.100.103.203:8083/single/%E5%88%98%E6%BD%AD%E7%AB%99%E9%9A%A7%E9%81%93%E5%85%A5%E6%96%99%E5%8F%A3" scrolling="no" ></iframe>
     <iframe src="http://10.100.103.203:8083/single/%E5%B9%BF%E7%9F%B3%E7%AB%99-%E5%85%A5%E6%96%99%E5%8F%A3" scrolling="no" ></iframe>
@@ -39,7 +27,7 @@ export default {
 #videolist .videos {
   display: flex;
   flex-wrap: wrap;
-  height: 100%;
+  height: 90%;
   padding-left: 20px;
   padding-top: 0px;
 }

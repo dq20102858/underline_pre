@@ -12,7 +12,9 @@
           <el-menu-item index="conflictcheck">冲突检测</el-menu-item>
         </el-submenu>
         <el-menu-item index="weekplan">周计划</el-menu-item>
-        <el-menu-item index="weekplanapply" v-if="sys_role==1">权限审批</el-menu-item>
+        <el-menu-item index="weekplanapply" v-if="sys_role == 1"
+          >权限审批</el-menu-item
+        >
       </el-menu>
     </div>
 
@@ -32,7 +34,11 @@
               </el-dropdown>
             </el-form-item>-->
             <el-form-item label="公司">
-              <el-select v-model="searchForm.depart_id" placeholder="请选择公司" clearable>
+              <el-select
+                v-model="searchForm.depart_id"
+                placeholder="请选择公司"
+                clearable
+              >
                 <el-option
                   v-for="item in companyList"
                   :key="item.id"
@@ -42,7 +48,11 @@
               </el-select>
             </el-form-item>
             <el-form-item label="线别">
-              <el-select v-model="searchForm.line_type" placeholder="请选择线别" clearable>
+              <el-select
+                v-model="searchForm.line_type"
+                placeholder="请选择线别"
+                clearable
+              >
                 <el-option
                   v-for="item in lineList"
                   :key="item.id"
@@ -52,7 +62,11 @@
               </el-select>
             </el-form-item>
             <el-form-item label="类型">
-              <el-select v-model="searchForm.type" placeholder="请选择类型" clearable>
+              <el-select
+                v-model="searchForm.type"
+                placeholder="请选择类型"
+                clearable
+              >
                 <el-option
                   v-for="item in typeList"
                   :key="item.id"
@@ -62,7 +76,11 @@
               </el-select>
             </el-form-item>
             <el-form-item label="起始车站">
-              <el-select v-model="searchForm.start_station" placeholder="请选择起始车站" clearable>
+              <el-select
+                v-model="searchForm.start_station"
+                placeholder="请选择起始车站"
+                clearable
+              >
                 <el-option
                   v-for="item in stationList"
                   :key="item.id"
@@ -72,7 +90,11 @@
               </el-select>
             </el-form-item>
             <el-form-item label="结束车站">
-              <el-select v-model="searchForm.end_station" placeholder="请选择结束车站" clearable>
+              <el-select
+                v-model="searchForm.end_station"
+                placeholder="请选择结束车站"
+                clearable
+              >
                 <el-option
                   v-for="item in stationList"
                   :key="item.id"
@@ -82,7 +104,11 @@
               </el-select>
             </el-form-item>
             <el-form-item label="状态">
-              <el-select v-model="searchForm.status" placeholder="请选择状态" clearable>
+              <el-select
+                v-model="searchForm.status"
+                placeholder="请选择状态"
+                clearable
+              >
                 <el-option
                   v-for="item in statusList"
                   :key="item.id"
@@ -109,8 +135,11 @@
                 icon="el-icon-search"
                 @click="pageSearchEvent"
                 type="primary"
-              >查询</el-button>
-              <el-button size="small" plain @click="resetSerach">重置</el-button>
+                >查询</el-button
+              >
+              <el-button size="small" plain @click="resetSerach"
+                >重置</el-button
+              >
             </el-form-item>
           </el-form>
         </div>
@@ -119,50 +148,91 @@
         <div class="app-table">
           <el-table :data="dataList">
             <el-table-column prop="number" label="作业编号"></el-table-column>
-            <el-table-column prop="command_num" label="作业令号"></el-table-column>
-            <el-table-column prop="description" label="作业内容" show-overflow-tooltip></el-table-column>
-            <el-table-column prop="company" label="公司简称" show-overflow-tooltip></el-table-column>
-            <el-table-column prop="status" label="当前状态" width="80" align="center">
+            <el-table-column
+              prop="command_num"
+              label="作业令号"
+            ></el-table-column>
+            <el-table-column
+              prop="description"
+              label="作业内容"
+              show-overflow-tooltip
+            ></el-table-column>
+            <el-table-column
+              prop="company"
+              label="公司简称"
+              show-overflow-tooltip
+            ></el-table-column>
+            <el-table-column
+              prop="status"
+              label="当前状态"
+              width="80"
+              align="center"
+            >
               <template slot-scope="scope">
-                <span class="statuse1" v-if="scope.row.status=='未批复'">未批复</span>
-                <span class="statuse2" v-if="scope.row.status=='同意'">同意</span>
-                <span class="statuse3" v-if="scope.row.status=='拒绝'">拒绝</span>
-                <span class="statuse4" v-if="scope.row.status=='已完成'">完成</span>
-                <span class="statuse6" v-if="scope.row.status=='已销点'">已销点</span>
-                <span class="statuse1" v-if="scope.row.status=='注销'">注销</span>
+                <span class="statuse1" v-if="scope.row.status == '未批复'"
+                  >未批复</span
+                >
+                <span class="statuse2" v-if="scope.row.status == '同意'"
+                  >同意</span
+                >
+                <span class="statuse3" v-if="scope.row.status == '拒绝'"
+                  >拒绝</span
+                >
+                <span class="statuse4" v-if="scope.row.status == '已完成'"
+                  >完成</span
+                >
+                <span class="statuse6" v-if="scope.row.status == '已销点'"
+                  >已销点</span
+                >
+                <span class="statuse1" v-if="scope.row.status == '注销'"
+                  >注销</span
+                >
               </template>
             </el-table-column>
 
-            <el-table-column prop="next_status" label="下一步状态" width="100" align="center"></el-table-column>
-            <el-table-column prop="create_time" label="创建时间" width="150"></el-table-column>
+            <el-table-column
+              prop="next_status"
+              label="下一步状态"
+              width="100"
+              align="center"
+            ></el-table-column>
+            <el-table-column
+              prop="create_time"
+              label="创建时间"
+              width="150"
+            ></el-table-column>
             <el-table-column label="操作" width="125">
               <template slot-scope="scope">
                 <div class="app-operation">
-                  <span v-if="can_check==1">
+                  <span v-if="can_check == 1">
                     <el-button
-                      v-if="scope.row.status=='未批复'"
+                      v-if="scope.row.status == '未批复'"
                       class="btn-red"
                       size="mini"
-                      @click="goApply(scope.row.id,scope.row.company)"
-                    >审批</el-button>
+                      @click="goApply(scope.row.id, scope.row.company)"
+                      >审批</el-button
+                    >
                     <el-button
-                      v-if="scope.row.status=='已销点'"
+                      v-if="scope.row.status == '已销点'"
                       class="btn-red"
                       size="mini"
-                      @click="goApplyOk(scope.row.id,scope.row.company)"
-                    >完成</el-button>
+                      @click="goApplyOk(scope.row.id, scope.row.company)"
+                      >完成</el-button
+                    >
                     <el-button
-                      v-if="scope.row.status=='已完成'"
+                      v-if="scope.row.status == '已完成'"
                       class="btn-red"
                       size="mini"
-                      @click="goApplyNo(scope.row.id,scope.row.company)"
-                    >注销</el-button>
+                      @click="goApplyNo(scope.row.id, scope.row.company)"
+                      >注销</el-button
+                    >
                   </span>
                   <el-button
                     class="btn-blue"
                     size="mini"
-                    @click="goDetail(scope.row.id,scope.row.type)"
-                  >详情</el-button>
+                    @click="goDetail(scope.row.id, scope.row.type)"
+                    >详情</el-button
+                  >
                 </div>
               </template>
             </el-table-column>
@@ -191,11 +261,26 @@
         <!-- end table -->
       </div>
     </div>
-    <el-dialog class="dialogStyle" title="审批" :visible.sync="dialogVisible" width="300px" center>
-      <span>请选择审批状态？</span>
+    <el-dialog
+      class="dialogStyle"
+      title="审批"
+      :visible.sync="dialogVisible"
+      width="400px"
+      center
+    >
+      <span style="margin-bottom: 10px; display: block">请选择审批状态？</span>
+      <el-input
+        type="textarea"
+        :rows="4"
+        placeholder="请输入审批备注"
+        v-model="advice"
+      >
+      </el-input>
       <span slot="footer" class="dialog-footer">
-        <el-button type="primary" @click="applyClick(dialogId,2)">同意</el-button>
-        <el-button @click="applyClick(dialogId,3)">拒绝</el-button>
+        <el-button type="primary" @click="applyClick(dialogId, 2)"
+          >同意</el-button
+        >
+        <el-button @click="applyClick(dialogId, 3)">拒绝</el-button>
       </span>
     </el-dialog>
     <el-dialog
@@ -207,8 +292,10 @@
     >
       <span>您确定任务已完成？</span>
       <span slot="footer" class="dialog-footer">
-        <el-button type="primary" @click="applyClick(dialogId,4)">确定</el-button>
-        <el-button @click="dialogVisibleOk=false">取消</el-button>
+        <el-button type="primary" @click="applyClick(dialogId, 4)"
+          >确定</el-button
+        >
+        <el-button @click="dialogVisibleOk = false">取消</el-button>
       </span>
     </el-dialog>
     <el-dialog
@@ -219,9 +306,12 @@
       center
     >
       <span>您确定注销此任务？</span>
+
       <span slot="footer" class="dialog-footer">
-        <el-button type="primary" @click="applyClick(dialogId,6)">确定</el-button>
-        <el-button @click="dialogVisibleNo=false">取消</el-button>
+        <el-button type="primary" @click="applyClick(dialogId, 6)"
+          >确定</el-button
+        >
+        <el-button @click="dialogVisibleNo = false">取消</el-button>
       </span>
     </el-dialog>
 
@@ -244,7 +334,12 @@
           ref="formRulesRef"
         >
           <fieldset>
-            <el-form-item class="company" label="施工单位：" prop="company_id" label-width="100px">
+            <el-form-item
+              class="company"
+              label="施工单位："
+              prop="company_id"
+              label-width="100px"
+            >
               <el-select
                 v-model="formData.company_id"
                 filterable
@@ -261,16 +356,24 @@
             </el-form-item>
             <div class="el-form-item-block">
               <el-form-item label="   " label-width="100px">
-                <el-checkbox v-model="formData.is_need_car" border>是否需要动车</el-checkbox>
+                <el-checkbox v-model="formData.is_need_car" border
+                  >是否需要动车</el-checkbox
+                >
               </el-form-item>
               <el-form-item label="   " label-width="42px">
-                <el-checkbox v-model="formData.is_need_fire" border>是否需要动火</el-checkbox>
+                <el-checkbox v-model="formData.is_need_fire" border
+                  >是否需要动火</el-checkbox
+                >
               </el-form-item>
               <el-form-item label="   " label-width="65px">
-                <el-checkbox v-model="formData.is_need_help" border>是否需要帮助</el-checkbox>
+                <el-checkbox v-model="formData.is_need_help" border
+                  >是否需要帮助</el-checkbox
+                >
               </el-form-item>
               <el-form-item label="   " label-width="52px">
-                <el-checkbox v-model="formData.is_need_break_ele" border>是否需要断电</el-checkbox>
+                <el-checkbox v-model="formData.is_need_break_ele" border
+                  >是否需要断电</el-checkbox
+                >
               </el-form-item>
             </div>
           </fieldset>
@@ -282,7 +385,7 @@
                   v-model="formData.contact"
                   filterable
                   placeholder="请选择"
-                  @change="selectUserList($event,'phone')"
+                  @change="selectUserList($event, 'phone')"
                 >
                   <el-option
                     v-for="item in objUserList"
@@ -295,12 +398,16 @@
               <el-form-item label="电话：" prop="phone" label-width="60px">
                 <el-input v-model="formData.phone"></el-input>
               </el-form-item>
-              <el-form-item label="负责人：" prop="p_in_charge" label-width="125px">
+              <el-form-item
+                label="负责人："
+                prop="p_in_charge"
+                label-width="125px"
+              >
                 <el-select
                   v-model="formData.p_in_charge"
                   filterable
                   placeholder="请选择"
-                  @change="selectUserList($event,'p_in_charge_phone')"
+                  @change="selectUserList($event, 'p_in_charge_phone')"
                 >
                   <el-option
                     v-for="item in objUserList"
@@ -310,7 +417,11 @@
                   ></el-option>
                 </el-select>
               </el-form-item>
-              <el-form-item label="电话：" prop="p_in_charge_phone" label-width="60px">
+              <el-form-item
+                label="电话："
+                prop="p_in_charge_phone"
+                label-width="60px"
+              >
                 <el-input v-model="formData.p_in_charge_phone"></el-input>
               </el-form-item>
             </div>
@@ -320,7 +431,7 @@
                   v-model="formData.carrier"
                   filterable
                   placeholder="请选择"
-                  @change="selectUserList($event,'carrier_phone')"
+                  @change="selectUserList($event, 'carrier_phone')"
                 >
                   <el-option
                     v-for="item in objUserList"
@@ -338,7 +449,7 @@
                   v-model="formData.supervisor"
                   filterable
                   placeholder="请选择"
-                  @change="selectUserList($event,'supervisor_phone')"
+                  @change="selectUserList($event, 'supervisor_phone')"
                 >
                   <el-option
                     v-for="item in objUserList"
@@ -353,18 +464,25 @@
               </el-form-item>
             </div>
             <div class="el-form-item-block">
-              <div class="el-form-item-block-item" v-for="(hitem, index) in formData.holders">
+              <div
+                class="el-form-item-block-item"
+                v-for="(hitem, index) in formData.holders"
+              >
                 <el-form-item
                   label-width="100px"
                   label="持证人："
                   :prop="'holders.' + index + '.name'"
-                  :rules="{ required: true, message: '请选择持证人', trigger: 'change' }"
+                  :rules="{
+                    required: true,
+                    message: '请选择持证人',
+                    trigger: 'change',
+                  }"
                 >
                   <el-select
                     v-model="hitem.name"
                     filterable
                     placeholder="请选择"
-                    @change="selectUserListHolder($event,hitem)"
+                    @change="selectUserListHolder($event, hitem)"
                   >
                     <el-option
                       v-for="item in objUserList"
@@ -378,21 +496,25 @@
                   label-width="60px"
                   label="电话："
                   :prop="'holders.' + index + '.phone'"
-                  :rules="{required: true, message: '请输入持证人电话', trigger: 'change'}"
+                  :rules="{
+                    required: true,
+                    message: '请输入持证人电话',
+                    trigger: 'change',
+                  }"
                 >
                   <el-input v-model="hitem.phone">
                     <el-button
-                      v-if="index==0"
+                      v-if="index == 0"
                       title="删除"
-                      style="padding:10px 5px"
+                      style="padding: 10px 5px"
                       slot="append"
                       icon="el-icon-plus"
                       @click.prevent="addHolders"
                     ></el-button>
                     <el-button
-                      v-if="index>0"
+                      v-if="index > 0"
                       title="删除"
-                      style="padding:10px 5px"
+                      style="padding: 10px 5px"
                       slot="append"
                       icon="el-icon-delete"
                       @click.prevent="removeHolders(hitem)"
@@ -402,7 +524,11 @@
               </div>
             </div>
             <div class="el-form-item-block">
-              <el-form-item label="作业人数：" prop="worker_num" label-width="100px">
+              <el-form-item
+                label="作业人数："
+                prop="worker_num"
+                label-width="100px"
+              >
                 <el-input v-model="formData.worker_num"></el-input>
               </el-form-item>
               <el-form-item label-width="10px">
@@ -419,23 +545,31 @@
                     title="添加"
                     icon="el-icon-plus"
                     @click.prevent="addWorker"
-                  >添加施工人员</el-button>
+                    >添加施工人员</el-button
+                  >
                 </div>
               </el-form-item>
             </div>
             <div class="el-form-item-block">
-              <div class="el-form-item-block-item" v-for="(witem, index) in formData.worker">
+              <div
+                class="el-form-item-block-item"
+                v-for="(witem, index) in formData.worker"
+              >
                 <el-form-item
                   label-width="100px"
                   label="施工人："
                   :prop="'worker.' + index + '.name'"
-                  :rules="{ required: true, message: '请选择施工人', trigger: 'change' }"
+                  :rules="{
+                    required: true,
+                    message: '请选择施工人',
+                    trigger: 'change',
+                  }"
                 >
                   <el-select
                     v-model="witem.name"
                     filterable
                     placeholder="请选择"
-                    @change="selectUserListWorker($event,witem)"
+                    @change="selectUserListWorker($event, witem)"
                   >
                     <el-option
                       v-for="item in objUserList"
@@ -449,12 +583,16 @@
                   label-width="60px"
                   label="电话："
                   :prop="'worker.' + index + '.phone'"
-                  :rules="{required: true, message: '请输入施工人电话', trigger: 'change'}"
+                  :rules="{
+                    required: true,
+                    message: '请输入施工人电话',
+                    trigger: 'change',
+                  }"
                 >
                   <el-input v-model="witem.phone">
                     <el-button
                       title="删除"
-                      style="padding:10px 5px"
+                      style="padding: 10px 5px"
                       slot="append"
                       icon="el-icon-delete"
                       @click.prevent="removeWorker(witem)"
@@ -466,7 +604,12 @@
           </fieldset>
           <!---2 -->
 
-          <el-form-item class="istextarea" label="计划内容：" label-width="110px" prop="description">
+          <el-form-item
+            class="istextarea"
+            label="计划内容："
+            label-width="110px"
+            prop="description"
+          >
             <el-input
               v-model="formData.description"
               autocomplete="off"
@@ -479,7 +622,9 @@
         </el-form>
         <div slot="footer" class="dialog-footer">
           <el-button @click="diaLogFormVisible = false">关闭</el-button>
-          <el-button type="primary" @click="addDailyApplyDialog()">确定</el-button>
+          <el-button type="primary" @click="addDailyApplyDialog()"
+            >确定</el-button
+          >
         </div>
       </el-dialog>
     </div>
@@ -503,7 +648,7 @@ export default {
         { id: "A1", name: "A1" },
         { id: "A2", name: "A2" },
         { id: "A3", name: "A3" },
-        { id: "A4", name: "A4" }
+        { id: "A4", name: "A4" },
       ],
       stationList: [],
       statusList: [
@@ -512,7 +657,7 @@ export default {
         { id: 3, name: "拒绝" },
         { id: 4, name: "完成" },
         { id: 5, name: "已销点" },
-        { id: 6, name: "注销" }
+        { id: 6, name: "注销" },
       ],
       dataList: [],
       searchForm: {
@@ -522,7 +667,7 @@ export default {
         start_station: "",
         end_station: "",
         time_range: [],
-        status: ""
+        status: "",
       },
       dialogVisible: false,
       dialogVisibleOk: false,
@@ -532,51 +677,52 @@ export default {
       can_check: 0,
       diaLogFormVisible: false,
       diaLogTitle: "添加信息",
+      advice: "",
       formData: {
         holders: [
           {
             name: "",
-            phone: ""
-          }
+            phone: "",
+          },
         ],
-        worker: []
+        worker: [],
       },
       formRules: {
         company_id: [
-          { required: true, message: "请选择施工单位", trigger: "change" }
+          { required: true, message: "请选择施工单位", trigger: "change" },
         ],
         contact: [
-          { required: true, message: "请选择联系人", trigger: "change" }
+          { required: true, message: "请选择联系人", trigger: "change" },
         ],
         phone: [
           {
             required: true,
             message: "请输入联系人电话",
-            trigger: "change"
-          }
+            trigger: "change",
+          },
         ],
         p_in_charge: [
-          { required: true, message: "请选择负责人", trigger: "change" }
+          { required: true, message: "请选择负责人", trigger: "change" },
         ],
         p_in_charge_phone: [
           {
             required: true,
             message: "请输入负责人电话",
-            trigger: "change"
-          }
+            trigger: "change",
+          },
         ],
         worker_num: [
           {
             required: true,
             message: "请输入作业人数",
-            trigger: "blur"
+            trigger: "blur",
           },
           {
             pattern: /^\d{1,5}$/,
             message: "请输入1-5位正整数",
-            trigger: "blur"
-          }
-        ]
+            trigger: "blur",
+          },
+        ],
         // holder_phone: [
         //   {
         //     required: true,
@@ -590,14 +736,14 @@ export default {
         holders: [
           {
             name: "",
-            phone: ""
-          }
-        ]
-      }
+            phone: "",
+          },
+        ],
+      },
     };
   },
   computed: {
-    ...mapGetters(["sys_role", "roles"])
+    ...mapGetters(["sys_role", "roles"]),
   },
   created() {
     this.getProjectName();
@@ -610,8 +756,8 @@ export default {
     getProjectName() {
       this.request({
         url: "/common/getItemDetail",
-        method: "get"
-      }).then(res => {
+        method: "get",
+      }).then((res) => {
         let data = res.data;
         if (data.status == 1) {
           this.projectName = data.data.name;
@@ -639,9 +785,9 @@ export default {
           start_station,
           end_station,
           time_range,
-          status
-        }
-      }).then(res => {
+          status,
+        },
+      }).then((res) => {
         let data = res.data;
         if (data.status == 1) {
           this.dataList = data.data.data;
@@ -677,8 +823,8 @@ export default {
     getCompanyList() {
       this.request({
         url: "/apply/getCompanyLists",
-        method: "get"
-      }).then(res => {
+        method: "get",
+      }).then((res) => {
         let data = res.data;
         if (data.status == 1) {
           this.companyList = data.data;
@@ -688,8 +834,8 @@ export default {
     getLineType() {
       this.request({
         url: "/common/getLineType",
-        method: "get"
-      }).then(res => {
+        method: "get",
+      }).then((res) => {
         let data = res.data;
         if (data.status == 1) {
           this.lineList = data.data;
@@ -699,8 +845,8 @@ export default {
     getStationList() {
       this.request({
         url: "/apply/getStationLists",
-        method: "get"
-      }).then(res => {
+        method: "get",
+      }).then((res) => {
         let data = res.data;
         if (data.status == 1) {
           this.stationList = data.data;
@@ -722,8 +868,8 @@ export default {
         content: {
           content: detailForm,
           parent: this,
-          data: { iframeData: { id: id, titles: laytitle } }
-        }
+          data: { iframeData: { id: id, titles: laytitle } },
+        },
       });
     },
     goApply(id, company) {
@@ -742,16 +888,17 @@ export default {
       this.dialogContent = company;
     },
     applyClick(id, status) {
+      let advices=this.advice;
       this.request({
         url: "/apply/changeStatus",
         method: "POST",
-        data: { id: id, status: status }
-      }).then(res => {
+        data: { id: id, status: status,advice:advices },
+      }).then((res) => {
         let data = res.data;
         if (data.status == 1) {
           this.$message({
             type: "success",
-            message: "恭喜您，操作成功"
+            message: "恭喜您，操作成功",
           });
           this.dialogVisible = false;
           this.dialogVisibleOk = false;
@@ -760,7 +907,7 @@ export default {
         } else {
           this.$message({
             type: "success",
-            message: "审批失败"
+            message: "审批失败",
           });
           this.dialogVisible = false;
           this.dialogVisibleOk = false;
@@ -774,8 +921,8 @@ export default {
       this.request({
         url: "/user/getUserByDepart",
         method: "get",
-        params: { id: val, type: 1 }
-      }).then(response => {
+        params: { id: val, type: 1 },
+      }).then((response) => {
         let data = response.data;
         if (data.status == 1) {
           this.objUserList = data.data;
@@ -784,7 +931,7 @@ export default {
     },
     selectUserList(event, params) {
       let obj = {};
-      obj = this.objUserList.find(item => {
+      obj = this.objUserList.find((item) => {
         return item.id === event;
       });
       console.log(obj);
@@ -799,16 +946,16 @@ export default {
           holders: [
             {
               name: "",
-              phone: ""
-            }
+              phone: "",
+            },
           ],
-          worker: []
+          worker: [],
         };
       }
     },
     selectUserListHolder(event, params) {
       let obj = {};
-      obj = this.objUserList.find(item => {
+      obj = this.objUserList.find((item) => {
         return item.id === event;
       });
       this.$set(params, "phone", obj.phone);
@@ -823,13 +970,13 @@ export default {
     addHolders() {
       this.formData.holders.push({
         name: "",
-        phone: ""
+        phone: "",
       });
     },
     //
     selectUserListWorker(event, params) {
       let obj = {};
-      obj = this.objUserList.find(item => {
+      obj = this.objUserList.find((item) => {
         return item.id === event;
       });
       this.$set(params, "phone", obj.phone);
@@ -844,21 +991,21 @@ export default {
     addWorker() {
       this.formData.worker.push({
         name: "",
-        phone: ""
+        phone: "",
       });
     },
 
     addDailyApplyDialog() {
-      this.$refs["formRulesRef"].validate(valid => {
+      this.$refs["formRulesRef"].validate((valid) => {
         if (valid) {
           let data = this.formData;
           console.log(JSON.stringify(data));
           console.log(this.formData.holders);
         }
       });
-    }
+    },
     // End 添加
-  }
+  },
 };
 </script>
 <style>
