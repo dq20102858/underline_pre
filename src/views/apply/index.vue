@@ -265,15 +265,16 @@
       class="dialogStyle"
       title="审批"
       :visible.sync="dialogVisible"
-      width="400px"
+      width="480px"
       center
     >
       <!-- <span style="margin-bottom: 10px; display: block">请选择审批状态？</span> -->
       <el-input
         type="textarea"
-        :rows="4"
+        :rows="7"
         placeholder="请输入审批备注"
-        v-model="advice"
+        v-model="advice"  maxlength="200"
+  show-word-limit
       >
       </el-input>
       <span slot="footer" class="dialog-footer">

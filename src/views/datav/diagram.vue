@@ -1243,7 +1243,7 @@ CanvasRenderingContext2D.prototype.fillTextVertical = function (text, x, y) {
 #diagram {
   position: absolute;
   width: 100%;
-  background: #01023a;
+  /* background: #01023a; */
 }
 
 #diagram .station {
