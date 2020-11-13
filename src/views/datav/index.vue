@@ -19,11 +19,6 @@
             </div>
           </div>
         </div>
-        <!-- <div class="bottom-content">
-          <schedule></schedule>
-          <personnel></personnel>
-          <monitors></monitors>
-        </div> -->
       </div>
     </dv-full-screen-container>
   </div>

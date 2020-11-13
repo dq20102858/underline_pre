@@ -178,6 +178,7 @@ export default {
       img.src = require("@/assets/image/staxs.jpg");
       img.onload = function() {
         let start = 0;
+        let distance=[0,20,20,20,40,60,30,40,30];
         for (let i = 0; i < json.length; i++) {
           // 绘制站点图
           let total =
@@ -191,23 +192,9 @@ export default {
           cansText.font = "12px Microsoft Yahei";
           cansText.fillStyle = "#fff";
           let origin = json[i].name;
-          cansText.fillText(origin, startLineX, 15);
-          // for (let x = 0; x < origin.length; x++) {
-          //   cansText.fillText(
-          //     origin[x],
-          //     startLineX,
-          //     138 - origin.length * 20 + 20 * x
-          //   );
-          // }
-          //DK
-          // let codes = "DK" + json[i].start_flag + " +" + json[i].start_length;
-          // cansText.fillStyle = "#5f88f9";
-          // cansText.font = "12px  Microsoft Yahei";
-          // if (endLineX < 400) {
-          //   cansText.fillText(codes, startLineX - 10, 36);
-          // } else {
-          //   cansText.fillText(codes, startLineX, 36);
-          // }
+       
+          cansText.fillText(origin, startLineX-distance[i], 15);
+        
         }
       };
       //Line=====================
