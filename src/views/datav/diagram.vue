@@ -518,18 +518,16 @@ export default {
           let endX = (end - lineTypeMinMileage) * everys;
           let centerX = (endX + startX) / 2; //开始结束平均值
 
-          let desc = "限速" + json[i].speed + "公里/小时";
+          let desc =json[i].speed.replace('.00','') + "km/h";
           context.beginPath();
           //画水平直线
           if (json[i].line_type == 1) {
             // alert(startX)
-
             //startX =40;
-
             context.moveTo(startX + 30, axis_LeftLine.y);
             context.lineTo(endX, axis_LeftLine.y);
             context.fillRect(centerX, axis_LeftLine.y, 2, 30);
-            context.fillText(desc, centerX - 45, axis_LeftLine.y + 42);
+            context.fillText(desc, centerX - 5, axis_LeftLine.y + 42);
           } else if (json[i].line_type == 2) {
             if (startX == 0) {
               startX = 30;
@@ -537,7 +535,7 @@ export default {
             context.moveTo(startX, axis_LeftLine_Two.y);
             context.lineTo(endX, axis_LeftLine_Two.y);
             context.fillRect(centerX, axis_LeftLine_Two.y, 2, 30);
-            context.fillText(desc, centerX - 45, axis_LeftLine_Two.y + 42);
+            context.fillText(desc, centerX - 5, axis_LeftLine_Two.y + 42);
           }
           context.stroke();
         }
@@ -614,16 +612,16 @@ export default {
             }
             context.moveTo(startX, axis_LeftLine.y);
             context.lineTo(endX, axis_LeftLine.y);
-            context.fillRect(centerX, axis_LeftLine.y, 2, 30);
-            context.fillText(desc, centerX - 80, axis_LeftLine.y + 42);
+            context.fillRect(centerX, axis_LeftLine.y, 2, 20);
+            context.fillText(desc, centerX - 80, axis_LeftLine.y + 30);
           } else if (json[i].line_type == 2) {
             if (startX == 0) {
               startX = 30;
             }
             context.moveTo(startX, axis_LeftLine_Two.y);
             context.lineTo(endX, axis_LeftLine_Two.y);
-            context.fillRect(centerX, axis_LeftLine_Two.y, 2, 30);
-            context.fillText(desc, centerX - 80, axis_LeftLine_Two.y + 42);
+            context.fillRect(centerX, axis_LeftLine_Two.y, 2, 20);
+            context.fillText(desc, centerX - 80, axis_LeftLine_Two.y + 30);
           }
           context.stroke();
           //

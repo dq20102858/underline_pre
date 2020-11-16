@@ -88,14 +88,12 @@ export default {
   padding: 20px 30px;
   overflow: hidden;
 }
-
 #dv-full-screen-container {
-  background: #01023a url("~@/assets/image/datav-bg.png") no-repeat 60px 37px;
+  background: #01023a url("~@/assets/image/datav-bg.png") no-repeat 60px 320px;
   background-size: 800px;
   display: flex;
   flex-direction: column;
 }
-
 .main-content {
   flex: 1;
   display: flex;
@@ -111,14 +109,12 @@ export default {
   display: flex;
   height: 62%;
 }
-
 .block-content {
   flex: 1;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
 }
-
 .block-item {
   display: flex;
   flex-direction: row;
@@ -126,5 +122,4 @@ export default {
   height: 52%;
   overflow: hidden;
 }
-
 </style>
