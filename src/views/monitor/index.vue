@@ -115,10 +115,7 @@
         <div @click="showCarList" class="cartitle">{{ cartableShowText }}</div>
         <el-table :data="locationRealtime" v-show="cartableShow">
           <el-table-column prop="id" label="编号" width="100"></el-table-column>
-          <el-table-column
-            prop="name"
-            label="列车名称"
-          ></el-table-column>
+          <el-table-column prop="name" label="列车名称"></el-table-column>
           <el-table-column label="当前速度"></el-table-column>
           <el-table-column label="当前位置">
             <template slot-scope="scope"
