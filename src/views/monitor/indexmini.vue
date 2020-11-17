@@ -70,7 +70,9 @@ export default {
       applyList: [],
       progressList: [],
       progressListItem: [],
-      progressCheckValue: 0
+      progressCheckValue: 0,
+       peopleLocation: [],
+      carLocation: [],
     };
   },
   updated() {},
@@ -114,6 +116,8 @@ export default {
           }
           //请点
           this.applyList = data.data.apply_lists;
+            this.peopleLocation = data.data.people_location; //人员定位
+          this.carLocation = data.data.real_location; //车辆定位
           //施工进度
           if (data.data.project.length > 0) {
             this.progressList = data.data.project;
@@ -307,7 +311,8 @@ export default {
       //车定位
       function drawAxesCar(jsonData) {
         context.beginPath();
-        let jsonCar = [
+        let jsonCar=jsonData;
+        let jsonCar1 = [
           {
             id: 1,
             name: "ZY01",
@@ -350,9 +355,9 @@ export default {
               context.drawImage(
                 imgcar,
                 startLineX,
-                axis_LeftLine.y - 25,
-                140,
-                20
+                axis_LeftLine.y - 20,
+                100,
+                14
               );
               //DK
               let codes =
@@ -372,9 +377,9 @@ export default {
               context.drawImage(
                 imgcar,
                 startLineX,
-                axis_LeftLine_Two.y - 25,
-                140,
-                20
+                axis_LeftLine_Two.y - 20,
+                100,
+                14
               );
               //DK
               let codes =
@@ -396,7 +401,8 @@ export default {
       }
       //人定位
       function drawAxesPeple(jsonData) {
-        let jsonCar = [
+        let jsonPeple =jsonData;
+          let jsonPeple1= [
           {
             id: 1,
             name: "R",
@@ -433,11 +439,11 @@ export default {
           let start = 0;
           context.fillStyle = "#fff ";
           context.font = "12px  Microsoft Yahei";
-          for (let i = 0; i < jsonCar.length; i++) {
-            if (jsonCar[i].line_type == 1) {
+          for (let i = 0; i < jsonPeple.length; i++) {
+            if (jsonPeple[i].line_type == 1) {
               let total =
-                parseInt(jsonCar[i].start_flag) * 1000 +
-                parseInt(jsonCar[i].start_length);
+                parseInt(jsonPeple[i].start_flag) * 1000 +
+                parseInt(jsonPeple[i].start_length);
               let startLineX = (total - lineTypeMinMileage) * every;
               context.drawImage(
                 imgcar,
@@ -449,16 +455,16 @@ export default {
               //DK
               let codes =
                 " [ ZDK" +
-                jsonCar[i].start_flag +
+                jsonPeple[i].start_flag +
                 " +" +
-                jsonCar[i].start_length +
+                jsonPeple[i].start_length +
                 " ]";
 
               context.fillText(codes, startLineX + 5, axis_LeftLine.y - 39);
-            } else if (jsonCar[i].line_type == 2) {
+            } else if (jsonPeple[i].line_type == 2) {
               let total =
-                parseInt(jsonCar[i].start_flag) * 1000 +
-                parseInt(jsonCar[i].start_length);
+                parseInt(jsonPeple[i].start_flag) * 1000 +
+                parseInt(jsonPeple[i].start_length);
               let startLineX = (total - lineTypeMinMileage) * every;
               context.drawImage(
                 imgcar,
@@ -470,9 +476,9 @@ export default {
               //DK
               let codes =
                 " [ YDK" +
-                jsonCar[i].start_flag +
+                jsonPeple[i].start_flag +
                 " +" +
-                jsonCar[i].start_length +
+                jsonPeple[i].start_length +
                 " ]";
               context.fillText(codes, startLineX + 5, axis_LeftLine_Two.y - 39);
             } //
@@ -732,8 +738,8 @@ export default {
       if (this.progressCheckValue) {
         drawProgressAxis(this.progressListItem);
       }
-      drawAxesCar(this.applyList);
-      drawAxesPeple(this.applyList);
+      drawAxesCar(this.carLocation);
+      drawAxesPeple(this.peopleLocation);
       //作业
       //  if (this.applyList.length > 0) {
       drawAxesApply(this.applyList);
@@ -819,7 +825,7 @@ CanvasRenderingContext2D.prototype.fillTextVertical = function(text, x, y) {
 #minprogress {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background: #081c33;
 }
 .minprogress {
