@@ -114,14 +114,13 @@
       <div class="cartablebox">
         <div @click="showCarList" class="cartitle">{{ cartableShowText }}</div>
         <el-table :data="locationRealtime" v-show="cartableShow">
-          <el-table-column prop="id" label="编号" width="60"></el-table-column>
+          <el-table-column prop="id" label="编号" width="100"></el-table-column>
           <el-table-column
             prop="name"
             label="列车名称"
-            width="80"
           ></el-table-column>
-          <el-table-column label="当前速度" width="100"></el-table-column>
-          <el-table-column label="当前位置" width="100">
+          <el-table-column label="当前速度"></el-table-column>
+          <el-table-column label="当前位置">
             <template slot-scope="scope"
               >DK{{ scope.row.start_flag }} +
               {{ scope.row.start_length }}</template
@@ -132,7 +131,7 @@
             label="线别"
             width="100"
           ></el-table-column>
-          <el-table-column prop="is_online" label="状态" width="100">
+          <el-table-column prop="is_online" label="状态">
             <template slot-scope="scope">
               <span class="statused" v-if="scope.row.is_online == '1'"
                 >在线</span
