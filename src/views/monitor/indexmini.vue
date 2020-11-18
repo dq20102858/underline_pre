@@ -1,18 +1,28 @@
 <template>
   <div id="minprogress" ref="proWrapper" :style="conheight">
     <div class="minprogress">
-      <div style="display:bolock;padding-top:15px;padding-left:15px;">
-        <router-link to="/monitor/" class="rlink" style="color:#fff">返回</router-link>
+      <div style="display: bolock; padding-top: 15px; padding-left: 15px">
+        <router-link to="/monitor/" class="rlink" style="color: #fff"
+          >返回</router-link
+        >
       </div>
       <div class="station">
         <canvas id="canvasStation" height="650" ref="canvasStation">
           <p>您的系统不支持此程序!</p>
         </canvas>
       </div>
-      <div class="progresslist" v-if="this.progressCheckValue !=''">
+      <div class="progresslist" v-if="this.progressCheckValue != ''">
         <span class="namess">施工进度：</span>
-        <el-radio-group v-model="progressCheckValue" @change="progressCheckSelect">
-          <el-radio v-for="item in progressList" :key="item.name" :label="item.name">{{item.name}}</el-radio>
+        <el-radio-group
+          v-model="progressCheckValue"
+          @change="progressCheckSelect"
+        >
+          <el-radio
+            v-for="item in progressList"
+            :key="item.name"
+            :label="item.name"
+            >{{ item.name }}</el-radio
+          >
         </el-radio-group>
       </div>
     </div>
@@ -25,36 +35,36 @@ let axis_Height = "650";
 //标尺起点
 let axis_LeftLine = {
   x: 30,
-  y: axis_Height - 400
+  y: axis_Height - 400,
 };
 let axis_LeftLine_Two = {
   x: 30,
-  y: axis_Height - 280
+  y: axis_Height - 280,
 };
 //出入场线
 let axis_OutLine = {
   x: 30,
-  y: axis_Height - 160
+  y: axis_Height - 160,
 };
 let axis_OutLine_Two = {
   x: 30,
-  y: axis_Height - 50
+  y: axis_Height - 50,
 };
 
 let axis_Applay = {
   x: 30,
-  y: axis_Height - 450
+  y: axis_Height - 450,
 };
 let axis_Applay_two = {
   x: 30,
-  y: axis_Height - 330
+  y: axis_Height - 330,
 };
 let applyClickXY = [];
 export default {
   data() {
     return {
       conheight: {
-        height: ""
+        height: "",
       },
       cwidth: 0,
       stationList: [],
@@ -71,7 +81,7 @@ export default {
       progressList: [],
       progressListItem: [],
       progressCheckValue: 0,
-       peopleLocation: [],
+      peopleLocation: [],
       carLocation: [],
     };
   },
@@ -89,8 +99,8 @@ export default {
     getProjectProcessMap() {
       this.request({
         url: "/monitor/getMointorDatas",
-        method: "get"
-      }).then(response => {
+        method: "get",
+      }).then((response) => {
         let data = response.data;
         if (data.status == 1) {
           this.stationList = data.data.stations;
@@ -116,7 +126,7 @@ export default {
           }
           //请点
           this.applyList = data.data.apply_lists;
-            this.peopleLocation = data.data.people_location; //人员定位
+          this.peopleLocation = data.data.people_location; //人员定位
           this.carLocation = data.data.real_location; //车辆定位
           //施工进度
           if (data.data.project.length > 0) {
@@ -134,6 +144,7 @@ export default {
       let clientWidth = this.$refs.proWrapper.clientWidth;
       let canvasWidth = clientWidth - 60;
       this.cwidth = canvasWidth;
+        let lineTypeMax = this.lineTypeMaxMileage;
       let lineTypeBetwentMileage =
         this.lineTypeMaxMileage - this.lineTypeMinMileage;
       let lineTypeTotalMileage =
@@ -261,10 +272,11 @@ export default {
       }
       //站点
       function drawAxesStationList(jsonData) {
+       
         let json = jsonData;
         let img = new Image();
         img.src = require("@/assets/image/stasm.png");
-        img.onload = function() {
+        img.onload = function () {
           let start = 0;
           for (let i = 0; i < json.length; i++) {
             // 绘制站点图
@@ -275,35 +287,32 @@ export default {
             if (startLineX == 0) {
               startLineX = axis_LeftLine.x;
             }
-            // console.log("startLineX：" + startLineX);
-            // 计算当前站点的x轴
-            context.drawImage(
-              img,
-              startLineX - 8,
-              axis_LeftLine.y - 95,
-              18,
-              90
-            );
-            // //站名
-            context.font = "18px Microsoft Yahei";
-            context.fillStyle = "#fff";
-            let origin = json[i].name.split("");
-            for (let x = 0; x < origin.length; x++) {
-              context.fillText(
-                origin[x],
-                startLineX - 8,
-                axis_LeftLine.y - 85 - origin.length * 20 + 20 * x
-              );
+            if (total == lineTypeMax) {
+               context.drawImage(img,startLineX - 15,axis_LeftLine.y - 95,18,90);
+              // //站名
+              context.font = "18px Microsoft Yahei";
+              context.fillStyle = "#fff";
+              let origin = json[i].name.split("");
+              context.fillText( json[i].name, startLineX-80, axis_LeftLine.y - 120);
+              //DK
+              let codes =
+                "DK" + json[i].start_flag + " +" + json[i].start_length;
+              context.fillStyle = "#5f88f9";
+              context.font = "12px  Microsoft Yahei";
+               context.fillText(codes, startLineX -80,axis_LeftLine.y - 100);
+            } else {
+               context.drawImage(img,startLineX - 8,axis_LeftLine.y - 95,18,90);
+              // //站名
+              context.font = "18px Microsoft Yahei";
+              context.fillStyle = "#fff";
+              context.fillText( json[i].name, startLineX-20, axis_LeftLine.y - 120);
+              //DK
+              let codes =
+                "DK" + json[i].start_flag + " +" + json[i].start_length;
+              context.fillStyle = "#5f88f9";
+              context.font = "12px  Microsoft Yahei";
+              context.fillText(codes, startLineX -20,axis_LeftLine.y - 100);
             }
-            //DK
-            let codes = "DK" + json[i].start_flag + " +" + json[i].start_length;
-            context.fillStyle = "#5f88f9";
-            context.font = "12px  Microsoft Yahei";
-            context.fillTextVertical(
-              codes,
-              startLineX + 10,
-              axis_LeftLine.y - 66
-            );
           }
         };
         context.stroke();
@@ -311,14 +320,14 @@ export default {
       //车定位
       function drawAxesCar(jsonData) {
         context.beginPath();
-        let jsonCar=jsonData;
+        let jsonCar = jsonData;
         let jsonCar1 = [
           {
             id: 1,
             name: "ZY01",
             start_flag: 0,
             start_length: 257,
-            line_type: 1
+            line_type: 1,
           },
 
           {
@@ -326,19 +335,19 @@ export default {
             name: "ZY01",
             start_flag: 7,
             start_length: 300,
-            line_type: 2
+            line_type: 2,
           },
           {
             id: 2,
             name: "ZY02",
             start_flag: 3,
             start_length: 430,
-            line_type: 2
-          }
+            line_type: 2,
+          },
         ];
         let imgcar = new Image();
         imgcar.src = require("@/assets/image/icon-car.png");
-        imgcar.onload = function() {
+        imgcar.onload = function () {
           let start = 0;
 
           for (let i = 0; i < jsonCar.length; i++) {
@@ -401,41 +410,41 @@ export default {
       }
       //人定位
       function drawAxesPeple(jsonData) {
-        let jsonPeple =jsonData;
-          let jsonPeple1= [
+        let jsonPeple = jsonData;
+        let jsonPeple1 = [
           {
             id: 1,
             name: "R",
             start_flag: 8,
             start_length: 300,
-            line_type: 1
+            line_type: 1,
           },
           {
             id: 1,
             name: "R",
             start_flag: 4,
             start_length: 232,
-            line_type: 1
+            line_type: 1,
           },
           {
             id: 1,
             name: "Y",
             start_flag: 1,
             start_length: 300,
-            line_type: 2
+            line_type: 2,
           },
           {
             id: 1,
             name: "Y",
             start_flag: 6,
             start_length: 300,
-            line_type: 2
-          }
+            line_type: 2,
+          },
         ];
 
         let imgcar = new Image();
         imgcar.src = require("@/assets/image/m_apply.png");
-        imgcar.onload = function() {
+        imgcar.onload = function () {
           let start = 0;
           context.fillStyle = "#fff ";
           context.font = "12px  Microsoft Yahei";
@@ -504,7 +513,7 @@ export default {
             end_length: "804",
             type: "A1",
             start_total: 600,
-            end_total: 10604
+            end_total: 10604,
           },
           {
             line_type: 1,
@@ -520,7 +529,7 @@ export default {
             end_length: "245",
             type: "A4",
             start_total: 40232,
-            end_total: 50245
+            end_total: 50245,
           },
 
           {
@@ -537,8 +546,8 @@ export default {
             end_length: "808",
             type: "A3",
             start_total: 14600,
-            end_total: 21370
-          }
+            end_total: 21370,
+          },
         ];
         //  let clickXYApplyList = [];
         for (let i = 0; i < json.length; i++) {
@@ -591,12 +600,12 @@ export default {
               y: axis_Applay.y - 55,
               w: 60,
               h: 54,
-              i: json[i]
+              i: json[i],
             });
 
             let img = new Image();
             img.src = require("@/assets/image/" + desc + ".png");
-            img.onload = function() {
+            img.onload = function () {
               context.drawImage(img, centerX - 29, axis_Applay.y - 56, 60, 54);
             };
           } else if (json[i].line_type == 2) {
@@ -611,11 +620,11 @@ export default {
               y: axis_Applay_two.y - 55,
               w: 60,
               h: 54,
-              i: json[i]
+              i: json[i],
             });
             let img = new Image();
             img.src = require("@/assets/image/" + desc + ".png");
-            img.onload = function() {
+            img.onload = function () {
               context.drawImage(
                 img,
                 centerX - 29,
@@ -628,7 +637,7 @@ export default {
           context.stroke();
           //
         }
-        canvas.onclick = function(event) {
+        canvas.onclick = function (event) {
           var x = event.pageX - canvas.getBoundingClientRect().left;
           var y = event.pageY - canvas.getBoundingClientRect().top;
 
@@ -663,7 +672,7 @@ export default {
                     distinguishCancelAndClose: true,
                     dangerouslyUseHTMLString: true,
                     showCancelButton: false,
-                    showConfirmButton: false
+                    showConfirmButton: false,
                   }
                 )
                 .catch(() => {});
@@ -686,8 +695,8 @@ export default {
             start_length: "257",
             end_flag: "0",
             end_length: "300",
-            line: "\u5de6\u7ebf"
-          }
+            line: "\u5de6\u7ebf",
+          },
         ];
         for (let i = 0; i < json.length; i++) {
           if (json[i].start_flag != null) {
@@ -746,24 +755,24 @@ export default {
       //   }
     },
     progressCheckSelect(val) {
-      this.progressList.map(item => {
+      this.progressList.map((item) => {
         if (item.name == val) {
           this.progressListItem = item.list;
         }
       });
       this.initCanvas();
-    }
-  }
+    },
+  },
   //进度
 };
 
 //prototype
-CanvasRenderingContext2D.prototype.fillTextVertical = function(text, x, y) {
+CanvasRenderingContext2D.prototype.fillTextVertical = function (text, x, y) {
   var context = this;
   var canvas = context.canvas;
 
   var arrText = text.split("");
-  var arrWidth = arrText.map(function(letter) {
+  var arrWidth = arrText.map(function (letter) {
     return context.measureText(letter).width;
   });
 
@@ -789,7 +798,7 @@ CanvasRenderingContext2D.prototype.fillTextVertical = function(text, x, y) {
   context.textBaseline = "middle";
 
   // 开始逐字绘制
-  arrText.forEach(function(letter, index) {
+  arrText.forEach(function (letter, index) {
     // 确定下一个字符的纵坐标位置
     var letterWidth = arrWidth[index];
     // 是否需要旋转判断

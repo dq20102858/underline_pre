@@ -337,6 +337,7 @@ export default {
         context.lineWidth = 10;
         context.strokeStyle = "#fff";
         context.beginPath();
+        // debugger;
         let start = parseInt(lineJson[i].start_flag) * 1000;
         let startLength = parseInt(lineJson[i].start_length);
         let end = parseInt(lineJson[i].end_flag) * 1000;
@@ -373,37 +374,38 @@ export default {
             axis_LeftLine_Two.x - 60,
             axis_LeftLine_Two.y + 28
           );
-        } else if (lineJson[i].id == 3) {
-          drawAxisTicksNum(
-            start,
-            startLength,
-            end,
-            endLength,
-            axis_Width,
-            axis_OutLine.x,
-            axis_OutLine.y,
-            "RDK"
-          );
-          context.font = "15px Microsoft Yahei";
-          context.fillText("入场线", axis_OutLine.x - 68, axis_OutLine.y + 28);
-        } else if (lineJson[i].id == 4) {
-          drawAxisTicksNum(
-            start,
-            startLength,
-            end,
-            endLength,
-            axis_Width,
-            axis_OutLine_Two.x,
-            axis_OutLine_Two.y,
-            "CDK"
-          );
-          context.font = "15px Microsoft Yahei";
-          context.fillText(
-            "出场线",
-            axis_OutLine_Two.x - 68,
-            axis_OutLine_Two.y + 28
-          );
         }
+        //  else if (lineJson[i].id == 3) {
+        //   drawAxisTicksNum(
+        //     start,
+        //     startLength,
+        //     end,
+        //     endLength,
+        //     axis_Width,
+        //     axis_OutLine.x,
+        //     axis_OutLine.y,
+        //     "RDK"
+        //   );
+        //   context.font = "15px Microsoft Yahei";
+        //   context.fillText("入场线", axis_OutLine.x - 68, axis_OutLine.y + 28);
+        // } else if (lineJson[i].id == 4) {
+        //   drawAxisTicksNum(
+        //     start,
+        //     startLength,
+        //     end,
+        //     endLength,
+        //     axis_Width,
+        //     axis_OutLine_Two.x,
+        //     axis_OutLine_Two.y,
+        //     "CDK"
+        //   );
+        //   context.font = "15px Microsoft Yahei";
+        //   context.fillText(
+        //     "出场线",
+        //     axis_OutLine_Two.x - 68,
+        //     axis_OutLine_Two.y + 28
+        //   );
+        // }
       }
       function drawAxisTicksNum(
         start,
@@ -536,18 +538,35 @@ export default {
             let startX = (total - leftLineMinMileage) * everys;
             // console.log(startX);
             context.drawImage(img, startX + offsetXLine + 1, 65, 24, 120);
-            //站名
-            context.font = "bold 20px Microsoft Yahei";
-            context.fillStyle = "#fff";
-            context.textAlign = "left";
-            let origin = json[i].name;
-            let lens = json[i].name.length;
-            context.fillText(origin, startX + 90, 25);
-            //DK
-            let codes = "DK" + json[i].start_flag + " +" + json[i].start_length;
-            context.fillStyle = "#0AE39A";
-            context.font = "14px Microsoft Yahei";
-            context.fillText(codes, startX + 90, 52);
+            if (total == leftLineMaxMileage) {
+              //站名
+              context.font = "bold 20px Microsoft Yahei";
+              context.fillStyle = "#fff";
+              context.textAlign = "left";
+              let origin = json[i].name;
+              let lens = json[i].name.length;
+              context.fillText(origin, startX + 20, 25);
+              //DK
+              let codes =
+                "DK" + json[i].start_flag + " +" + json[i].start_length;
+              context.fillStyle = "#0AE39A";
+              context.font = "14px Microsoft Yahei";
+              context.fillText(codes, startX +20, 52);
+            } else {
+              //站名
+              context.font = "bold 20px Microsoft Yahei";
+              context.fillStyle = "#fff";
+              context.textAlign = "left";
+              let origin = json[i].name;
+              let lens = json[i].name.length;
+              context.fillText(origin, startX + 90, 25);
+              //DK
+              let codes =
+                "DK" + json[i].start_flag + " +" + json[i].start_length;
+              context.fillStyle = "#0AE39A";
+              context.font = "14px Microsoft Yahei";
+              context.fillText(codes, startX + 90, 52);
+            }
           }
         };
       }
@@ -558,25 +577,25 @@ export default {
             id: 1,
             type: 1,
             start_flag: 0,
-            start_length: 600,
+            start_length: 900,
           },
           {
             id: 1,
             type: 2,
             start_flag: 2,
-            start_length: 200,
+            start_length: 500,
           },
           {
             id: 1,
             type: 3,
             start_flag: 5,
-            start_length: 600,
+            start_length: 900,
           },
           {
             id: 1,
             type: 4,
             start_flag: 7,
-            start_length: 200,
+            start_length: 700,
           },
         ];
         let start = 0;

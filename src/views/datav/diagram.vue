@@ -219,6 +219,7 @@ export default {
       console.log("canvasWidth：" + this.cwidth + "_" + this.everys);
 
       let lineTypeMinMileage = this.lineTypeMinMileage;
+      let lineTypeMaxMileage = this.lineTypeMaxMileage;
       let everys = this.everys; //每米长度等于px
       // console.log("everys" + everys);
 
@@ -283,24 +284,29 @@ export default {
             if (startLineX == 0) {
               startLineX = axis_LeftLine.x;
             }
-            context.drawImage(img, startLineX - 5, 35, 12, 30);
-            // //站名
-            context.font = "12px Microsoft Yahei";
-            context.fillStyle = "#fff";
-            let origin = json[i].name;
-            if (i > 0) {
-              context.fillText(origin, startLineX - 20, 15);
+            if (total == lineTypeMaxMileage) {
+              context.drawImage(img, startLineX - 5, 35, 12, 30);
+              // //站名
+              context.font = "12px Microsoft Yahei";
+              context.fillStyle = "#fff";
+              context.fillText(json[i].name, startLineX-70, 15);
+              //DK
+              let codes =
+                "DK" + json[i].start_flag + " +" + json[i].start_length;
+              context.fillStyle = "#5f88f9";
+              context.font = "12px  Microsoft Yahei";
+              context.fillText(codes, startLineX-70, 30);
             } else {
-              context.fillText(origin, startLineX, 15);
-            }
-            //DK
-            let codes = "DK" + json[i].start_flag + " +" + json[i].start_length;
-            context.fillStyle = "#5f88f9";
-            context.font = "12px  Microsoft Yahei";
-
-            if (i > 0) {
-              context.fillText(codes, startLineX - 20, 30);
-            } else {
+              context.drawImage(img, startLineX - 5, 35, 12, 30);
+              // //站名
+              context.font = "12px Microsoft Yahei";
+              context.fillStyle = "#fff";
+              context.fillText(json[i].name, startLineX, 15);
+              //DK
+              let codes =
+                "DK" + json[i].start_flag + " +" + json[i].start_length;
+              context.fillStyle = "#5f88f9";
+              context.font = "12px  Microsoft Yahei";
               context.fillText(codes, startLineX, 30);
             }
           }
@@ -468,31 +474,33 @@ export default {
           {
             id: 1,
             type: 1,
-            start_flag: 0,
-            start_length: 800,
+            start_flag: 1,
+            start_length: 100,
           },
           {
             id: 1,
             type: 2,
             start_flag: 2,
-            start_length: 100
+            start_length: 500,
           },
           {
             id: 1,
             type: 3,
             start_flag: 5,
-            start_length: 500
+            start_length: 780,
           },
           {
             id: 1,
             type: 4,
             start_flag: 7,
-            start_length: 100,
+            start_length: 580,
           },
         ];
         let start = 0;
         for (let i = 0; i < json.length; i++) {
-          let start =parseInt(json[i].start_flag) * 1000 +parseInt(json[i].start_length);
+          let start =
+            parseInt(json[i].start_flag) * 1000 +
+            parseInt(json[i].start_length);
           let startX = (start - lineTypeMinMileage) * everys;
           let img = new Image();
           img.src = require("@/assets/image/icon-dc" + i + ".png");
@@ -518,7 +526,7 @@ export default {
           let endX = (end - lineTypeMinMileage) * everys;
           let centerX = (endX + startX) / 2; //开始结束平均值
 
-          let desc =json[i].speed.replace('.00','') + "km/h";
+          let desc = json[i].speed.replace(".00", "") + "km/h";
           context.beginPath();
           //画水平直线
           if (json[i].line_type == 1) {

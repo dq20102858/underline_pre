@@ -175,7 +175,7 @@ export default {
         position: [
           {
             required: true,
-            message: "请输入公里数+米数，比如：输入10300 就表示10公里300米",
+            message: "请输入公里数+米数，比如：10公里300米，输入10300",
             trigger: "blur"
           },
           {
