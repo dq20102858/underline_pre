@@ -577,25 +577,25 @@ export default {
             id: 1,
             type: 1,
             start_flag: 0,
-            start_length: 900,
+            start_length: 600,
           },
           {
             id: 1,
             type: 2,
             start_flag: 2,
-            start_length: 500,
+            start_length: 300,
           },
           {
             id: 1,
             type: 3,
             start_flag: 5,
-            start_length: 900,
+            start_length: 600,
           },
           {
             id: 1,
             type: 4,
             start_flag: 7,
-            start_length: 700,
+            start_length: 200,
           },
         ];
         let start = 0;
