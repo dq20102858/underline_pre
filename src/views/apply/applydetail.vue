@@ -669,6 +669,7 @@ export default {
   #printMe .petable td {
     border: 0;
     padding: 0;
+    white-space: nowrap;
   }
 }
 
@@ -768,6 +769,7 @@ export default {
 .vtable table td .petable td {
   border: 0;
   padding: 0;
+    white-space: nowrap;
 }
 .atable {
   border-collapse: collapse;

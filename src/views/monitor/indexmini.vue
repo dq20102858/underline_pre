@@ -287,19 +287,19 @@ export default {
             if (startLineX == 0) {
               startLineX = axis_LeftLine.x;
             }
-            if (total == lineTypeMax) {
+            if (i == json.length-1) {
                context.drawImage(img,startLineX - 15,axis_LeftLine.y - 95,18,90);
               // //站名
               context.font = "18px Microsoft Yahei";
               context.fillStyle = "#fff";
               let origin = json[i].name.split("");
-              context.fillText( json[i].name, startLineX-80, axis_LeftLine.y - 120);
+              context.fillText( json[i].name, startLineX-60, axis_LeftLine.y - 120);
               //DK
               let codes =
                 "DK" + json[i].start_flag + " +" + json[i].start_length;
               context.fillStyle = "#5f88f9";
               context.font = "12px  Microsoft Yahei";
-               context.fillText(codes, startLineX -80,axis_LeftLine.y - 100);
+               context.fillText(codes, startLineX -60,axis_LeftLine.y - 100);
             } else {
                context.drawImage(img,startLineX - 8,axis_LeftLine.y - 95,18,90);
               // //站名

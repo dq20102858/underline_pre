@@ -71,7 +71,7 @@
             </el-form-item>
             <el-form-item class="form-so">
               <label class="el-form-item__label"></label>
-              <el-button size="small" icon="el-icon-search" type="primary" @click="getUserLists">查询</el-button>
+              <el-button size="small" icon="el-icon-search" type="primary" @click="goSerach">查询</el-button>
               <el-button size="small" plain @click="resetSerach">重置</el-button>
             </el-form-item>
           </el-form>
@@ -438,6 +438,10 @@ export default {
       this.getUserLists();
     },
     userSearchPage() {
+      this.userPage_cur = 1;
+      this.getUserLists();
+    },
+        goSerach() {
       this.userPage_cur = 1;
       this.getUserLists();
     },
