@@ -7951,7 +7951,7 @@ var constantRouterMap = [{
 }, {
   path: '/login',
   component: function component() {
-    return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(18)]).then(__webpack_require__.bind(null, "T+/8"));
+    return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(26)]).then(__webpack_require__.bind(null, "T+/8"));
   },
   hidden: true
 }, {
@@ -7979,12 +7979,12 @@ var constantRouterMap = [{
   children: [{
     path: '/set',
     component: function component() {
-      return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(4)]).then(__webpack_require__.bind(null, "bUWe"));
+      return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(2)]).then(__webpack_require__.bind(null, "bUWe"));
     }
   }, {
     path: '/speed',
     component: function component() {
-      return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(40)]).then(__webpack_require__.bind(null, "1rgo"));
+      return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(39)]).then(__webpack_require__.bind(null, "1rgo"));
     }
   }, {
     path: '/alerts',
@@ -7994,22 +7994,22 @@ var constantRouterMap = [{
   }, {
     path: '/bridge',
     component: function component() {
-      return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(27)]).then(__webpack_require__.bind(null, "1dUF"));
+      return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(25)]).then(__webpack_require__.bind(null, "1dUF"));
     }
   }, {
     path: '/tunnel',
     component: function component() {
-      return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(30)]).then(__webpack_require__.bind(null, "Yz66"));
+      return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(29)]).then(__webpack_require__.bind(null, "Yz66"));
     }
   }, {
     path: '/slope',
     component: function component() {
-      return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(32)]).then(__webpack_require__.bind(null, "Dt0U"));
+      return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(31)]).then(__webpack_require__.bind(null, "Dt0U"));
     }
   }, {
     path: '/process',
     component: function component() {
-      return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(45)]).then(__webpack_require__.bind(null, "Bx4V"));
+      return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(44)]).then(__webpack_require__.bind(null, "Bx4V"));
     }
   }]
 }, {
@@ -8039,12 +8039,12 @@ var constantRouterMap = [{
   children: [{
     path: '/project',
     component: function component() {
-      return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(2)]).then(__webpack_require__.bind(null, "KYsC"));
+      return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(3)]).then(__webpack_require__.bind(null, "KYsC"));
     }
   }, {
     path: '/schedule',
     component: function component() {
-      return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(29)]).then(__webpack_require__.bind(null, "quMV"));
+      return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(28)]).then(__webpack_require__.bind(null, "quMV"));
     }
   }, {
     path: '/chartdata',
@@ -8054,7 +8054,7 @@ var constantRouterMap = [{
   }, {
     path: '/detaillist',
     component: function component() {
-      return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(28)]).then(__webpack_require__.bind(null, "AJau"));
+      return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(27)]).then(__webpack_require__.bind(null, "AJau"));
     }
   }]
 }, {
@@ -8069,17 +8069,17 @@ var constantRouterMap = [{
   }, {
     path: '/departlist',
     component: function component() {
-      return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(33)]).then(__webpack_require__.bind(null, "BQKP"));
+      return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(32)]).then(__webpack_require__.bind(null, "BQKP"));
     }
   }, {
     path: '/postlist',
     component: function component() {
-      return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(34)]).then(__webpack_require__.bind(null, "0qre"));
+      return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(33)]).then(__webpack_require__.bind(null, "0qre"));
     }
   }, {
     path: '/userlist',
     component: function component() {
-      return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(22)]).then(__webpack_require__.bind(null, "lfKa"));
+      return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(24)]).then(__webpack_require__.bind(null, "lfKa"));
     }
   }]
 }, {
@@ -8089,12 +8089,12 @@ var constantRouterMap = [{
   children: [{
     path: '/monitor',
     component: function component() {
-      return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(3)]).then(__webpack_require__.bind(null, "lZYz"));
+      return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(4)]).then(__webpack_require__.bind(null, "lZYz"));
     }
   }, {
     path: '/monitor/indexmini',
     component: function component() {
-      return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(26)]).then(__webpack_require__.bind(null, "N8bY"));
+      return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(22)]).then(__webpack_require__.bind(null, "N8bY"));
     }
   }]
 }, {
@@ -8114,12 +8114,12 @@ var constantRouterMap = [{
   }, {
     path: '/datav/diagram',
     component: function component() {
-      return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(23)]).then(__webpack_require__.bind(null, "xmk4"));
+      return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(45)]).then(__webpack_require__.bind(null, "xmk4"));
     }
   }, {
     path: '/datav/personnel',
     component: function component() {
-      return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(24)]).then(__webpack_require__.bind(null, "MK4H"));
+      return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(21)]).then(__webpack_require__.bind(null, "MK4H"));
     }
   }, {
     path: '/datav/demo',
@@ -8156,31 +8156,31 @@ var asyncRouterMap = {
     return new Promise(function(resolve) { resolve(); }).then(__webpack_require__.bind(null, "AkUR"));
   },
   '/views/monitor/index': function viewsMonitorIndex() {
-    return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(3)]).then(__webpack_require__.bind(null, "lZYz"));
+    return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(4)]).then(__webpack_require__.bind(null, "lZYz"));
   }, //行车监控
   '/views/dashboard/index': function viewsDashboardIndex() {
-    return __webpack_require__.e/* import() */(42).then(__webpack_require__.bind(null, "ARoL"));
+    return __webpack_require__.e/* import() */(41).then(__webpack_require__.bind(null, "ARoL"));
   }, //视频监控
   '/views/admin/index': function viewsAdminIndex() {
     return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(1)]).then(__webpack_require__.bind(null, "x0vE"));
   }, //人员管理
   '/views/project/index': function viewsProjectIndex() {
-    return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(2)]).then(__webpack_require__.bind(null, "KYsC"));
+    return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(3)]).then(__webpack_require__.bind(null, "KYsC"));
   }, //工程进度
   '/views/run_monitor/index': function viewsRun_monitorIndex() {
-    return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(21)]).then(__webpack_require__.bind(null, "WfHw"));
+    return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(20)]).then(__webpack_require__.bind(null, "WfHw"));
   }, //列车运行监控
   '/views/location/index': function viewsLocationIndex() {
     return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(13)]).then(__webpack_require__.bind(null, "Sp6l"));
   }, //定位管理
   '/views/real_time/index': function viewsReal_timeIndex() {
-    return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(35)]).then(__webpack_require__.bind(null, "2jNM"));
+    return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(34)]).then(__webpack_require__.bind(null, "2jNM"));
   }, //实时管理
   '/views/progress/index': function viewsProgressIndex() {
-    return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(37)]).then(__webpack_require__.bind(null, "naN1"));
+    return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(36)]).then(__webpack_require__.bind(null, "naN1"));
   }, //进度形象图
   '/views/security/index': function viewsSecurityIndex() {
-    return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(19)]).then(__webpack_require__.bind(null, "h5Rs"));
+    return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(18)]).then(__webpack_require__.bind(null, "h5Rs"));
   }, //安全管理
   '/views/dispatch/index': function viewsDispatchIndex() {
     return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(7)]).then(__webpack_require__.bind(null, "FvKM"));
@@ -8189,7 +8189,7 @@ var asyncRouterMap = {
     return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(8)]).then(__webpack_require__.bind(null, "43N1"));
   }, //施工请点
   '/views/plan/index': function viewsPlanIndex() {
-    return __webpack_require__.e/* import() */(38).then(__webpack_require__.bind(null, "aJNJ"));
+    return __webpack_require__.e/* import() */(37).then(__webpack_require__.bind(null, "aJNJ"));
   }, //施工计划
   '/views/search/index': function viewsSearchIndex() {
     return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(5)]).then(__webpack_require__.bind(null, "Rv23"));
@@ -8198,37 +8198,37 @@ var asyncRouterMap = {
     return __webpack_require__.e/* import() */(10).then(__webpack_require__.bind(null, "ap+h"));
   }, //项目介绍
   '/views/set/index': function viewsSetIndex() {
-    return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(4)]).then(__webpack_require__.bind(null, "bUWe"));
+    return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(2)]).then(__webpack_require__.bind(null, "bUWe"));
   }, //设置
   '/views/back/index': function viewsBackIndex() {
-    return __webpack_require__.e/* import() */(39).then(__webpack_require__.bind(null, "FKtP"));
+    return __webpack_require__.e/* import() */(38).then(__webpack_require__.bind(null, "FKtP"));
   }, //返回
   '/views/apply/daychart': function viewsApplyDaychart() {
-    return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(20)]).then(__webpack_require__.bind(null, "wpBv"));
+    return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(19)]).then(__webpack_require__.bind(null, "wpBv"));
   }, //日班图表
   '/views/apply/conflictcheck': function viewsApplyConflictcheck() {
     return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(9)]).then(__webpack_require__.bind(null, "JXxd"));
   }, //冲突检测
   '/views/apply/weekplan': function viewsApplyWeekplan() {
-    return __webpack_require__.e/* import() */(43).then(__webpack_require__.bind(null, "mz+a"));
+    return __webpack_require__.e/* import() */(42).then(__webpack_require__.bind(null, "mz+a"));
   }, //周计划
   '/views/apply/weekplanapply': function viewsApplyWeekplanapply() {
-    return __webpack_require__.e/* import() */(36).then(__webpack_require__.bind(null, "qSqD"));
+    return __webpack_require__.e/* import() */(35).then(__webpack_require__.bind(null, "qSqD"));
   }, //周计划l审核历史
   '/views/location/walldetector': function viewsLocationWalldetector() {
     return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(15)]).then(__webpack_require__.bind(null, "RwO4"));
   }, //墙壁探测器
   '/views/location/cardetector': function viewsLocationCardetector() {
-    return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(41)]).then(__webpack_require__.bind(null, "4nWN"));
+    return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(40)]).then(__webpack_require__.bind(null, "4nWN"));
   }, //车载探测器
   '/views/location/locationbind': function viewsLocationLocationbind() {
-    return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(25)]).then(__webpack_require__.bind(null, "6QbA"));
+    return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(23)]).then(__webpack_require__.bind(null, "6QbA"));
   }, //定位从设备
   '/views/location/device': function viewsLocationDevice() {
-    return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(44)]).then(__webpack_require__.bind(null, "ZFGK"));
+    return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(43)]).then(__webpack_require__.bind(null, "ZFGK"));
   }, //机具
   '/views/message/index': function viewsMessageIndex() {
-    return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(31)]).then(__webpack_require__.bind(null, "Rf88"));
+    return Promise.all/* import() */([__webpack_require__.e(0), __webpack_require__.e(30)]).then(__webpack_require__.bind(null, "Rf88"));
   }
 
 };

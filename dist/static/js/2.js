@@ -1,72 +1,12 @@
 webpackJsonp([2],{
 
-/***/ "63Di":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("P9jJ");
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__("rjj0")("b0bd36f8", content, true);
-
-/***/ }),
-
-/***/ "KYsC":
+/***/ "bUWe":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
-// EXTERNAL MODULE: ./node_modules/babel-runtime/helpers/defineProperty.js
-var defineProperty = __webpack_require__("bOdI");
-var defineProperty_default = /*#__PURE__*/__webpack_require__.n(defineProperty);
-
-// CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./src/views/project/index.vue
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+// CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./src/views/set/index.vue
 //
 //
 //
@@ -216,148 +156,183 @@ var defineProperty_default = /*#__PURE__*/__webpack_require__.n(defineProperty);
 //
 //
 
-/* harmony default export */ var project = ({
+/* harmony default export */ var set = ({
   data: function data() {
-    var _this = this;
-
     return {
-      pickerOptionsStart: {
-        disabledDate: function disabledDate(time) {
-          if (_this.workData.end_time) {
-            return time.getTime() > new Date(_this.workData.end_time).getTime();
-          }
-        }
+      diaLogFormVisible: false,
+      diaLogTitle: "添加信息",
+      formData: {
+        type: 1
       },
-      pickerOptionsEnd: {
-        disabledDate: function disabledDate(time) {
-          if (_this.workData.start_time) {
-            return time.getTime() < new Date(_this.workData.start_time).getTime();
-          }
-        }
-      },
-      workLists: [],
-      workPage: 1,
-      workTotal: 0,
-      workPageSize: 20,
-      workPage_total: 0,
-      workVisible: false,
-      lineTypeList: [],
-      workData: {
-        type: 1,
-        line_type: []
-      },
-      title: "添加作业信息",
-      workRules: {
-        name: [{ required: true, message: "请输入名称2~20个字符", trigger: "blur" }, { min: 2, max: 20, message: "长度在2到20个字符", trigger: "blur" }, {
+      formRules: {
+        name: [{
+          required: true,
+          message: "请输入名称2~20个字符",
+          trigger: "blur"
+        }, { min: 2, max: 20, message: "长度在2到20个字符", trigger: "blur" }, {
           pattern: /(^\S+).*(\S+$)/,
           message: "开始和结尾不能有空格",
           trigger: "blur"
         }],
-        type: [{ required: true, message: "请选择类别", trigger: "change" }],
         line_type: [{ required: true, message: "请选择线别", trigger: "change" }],
-        start_time: [{ required: true, message: "请选择日期", trigger: "change" }],
-        end_time: [{ required: true, message: "请选择日期", trigger: "change" }],
-        total: [{
+        position: [{
           required: true,
-          min: 1,
-          max: 7,
+          message: "请输入公里数+米数，比如：10公里300米，输入10300",
+          trigger: "blur"
+        }, {
+          pattern: /^\d{1,7}$/,
           message: "请输入1-7位正整数",
           trigger: "blur"
-        }, {
-          pattern: /^(0|[1-9][0-9]*)$/,
-          message: "请输入1-5位正整数",
-          trigger: "blur"
         }],
-        unit: [{
-          required: true,
-          message: "请输入单位公里，个，股，孔等",
+        sort: [{
+          pattern: /^\d{1,3}$/,
+          message: "请输入1-3位正整数",
           trigger: "blur"
-        }, {
-          pattern: /\s\S+|S+\s|\S/,
-          message: "输入不能全是空格",
-          trigger: "blur"
-        }, {
-          pattern: /^[^\s]*$/,
-          message: "输入不能含有空格",
-          trigger: "blur"
-        }, { min: 1, max: 5, message: "长度在1到5个字符", trigger: "blur" }]
+        }]
       },
-      lineVisible: false, //查看线别
-      lineData: []
+      page_cur: 1,
+      page_data_total: 0,
+      page_size: 20,
+      page_total: 0,
+      dataList: [],
+      searchName: "",
+      lineTypeStart: "",
+      lineTypeEnd: "",
+      lineTypeDes: "",
+      lineTypeList: []
     };
   },
   created: function created() {
-    this.getWorkLists();
-    this.getLineTypes();
+    this.getLineTypeLists();
+    this.getDataList();
   },
 
   methods: {
-    getWorkLists: function getWorkLists() {
-      var _this2 = this;
+    getDataList: function getDataList() {
+      var _this = this;
 
-      var page = this.workPage;
+      var page = this.page_cur;
+      var name = this.searchName;
       this.request({
-        url: "/project/getWorkLists",
+        url: "/search/getStationPages",
         method: "get",
-        params: { page: page }
-      }).then(function (response) {
-        var data = response.data;
+        params: {
+          page: page,
+          name: name
+        }
+      }).then(function (res) {
+        var data = res.data;
         if (data.status == 1) {
-          _this2.workLists = data.data.data;
-
-          _this2.workPage = parseInt(data.data.current_page);
-          _this2.workTotal = parseInt(data.data.total);
-          _this2.workPageSize = data.data.per_page;
-          _this2.workPage_total = parseInt(data.data.last_page);
-          // this.workPage = parseInt(data.data.current_page);
-          // this.workTotal =data.data.total;
-          // this.workPage_total =data.data.last_page;
+          _this.dataList = data.data.data;
+          _this.page_cur = parseInt(data.data.current_page);
+          _this.page_total = data.data.last_page;
+          _this.page_data_total = data.data.total;
+          _this.page_size = data.data.per_page;
         }
       });
     },
-    workPageChange: function workPageChange(value) {
-      this.workPage = value;
-      this.getWorkLists();
+    pageChange: function pageChange(value) {
+      this.page_cur = value;
+      this.getDataList();
     },
-    workPageFirst: function workPageFirst() {
-      this.workPage = 1;
-      this.getWorkLists();
+    pageToFirst: function pageToFirst() {
+      this.page_cur = 1;
+      this.getDataList();
     },
-    workPageLast: function workPageLast() {
-      this.workPage = this.workPage_total;
-      this.getWorkLists();
+    pageToLast: function pageToLast() {
+      this.page_cur = this.page_total;
+      this.getDataList();
     },
-    openAddWork: function openAddWork() {
-      var _this3 = this,
-          _workData;
+    searchEvent: function searchEvent() {
+      this.page_cur = 1;
+      this.getDataList();
+    },
+    getLineTypeLists: function getLineTypeLists() {
+      var _this2 = this;
 
-      this.title = "添加作业信息";
-      this.workVisible = true;
-      this.$nextTick(function () {
-        _this3.$refs["workForm"].clearValidate();
+      this.request({
+        url: "/common/getLineType",
+        method: "get"
+      }).then(function (response) {
+        var data = response.data;
+        if (data.status == 1) {
+          var lineJson = data.data;
+          var newArr = new Array();
+          for (var i = 0; i < lineJson.length; i++) {
+            var j = lineJson[i];
+            if (j.id == 1) {
+              newArr.push(j);
+            }
+          }
+          _this2.lineTypeList = newArr;
+        }
       });
-      this.workData = (_workData = {
-        name: "",
-        sort: "",
-        type: "1",
-        line_type: []
-      }, defineProperty_default()(_workData, "type", 1), defineProperty_default()(_workData, "start_time", ""), defineProperty_default()(_workData, "end_time", ""), _workData);
     },
-    addOrEditDo: function addOrEditDo() {
+    selectLineType: function selectLineType(value) {
+      var that = this;
+      this.lineTypeList.map(function (item, index) {
+        if (item.id == value) {
+          that.lineTypeDes = "里程范围：" + item.tip;
+          that.lineTypeStart = item.start;
+          that.lineTypeEnd = item.end;
+        }
+      });
+      console.log(this.lineTypeDes);
+    },
+    goAdd: function goAdd() {
+      var _this3 = this;
+
+      this.formData = {
+        type: 1
+      };
+      this.diaLogTitle = "添加信息";
+      this.diaLogFormVisible = true;
+      this.$nextTick(function () {
+        _this3.$refs["formRules"].clearValidate();
+      });
+      this.lineTypeDes = "";
+    },
+    addOrEditDialog: function addOrEditDialog() {
       var _this4 = this;
 
-      this.$refs["workForm"].validate(function (valid) {
+      var that = this;
+      this.$refs["formRules"].validate(function (valid) {
         if (valid) {
-          var data = _this4.workData;
+          var data = that.formData;
+          var pnum = data.position;
+          var lineStart = that.lineTypeStart * 1000;
+          var lineEnd = that.lineTypeEnd * 1000;
+          // if (parseInt( parseInt(m_start)>) {
+          //   alert("num2 > num1！");
+          //   return false;
+          // }
+          if (parseInt(pnum) < parseInt(lineStart)) {
+            _this4.$message({
+              message: "位置输入不在线别" + lineStart + "~" + lineEnd + "里程范围内",
+              duration: 5000,
+              type: "error"
+            });
+
+            return false;
+          }
+          if (parseInt(pnum) > parseInt(lineEnd)) {
+            _this4.$message({
+              message: "位置输入不在线别" + lineStart + "~" + lineEnd + "里程范围内",
+              duration: 5000,
+              type: "error"
+            });
+            return false;
+          }
           _this4.request({
-            url: "/project/addOrEditWork",
+            url: "/search/addOrEditStaion",
             method: "post",
             data: data
           }).then(function (response) {
             var data = response.data;
             if (data.status == 1) {
-              _this4.workVisible = false;
-              _this4.getWorkLists();
+              _this4.diaLogFormVisible = false;
+              _this4.formData.name = "";
+              _this4.getDataList();
               _this4.$message({
                 type: "success",
                 message: "保存成功！"
@@ -365,106 +340,84 @@ var defineProperty_default = /*#__PURE__*/__webpack_require__.n(defineProperty);
             }
           });
         } else {
-          console.log("error submit!!");
+          console.log("操作失败！");
           return false;
         }
       });
     },
-    editWork: function editWork(id) {
+    goEdit: function goEdit(id) {
       var _this5 = this;
 
-      this.title = "修改作业信息";
-      this.workVisible = true;
+      this.diaLogTitle = "修改信息";
+      this.diaLogFormVisible = true;
       this.$nextTick(function () {
-        _this5.$refs["workForm"].clearValidate();
+        _this5.$refs["formRules"].clearValidate();
       });
       this.request({
-        url: "/project/getWorkDetail",
+        url: "/search/getStationDetail",
         method: "get",
         params: { id: id }
       }).then(function (response) {
         var data = response.data;
         if (data.status == 1) {
-          _this5.workData = data.data;
-          //console.log(data.data.line_type);
+          _this5.formData = data.data;
+          _this5.lineTypeList.map(function (item, index) {
+            if (item.id == data.data.line_type) {
+              _this5.lineTypeDes = "里程范围：" + item.tip;
+              _this5.lineTypeStart = item.start;
+              _this5.lineTypeEnd = item.end;
+              _this5.formData.position = parseFloat(data.data.position);
+            }
+          });
         }
       });
     },
-    deleteWork: function deleteWork(id) {
+    goDel: function goDel(id) {
       var _this6 = this;
 
-      this.$confirm("请确认要删除，删除后不可恢复", "提示", {
+      this.$confirm("您确定要删除？删除后不能恢复！", "提示", {
         confirmButtonText: "确定",
         cancelButtonText: "取消",
         type: "warning",
         customClass: "el-message-box-new"
       }).then(function () {
-        var data = {
-          id: id
-        };
         _this6.request({
-          url: "/project/deleteWork",
+          url: "/search/deleteStation",
           method: "post",
-          data: data
-        }).then(function (response) {
-          var data = response.data;
+          data: { id: id }
+        }).then(function (res) {
+          var data = res.data;
           if (data.status == 1) {
             _this6.$message({
-              showClose: true,
-              message: "删除成功",
-              type: "success"
+              type: "success",
+              message: "删除成功！"
             });
-            _this6.getWorkLists();
-          } else {
-            _this6.$message({
-              showClose: true,
-              message: "删除失败",
-              type: "error"
-            });
+            _this6.getDataList();
           }
         });
       }).catch(function () {});
     },
-    getLineTypes: function getLineTypes() {
-      var _this7 = this;
-
-      this.request({
-        url: "/common/getLineType",
-        method: "get"
-      }).then(function (res) {
-        var data = res.data;
-        if (data.status == 1) {
-          _this7.lineTypeList = data.data;
-        }
-      });
-    },
-    detailWork: function detailWork(id) {
-      var _this8 = this;
-
-      this.lineVisible = true;
-      this.request({
-        url: "/project/getLine",
-        method: "get",
-        params: { id: id }
-      }).then(function (response) {
-        var data = response.data;
-        if (data.status == 1) {
-          _this8.lineData = data.data;
-        }
-      });
+    timestampToTime: function timestampToTime(time) {
+      // let time = row[column.property];
+      if (time == null) {
+        return null;
+      }
+      var date = new Date(time * 1000);
+      var tt = [date.getFullYear(), date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1, date.getDate() < 10 ? "0" + date.getDate() : date.getDate()].join("-") + "  " + [date.getHours() < 10 ? "0" + date.getHours() : date.getHours(), date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes(), date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds()].join(":");
+      return tt;
     }
     //
 
   }
 });
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-9c289cbe","hasScoped":false,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/views/project/index.vue
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"project"}},[_c('div',{staticClass:"el-menu-top"},[_c('el-menu',{attrs:{"router":"","default-active":"project","mode":"horizontal"}},[_c('li',{staticClass:"ptitle"},[_c('img',{attrs:{"src":__webpack_require__("MV+A")}}),_vm._v("工程进度\n      ")]),_vm._v(" "),_c('el-menu-item',{attrs:{"index":"project"},on:{"click":_vm.workPageFirst}},[_vm._v("作业列表")]),_vm._v(" "),_c('el-menu-item',{attrs:{"index":"schedule"}},[_vm._v("计划日程")]),_vm._v(" "),_c('el-menu-item',{attrs:{"index":"detaillist"}},[_vm._v("详情列表")]),_vm._v(" "),_c('el-menu-item',{attrs:{"index":"chartdata"}},[_vm._v("图表数据")])],1)],1),_vm._v(" "),_c('div',{staticClass:"app-page"},[_c('div',{staticClass:"app-table",attrs:{"id":"work"}},[_c('div',{staticClass:"app-page-container"},[_c('div',{staticClass:"addbtn"},[_c('el-button',{attrs:{"type":"primary","icon":"el-icon-plus"},on:{"click":_vm.openAddWork}},[_vm._v("添加作业")])],1),_vm._v(" "),_c('el-table',{ref:"multipleTable",attrs:{"data":_vm.workLists}},[_c('el-table-column',{attrs:{"prop":"sort","label":"作业顺序","width":"100"}}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"name","label":"作业名称"}}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"start_time","label":"计划开始时间"}}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"end_time","label":"计划结束时间"}}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"total","label":"设计总量"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_vm._v(_vm._s(scope.row.total)+"("+_vm._s(scope.row.unit)+")")]}}])}),_vm._v(" "),_c('el-table-column',{attrs:{"label":"操作","width":"180px"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_c('div',{staticClass:"app-operation"},[(scope.row.type==1)?_c('el-button',{staticClass:"btn-blue",attrs:{"size":"mini"},on:{"click":function($event){return _vm.detailWork(scope.row.id)}}},[_vm._v("查看")]):_vm._e(),_vm._v(" "),_c('el-button',{staticClass:"btn-blue",attrs:{"size":"mini"},on:{"click":function($event){return _vm.editWork(scope.row.id)}}},[_vm._v("修改")]),_vm._v(" "),_c('el-button',{staticClass:"btn-red",attrs:{"size":"mini"},on:{"click":function($event){return _vm.deleteWork(scope.row.id)}}},[_vm._v("删除")])],1)]}}])})],1),_vm._v(" "),_c('div',{staticClass:"app-pagination"},[(_vm.workLists.length !== 0)?_c('el-pagination',{staticClass:"pagination",attrs:{"layout":"slot,prev, pager, next,slot,total","current-page":this.workPage,"total":this.workTotal,"page-size":this.workPageSize,"prev-text":"上一页","next-text":"下一页"},on:{"current-change":_vm.workPageChange}},[_c('button',{staticClass:"btn-first",attrs:{"type":"button"},on:{"click":_vm.workPageFirst}},[_c('span',[_vm._v("首页")])]),_vm._v(" "),_c('button',{staticClass:"btn-last",attrs:{"type":"button"},on:{"click":_vm.workPageLast}},[_c('span',[_vm._v("尾页")])])]):_vm._e()],1)],1),_vm._v(" "),_c('el-dialog',{staticClass:"dialog-work",attrs:{"width":"700px","close-on-click-modal":false,"title":this.title,"visible":_vm.workVisible},on:{"update:visible":function($event){_vm.workVisible=$event}}},[_c('el-form',{ref:"workForm",staticClass:"el-form-custom",attrs:{"model":_vm.workData,"rules":_vm.workRules}},[_c('el-form-item',{attrs:{"label":"名称：","prop":"name"}},[_c('el-input',{attrs:{"autocomplete":"off","placeholder":"请输入作业名称","maxlength":"20","show-word-limit":""},model:{value:(_vm.workData.name),callback:function ($$v) {_vm.$set(_vm.workData, "name", $$v)},expression:"workData.name"}})],1),_vm._v(" "),_c('el-form-item',{attrs:{"label":"顺序："}},[_c('el-input',{attrs:{"autocomplete":"off","onkeyup":"this.value = this.value.replace(/[^\\d.]/g,'');","placeholder":"请输入数字，数字越大越靠后","maxlength":"4"},model:{value:(_vm.workData.sort),callback:function ($$v) {_vm.$set(_vm.workData, "sort", $$v)},expression:"workData.sort"}})],1),_vm._v(" "),(this.title=='添加作业信息')?_c('div',[_c('el-form-item',{attrs:{"label":"类别：","prop":"type"}},[_c('el-radio',{attrs:{"label":1},model:{value:(_vm.workData.type),callback:function ($$v) {_vm.$set(_vm.workData, "type", $$v)},expression:"workData.type"}},[_vm._v("里程")]),_vm._v(" "),_c('el-radio',{attrs:{"label":2},model:{value:(_vm.workData.type),callback:function ($$v) {_vm.$set(_vm.workData, "type", $$v)},expression:"workData.type"}},[_vm._v("计数（个，股，孔）")])],1),_vm._v(" "),(_vm.workData.type == 1)?_c('el-form-item',{attrs:{"label":"线别：","prop":"line_type"}},[_c('el-checkbox-group',{model:{value:(_vm.workData.line_type),callback:function ($$v) {_vm.$set(_vm.workData, "line_type", $$v)},expression:"workData.line_type"}},_vm._l((_vm.lineTypeList),function(item){return _c('el-checkbox',{key:item.id,attrs:{"label":item.id}},[_vm._v(_vm._s(item.name))])}),1)],1):_vm._e(),_vm._v(" "),(_vm.workData.type==2)?_c('div',{staticClass:"el-form-item-inline"},[_c('el-form-item',{attrs:{"label":"设计总量：","prop":"total"}},[_c('el-input',{attrs:{"autocomplete":"off","placeholder":"请输入数字","maxlength":"7"},model:{value:(_vm.workData.total),callback:function ($$v) {_vm.$set(_vm.workData, "total", $$v)},expression:"workData.total"}})],1),_vm._v(" "),(_vm.workData.type==2)?_c('el-form-item',{attrs:{"label":"单位：","prop":"unit"}},[_c('el-input',{attrs:{"autocomplete":"off","placeholder":"请输入个，股，孔等"},model:{value:(_vm.workData.unit),callback:function ($$v) {_vm.$set(_vm.workData, "unit", $$v)},expression:"workData.unit"}})],1):_vm._e()],1):_vm._e()],1):_vm._e(),_vm._v(" "),_c('div',{staticClass:"blank"}),_vm._v(" "),_c('el-form-item',{attrs:{"label":"计划开始时间","prop":"start_time"}},[_c('el-date-picker',{attrs:{"picker-options":_vm.pickerOptionsStart,"type":"date","placeholder":"选择时间"},model:{value:(_vm.workData.start_time),callback:function ($$v) {_vm.$set(_vm.workData, "start_time", $$v)},expression:"workData.start_time"}})],1),_vm._v(" "),_c('el-form-item',{attrs:{"label":"计划结束时间","prop":"end_time"}},[_c('el-date-picker',{attrs:{"picker-options":_vm.pickerOptionsEnd,"type":"date","placeholder":"选择时间"},model:{value:(_vm.workData.end_time),callback:function ($$v) {_vm.$set(_vm.workData, "end_time", $$v)},expression:"workData.end_time"}})],1),_vm._v(" "),_c('div',{staticClass:"blank"})],1),_vm._v(" "),_c('div',{staticClass:"dialog-footer",attrs:{"slot":"footer"},slot:"footer"},[_c('el-button',{on:{"click":function($event){_vm.workVisible = false}}},[_vm._v("关闭")]),_vm._v(" "),_c('el-button',{attrs:{"type":"primary"},on:{"click":function($event){return _vm.addOrEditDo()}}},[_vm._v("确定")])],1)],1),_vm._v(" "),_c('el-dialog',{attrs:{"title":"里程线别设置","visible":_vm.lineVisible,"width":"700px"},on:{"update:visible":function($event){_vm.lineVisible=$event}}},[_c('el-table',{attrs:{"data":_vm.lineData}},[_c('el-table-column',{attrs:{"label":"线别"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return _vm._l((_vm.lineTypeList),function(item){return (scope.row.line_type == item.id)?_c('span',{key:item.id},[_vm._v(_vm._s(item.name))]):_vm._e()})}}])}),_vm._v(" "),_c('el-table-column',{attrs:{"label":"开始里程"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_c('div',[_c('span',[_vm._v("DK")]),_vm._v(" "),_c('input',{directives:[{name:"model",rawName:"v-model",value:(scope.row.start_flag),expression:"scope.row.start_flag"}],staticClass:"diinput",attrs:{"type":"number","disabled":""},domProps:{"value":(scope.row.start_flag)},on:{"input":function($event){if($event.target.composing){ return; }_vm.$set(scope.row, "start_flag", $event.target.value)}}}),_vm._v(" "),_c('span',[_vm._v("+")]),_vm._v(" "),_c('input',{directives:[{name:"model",rawName:"v-model",value:(scope.row.start_length),expression:"scope.row.start_length"}],staticClass:"diinput",attrs:{"type":"number","disabled":""},domProps:{"value":(scope.row.start_length)},on:{"input":function($event){if($event.target.composing){ return; }_vm.$set(scope.row, "start_length", $event.target.value)}}})])]}}])}),_vm._v(" "),_c('el-table-column',{attrs:{"label":"结束里程"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_c('div',[_c('span',[_vm._v("DK")]),_vm._v(" "),_c('input',{directives:[{name:"model",rawName:"v-model",value:(scope.row.end_flag),expression:"scope.row.end_flag"}],staticClass:"diinput",attrs:{"type":"number","disabled":""},domProps:{"value":(scope.row.end_flag)},on:{"input":function($event){if($event.target.composing){ return; }_vm.$set(scope.row, "end_flag", $event.target.value)}}}),_vm._v(" "),_c('span',[_vm._v("+")]),_vm._v(" "),_c('input',{directives:[{name:"model",rawName:"v-model",value:(scope.row.end_length),expression:"scope.row.end_length"}],staticClass:"diinput",attrs:{"type":"number","disabled":""},domProps:{"value":(scope.row.end_length)},on:{"input":function($event){if($event.target.composing){ return; }_vm.$set(scope.row, "end_length", $event.target.value)}}})])]}}])})],1),_vm._v(" "),_c('div',{staticClass:"dialog-footer",attrs:{"slot":"footer"},slot:"footer"},[_c('el-button',{on:{"click":function($event){_vm.lineVisible = false}}},[_vm._v("关闭")])],1)],1)],1)])])}
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-b08187de","hasScoped":false,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/views/set/index.vue
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"monitor"}},[_c('div',{staticClass:"el-menu-top"},[_c('el-menu',{attrs:{"router":"","default-active":"set","mode":"horizontal"}},[_c('li',{staticClass:"ptitle"},[_c('img',{attrs:{"src":__webpack_require__("qyEk")}}),_vm._v("设置\n      ")]),_vm._v(" "),_c('el-menu-item',{attrs:{"index":"set"},on:{"click":_vm.pageToFirst}},[_vm._v("站点设置")]),_vm._v(" "),_c('el-menu-item',{attrs:{"index":"speed"}},[_vm._v("限速设置")]),_vm._v(" "),_c('el-menu-item',{attrs:{"index":"alerts"}},[_vm._v("防区设置")]),_vm._v(" "),_c('el-menu-item',{attrs:{"index":"bridge"}},[_vm._v("桥设置")]),_vm._v(" "),_c('el-menu-item',{attrs:{"index":"tunnel"}},[_vm._v("隧道设置")]),_vm._v(" "),_c('el-menu-item',{attrs:{"index":"slope"}},[_vm._v("坡度设置")]),_vm._v(" "),_c('el-menu-item',{attrs:{"index":"process"}},[_vm._v("项目工序")])],1)],1),_vm._v(" "),_c('div',{staticClass:"app-page"},[_c('div',{staticClass:"app-page-container"},[_c('div',{staticClass:"app-page-select"},[_c('el-form',{attrs:{"inline":true}},[_c('el-form-item',[_c('el-button',{attrs:{"type":"primary","icon":"el-icon-plus"},on:{"click":_vm.goAdd}},[_vm._v("添加站点")])],1),_vm._v(" "),_c('div',{staticClass:"el-serach"},[_c('el-input',{attrs:{"autocomplete":"off","placeholder":"请输入名称查询","clearable":"","maxlength":"20"},model:{value:(_vm.searchName),callback:function ($$v) {_vm.searchName=$$v},expression:"searchName"}}),_vm._v(" "),_c('el-button',{on:{"click":_vm.searchEvent}},[_vm._v("查询")])],1)],1)],1),_vm._v(" "),_c('div',{staticClass:"app-table"},[_c('el-table',{attrs:{"data":_vm.dataList}},[_c('el-table-column',{attrs:{"label":"序号","width":"80"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_c('span',[_vm._v(_vm._s(scope.$index+(_vm.page_cur - 1) * _vm.page_size + 1))])]}}])}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"name","label":"名称"}}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"position","label":"位置"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_c('b',[_vm._v("DK")]),_vm._v("\n              "+_vm._s(parseFloat(scope.row.start_flag))+" + "+_vm._s(parseFloat(scope.row.start_length))+"\n            ")]}}])}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"type","label":"站点类型"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_c('span',{directives:[{name:"show",rawName:"v-show",value:(scope.row.type==1),expression:"scope.row.type==1"}]},[_vm._v("客运站")]),_vm._v(" "),_c('span',{directives:[{name:"show",rawName:"v-show",value:(scope.row.type==2),expression:"scope.row.type==2"}]},[_vm._v("中间站")]),_vm._v(" "),_c('span',{directives:[{name:"show",rawName:"v-show",value:(scope.row.type==3),expression:"scope.row.type==3"}]},[_vm._v("越行站")])]}}])}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"line","label":"线别"}}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"create_time","label":"创建时间","width":"160"}}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"update_time","label":"修改时间","width":"160"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_c('span',[_vm._v(_vm._s(_vm.timestampToTime(scope.row.update_time)))])]}}])}),_vm._v(" "),_c('el-table-column',{attrs:{"label":"操作","width":"120"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_c('div',{staticClass:"app-operation"},[_c('el-button',{staticClass:"btn-blue",attrs:{"size":"mini"},on:{"click":function($event){return _vm.goEdit(scope.row.id)}}},[_vm._v("修改")]),_vm._v(" "),_c('el-button',{staticClass:"btn-red",attrs:{"size":"mini"},on:{"click":function($event){return _vm.goDel(scope.row.id)}}},[_vm._v("删除")])],1)]}}])})],1),_vm._v(" "),_c('div',{staticClass:"app-pagination"},[(_vm.dataList.length !== 0)?_c('el-pagination',{staticClass:"pagination",attrs:{"layout":"slot,prev, pager, next,slot,total","page-size":this.page_size,"current-page":this.page_cur,"total":this.page_data_total,"prev-text":"上一页","next-text":"下一页"},on:{"current-change":_vm.pageChange}},[_c('button',{staticClass:"btn-first",attrs:{"type":"button"},on:{"click":_vm.pageToFirst}},[_c('span',[_vm._v("首页")])]),_vm._v(" "),_c('button',{staticClass:"btn-last",attrs:{"type":"button"},on:{"click":_vm.pageToLast}},[_c('span',[_vm._v("尾页")])])]):_vm._e()],1)],1),_vm._v(" "),_c('el-dialog',{staticClass:"dialog-station",attrs:{"width":"700px","close-on-click-modal":false,"title":this.diaLogTitle,"visible":_vm.diaLogFormVisible},on:{"update:visible":function($event){_vm.diaLogFormVisible=$event}}},[_c('el-form',{ref:"formRules",staticClass:"el-form-custom",attrs:{"model":_vm.formData,"rules":_vm.formRules}},[_c('el-form-item',{attrs:{"label":"名称：","prop":"name"}},[_c('el-input',{attrs:{"autocomplete":"off","maxlength":"20","show-word-limit":""},model:{value:(_vm.formData.name),callback:function ($$v) {_vm.$set(_vm.formData, "name", $$v)},expression:"formData.name"}})],1),_vm._v(" "),_c('el-form-item',{attrs:{"label":"线别：","prop":"line_type"}},[_c('el-select',{attrs:{"placeholder":"请选择"},on:{"change":function($event){return _vm.selectLineType($event)}},model:{value:(_vm.formData.line_type),callback:function ($$v) {_vm.$set(_vm.formData, "line_type", $$v)},expression:"formData.line_type"}},_vm._l((_vm.lineTypeList),function(item){return _c('el-option',{key:item.id,attrs:{"label":item.name,"value":item.id}})}),1),_vm._v(" "),_c('div',{staticClass:"el-form-item__error"},[_vm._v(_vm._s(_vm.lineTypeDes))])],1),_vm._v(" "),_c('el-form-item',{attrs:{"label":"位置：","prop":"position"}},[_c('el-input',{attrs:{"autocomplete":"off","placeholder":"公里数+米数"},model:{value:(_vm.formData.position),callback:function ($$v) {_vm.$set(_vm.formData, "position", $$v)},expression:"formData.position"}})],1),_vm._v(" "),_c('el-form-item',{attrs:{"label":"类型："}},[_c('el-select',{model:{value:(_vm.formData.type),callback:function ($$v) {_vm.$set(_vm.formData, "type", $$v)},expression:"formData.type"}},[_c('el-option',{attrs:{"label":"客运站","value":1}}),_vm._v(" "),_c('el-option',{attrs:{"label":"中间站","value":2}}),_vm._v(" "),_c('el-option',{attrs:{"label":"越行站","value":3}})],1)],1),_vm._v(" "),_c('el-form-item',{staticStyle:{"display":"none"},attrs:{"label":"排序：","prop":"sort"}},[_c('el-input',{attrs:{"autocomplete":"off","maxlength":"3","show-word-limit":""},model:{value:(_vm.formData.sort),callback:function ($$v) {_vm.$set(_vm.formData, "sort", $$v)},expression:"formData.sort"}})],1),_vm._v(" "),_c('div',{staticClass:"blank"})],1),_vm._v(" "),_c('div',{staticClass:"dialog-footer",attrs:{"slot":"footer"},slot:"footer"},[_c('el-button',{on:{"click":function($event){_vm.diaLogFormVisible = false}}},[_vm._v("关闭")]),_vm._v(" "),_c('el-button',{attrs:{"type":"primary"},on:{"click":function($event){return _vm.addOrEditDialog()}}},[_vm._v("确定")])],1)],1)],1)])])}
 var staticRenderFns = []
 var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ var views_project = (esExports);
-// CONCATENATED MODULE: ./src/views/project/index.vue
+/* harmony default export */ var views_set = (esExports);
+// CONCATENATED MODULE: ./src/views/set/index.vue
 function injectStyle (ssrContext) {
-  __webpack_require__("63Di")
+  __webpack_require__("byeJ")
 }
 var normalizeComponent = __webpack_require__("VU/8")
 /* script */
@@ -480,20 +433,34 @@ var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
-  project,
-  views_project,
+  set,
+  views_set,
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
   __vue_module_identifier__
 )
 
-/* harmony default export */ var src_views_project = __webpack_exports__["default"] = (Component.exports);
+/* harmony default export */ var src_views_set = __webpack_exports__["default"] = (Component.exports);
 
 
 /***/ }),
 
-/***/ "P9jJ":
+/***/ "byeJ":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("n2m+");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__("rjj0")("55ef07a4", content, true);
+
+/***/ }),
+
+/***/ "n2m+":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("FZ+f")(false);
@@ -501,7 +468,7 @@ exports = module.exports = __webpack_require__("FZ+f")(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* work */\n.dialog-work .el-form-item__label {\r\n  width: 110px;\n}\n.dialog-work .el-form-item__content {\r\n  margin-left: 110px;\n}\n.dialog-work .el-form-item-inline .el-input {\r\n  width: 100%;\n}\n.addbtn {\r\n  margin-bottom: 15px;\n}\n.diinput {\r\n  width: 60px;\r\n  height: 28px;\r\n  border: 1px #9db9fa solid;\r\n  text-align: center;\n}\r\n", ""]);
+exports.push([module.i, "\n.dialog-station .el-textarea__inner {\r\n  border: 1px #9db9fa solid;\r\n  color: #4b6eca;\r\n  height: 100px;\n}\n.dialog-station .el-textarea {\r\n  width: 100% !important;\n}\n.dialog-station .el-form-item__label {\r\n  width: 110px;\n}\n.dialog-station .el-form-item__content {\r\n  margin-left: 110px;\n}\n.dialog-station .el-form-item-inline .el-input--medium {\r\n  display: inline-block;\r\n  width: 80px;\r\n  text-align: center;\n}\n.dialog-station .el-form-item-inline input {\r\n  display: inline-block;\r\n  width: 80px;\r\n  text-align: center;\n}\n.dialog-station .el-select {\r\n  width: 100%;\n}\r\n", ""]);
 
 // exports
 

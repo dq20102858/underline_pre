@@ -1,6 +1,6 @@
 webpackJsonp([22],{
 
-/***/ "0ldE":
+/***/ "CisK":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("FZ+f")(false);
@@ -8,242 +8,25 @@ exports = module.exports = __webpack_require__("FZ+f")(false);
 
 
 // module
-exports.push([module.i, "\n.dialog-users .el-textarea {\r\n  width: 100% !important;\n}\n.dialog-users .el-form-item__label {\r\n  width: 110px;\n}\n.dialog-users .newitem {\r\n  width: 350px;\n}\n.dialog-users .newitem .el-input--medium {\r\n  width: 240px;\n}\n.dialog-users .el-input--medium {\r\n  width: 100%;\n}\n.dialog-users .el-select {\r\n  width: 185px;\n}\n.dialog-users .el-form-item-block {\r\n  display: block;\n}\n.dialog-users .el-form-item-inliness {\r\n  display: inline-block;\n}\n.dialog-users .el-form-item-inliness .el-form-item {\r\n  display: inline-block;\n}\n.dialog-users .el-form-item-block {\r\n  display: block;\n}\n.dialog-users .el-form-item-inliness .el-checkbox-group {\r\n  margin-left: 110px;\n}\n.dialog-users .checkbox-group .el-form-item__label {\r\n  float: left;\n}\n.dialog-users .checkbox-group .el-form-item__content {\r\n  display: initial !important;\n}\n.dialog-users .checkbox-group .el-checkbox-group {\r\n  margin-left: 110px;\n}\n.avatar-uploader .el-upload {\r\n  border: 1px dashed #d9d9d9;\r\n  border-radius: 6px;\r\n  cursor: pointer;\r\n  position: relative;\r\n  overflow: hidden;\n}\n.avatar-uploader .el-upload:hover {\r\n  border-color: #409eff;\n}\n.avatar-uploader-icon {\r\n  font-size: 28px;\r\n  color: #8c939d;\r\n  width: 178px;\r\n  height: 178px;\r\n  line-height: 178px;\r\n  text-align: center;\n}\n.avatar {\r\n  width: 178px;\r\n  height: 178px;\r\n  display: block;\n}\r\n", ""]);
+exports.push([module.i, "\n.sttitle {\r\n  color: #fff;\r\n  padding: 22px 0 0 25px;\r\n  font-size: 24px;\r\n  text-align: center;\n}\n#minprogress {\r\n  position: absolute;\r\n  width: 100%;\r\n  height: 100vh;\r\n  background: #081c33;\n}\n.minprogress {\r\n  background: #081c33;\r\n  padding-bottom: 30px;\n}\n.minprogress #canvasStation {\r\n  background: #081c33;\n}\n.minprogress .station {\r\n  margin: 30px 30px 0px 15px;\r\n  position: relative;\r\n  z-index: 999;\n}\n.minprogress .progresslist {\r\n  padding-top: 20px;\r\n  padding-left: 30px;\r\n  color: #fff;\n}\n.minprogress .progresslist .namess {\r\n  padding-bottom: 10px;\r\n  display: inline-block;\r\n  padding-right: 14px;\n}\n.minprogress .progresslist .el-radio__label {\r\n  color: #fff;\n}\n.clear {\r\n  clear: both;\n}\r\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ "lfKa":
+/***/ "N8bY":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
-// EXTERNAL MODULE: ./node_modules/babel-runtime/helpers/defineProperty.js
-var defineProperty = __webpack_require__("bOdI");
-var defineProperty_default = /*#__PURE__*/__webpack_require__.n(defineProperty);
+// EXTERNAL MODULE: ./node_modules/babel-runtime/core-js/get-iterator.js
+var get_iterator = __webpack_require__("BO1k");
+var get_iterator_default = /*#__PURE__*/__webpack_require__.n(get_iterator);
 
-// CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./src/views/admin/userlist.vue
+// CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./src/views/monitor/indexmini.vue
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -275,458 +58,699 @@ var defineProperty_default = /*#__PURE__*/__webpack_require__.n(defineProperty);
 //
 //
 
-/* harmony default export */ var userlist = ({
+var indexmini_canvas = void 0;
+var indexmini_context = void 0;
+var axis_Height = "650";
+//标尺起点
+var axis_LeftLine = {
+  x: 30,
+  y: axis_Height - 400
+};
+var axis_LeftLine_Two = {
+  x: 30,
+  y: axis_Height - 280
+};
+//出入场线
+var axis_OutLine = {
+  x: 30,
+  y: axis_Height - 160
+};
+var axis_OutLine_Two = {
+  x: 30,
+  y: axis_Height - 50
+};
+
+var axis_Applay = {
+  x: 30,
+  y: axis_Height - 450
+};
+var axis_Applay_two = {
+  x: 30,
+  y: axis_Height - 330
+};
+var applyClickXY = [];
+/* harmony default export */ var indexmini = ({
   data: function data() {
-    var _ref;
-
-    return _ref = {
-      userList: [],
-      userPage_size: 20,
-      userPage_cur: 1,
-      userPage_items: 0
-    }, defineProperty_default()(_ref, "userPage_size", 20), defineProperty_default()(_ref, "userPage_cur", 1), defineProperty_default()(_ref, "userPage_items", 0), defineProperty_default()(_ref, "userPage_total", 0), defineProperty_default()(_ref, "userDialogVisible", false), defineProperty_default()(_ref, "userDialogTitle", ""), defineProperty_default()(_ref, "userData", {
-      menus: [],
-      sys_role: 3
-    }), defineProperty_default()(_ref, "uploadAction", this.hostURL + "/upload/uploadFile"), defineProperty_default()(_ref, "UserimageUrl", ""), defineProperty_default()(_ref, "userSearch", {}), defineProperty_default()(_ref, "userAddRules", {
-      user_name: [{
-        required: true,
-        message: "请输入用户名",
-        trigger: "blur"
-      }, {
-        min: 2,
-        max: 14,
-        message: "请输入用户名长度在2到14个字符",
-        trigger: "blur"
-      }, {
-        pattern: /^[A-Za-z0-9\_]*$/,
-        message: "用户名只能是字母、数字及下划线",
-        trigger: "blur"
-      }],
-      name: [{
-        required: true,
-        message: "请输入姓名",
-        trigger: "blur"
-      }, {
-        min: 2,
-        max: 10,
-        message: "请输入姓名长度在2到10个字符",
-        trigger: "blur"
-      }, {
-        pattern: /^[\u4e00-\u9fa5A-Za-z0-9\_]*$/,
-        message: "姓名只能是汉字、字母、数字及下划线",
-        trigger: "blur"
-      }],
-      password: [{
-        required: true,
-        message: "请输入密码",
-        trigger: "blur"
-      }, {
-        min: 6,
-        max: 14,
-        message: "请输入密码长度6到14个字符",
-        trigger: "blur"
-      }, {
-        pattern: /^[0-9a-zA-Z_]{1,}$/,
-        message: "密码只能是数字、字母、下划线",
-        trigger: "blur"
-      }],
-      passwordEdit: [{
-        min: 6,
-        max: 14,
-        message: "请输入密码长度6到14个字符",
-        trigger: "blur"
-      }, {
-        pattern: /^[0-9a-zA-Z_]{1,}$/,
-        message: "密码只能是数字、字母、下划线",
-        trigger: "blur"
-      }],
-      company_id: [{
-        required: true,
-        message: "请选择公司",
-        trigger: "change"
-      }],
-
-      depart_id: [{
-        required: true,
-        message: "请选择部门",
-        trigger: "change"
-      }],
-      post_id: [{
-        required: true,
-        message: "请选择职位",
-        trigger: "change"
-      }],
-      dispatch: [{
-        required: true,
-        message: "请选择调度信息",
-        trigger: "change"
-      }],
-      email: [{
-        type: "email",
-        message: "请输入正确的邮箱地址",
-        trigger: ["blur", "change"]
-      }],
-      phone: [{
-        pattern: /^1[34578]\d{9}$/,
-        message: "请输入正确的手机号码",
-        trigger: "blur"
-      }],
-      sys_role: [{
-        required: true,
-        message: "请选择用户角色",
-        trigger: "change"
-      }]
-    }), defineProperty_default()(_ref, "passwordOrg", ""), defineProperty_default()(_ref, "companySelectList", []), defineProperty_default()(_ref, "departSelectList", []), defineProperty_default()(_ref, "postSelectList", []), defineProperty_default()(_ref, "userMenuList", []), _ref;
+    return {
+      conheight: {
+        height: ""
+      },
+      cwidth: 0,
+      stationList: [],
+      lineTypeList: [],
+      listSchedule: [],
+      stationlineHeight: 0,
+      stationlineTwoHeight: 0,
+      every: 0,
+      lineTypeMinMileage: 0,
+      lineTypeMaxMileage: 0,
+      lineTypeEnterMinMileage: 0,
+      lineTypeOutMinMileage: 0,
+      applyList: [],
+      progressList: [],
+      progressListItem: [],
+      progressCheckValue: 0,
+      peopleLocation: [],
+      carLocation: []
+    };
+  },
+  updated: function updated() {},
+  created: function created() {
+    this.getProjectProcessMap();
   },
   mounted: function mounted() {
-    document.querySelector("#app-menu-items #menu_admin").classList.add("is-active");
+    window.addEventListener("resize", this.initCanvas);
   },
-  created: function created() {
-    this.getCompanyLists();
-    this.getLineTypes();
-    this.getMenuLists();
-    this.getUserLists();
+  destroyed: function destroyed() {
+    window.removeEventListener("resize", this.initCanvas);
   },
 
   methods: {
-    getUserLists: function getUserLists() {
+    getProjectProcessMap: function getProjectProcessMap() {
       var _this = this;
 
-      var page = this.userPage_cur;
-      var user_name = this.userSearch.user_name;
-      var company_id = this.userSearch.company_id;
-      var depart_id = this.userSearch.depart_id;
-      var post_id = this.userSearch.post_id;
       this.request({
-        url: "/user/getUserPage",
-        method: "get",
-        params: { page: page, user_name: user_name, company_id: company_id, depart_id: depart_id, post_id: post_id }
+        url: "/monitor/getMointorDatas",
+        method: "get"
       }).then(function (response) {
         var data = response.data;
         if (data.status == 1) {
-          _this.userList = data.data.data;
-          _this.userPage_cur = parseInt(data.data.current_page);
-          _this.userPage_items = data.data.total;
-          _this.userPage_size = data.data.per_page;
-          _this.userPage_total = data.data.last_page;
+          _this.stationList = data.data.stations;
+          var linetypeJson = data.data.line_types;
+          _this.lineTypeList = linetypeJson;
+          for (var i = 0; i < linetypeJson.length; i++) {
+            if (linetypeJson[i].id == 1) {
+              _this.lineTypeMinMileage = parseInt(linetypeJson[i].start_flag) * 1000 + parseInt(linetypeJson[i].start_length);
+              _this.lineTypeMaxMileage = parseInt(linetypeJson[i].end_flag) * 1000 + parseInt(linetypeJson[i].end_length);
+            } else if (linetypeJson[i].id == 3) {
+              _this.lineTypeEnterMinMileage = parseInt(linetypeJson[i].start_flag) * 1000 + parseInt(linetypeJson[i].start_length);
+            } else if (linetypeJson[i].id == 4) {
+              _this.lineTypeOutMinMileage = parseInt(linetypeJson[i].start_flag) * 1000 + parseInt(linetypeJson[i].start_length);
+            }
+          }
+          //请点
+          _this.applyList = data.data.apply_lists;
+          _this.peopleLocation = data.data.people_location; //人员定位
+          _this.carLocation = data.data.real_location; //车辆定位
+          //施工进度
+          if (data.data.project.length > 0) {
+            _this.progressList = data.data.project;
+            _this.progressCheckValue = data.data.project[0]["name"];
+            _this.progressListItem = data.data.project[0].list;
+          }
+          _this.initCanvas();
+          //
         }
       });
     },
-    userChangePage: function userChangePage(value) {
-      this.userPage_cur = value;
-      this.getUserLists();
+    initCanvas: function initCanvas() {
+      var clientWidth = this.$refs.proWrapper.clientWidth;
+      var canvasWidth = clientWidth - 60;
+      this.cwidth = canvasWidth;
+      var lineTypeMax = this.lineTypeMaxMileage;
+      var lineTypeBetwentMileage = this.lineTypeMaxMileage - this.lineTypeMinMileage;
+      var lineTypeTotalMileage = this.lineTypeMaxMileage + this.lineTypeMinMileage;
+      this.every = (parseInt(this.cwidth) / lineTypeBetwentMileage).toFixed(5);
+      console.log("canvasWidth：" + this.cwidth + "_" + this.every);
+
+      var lineTypeMinMileage = this.lineTypeMinMileage;
+      var every = this.every; //每米长度等于px
+      // console.log("every：" + every);
+
+      var canvas = this.$refs.canvasStation;
+      var context = canvas.getContext("2d");
+      canvas.width = canvasWidth;
+      //console.log("lineTypeMinMileage：" + lineTypeMinMileage);
+      //左右线
+      function drawAxesLine(lineJson) {
+        // lineJson=[
+        //             {
+        //                 "id": 1,
+        //                 "name": "\u5de6\u7ebf",
+        //                 "start_flag": 0,
+        //                 "start_length": 257,
+        //                 "end_flag": 11,
+        //                 "end_length": 455,
+        //                 "start_total": 257,
+        //                 "end_total": 11455
+        //             },
+        //             {
+        //                 "id": 2,
+        //                 "name": "\u53f3\u7ebf",
+        //                 "start_flag": 0,
+        //                 "start_length": 257,
+        //                 "end_flag": 11,
+        //                 "end_length": 455,
+        //                 "start_total": 257,
+        //                 "end_total": 11455
+        //             },
+        //             {
+        //                 "id": 3,
+        //                 "name": "入场线",
+        //                 "start_flag": 1,
+        //                 "start_length": 804,
+        //                 "end_flag": 4,
+        //                 "end_length": 232,
+        //                 "start_total": 1804,
+        //                 "end_total": 4232
+        //             },
+        //             {
+        //                 "id": 4,
+        //                 "name": "出场线",
+        //                 "start_flag": 1,
+        //                 "start_length": 804,
+        //                 "end_flag": 4,
+        //                 "end_length": 232,
+        //                 "start_total": 1804,
+        //                 "end_total": 4232
+        //             }
+        //         ]
+
+        context.beginPath();
+        context.strokeStyle = "#fff";
+        context.fillStyle = "#fff";
+        context.font = "13px Microsoft Yahei";
+        context.lineWidth = 10;
+        var lineData = [];
+        for (var i = 0; i < lineJson.length; i++) {
+          lineData.push(lineJson[i]);
+          var tfrom = lineJson[i].name + " " + "DK" + lineJson[i].start_flag + "+" + lineJson[i].start_length,
+              tend = "DK" + lineJson[i].end_flag + "+" + lineJson[i].end_length;
+          var startLength = context.measureText(tfrom).width,
+              endLength = context.measureText(tend).width;
+          var starttotal = parseInt(lineJson[i].start_total);
+          var endtotal = parseInt(lineJson[i].end_total);
+          var startX = (starttotal - lineTypeMinMileage) * every;
+          if (lineJson[i].id == 1) {
+            context.moveTo(axis_LeftLine.x, axis_LeftLine.y);
+            context.lineTo(canvasWidth, axis_LeftLine.y);
+            context.fillText(tfrom, 30, axis_LeftLine.y + 25);
+            context.fillText(tend, canvasWidth - 75, axis_LeftLine.y + 25);
+          } else if (lineJson[i].id == 2) {
+            context.moveTo(axis_LeftLine.x, axis_LeftLine_Two.y);
+            context.lineTo(canvasWidth, axis_LeftLine_Two.y);
+            context.fillText(tfrom, 30, axis_LeftLine_Two.y + 25);
+            context.fillText(tend, canvasWidth - 75, axis_LeftLine_Two.y + 25);
+          } else if (lineJson[i].id == 3) {
+            var startZB = (starttotal - lineTypeMinMileage) * every;
+            var endZB = parseFloat((endtotal - starttotal) * every) + parseFloat(startZB);
+            context.moveTo(startZB, axis_OutLine.y);
+            context.lineTo(endZB, axis_OutLine.y);
+            //
+            var beteew = endZB - startZB;
+            if (beteew < 160) {
+              context.fillText(tfrom, startZB - 160, axis_OutLine.y + 25);
+              context.fillText(tend, endZB - 80, axis_OutLine.y + 25);
+            } else {
+              context.fillText(tfrom, startZB, axis_OutLine.y + 25);
+              context.fillText(tend, endZB - 75, axis_OutLine.y + 25);
+            }
+          } else if (lineJson[i].id == 4) {
+            var _startZB = (starttotal - lineTypeMinMileage) * every;
+            var _endZB = parseFloat((endtotal - starttotal) * every) + parseFloat(_startZB);
+            context.moveTo(_startZB, axis_OutLine_Two.y);
+            context.lineTo(_endZB, axis_OutLine_Two.y);
+            //
+            var _beteew = _endZB - _startZB;
+            if (_beteew < 160) {
+              context.fillText(tfrom, _startZB - 160, axis_OutLine_Two.y + 25);
+              context.fillText(tend, _endZB - 80, axis_OutLine_Two.y + 25);
+            } else {
+              context.fillText(tfrom, _startZB, axis_OutLine_Two.y + 25);
+              context.fillText(tend, _endZB - 75, axis_OutLine_Two.y + 25);
+            }
+          }
+        }
+        context.stroke();
+      }
+      //站点
+      function drawAxesStationList(jsonData) {
+        var json = jsonData;
+        var img = new Image();
+        img.src = __webpack_require__("JBQT");
+        img.onload = function () {
+          var start = 0;
+          for (var i = 0; i < json.length; i++) {
+            // 绘制站点图
+            var total = parseInt(json[i].start_flag) * 1000 + parseInt(json[i].start_length);
+            var startLineX = (total - lineTypeMinMileage) * every;
+            if (startLineX == 0) {
+              startLineX = axis_LeftLine.x;
+            }
+            if (i == json.length - 1) {
+              context.drawImage(img, startLineX - 15, axis_LeftLine.y - 95, 18, 90);
+              // //站名
+              context.font = "18px Microsoft Yahei";
+              context.fillStyle = "#fff";
+              var origin = json[i].name.split("");
+              context.fillText(json[i].name, startLineX - 60, axis_LeftLine.y - 120);
+              //DK
+              var codes = "DK" + json[i].start_flag + " +" + json[i].start_length;
+              context.fillStyle = "#5f88f9";
+              context.font = "12px  Microsoft Yahei";
+              context.fillText(codes, startLineX - 60, axis_LeftLine.y - 100);
+            } else {
+              context.drawImage(img, startLineX - 8, axis_LeftLine.y - 95, 18, 90);
+              // //站名
+              context.font = "18px Microsoft Yahei";
+              context.fillStyle = "#fff";
+              context.fillText(json[i].name, startLineX - 20, axis_LeftLine.y - 120);
+              //DK
+              var _codes = "DK" + json[i].start_flag + " +" + json[i].start_length;
+              context.fillStyle = "#5f88f9";
+              context.font = "12px  Microsoft Yahei";
+              context.fillText(_codes, startLineX - 20, axis_LeftLine.y - 100);
+            }
+          }
+        };
+        context.stroke();
+      }
+      //车定位
+      function drawAxesCar(jsonData) {
+        context.beginPath();
+        var jsonCar = jsonData;
+        var jsonCar1 = [{
+          id: 1,
+          name: "ZY01",
+          start_flag: 0,
+          start_length: 257,
+          line_type: 1
+        }, {
+          id: 1,
+          name: "ZY01",
+          start_flag: 7,
+          start_length: 300,
+          line_type: 2
+        }, {
+          id: 2,
+          name: "ZY02",
+          start_flag: 3,
+          start_length: 430,
+          line_type: 2
+        }];
+        var imgcar = new Image();
+        imgcar.src = __webpack_require__("1Dh/");
+        imgcar.onload = function () {
+          var start = 0;
+
+          for (var i = 0; i < jsonCar.length; i++) {
+            context.fillStyle = "#fafafa";
+            context.font = " 11px";
+            if (jsonCar[i].line_type == 1) {
+              var total = parseInt(jsonCar[i].start_flag) * 1000 + parseInt(jsonCar[i].start_length);
+              var startLineX = (total - lineTypeMinMileage) * every;
+              if (jsonCar[i].start_flag == 0) {
+                startLineX = axis_LeftLine.x;
+              }
+              context.drawImage(imgcar, startLineX, axis_LeftLine.y - 20, 100, 14);
+              //DK
+              var codes = jsonCar[i].name + " [ ZDK" + jsonCar[i].start_flag + " +" + jsonCar[i].start_length + " ]";
+              context.fillText(codes, startLineX + 18, axis_LeftLine.y - 30);
+            } else if (jsonCar[i].line_type == 2) {
+              // 绘制站点图
+              var _total = parseInt(jsonCar[i].start_flag) * 1000 + parseInt(jsonCar[i].start_length);
+              var _startLineX = (_total - lineTypeMinMileage) * every;
+              context.drawImage(imgcar, _startLineX, axis_LeftLine_Two.y - 20, 100, 14);
+              //DK
+              var _codes2 = jsonCar[i].name + " [ YDK" + jsonCar[i].start_flag + " +" + jsonCar[i].start_length + " ]";
+              context.fillText(_codes2, _startLineX + 18, axis_LeftLine_Two.y - 30);
+            } //
+          }
+        };
+        context.stroke();
+      }
+      //人定位
+      function drawAxesPeple(jsonData) {
+        var jsonPeple = jsonData;
+        var jsonPeple1 = [{
+          id: 1,
+          name: "R",
+          start_flag: 8,
+          start_length: 300,
+          line_type: 1
+        }, {
+          id: 1,
+          name: "R",
+          start_flag: 4,
+          start_length: 232,
+          line_type: 1
+        }, {
+          id: 1,
+          name: "Y",
+          start_flag: 1,
+          start_length: 300,
+          line_type: 2
+        }, {
+          id: 1,
+          name: "Y",
+          start_flag: 6,
+          start_length: 300,
+          line_type: 2
+        }];
+
+        var imgcar = new Image();
+        imgcar.src = __webpack_require__("+IES");
+        imgcar.onload = function () {
+          var start = 0;
+          context.fillStyle = "#fff ";
+          context.font = "12px  Microsoft Yahei";
+          for (var i = 0; i < jsonPeple.length; i++) {
+            if (jsonPeple[i].line_type == 1) {
+              var total = parseInt(jsonPeple[i].start_flag) * 1000 + parseInt(jsonPeple[i].start_length);
+              var startLineX = (total - lineTypeMinMileage) * every;
+              context.drawImage(imgcar, startLineX - 16, axis_LeftLine.y - 39, 36, 36);
+              //DK
+              var codes = " [ ZDK" + jsonPeple[i].start_flag + " +" + jsonPeple[i].start_length + " ]";
+
+              context.fillText(codes, startLineX + 5, axis_LeftLine.y - 39);
+            } else if (jsonPeple[i].line_type == 2) {
+              var _total2 = parseInt(jsonPeple[i].start_flag) * 1000 + parseInt(jsonPeple[i].start_length);
+              var _startLineX2 = (_total2 - lineTypeMinMileage) * every;
+              context.drawImage(imgcar, _startLineX2 - 16, axis_LeftLine_Two.y - 39, 36, 36);
+              //DK
+              var _codes3 = " [ YDK" + jsonPeple[i].start_flag + " +" + jsonPeple[i].start_length + " ]";
+              context.fillText(_codes3, _startLineX2 + 5, axis_LeftLine_Two.y - 39);
+            } //
+          }
+        };
+      }
+      //绘制请点
+      var that = this;
+      function drawAxesApply(jsonData) {
+        var json = jsonData;
+        var json1 = [{
+          line_type: 1,
+          number: "A1-2-007-1",
+          command_num: "(2020)\u5B57\u7B2C04.21-007-2",
+          description: "\u98CE\u98CE\u5149\u5149",
+          work_area: "DK0+600\u81F3DK1+804",
+          start_time: "2020-04-28 00:00:00",
+          end_time: "2020-04-28 23:59:59",
+          start_flag: "0",
+          start_length: "600",
+          end_flag: "1",
+          end_length: "804",
+          type: "A1",
+          start_total: 600,
+          end_total: 10604
+        }, {
+          line_type: 1,
+          number: "A4-2-007-1",
+          command_num: "(2020)\u5B57\u7B2C04.21-007-2",
+          description: "\u98CE\u98CE\u5149\u5149",
+          work_area: "DK4+232\u81F3DK5+245",
+          start_time: "2020-04-28 00:00:00",
+          end_time: "2020-04-28 23:59:59",
+          start_flag: "4",
+          start_length: "232",
+          end_flag: "5",
+          end_length: "245",
+          type: "A4",
+          start_total: 40232,
+          end_total: 50245
+        }, {
+          line_type: 2,
+          number: "A3-2-007-1",
+          command_num: "(2020)\u5B57\u7B2C04.21-007-2",
+          description: "\u98CE\u98CE\u5149\u5149",
+          work_area: "DK14+160\u81F3DK21+370",
+          start_time: "2020-04-28 00:00:00",
+          end_time: "2020-04-28 23:59:59",
+          start_flag: "6",
+          start_length: "736",
+          end_flag: "9",
+          end_length: "808",
+          type: "A3",
+          start_total: 14600,
+          end_total: 21370
+        }];
+        //  let clickXYApplyList = [];
+
+        var _loop = function _loop(i) {
+          var start = parseInt(json[i].start_flag) * 1000 + parseInt(json[i].start_length);
+          var end = parseInt(json[i].end_flag) * 1000 + parseInt(json[i].end_length);
+          var dksatrt = "YDK" + json[i].start_flag + " +" + json[i].start_length;
+          var dkend = "YDK" + json[i].end_flag + " +" + json[i].end_length;
+          var startX = (start - lineTypeMinMileage) * every;
+          if (parseInt(json[i].start_flag) == 0) {
+            startX = startX + axis_LeftLine.x;
+          }
+          var endX = (end - lineTypeMinMileage) * every;
+          var centerX = (endX + startX) / 2; //开始结束平均值
+
+          //  startX=startX+axis_LeftLine.x;
+          console.log("startX：" + startX);
+
+          var desc = json[i].type;
+          context.lineWidth = 2;
+          //context.fillStyle = "#ffff00";
+          // context.strokeStyle = "#ffff00";
+          if (json[i].type == "A1") {
+            context.fillStyle = "#f14e0e";
+            context.strokeStyle = "#f14e0e";
+          } else if (json[i].type == "A2") {
+            context.fillStyle = "#fd7510";
+            context.strokeStyle = "#fd7510";
+          } else if (json[i].type == "A3") {
+            context.fillStyle = "#fda328";
+            context.strokeStyle = "#fda328";
+          } else if (json[i].type == "A4") {
+            context.fillStyle = "#f2c136";
+            context.strokeStyle = "#f2c136";
+          }
+          context.beginPath();
+          if (json[i].line_type == 1) {
+            //画水平直线
+            context.fillRect(startX, axis_Applay.y - 8, 2, 15);
+            context.fillRect(endX, axis_Applay.y - 8, 2, 15);
+            context.moveTo(startX, axis_Applay.y);
+            context.lineTo(endX + 1, axis_Applay.y);
+            //文字
+            //context.fillRect(centerX - 29, axis_Applay.y - 55, 60, 54);
+            applyClickXY.push({
+              x: centerX - 29,
+              y: axis_Applay.y - 55,
+              w: 60,
+              h: 54,
+              i: json[i]
+            });
+
+            var img = new Image();
+            img.src = __webpack_require__("nDGB")("./" + desc + ".png");
+            img.onload = function () {
+              context.drawImage(img, centerX - 29, axis_Applay.y - 56, 60, 54);
+            };
+          } else if (json[i].line_type == 2) {
+            //画水平直线
+            context.fillRect(startX, axis_Applay_two.y - 8, 2, 15);
+            context.fillRect(endX, axis_Applay_two.y - 8, 2, 15);
+            context.moveTo(startX, axis_Applay_two.y);
+            context.lineTo(endX + 1, axis_Applay_two.y);
+            //文字
+            applyClickXY.push({
+              x: centerX - 29,
+              y: axis_Applay_two.y - 55,
+              w: 60,
+              h: 54,
+              i: json[i]
+            });
+            var _img = new Image();
+            _img.src = __webpack_require__("nDGB")("./" + desc + ".png");
+            _img.onload = function () {
+              context.drawImage(_img, centerX - 29, axis_Applay_two.y - 56, 60, 54);
+            };
+          }
+          context.stroke();
+          //
+        };
+
+        for (var i = 0; i < json.length; i++) {
+          _loop(i);
+        }
+        canvas.onclick = function (event) {
+          var x = event.pageX - canvas.getBoundingClientRect().left;
+          var y = event.pageY - canvas.getBoundingClientRect().top;
+
+          console.log("X：" + x + "_" + y);
+          //console.log("clickXY：" + JSON.stringify(applyClickXY));
+          var _iteratorNormalCompletion = true;
+          var _didIteratorError = false;
+          var _iteratorError = undefined;
+
+          try {
+            for (var _iterator = get_iterator_default()(applyClickXY), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+              var item = _step.value;
+
+              if (x >= item.x && x <= item.x + item.w && y >= item.y && y <= item.y + item.h) {
+                var infos = item.i;
+                that.$confirm("<p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>作业编号：</span>" + infos.number + "</p><p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>作业令号</span>：" + infos.command_num + "</p>" + "<p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>开始时间：</span>" + infos.start_time + "</p><p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>结束时间：</span>" + infos.end_time + "</p>" + "<p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>施工区间：</span>" + infos.work_area + "</p><p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>施工内容：</span>" + infos.description + "</p>", {
+                  distinguishCancelAndClose: true,
+                  dangerouslyUseHTMLString: true,
+                  showCancelButton: false,
+                  showConfirmButton: false
+                }).catch(function () {});
+                break;
+              }
+            }
+          } catch (err) {
+            _didIteratorError = true;
+            _iteratorError = err;
+          } finally {
+            try {
+              if (!_iteratorNormalCompletion && _iterator.return) {
+                _iterator.return();
+              }
+            } finally {
+              if (_didIteratorError) {
+                throw _iteratorError;
+              }
+            }
+          }
+        };
+      }
+      //绘制施工进度
+      function drawProgressAxis(sprogressListJson) {
+        var json = sprogressListJson;
+        console.log(sprogressListJson);
+        var json1 = [{
+          id: 233,
+          pro_id: 110,
+          pro_name: "\u6D4B\u8BD52",
+          line_type: 1,
+          start_flag: "0",
+          start_length: "257",
+          end_flag: "0",
+          end_length: "300",
+          line: "\u5DE6\u7EBF"
+        }];
+        for (var i = 0; i < json.length; i++) {
+          if (json[i].start_flag != null) {
+            var start = parseInt(json[i].start_flag) * 1000 + parseInt(json[i].start_length);
+            var end = parseInt(json[i].end_flag) * 1000 + parseInt(json[i].end_length);
+
+            var _startX = axis_LeftLine.x + (start - lineTypeMinMileage) * every;
+            var _endX = axis_LeftLine.x + (end - lineTypeMinMileage) * every;
+            // console.log(
+            //   "startX：" + startX + " endX：" + endX + "_" + lineTypeMinMileage
+            // );
+            context.lineWidth = 10;
+            context.strokeStyle = "#27DB07";
+            context.beginPath();
+            if (json[i].line_type == 1) {
+              context.moveTo(_startX, axis_LeftLine.y);
+              context.lineTo(_endX + 1, axis_LeftLine.y);
+            } else if (json[i].line_type == 2) {
+              context.moveTo(_startX, axis_LeftLine_Two.y);
+              context.lineTo(_endX + 1, axis_LeftLine_Two.y);
+            } else if (json[i].line_type == 3) {
+              if (start == 0) {
+                _startX = 0;
+                _endX = end * everys;
+              }
+              context.moveTo(_startX, axis_OutLine.y);
+              context.lineTo(_endX + 1, axis_OutLine.y);
+            } else if (json[i].line_type == 4) {
+              if (start == 0) {
+                _startX = 0;
+                _endX = end * everys;
+              }
+              context.moveTo(_startX, axis_OutLine_Two.y);
+              context.lineTo(_endX + 1, axis_OutLine_Two.y);
+            }
+            context.stroke();
+          }
+          //
+        }
+      }
+      //
+      drawAxesLine(this.lineTypeList);
+      drawAxesStationList(this.stationList);
+      //施工进度
+      if (this.progressCheckValue) {
+        drawProgressAxis(this.progressListItem);
+      }
+      drawAxesCar(this.carLocation);
+      drawAxesPeple(this.peopleLocation);
+      //作业
+      //  if (this.applyList.length > 0) {
+      drawAxesApply(this.applyList);
+      //   }
     },
-    userFirstPage: function userFirstPage() {
-      this.userPage_cur = 1;
-      this.getUserLists();
-    },
-    userLastPage: function userLastPage() {
-      this.userPage_cur = this.userPage_total;
-      this.getUserLists();
-    },
-    userSearchPage: function userSearchPage() {
-      this.userPage_cur = 1;
-      this.getUserLists();
-    },
-    resetSerach: function resetSerach() {
-      this.userSearch = {
-        user_name: "",
-        company_id: "",
-        depart_id: "",
-        post_id: ""
-      };
-      this.departSelectList = [];
-      this.postSelectList = [];
-      this.userPage_cur = 1;
-      this.getUserLists();
-    },
-    openAddUser: function openAddUser() {
+    progressCheckSelect: function progressCheckSelect(val) {
       var _this2 = this;
 
-      this.userData = {
-        menus: [],
-        sys_role: 3
-      };
-      this.userDialogVisible = true;
-      this.userDialogTitle = "添加人员信息";
-      this.$nextTick(function () {
-        _this2.$refs["userRulesForm"].clearValidate();
-      });
-    },
-    changeSysrole: function changeSysrole(val) {
-      if (val == 3) {
-        this.userData.menus = [];
-      }
-    },
-    addUser: function addUser() {
-      var _this3 = this;
-
-      this.$refs["userRulesForm"].validate(function (valid) {
-        if (valid) {
-          var data = _this3.userData;
-          var menuArr = data.menus;
-          console.log(menuArr);
-          if (menuArr.includes("9") && menuArr.includes("14")) {
-            _this3.$message({
-              type: "error",
-              message: "施工队长和总工程师不能同时选择"
-            });
-            return false;
-          }
-          var url = "/user/addUser";
-          var baseid = _this3.userData.id;
-
-          if (typeof baseid != "undefined") {
-            url = "/user/editUser";
-            var pwdEdit = _this3.userData.passwordEdit;
-            if (pwdEdit != "" && typeof pwdEdit != "undefined") {
-              _this3.userData.password = pwdEdit;
-            } else {
-              _this3.userData.password = "";
-            }
-          }
-          _this3.request({
-            url: url,
-            method: "post",
-            data: data
-          }).then(function (response) {
-            var data = response.data;
-            if (data.status == 1) {
-              _this3.userDialogVisible = false;
-              _this3.userData.passwordEdit = "";
-              _this3.$message({
-                type: "success",
-                message: "保存成功！"
-              });
-              _this3.getUserLists();
-            }
-          });
+      this.progressList.map(function (item) {
+        if (item.name == val) {
+          _this2.progressListItem = item.list;
         }
       });
-    },
-    detailUser: function detailUser(id) {
-      var _this4 = this;
-
-      this.userDialogTitle = "修改人员信息";
-      this.userDialogVisible = true;
-      this.$nextTick(function () {
-        _this4.$refs["userRulesForm"].clearValidate();
-      });
-      this.request({
-        url: "/user/getUserDetial",
-        method: "get",
-        params: { id: id }
-      }).then(function (response) {
-        var data = response.data;
-        if (data.status == 1) {
-          _this4.userData = data.data;
-          if (data.data.menus != "") {
-            _this4.userData.menus = data.data.menus.split(",");
-          } else {
-            _this4.userData.menus = [];
-          }
-
-          console.log(_this4.userData.menus);
-          _this4.passwordOrg = data.data.password;
-          _this4.getDepartListEdit(data.data.company_id); //部门
-          _this4.getPostListEdit(data.data.depart_id); //职位
-        }
-      });
-    },
-    delUser: function delUser(id) {
-      var _this5 = this;
-
-      this.$confirm("您确定要删除？删除后不能恢复！", "提示", {
-        confirmButtonText: "确定",
-        cancelButtonText: "取消",
-        type: "warning",
-        customClass: "el-message-box-new"
-      }).then(function () {
-        _this5.request({
-          url: "/user/deleteUser",
-          method: "post",
-          data: { id: id }
-        }).then(function (res) {
-          var data = res.data;
-          if (data.status == 1) {
-            _this5.$message({
-              type: "success",
-              message: "删除成功！"
-            });
-            _this5.getUserLists();
-          }
-        });
-      }).catch(function () {});
-    },
-
-    //公司 部门 职位
-    getCompanyLists: function getCompanyLists() {
-      var _this6 = this;
-
-      this.request({
-        url: "/company/getDepartLists",
-        method: "get",
-        params: { pid: 0, type: 1 }
-      }).then(function (response) {
-        var data = response.data;
-        if (data.status == 1) {
-          _this6.companySelectList = data.data;
-        }
-      });
-    },
-    getDepartLists: function getDepartLists(val) {
-      var _this7 = this;
-
-      // debugger;
-      if (this.userSearch.company_id != "") {
-        this.$set(this.userData, "depart_id", "");
-        this.$set(this.userData, "post_id", "");
-        this.$set(this.userSearch, "depart_id", "");
-        this.$set(this.userSearch, "post_id", "");
-        this.request({
-          url: "/company/getDepartLists",
-          method: "get",
-          params: { pid: val, type: 2 }
-        }).then(function (response) {
-          var data = response.data;
-          if (data.status == 1) {
-            _this7.departSelectList = data.data;
-          }
-        });
-      } else {
-        this.userSearch.depart_id = "";
-        this.departSelectList = [];
-      }
-    },
-    getDepartListsClear: function getDepartListsClear() {
-      this.getPostLists(-1);
-      this.userSearch.post_id = "";
-      this.postSelectList = [];
-    },
-    getPostLists: function getPostLists(val) {
-      var _this8 = this;
-
-      this.$set(this.userData, "post_id", "");
-      this.$set(this.userSearch, "post_id", "");
-      this.request({
-        url: "/company/getDepartLists",
-        method: "get",
-        params: { pid: val, type: 3 }
-      }).then(function (response) {
-        var data = response.data;
-        if (data.status == 1) {
-          _this8.postSelectList = data.data;
-        }
-      });
-    },
-    getPostListsClear: function getPostListsClear() {
-      this.getPostLists(-1);
-      this.postSelectList = [];
-    },
-    getDepartListEdit: function getDepartListEdit(val) {
-      var _this9 = this;
-
-      this.request({
-        url: "/company/getDepartLists",
-        method: "get",
-        params: { pid: val, type: 2 }
-      }).then(function (response) {
-        var data = response.data;
-        if (data.status == 1) {
-          _this9.departSelectList = data.data;
-        }
-      });
-    },
-    getPostListEdit: function getPostListEdit(val) {
-      var _this10 = this;
-
-      this.request({
-        url: "/company/getDepartLists",
-        method: "get",
-        params: { pid: val, type: 3 }
-      }).then(function (response) {
-        var data = response.data;
-        if (data.status == 1) {
-          _this10.postSelectList = data.data;
-        }
-      });
-    },
-    getLineTypes: function getLineTypes() {
-      var _this11 = this;
-
-      this.request({
-        url: "/common/getLineType",
-        method: "get"
-      }).then(function (res) {
-        var data = res.data;
-        if (data.status == 1) {
-          _this11.userMenuList1 = data.data;
-        }
-      });
-    },
-    getMenuLists: function getMenuLists() {
-      var _this12 = this;
-
-      this.request({
-        url: "/user/getMenuLists",
-        method: "get"
-      }).then(function (response) {
-        var data = response.data;
-        if (data.status == 1) {
-          _this12.userMenuList = data.data;
-        }
-      });
-    },
-    selectUuserMenu: function selectUuserMenu(val) {
-      //alert(val);
-      if (val == 14) {}
-    },
-
-    //上传图片
-    uploadExceed: function uploadExceed() {
-      this.$message({
-        type: "warning",
-        message: "\u6700\u591A\u53EF\u4EE5\u4E0A\u4F205\u5F20\u56FE\u7247"
-      });
-    },
-    uploadSuccess: function uploadSuccess(res, file) {
-      console.log("图上传成功", res);
-      // this.$set(this.userData, "avatar", "http://129.211.168.161/uploads/home/20200518/df6578d3a9da5e8d5431b22ea04aa37e.png");
-      this.$set(this.userData, "avatar", res.data.url);
-    },
-    uploadBefore: function uploadBefore(file) {
-      var filename = file.name.substring(file.name.lastIndexOf(".") + 1);
-      var extension = filename === "GIF" || filename === "gif" || filename === "jpeg" || filename === "jpg" || filename === "JPG" || filename === "png" || filename === "PNG";
-      var isLtM = file.size / 1024 / 1024 < 2;
-      if (!extension) {
-        this.$message({
-          message: "上传图片只能是 jpg  png  gif 格式",
-          type: "error"
-        });
-        return false; //必须加上return false; 才能阻止
-      }
-      if (!isLtM) {
-        this.$message({
-          message: "上传图片大小不能超过 2MB",
-          type: "error"
-        });
-        return false;
-      }
-      return extension || isLtM;
+      this.initCanvas();
     }
-    //
-
   }
-  //
+  //进度
 });
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-76bb46ce","hasScoped":false,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/views/admin/userlist.vue
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"admins"}},[_c('div',{staticClass:"el-menu-top"},[_c('el-menu',{attrs:{"router":"","default-active":"userlist","mode":"horizontal"}},[_c('li',{staticClass:"ptitle"},[_c('img',{attrs:{"src":__webpack_require__("xX+s")}}),_vm._v("人员管理\n      ")]),_vm._v(" "),_c('el-menu-item',{attrs:{"index":"admin"}},[_vm._v("公司列表")]),_vm._v(" "),_c('el-menu-item',{attrs:{"index":"departlist"}},[_vm._v("部门列表")]),_vm._v(" "),_c('el-menu-item',{attrs:{"index":"postlist"}},[_vm._v("职位列表")]),_vm._v(" "),_c('el-menu-item',{attrs:{"index":"userlist"},on:{"click":_vm.userFirstPage}},[_vm._v("人员列表")])],1)],1),_vm._v(" "),_c('div',{staticClass:"app-page"},[_c('div',{staticClass:"app-page-container"},[_c('div',{staticClass:"app-page-select"},[_c('el-form',{ref:"userSearch",attrs:{"inline":true}},[_c('el-form-item',{staticClass:"form-add-item"},[_c('el-button',{attrs:{"type":"primary","icon":"el-icon-plus"},on:{"click":_vm.openAddUser}},[_vm._v("添加人员")])],1),_vm._v(" "),_c('el-form-item',{attrs:{"label":"姓名"}},[_c('el-input',{attrs:{"autocomplete":"off","placeholder":"请输入姓名","maxlength":"30","clearable":""},model:{value:(_vm.userSearch.user_name),callback:function ($$v) {_vm.$set(_vm.userSearch, "user_name", $$v)},expression:"userSearch.user_name"}})],1),_vm._v(" "),_c('el-form-item',{attrs:{"label":"公司"}},[_c('el-select',{attrs:{"placeholder":"请选择公司","clearable":""},on:{"change":function($event){return _vm.getDepartLists($event)},"clear":_vm.getDepartListsClear},model:{value:(_vm.userSearch.company_id),callback:function ($$v) {_vm.$set(_vm.userSearch, "company_id", $$v)},expression:"userSearch.company_id"}},_vm._l((this.companySelectList),function(item){return _c('el-option',{key:item.id,attrs:{"label":item.name,"value":item.id}})}),1)],1),_vm._v(" "),_c('el-form-item',{attrs:{"label":"部门"}},[_c('el-select',{attrs:{"placeholder":"请选择部门","clearable":""},on:{"change":function($event){return _vm.getPostLists($event)},"clear":_vm.getPostListsClear},model:{value:(_vm.userSearch.depart_id),callback:function ($$v) {_vm.$set(_vm.userSearch, "depart_id", $$v)},expression:"userSearch.depart_id"}},_vm._l((this.departSelectList),function(item){return _c('el-option',{key:item.id,attrs:{"label":item.name,"value":item.id}})}),1)],1),_vm._v(" "),_c('el-form-item',{attrs:{"label":"职位"}},[_c('el-select',{attrs:{"placeholder":"请选择职位","clearable":""},model:{value:(_vm.userSearch.post_id),callback:function ($$v) {_vm.$set(_vm.userSearch, "post_id", $$v)},expression:"userSearch.post_id"}},_vm._l((this.postSelectList),function(item){return _c('el-option',{key:item.id,attrs:{"label":item.name,"value":item.id}})}),1)],1),_vm._v(" "),_c('el-form-item',{staticClass:"form-so"},[_c('label',{staticClass:"el-form-item__label"}),_vm._v(" "),_c('el-button',{attrs:{"size":"small","icon":"el-icon-search","type":"primary"},on:{"click":_vm.getUserLists}},[_vm._v("查询")]),_vm._v(" "),_c('el-button',{attrs:{"size":"small","plain":""},on:{"click":_vm.resetSerach}},[_vm._v("重置")])],1)],1)],1),_vm._v(" "),_c('div',{staticClass:"app-table"},[_c('el-table',{attrs:{"data":_vm.userList}},[_c('el-table-column',{attrs:{"label":"序号","width":"100"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_c('span',[_vm._v(_vm._s(scope.$index+(_vm.userPage_cur - 1) * _vm.userPage_size + 1))])]}}])}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"user_name","label":"用户名"}}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"name","label":"姓名"}}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"company","label":"公司"}}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"depart","label":"部门"}}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"post","label":"职位"}}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"email","label":"邮箱"}}),_vm._v(" "),_c('el-table-column',{attrs:{"prop":"phone","label":"电话"}}),_vm._v(" "),_c('el-table-column',{attrs:{"label":"操作","width":"120"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_c('div',{staticClass:"app-operation"},[_c('el-button',{staticClass:"btn-blue",attrs:{"size":"mini"},on:{"click":function($event){return _vm.detailUser(scope.row.id)}}},[_vm._v("修改")]),_vm._v(" "),_c('el-button',{staticClass:"btn-red",attrs:{"size":"mini"},on:{"click":function($event){return _vm.delUser(scope.row.id)}}},[_vm._v("删除")])],1)]}}])})],1),_vm._v(" "),_c('div',{staticClass:"app-pagination"},[(_vm.userList.length !== 0)?_c('el-pagination',{staticClass:"pagination",attrs:{"layout":"slot,prev, pager, next,slot,total","page-size":_vm.userPage_size,"current-page":this.userPage_cur,"total":this.userPage_items,"prev-text":"上一页","next-text":"下一页"},on:{"current-change":_vm.userChangePage}},[_c('button',{staticClass:"btn-first",attrs:{"type":"button"},on:{"click":_vm.userFirstPage}},[_c('span',[_vm._v("首页")])]),_vm._v(" "),_c('button',{staticClass:"btn-last",attrs:{"type":"button"},on:{"click":_vm.userLastPage}},[_c('span',[_vm._v("尾页")])])]):_vm._e()],1)],1),_vm._v(" "),_c('el-dialog',{staticClass:"dialog-users",attrs:{"width":"780px","title":this.userDialogTitle,"close-on-click-modal":false,"visible":_vm.userDialogVisible},on:{"update:visible":function($event){_vm.userDialogVisible=$event}}},[_c('el-form',{ref:"userRulesForm",staticClass:"el-form-custom",attrs:{"inline":true,"model":_vm.userData,"rules":_vm.userAddRules}},[_c('div',{staticClass:"el-form-item-inlinessddd"},[(this.userDialogTitle=='添加人员信息')?_c('el-form-item',{staticClass:"newitem",attrs:{"label":"用户名：","prop":"user_name"}},[_c('el-input',{attrs:{"show-word-limit":""},model:{value:(_vm.userData.user_name),callback:function ($$v) {_vm.$set(_vm.userData, "user_name", $$v)},expression:"userData.user_name"}})],1):_vm._e(),_vm._v(" "),_c('el-form-item',{staticClass:"newitem",attrs:{"label":"姓名：","prop":"name"}},[_c('el-input',{attrs:{"autocomplete":"off"},model:{value:(_vm.userData.name),callback:function ($$v) {_vm.$set(_vm.userData, "name", $$v)},expression:"userData.name"}})],1),_vm._v(" "),_c('el-form-item',{staticClass:"newitem",attrs:{"label":"公司名称：","prop":"company_id"}},[_c('el-select',{on:{"change":function($event){return _vm.getDepartLists($event)}},model:{value:(_vm.userData.company_id),callback:function ($$v) {_vm.$set(_vm.userData, "company_id", $$v)},expression:"userData.company_id"}},_vm._l((this.companySelectList),function(item){return _c('el-option',{key:item.id,attrs:{"label":item.name,"value":item.id}})}),1)],1),_vm._v(" "),(this.userDialogTitle=='添加人员信息')?_c('el-form-item',{staticClass:"newitem",attrs:{"label":"密码：","prop":"password"}},[_c('el-input',{attrs:{"autocomplete":"off"},model:{value:(_vm.userData.password),callback:function ($$v) {_vm.$set(_vm.userData, "password", $$v)},expression:"userData.password"}})],1):_vm._e(),_vm._v(" "),(this.userDialogTitle=='修改人员信息')?_c('el-form-item',{staticClass:"newitem",attrs:{"label":"密码：","prop":"passwordEdit"}},[_c('el-input',{attrs:{"autocomplete":"off","placeholder":"不修改密码请留空"},model:{value:(_vm.userData.passwordEdit),callback:function ($$v) {_vm.$set(_vm.userData, "passwordEdit", $$v)},expression:"userData.passwordEdit"}})],1):_vm._e(),_vm._v(" "),_c('el-form-item',{staticClass:"newitem",attrs:{"label":"部门名称：","prop":"depart_id"}},[_c('el-select',{on:{"change":function($event){return _vm.getPostLists($event)}},model:{value:(_vm.userData.depart_id),callback:function ($$v) {_vm.$set(_vm.userData, "depart_id", $$v)},expression:"userData.depart_id"}},_vm._l((this.departSelectList),function(item){return _c('el-option',{key:item.id,attrs:{"label":item.name,"value":item.id}})}),1)],1),_vm._v(" "),_c('el-form-item',{staticClass:"newitem",attrs:{"label":"邮箱：","prop":"email"}},[_c('el-input',{attrs:{"autocomplete":"off"},model:{value:(_vm.userData.email),callback:function ($$v) {_vm.$set(_vm.userData, "email", $$v)},expression:"userData.email"}})],1),_vm._v(" "),_c('el-form-item',{staticClass:"newitem",attrs:{"label":"职位名称：","prop":"post_id"}},[_c('el-select',{model:{value:(_vm.userData.post_id),callback:function ($$v) {_vm.$set(_vm.userData, "post_id", $$v)},expression:"userData.post_id"}},_vm._l((this.postSelectList),function(item){return _c('el-option',{key:item.id,attrs:{"label":item.name,"value":item.id}})}),1)],1),_vm._v(" "),_c('el-form-item',{staticClass:"newitem",attrs:{"label":"手机号码：","prop":"phone"}},[_c('el-input',{attrs:{"autocomplete":"off"},model:{value:(_vm.userData.phone),callback:function ($$v) {_vm.$set(_vm.userData, "phone", $$v)},expression:"userData.phone"}})],1),_vm._v(" "),_c('el-form-item',{staticStyle:{"width":"100%"},attrs:{"label":"头像上传："}},[_c('el-upload',{ref:"uploadfive",staticClass:"avatar-uploader",attrs:{"action":_vm.uploadAction,"auto-upload":true,"on-exceed":_vm.uploadExceed,"before-upload":_vm.uploadBefore,"on-success":_vm.uploadSuccess,"show-file-list":false}},[(_vm.userData.avatar)?_c('img',{staticClass:"avatar",attrs:{"src":_vm.userData.avatar}}):_c('i',{staticClass:"el-icon-plus avatar-uploader-icon"})])],1),_vm._v(" "),_c('el-form-item',{attrs:{"label":"用户角色：","prop":"sys_role"}},[_c('el-radio-group',{on:{"change":function($event){return _vm.changeSysrole($event)}},model:{value:(_vm.userData.sys_role),callback:function ($$v) {_vm.$set(_vm.userData, "sys_role", $$v)},expression:"userData.sys_role"}},[_c('el-radio',{attrs:{"label":3}},[_vm._v("普通用户")]),_vm._v(" "),_c('el-radio',{attrs:{"label":1}},[_vm._v("管理员")]),_vm._v(" "),_c('el-radio',{attrs:{"label":2}},[_vm._v("业主方")])],1)],1),_vm._v(" "),_c('el-form-item',{directives:[{name:"show",rawName:"v-show",value:(_vm.userData.sys_role==3),expression:"userData.sys_role==3"}],staticClass:"checkbox-group",attrs:{"label":"用户职责："}},[_c('el-checkbox-group',{on:{"change":_vm.selectUuserMenu},model:{value:(_vm.userData.menus),callback:function ($$v) {_vm.$set(_vm.userData, "menus", $$v)},expression:"userData.menus"}},_vm._l((_vm.userMenuList),function(item){return _c('el-checkbox',{key:item.id,attrs:{"label":item.id+''}},[_vm._v(_vm._s(item.name))])}),1)],1)],1)]),_vm._v(" "),_c('div',{staticClass:"dialog-footer",attrs:{"slot":"footer"},slot:"footer"},[_c('el-button',{on:{"click":function($event){_vm.userDialogVisible = false}}},[_vm._v("取 消")]),_vm._v(" "),_c('el-button',{attrs:{"type":"primary"},on:{"click":_vm.addUser}},[_vm._v("确 定")])],1)],1)],1)])])}
+
+//prototype
+CanvasRenderingContext2D.prototype.fillTextVertical = function (text, x, y) {
+  var context = this;
+  var canvas = context.canvas;
+
+  var arrText = text.split("");
+  var arrWidth = arrText.map(function (letter) {
+    return context.measureText(letter).width;
+  });
+
+  var align = context.textAlign;
+  var baseline = context.textBaseline;
+
+  if (align == "left") {
+    x = x + Math.max.apply(null, arrWidth) / 2;
+  } else if (align == "right") {
+    x = x - Math.max.apply(null, arrWidth) / 2;
+  }
+  if (baseline == "bottom" || baseline == "alphabetic" || baseline == "ideographic") {
+    y = y - arrWidth[0] / 2;
+  } else if (baseline == "top" || baseline == "hanging") {
+    y = y + arrWidth[0] / 2;
+  }
+
+  context.textAlign = "center";
+  context.textBaseline = "middle";
+
+  // 开始逐字绘制
+  arrText.forEach(function (letter, index) {
+    // 确定下一个字符的纵坐标位置
+    var letterWidth = arrWidth[index];
+    // 是否需要旋转判断
+    var code = letter.charCodeAt(0);
+    if (code <= 256) {
+      context.translate(x, y);
+      // 英文字符，旋转90°
+      context.rotate(90 * Math.PI / 180);
+      context.translate(-x, -y);
+    } else if (index > 0 && text.charCodeAt(index - 1) < 256) {
+      // y修正
+      y = y + arrWidth[index - 1] / 2;
+    }
+    context.fillText(letter, x, y);
+    // 旋转坐标系还原成初始态
+    context.setTransform(1, 0, 0, 1, 0, 0);
+    // 确定下一个字符的纵坐标位置
+    var letterWidth = arrWidth[index];
+    y = y + letterWidth;
+  });
+  // 水平垂直对齐方式还原
+  context.textAlign = align;
+  context.textBaseline = baseline;
+};
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-671ef8cb","hasScoped":false,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/views/monitor/indexmini.vue
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"proWrapper",style:(_vm.conheight),attrs:{"id":"minprogress"}},[_c('div',{staticClass:"minprogress"},[_c('div',{staticStyle:{"display":"bolock","padding-top":"15px","padding-left":"15px"}},[_c('router-link',{staticClass:"rlink",staticStyle:{"color":"#fff"},attrs:{"to":"/monitor/"}},[_vm._v("返回")])],1),_vm._v(" "),_c('div',{staticClass:"station"},[_c('canvas',{ref:"canvasStation",attrs:{"id":"canvasStation","height":"650"}},[_c('p',[_vm._v("您的系统不支持此程序!")])])]),_vm._v(" "),(this.progressCheckValue != '')?_c('div',{staticClass:"progresslist"},[_c('span',{staticClass:"namess"},[_vm._v("施工进度：")]),_vm._v(" "),_c('el-radio-group',{on:{"change":_vm.progressCheckSelect},model:{value:(_vm.progressCheckValue),callback:function ($$v) {_vm.progressCheckValue=$$v},expression:"progressCheckValue"}},_vm._l((_vm.progressList),function(item){return _c('el-radio',{key:item.name,attrs:{"label":item.name}},[_vm._v(_vm._s(item.name))])}),1)],1):_vm._e()])])}
 var staticRenderFns = []
 var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ var admin_userlist = (esExports);
-// CONCATENATED MODULE: ./src/views/admin/userlist.vue
+/* harmony default export */ var monitor_indexmini = (esExports);
+// CONCATENATED MODULE: ./src/views/monitor/indexmini.vue
 function injectStyle (ssrContext) {
-  __webpack_require__("n5tl")
+  __webpack_require__("la6P")
 }
 var normalizeComponent = __webpack_require__("VU/8")
 /* script */
@@ -742,30 +766,30 @@ var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
-  userlist,
-  admin_userlist,
+  indexmini,
+  monitor_indexmini,
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
   __vue_module_identifier__
 )
 
-/* harmony default export */ var views_admin_userlist = __webpack_exports__["default"] = (Component.exports);
+/* harmony default export */ var views_monitor_indexmini = __webpack_exports__["default"] = (Component.exports);
 
 
 /***/ }),
 
-/***/ "n5tl":
+/***/ "la6P":
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__("0ldE");
+var content = __webpack_require__("CisK");
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__("rjj0")("3f52b64f", content, true);
+var update = __webpack_require__("rjj0")("43262bb6", content, true);
 
 /***/ })
 
