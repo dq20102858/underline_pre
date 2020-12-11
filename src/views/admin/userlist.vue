@@ -90,7 +90,6 @@
             <el-table-column prop="post" label="职位"></el-table-column>
             <el-table-column prop="email" label="邮箱"></el-table-column>
             <el-table-column prop="phone" label="电话"></el-table-column>
-            <!-- <el-table-column prop="dispatch_desc" label="调度信息"></el-table-column> -->
             <el-table-column label="操作" width="120">
               <template slot-scope="scope">
                 <div class="app-operation">

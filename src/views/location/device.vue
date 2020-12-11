@@ -17,26 +17,45 @@
         <div class="app-page-select">
           <el-form :inline="true">
             <el-form-item>
-              <el-button type="primary" icon="el-icon-plus" @click="addDialogInfo">添加机具</el-button>
+              <el-button
+                type="primary"
+                icon="el-icon-plus"
+                @click="addDialogInfo"
+                >添加机具</el-button
+              >
             </el-form-item>
           </el-form>
         </div>
         <div class="app-table">
           <el-table :data="dataList">
-             <el-table-column label="序号" width="100">
+            <el-table-column label="序号" width="100">
               <template slot-scope="scope">
-                <span>{{scope.$index+(page_cur - 1) * page_size + 1}}</span>
+                <span>{{ scope.$index + (page_cur - 1) * page_size + 1 }}</span>
               </template>
             </el-table-column>
             <el-table-column prop="name" label="名称"></el-table-column>
             <el-table-column prop="type" label="类型"></el-table-column>
-            <el-table-column prop="description" label="详情" show-overflow-tooltip></el-table-column>
+            <el-table-column
+              prop="description"
+              label="详情"
+              show-overflow-tooltip
+            ></el-table-column>
             <el-table-column prop="company" label="公司名称"></el-table-column>
             <el-table-column label="操作" width="120">
               <template slot-scope="scope">
                 <div class="app-operation">
-                  <el-button class="btn-blue" size="mini" @click="goEdit(scope.row.id)">修改</el-button>
-                  <el-button class="btn-red" size="mini" @click="goDel(scope.row.id)">删除</el-button>
+                  <el-button
+                    class="btn-blue"
+                    size="mini"
+                    @click="goEdit(scope.row.id)"
+                    >修改</el-button
+                  >
+                  <el-button
+                    class="btn-red"
+                    size="mini"
+                    @click="goDel(scope.row.id)"
+                    >删除</el-button
+                  >
                 </div>
               </template>
             </el-table-column>
@@ -72,9 +91,18 @@
       :title="this.diaLogTitle"
       :visible.sync="diaLogFormVisible"
     >
-      <el-form class="el-form-custom" :model="deviceData" :rules="deviceRules" ref="deviceRulesRef">
+      <el-form
+        class="el-form-custom"
+        :model="deviceData"
+        :rules="deviceRules"
+        ref="deviceRulesRef"
+      >
         <el-form-item label="公司名称：" prop="depart_id">
-          <el-select v-model="deviceData.depart_id" placeholder="请选择公司" clearable>
+          <el-select
+            v-model="deviceData.depart_id"
+            placeholder="请选择公司"
+            clearable
+          >
             <el-option
               v-for="item in companyList"
               :key="item.id"
@@ -84,7 +112,12 @@
           </el-select>
         </el-form-item>
         <el-form-item label="机具名称：" prop="name">
-          <el-input v-model="deviceData.name" autocomplete="off" maxlength="20" show-word-limit></el-input>
+          <el-input
+            v-model="deviceData.name"
+            autocomplete="off"
+            maxlength="20"
+            show-word-limit
+          ></el-input>
         </el-form-item>
         <el-form-item label="机具类型：" prop="type">
           <el-select v-model="deviceData.type" placeholder="请选择">
@@ -92,10 +125,16 @@
             <el-option label="小平板车" :value="3"></el-option>
             <el-option label="梯车" :value="4"></el-option>
             <el-option label="梯子" :value="5"></el-option>
+            <el-option label="机械设备" :value="6"></el-option>
           </el-select>
         </el-form-item>
         <el-form-item label="详情：" prop="description">
-          <el-input type="textarea" v-model="deviceData.description" maxlength="50" show-word-limit></el-input>
+          <el-input
+            type="textarea"
+            v-model="deviceData.description"
+            maxlength="50"
+            show-word-limit
+          ></el-input>
         </el-form-item>
         <div class="blank"></div>
       </el-form>
@@ -116,30 +155,30 @@ export default {
       deviceData: {},
       deviceRules: {
         depart_id: [
-          { required: true, message: "请选择公司", trigger: "change" }
+          { required: true, message: "请选择公司", trigger: "change" },
         ],
         name: [
           {
             required: true,
             message: "请输入机具名称2~20个字符",
-            trigger: "blur"
+            trigger: "blur",
           },
           { min: 2, max: 20, message: "长度在2到20个字符", trigger: "blur" },
           {
             pattern: /(^\S+).*(\S+$)/,
             message: "开始和结尾不能有空格",
-            trigger: "blur"
-          }
+            trigger: "blur",
+          },
         ],
         description: [
-          { min: 0, max: 50, message: "长度在0到50个字符", trigger: "blur" }
-        ]
+          { min: 0, max: 50, message: "长度在0到50个字符", trigger: "blur" },
+        ],
       },
       page_cur: 1,
       pageTotal: 0,
       page_size: 20,
       page_total: 0,
-      dataList: []
+      dataList: [],
     };
   },
   mounted() {
@@ -155,8 +194,8 @@ export default {
     getCompanyList() {
       this.request({
         url: "/apply/getCompanyLists",
-        method: "get"
-      }).then(res => {
+        method: "get",
+      }).then((res) => {
         let data = res.data;
         if (data.status == 1) {
           this.companyList = data.data;
@@ -169,9 +208,9 @@ export default {
         url: "/location/getDevicePages",
         method: "get",
         params: {
-          page
-        }
-      }).then(res => {
+          page,
+        },
+      }).then((res) => {
         let data = res.data;
         if (data.status == 1) {
           this.dataList = data.data.data;
@@ -197,7 +236,7 @@ export default {
       this.deviceData = {
         depart_id: "",
         name: "",
-        description: ""
+        description: "",
       };
       this.diaLogTitle = "添加机具信息";
       this.diaLogFormVisible = true;
@@ -206,7 +245,7 @@ export default {
       });
     },
     addOrEditDialog() {
-      this.$refs["deviceRulesRef"].validate(valid => {
+      this.$refs["deviceRulesRef"].validate((valid) => {
         if (valid) {
           let data = this.deviceData;
           if (this.deviceData.description == "") {
@@ -215,19 +254,19 @@ export default {
           this.request({
             url: "/location/addOrEditDevice",
             method: "post",
-            data
-          }).then(response => {
+            data,
+          }).then((response) => {
             var data = response.data;
             if (data.status == 1) {
               this.diaLogFormVisible = false;
               this.$message({
                 type: "success",
-                message: "保存成功！"
+                message: "保存成功！",
               });
               this.getDataList();
             }
           });
-         } else {
+        } else {
           console.log("操作失败！");
           return false;
         }
@@ -242,8 +281,8 @@ export default {
       this.request({
         url: "/location/getDevice",
         method: "get",
-        params: { id }
-      }).then(response => {
+        params: { id },
+      }).then((response) => {
         let data = response.data;
         if (data.status == 1) {
           this.deviceData = data.data;
@@ -259,28 +298,28 @@ export default {
         confirmButtonText: "确定",
         cancelButtonText: "取消",
         type: "warning",
-        customClass: "el-message-box-new"
+        customClass: "el-message-box-new",
       })
         .then(() => {
           this.request({
             url: "/location/deleteDevice",
             method: "post",
-            data: { id: id }
-          }).then(res => {
+            data: { id: id },
+          }).then((res) => {
             let data = res.data;
             if (data.status == 1) {
               this.$message({
                 type: "success",
-                message: "删除成功！"
+                message: "删除成功！",
               });
               this.getDataList();
             }
           });
         })
         .catch(() => {});
-    }
+    },
     //
-  }
+  },
 };
 </script>
 <style >
