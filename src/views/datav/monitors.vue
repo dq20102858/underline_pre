@@ -19,9 +19,9 @@
           color="#ffd980"
           :stroke-width="10"
         ></el-progress>
-         <div class="anum">110/<em>110</em></div>
+        <div class="anum">110/<em>110</em></div>
       </div>
-       <div class="progress-txt">进场人数/<em>总人数</em></div>
+      <div class="progress-txt">进场人数/<em>总人数</em></div>
       <div class="progress-item">
         <div class="atxt">离场人数</div>
         <el-progress
@@ -29,7 +29,7 @@
           color="#26da06"
           :stroke-width="10"
         ></el-progress>
-         <div class="anum">0/<em>110</em></div>
+        <div class="anum">0/<em>110</em></div>
       </div>
       <div class="progress-txt">离场人数/<em>总人数</em></div>
       <div class="progress-item">
@@ -39,6 +39,7 @@
           color="#2e92ff"
           :stroke-width="10"
         ></el-progress>
+         <div class="anum">0/<em>110</em></div>
       </div>
       <div class="progress-txt">安全帽/<em>总人数</em></div>
       <div class="progress-item">
@@ -48,7 +49,7 @@
           color="#6be0e3"
           :stroke-width="10"
         ></el-progress>
-         <div class="anum">20/<em>40</em></div>
+        <div class="anum">20/<em>40</em></div>
       </div>
       <div class="progress-txt">反光背心/<em>总人数</em></div>
     </div>
@@ -58,15 +59,38 @@
 export default {
   name: "Monitors",
   data() {
-    return {};
+    return {
+      counts: [
+        {
+          a: 1,
+          b: 2,
+        },
+        {
+          a: 1,
+          b: 2,
+        },
+        {
+          a: 1,
+          b: 2,
+        },
+        {
+          a: 20,
+          z: 40,
+        },
+        {
+          a: 20,
+          z: 40,
+        },
+      ],
+    };
   },
   created() {},
   methods: {
     getCompanyList() {
       this.request({
         url: "/apply/getCompanyLists",
-        method: "get"
-      }).then(res => {
+        method: "get",
+      }).then((res) => {
         let data = res.data;
         if (data.status == 1) {
           this.companyList = data.data;
@@ -79,9 +103,9 @@ export default {
         url: "/location/getDevicePages",
         method: "get",
         params: {
-          page
-        }
-      }).then(res => {
+          page,
+        },
+      }).then((res) => {
         let data = res.data;
         if (data.status == 1) {
           this.dataList = data.data.data;
@@ -91,14 +115,15 @@ export default {
           this.page_total = data.data.last_page;
         }
       });
-    }
+    },
     //
-  }
+  },
 };
 </script>
 
 <style>
-#monitors {  width: 50%;
+#monitors {
+  width: 50%;
   position: relative;
 }
 #monitors .el-progress-bar__outer {
@@ -117,12 +142,12 @@ export default {
 }
 .progress-txt {
   font-size: 12px;
- text-align: right;
- display: block;
- margin-bottom: 12px;
- padding-top: 5px;
+  text-align: right;
+  display: block;
+  margin-bottom: 12px;
+  padding-top: 5px;
 }
-.progress-txt  em {
+.progress-txt em {
   color: #00d9ff;
 }
 .progress-item .anum {
