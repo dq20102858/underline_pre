@@ -1505,12 +1505,13 @@ export default {
       //人定位
       function drawAxesPeple(jsonData) {
         let start = 0;
-        context.fillStyle = "#fff ";
-        context.font = "12px  Microsoft Yahei";
+
         for (let i = 0; i < jsonData.length; i++) {
           if (jsonData[i].line_type == 1) {
             let imgcar = new Image();
-               imgcar.src = require("@/assets/image/ding"+jsonData[i].type+".png");
+            imgcar.src = require("@/assets/image/ding" +
+              jsonData[i].type +
+              ".png");
             imgcar.onload = function () {
               let total =
                 parseInt(jsonData[i].start_flag) * 1000 +
@@ -1532,7 +1533,8 @@ export default {
                 " +" +
                 jsonData[i].start_length +
                 " ]";
-
+              context.fillStyle = "#fff ";
+              context.font = "12px  Microsoft Yahei";
               context.fillText(
                 codes,
                 startLineX + offsetX + 20,
@@ -1541,7 +1543,9 @@ export default {
             };
           } else if (jsonData[i].line_type == 2) {
             let imgcar = new Image();
-            imgcar.src = require("@/assets/image/ding"+jsonData[i].type+".png");
+            imgcar.src = require("@/assets/image/ding" +
+              jsonData[i].type +
+              ".png");
             imgcar.onload = function () {
               let total =
                 parseInt(jsonData[i].start_flag) * 1000 +
@@ -1563,6 +1567,8 @@ export default {
                 " +" +
                 jsonData[i].start_length +
                 " ]";
+              context.fillStyle = "#fff ";
+              context.font = "12px  Microsoft Yahei";
               context.fillText(
                 codes,
                 startLineX + offsetX + 20,
