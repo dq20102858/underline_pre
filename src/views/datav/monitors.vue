@@ -5,7 +5,7 @@
       <div class="progress-item">
         <div class="atxt">请点单位</div>
         <el-progress
-          :percentage="11.3"
+          :percentage="60"
           color="#fe5a27"
           :stroke-width="10"
         ></el-progress>
@@ -15,7 +15,7 @@
       <div class="progress-item">
         <div class="atxt">进场人数</div>
         <el-progress
-          :percentage="43"
+          :percentage="100"
           color="#ffd980"
           :stroke-width="10"
         ></el-progress>
@@ -25,7 +25,7 @@
       <div class="progress-item">
         <div class="atxt">离场人数</div>
         <el-progress
-          :percentage="50"
+          :percentage="0"
           color="#26da06"
           :stroke-width="10"
         ></el-progress>
@@ -35,7 +35,7 @@
       <div class="progress-item">
         <div class="atxt">&nbsp;&nbsp;&nbsp;&nbsp;安全帽</div>
         <el-progress
-          :percentage="50"
+          :percentage="0"
           color="#2e92ff"
           :stroke-width="10"
         ></el-progress>
