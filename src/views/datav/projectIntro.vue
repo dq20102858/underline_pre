@@ -1,12 +1,19 @@
 <template>
   <div id="project-intro">
     <div class="intro-box">
-      <div class="datav-ptitle" ><h3>工程概况</h3></div>
-      <div class="intro-info">
-        <el-scrollbar style="height:100%">
-         无锡地铁4号线一期工程轨道系统施工工程项目01标段施工内容包括正线、配线、场段线及与在建3号线的联络线（从3号线岔心后66.043m为4号线施工范围）的轨道工程。正线刘潭站至西园弄站（含），共8站7区间，里程为DK0+257.300～DK11+455.670，正线及配线双线长度25.054km,含单开道岔11组，交叉渡线3组；场段线包括天河停车场及其出入场线,铺轨长度5.403km,含单开道岔14组，交叉渡线1组。
-主要施工内容包括轨道系统设备及材料的供货、运输、安装、测试、试验、交验、试运行、试运营、缺陷责任期内的工程缺陷修复等。</el-scrollbar
-        >
+      <div class="datav-ptitle"><h3>工程概况</h3></div>
+      <div id="scroll" class="intro-info">
+        <div id="inner1">
+          <!-- <el-scrollbar style="height:100%"> -->
+          <p>
+            无锡地铁4号线一期工程轨道系统施工工程项目01标段施工内容包括正线、配线、场段线及与在建3号线的联络线（从3号线岔心后66.043m为4号线施工范围）的轨道工程。正线刘潭站至西园弄站（含），共8站7区间，里程为DK0+257.300～DK11+455.670，正线及配线双线长度25.054km,含单开道岔11组，交叉渡线3组；场段线包括天河停车场及其出入场线,铺轨长度5.403km,含单开道岔14组，交叉渡线1组。
+          </p>
+          <p>
+            主要施工内容包括轨道系统设备及材料的供货、运输、安装、测试、试验、交验、试运行、试运营、缺陷责任期内的工程缺陷修复等。
+          </p>
+          <!-- </el-scrollbar> -->
+        </div>
+        <div id="inner2"></div>
       </div>
       <div class="datav-ptitle"><h3>参建单位</h3></div>
       <div class="intro-item">
@@ -29,11 +36,11 @@
         <div class="dname4">盛岸站</div>
         <div class="v-dot5"><i></i></div>
         <div class="dname5">惠山古镇站</div>
-        <div class="dot dot6"><i></i></div>
+        <div class="v-dot6"><i></i></div>
         <div class="dname6">青山湾荣院站</div>
-        <div class="dot dot7"><i></i></div>
+        <div class="v-dot7"><i></i></div>
         <div class="dname7">河埒口站</div>
-        <div class="dot dot8"><i></i></div>
+        <div class="v-dot8"><i></i></div>
         <div class="dname8">西园弄站</div>
         <div class="dot dot9"><i></i></div>
         <div class="dname9">体育中心站</div>
@@ -65,13 +72,15 @@ export default {
   data() {
     return {};
   },
-  created() {},
+  mounted() {
+    this.srcollTxt();
+  },
   methods: {
     getCompanyList() {
       this.request({
         url: "/apply/getCompanyLists",
-        method: "get"
-      }).then(res => {
+        method: "get",
+      }).then((res) => {
         let data = res.data;
         if (data.status == 1) {
           this.companyList = data.data;
@@ -84,9 +93,9 @@ export default {
         url: "/location/getDevicePages",
         method: "get",
         params: {
-          page
-        }
-      }).then(res => {
+          page,
+        },
+      }).then((res) => {
         let data = res.data;
         if (data.status == 1) {
           this.dataList = data.data.data;
@@ -96,9 +105,30 @@ export default {
           this.page_total = data.data.last_page;
         }
       });
-    }
+    },
+    srcollTxt() {
+      var _scroll = document.getElementById("scroll"),
+        _inner1 = document.getElementById("inner1"),
+        _inner2 = document.getElementById("inner2"),
+        speed =50;
+      _inner2.innerHTML = _inner1.innerHTML;
+      function marquee() {
+        if (_inner1.offsetHeight <= _scroll.scrollTop) {
+          _scroll.scrollTop = 0;
+        } else {
+          _scroll.scrollTop++;
+        }
+      }
+      var interval = setInterval(marquee, speed);
+      _scroll.onmouseover = function () {
+        clearInterval(interval);
+      };
+      _scroll.onmouseout = function () {
+        interval = setInterval(marquee, speed);
+      };
+    },
     //
-  }
+  },
 };
 </script>
 
@@ -115,12 +145,12 @@ export default {
   flex: 1;
 }
 .intro-info {
-  height: 40%;
-  overflow: hidden;
+  height: 300px;
   margin: 15px 30px;
   background: rgba(8, 19, 87, 0.6);
   padding: 15px;
   line-height: 1.8;
+  overflow: hidden;
 }
 .intro-item {
   overflow: hidden;
@@ -385,6 +415,63 @@ export default {
   border-radius: 50%;
 }
 .v-dot5:before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  opacity: 0.7;
+  background-color: #ffff00;
+  animation: scaless 1s infinite cubic-bezier(0, 0, 0.49, 1.02);
+}
+.v-dot6 {
+  top: 220px;
+  left: 95px;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #ffff00;
+  border-radius: 50%;
+}
+.v-dot6:before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  opacity: 0.7;
+  background-color: #ffff00;
+  animation: scaless 1s infinite cubic-bezier(0, 0, 0.49, 1.02);
+}
+.v-dot7 {
+  top: 260px;
+  left: 70px;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #ffff00;
+  border-radius: 50%;
+}
+.v-dot7:before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  opacity: 0.7;
+  background-color: #ffff00;
+  animation: scaless 1s infinite cubic-bezier(0, 0, 0.49, 1.02);
+}
+.v-dot8 {
+  top: 300px;
+  left: 69px;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #ffff00;
+  border-radius: 50%;
+}
+.v-dot8:before {
   content: "";
   display: block;
   width: 10px;

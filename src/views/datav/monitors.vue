@@ -3,7 +3,7 @@
     <div class="datav-ptitle"><h3>实时监测</h3></div>
     <div class="datav-list">
       <div class="progress-item">
-        <div class="atxt">请点人员</div>
+        <div class="atxt">请点单位</div>
         <el-progress
           :percentage="11.3"
           color="#fe5a27"
@@ -11,7 +11,7 @@
         ></el-progress>
         <div class="anum">15/<em>170</em></div>
       </div>
-      <div class="progress-txt">请点人员/<em>总人数</em></div>
+      <div class="progress-txt">请点单位/<em>总人数</em></div>
       <div class="progress-item">
         <div class="atxt">进场人数</div>
         <el-progress
