@@ -32,11 +32,11 @@
         <div class="dname2">广石路</div>
         <div class="dot dot3"><i></i></div>
         <div class="dname3">黄巷站</div>
-        <div class="dot dot4"><i></i></div>
+        <div class="v-dot4"><i></i></div>
         <div class="dname4">盛岸站</div>
         <div class="v-dot5"><i></i></div>
         <div class="dname5">惠山古镇站</div>
-        <div class="v-dot6"><i></i></div>
+        <div class="dot dot6"><i></i></div>
         <div class="dname6">青山湾荣院站</div>
         <div class="v-dot7"><i></i></div>
         <div class="dname7">河埒口站</div>
@@ -396,6 +396,25 @@ export default {
   border-radius: 50%;
 }
 .v-dot2:before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  opacity: 0.7;
+  background-color: #ffff00;
+  animation: scaless 1s infinite cubic-bezier(0, 0, 0.49, 1.02);
+}
+.v-dot4 {
+   top: 136px;
+  left: 100px;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #ffff00;
+  border-radius: 50%;
+}
+.v-dot4:before {
   content: "";
   display: block;
   width: 10px;
