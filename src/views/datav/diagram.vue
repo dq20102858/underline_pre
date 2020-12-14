@@ -8,7 +8,7 @@
     </div>
     <div class="check-lists">
       <span class="namess">显示图形：</span>
-      <el-checkbox
+      <!-- <el-checkbox
         class="bridgechk"
         v-model="bridgeCheckValue"
         @change="bridgeCheckSelect"
@@ -19,13 +19,8 @@
         v-model="tunnelCheckValue"
         @change="tunnelCheckSelect"
         label="隧道"
-      ></el-checkbox>
-      <!-- <el-checkbox
-          class="speedchk"
-          v-model="speedCheckValue"
-          @change="speedCheckSelect"
-          label="限速区"
-        ></el-checkbox>-->
+      ></el-checkbox> -->
+
       <el-checkbox
         class="alertchk"
         v-model="alertCheckValue"
@@ -33,12 +28,12 @@
         label="防区"
       ></el-checkbox>
       <!-- <el-checkbox v-model="checked5" label="道岔" border></el-checkbox> -->
-      <el-checkbox
+      <!-- <el-checkbox
         class="slopechk"
         v-model="slopeCheckValue"
         @change="slopeCheckSelect"
         label="坡度"
-      ></el-checkbox>
+      ></el-checkbox> -->
       <el-checkbox
         class="daocchk"
         v-model="daocCheckValue"
@@ -418,16 +413,17 @@ export default {
         context.fillStyle = "#fff ";
         context.font = "10px  Microsoft Yahei";
         for (let i = 0; i < jsoPeple.length; i++) {
+          let total =
+            parseInt(jsoPeple[i].start_flag) * 1000 +
+            parseInt(jsoPeple[i].start_length);
+          let startLineX = (total - lineTypeMinMileage) * everys;
+
           if (jsoPeple[i].line_type == 1) {
             let imgcar = new Image();
             imgcar.src = require("@/assets/image/ding" +
               jsonData[i].type +
               ".png");
             imgcar.onload = function () {
-              let total =
-                parseInt(jsoPeple[i].start_flag) * 1000 +
-                parseInt(jsoPeple[i].start_length);
-              let startLineX = (total - lineTypeMinMileage) * everys;
               context.drawImage(
                 imgcar,
                 startLineX,
@@ -445,6 +441,24 @@ export default {
                 jsoPeple[i].start_length +
                 " ]";
               context.fillText(codes, startLineX + 5, axis_LeftLine.y - 28);
+
+              //  anvas.onclick = function (e) {
+              //   //给canvas添加点击事件
+              //   e = e || event; //获取事件对象
+              //   //获取事件在canvas中发生的位置
+              //   var x = e.clientX - canvas.offsetLeft;
+              //   var y = e.clientY - canvas.offsetTop;
+              //     alert(x+'_'+y+'_'+startLineX);
+              //   //如果bai事件位置在矩形区域中
+              //   if (
+              //     x >= startLineX.x &&
+              //     x <= startLineX.x +20 &&
+              //     y >= startLineX.y &&
+              //     y <= startLineX.y +20
+              //   ) {
+              //     alert("链接地址");
+              //   }
+              // };
             };
           } else if (jsoPeple[i].line_type == 2) {
             let imgcar = new Image();
@@ -452,10 +466,6 @@ export default {
               jsonData[i].type +
               ".png");
             imgcar.onload = function () {
-              let total =
-                parseInt(jsoPeple[i].start_flag) * 1000 +
-                parseInt(jsoPeple[i].start_length);
-              let startLineX = (total - lineTypeMinMileage) * everys;
               context.drawImage(
                 imgcar,
                 startLineX - 1,
@@ -463,7 +473,7 @@ export default {
                 20,
                 20
               );
-              //DK 
+              //DK
               let codes =
                 "[ " +
                 jsoPeple[i].name +
@@ -897,16 +907,17 @@ export default {
       if (this.speedCheckValue) {
         drawSpeedAxis(this.speedList);
       }
-      //施工路段
-      if (this.buildCheckValue) {
-        drawBuildAxis(this.buildList);
-      }
       //防区
       if (this.alertList.length > 0) {
         if (this.alertCheckValue) {
           drawAlertAxis(this.alertList);
         }
       }
+      //施工路段
+      if (this.buildCheckValue) {
+        drawBuildAxis(this.buildList);
+      }
+
       //施工进度
       // if (this.progressCheckValue) {
       //   drawProgressAxis(this.progressListItem);

@@ -47,7 +47,7 @@
       </div>
       <div class="check-list">
         <span class="namess">显示图形：</span>
-        <!-- <el-checkbox
+        <el-checkbox
           class="bridgechk"
           v-model="bridgeCheckValue"
           @change="bridgeCheckSelect"
@@ -58,7 +58,13 @@
           v-model="tunnelCheckValue"
           @change="tunnelCheckSelect"
           label="隧道"
-        ></el-checkbox> -->
+        ></el-checkbox>
+        <!-- <el-checkbox
+          class="speedchk"
+          v-model="speedCheckValue"
+          @change="speedCheckSelect"
+          label="限速区"
+        ></el-checkbox>-->
         <el-checkbox
           class="alertchk"
           v-model="alertCheckValue"
@@ -66,12 +72,12 @@
           label="防区"
         ></el-checkbox>
         <!-- <el-checkbox v-model="checked5" label="道岔" border></el-checkbox> -->
-        <!-- <el-checkbox
+        <el-checkbox
           class="slopechk"
           v-model="slopeCheckValue"
           @change="slopeCheckSelect"
           label="坡度"
-        ></el-checkbox> -->
+        ></el-checkbox>
         <el-checkbox
           class="daocchk"
           v-model="daocCheckValue"
@@ -1593,18 +1599,18 @@ export default {
           drawAlertAxis(this.alertList);
         }
       }
-      // //桥
-      // if (this.bridgeCheckValue) {
-      //   drawBridgeAxis(this.bridgeList);
-      // }
-      // //隧道
-      // if (this.tunnelCheckValue) {
-      //   drawTunnelAxis(this.tunnelList);
-      // }
-      // //坡度
-      // if (this.slopeCheckValue) {
-      //   drawSlopeAxis(this.slopeList);
-      // }
+      //桥
+      if (this.bridgeCheckValue) {
+        drawBridgeAxis(this.bridgeList);
+      }
+      //隧道
+      if (this.tunnelCheckValue) {
+        drawTunnelAxis(this.tunnelList);
+      }
+      //坡度
+      if (this.slopeCheckValue) {
+        drawSlopeAxis(this.slopeList);
+      }
       //作业
       // if (this.applyList.length > 0) {
       drawAxesApply(this.applyList);

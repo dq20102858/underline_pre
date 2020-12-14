@@ -9,9 +9,9 @@
           color="#fe5a27"
           :stroke-width="10"
         ></el-progress>
-        <div class="anum">15/<em>170</em></div>
+        <div class="anum">6/<em>10</em></div>
       </div>
-      <div class="progress-txt">请点单位/<em>总人数</em></div>
+      <div class="progress-txt">进场单位/<em>总数</em></div>
       <div class="progress-item">
         <div class="atxt">进场人数</div>
         <el-progress
@@ -19,7 +19,7 @@
           color="#ffd980"
           :stroke-width="10"
         ></el-progress>
-         <div class="anum">10/<em>23</em></div>
+         <div class="anum">110/<em>110</em></div>
       </div>
        <div class="progress-txt">进场人数/<em>总人数</em></div>
       <div class="progress-item">
@@ -29,7 +29,7 @@
           color="#26da06"
           :stroke-width="10"
         ></el-progress>
-         <div class="anum">15/<em>30</em></div>
+         <div class="anum">0/<em>110</em></div>
       </div>
       <div class="progress-txt">离场人数/<em>总人数</em></div>
       <div class="progress-item">
