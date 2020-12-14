@@ -289,13 +289,13 @@ export default {
               // //站名
               context.font = "12px Microsoft Yahei";
               context.fillStyle = "#fff";
-              context.fillText(json[i].name, startLineX-70, 15);
+              context.fillText(json[i].name, startLineX - 70, 15);
               //DK
               let codes =
                 "DK" + json[i].start_flag + " +" + json[i].start_length;
               context.fillStyle = "#5f88f9";
               context.font = "12px  Microsoft Yahei";
-              context.fillText(codes, startLineX-70, 30);
+              context.fillText(codes, startLineX - 70, 30);
             } else {
               context.drawImage(img, startLineX - 5, 35, 12, 30);
               // //站名
@@ -413,14 +413,17 @@ export default {
             line_type: 2,
           },
         ];
-        let imgcar = new Image();
-        imgcar.src = require("@/assets/image/m_apply.png");
-        imgcar.onload = function () {
-          let start = 0;
-          context.fillStyle = "#fff ";
-          context.font = "10px  Microsoft Yahei";
-          for (let i = 0; i < jsoPeple.length; i++) {
-            if (jsoPeple[i].line_type == 1) {
+
+        let start = 0;
+        context.fillStyle = "#fff ";
+        context.font = "10px  Microsoft Yahei";
+        for (let i = 0; i < jsoPeple.length; i++) {
+          if (jsoPeple[i].line_type == 1) {
+            let imgcar = new Image();
+            imgcar.src = require("@/assets/image/ding" +
+              jsonData[i].type +
+              ".png");
+            imgcar.onload = function () {
               let total =
                 parseInt(jsoPeple[i].start_flag) * 1000 +
                 parseInt(jsoPeple[i].start_length);
@@ -442,14 +445,20 @@ export default {
                 jsoPeple[i].start_length +
                 " ]";
               context.fillText(codes, startLineX + 5, axis_LeftLine.y - 28);
-            } else if (jsoPeple[i].line_type == 2) {
+            };
+          } else if (jsoPeple[i].line_type == 2) {
+            let imgcar = new Image();
+            imgcar.src = require("@/assets/image/ding" +
+              jsonData[i].type +
+              ".png");
+            imgcar.onload = function () {
               let total =
                 parseInt(jsoPeple[i].start_flag) * 1000 +
                 parseInt(jsoPeple[i].start_length);
               let startLineX = (total - lineTypeMinMileage) * everys;
               context.drawImage(
                 imgcar,
-                startLineX - 16,
+                startLineX - 1,
                 axis_LeftLine_Two.y - 25,
                 20,
                 20
@@ -464,9 +473,9 @@ export default {
                 jsoPeple[i].start_length +
                 " ]";
               context.fillText(codes, startLineX + 5, axis_LeftLine_Two.y - 28);
-            } //
+            }; //
           }
-        };
+        }
       }
       //绘制道岔
       function drawDaocha() {

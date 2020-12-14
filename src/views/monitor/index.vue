@@ -551,7 +551,7 @@ export default {
                 "DK" + json[i].start_flag + " +" + json[i].start_length;
               context.fillStyle = "#0AE39A";
               context.font = "14px Microsoft Yahei";
-              context.fillText(codes, startX +20, 52);
+              context.fillText(codes, startX + 20, 52);
             } else {
               //站名
               context.font = "bold 20px Microsoft Yahei";
@@ -1504,14 +1504,14 @@ export default {
       }
       //人定位
       function drawAxesPeple(jsonData) {
-        let imgcar = new Image();
-        imgcar.src = require("@/assets/image/m_apply.png");
-        imgcar.onload = function () {
-          let start = 0;
-          context.fillStyle = "#fff ";
-          context.font = "12px  Microsoft Yahei";
-          for (let i = 0; i < jsonData.length; i++) {
-            if (jsonData[i].line_type == 1) {
+        let start = 0;
+        context.fillStyle = "#fff ";
+        context.font = "12px  Microsoft Yahei";
+        for (let i = 0; i < jsonData.length; i++) {
+          if (jsonData[i].line_type == 1) {
+            let imgcar = new Image();
+               imgcar.src = require("@/assets/image/ding"+jsonData[i].type+".png");
+            imgcar.onload = function () {
               let total =
                 parseInt(jsonData[i].start_flag) * 1000 +
                 parseInt(jsonData[i].start_length);
@@ -1519,9 +1519,9 @@ export default {
               context.drawImage(
                 imgcar,
                 startLineX + offsetX,
-                axis_LeftLine.y - 40,
-                36,
-                36
+                axis_LeftLine.y - 35,
+                30,
+                30
               );
               //DK
               let codes =
@@ -1538,7 +1538,11 @@ export default {
                 startLineX + offsetX + 20,
                 axis_LeftLine.y - 35
               );
-            } else if (jsonData[i].line_type == 2) {
+            };
+          } else if (jsonData[i].line_type == 2) {
+            let imgcar = new Image();
+            imgcar.src = require("@/assets/image/ding"+jsonData[i].type+".png");
+            imgcar.onload = function () {
               let total =
                 parseInt(jsonData[i].start_flag) * 1000 +
                 parseInt(jsonData[i].start_length);
@@ -1546,9 +1550,9 @@ export default {
               context.drawImage(
                 imgcar,
                 startLineX + offsetX,
-                axis_LeftLine_Two.y - 40,
-                36,
-                36
+                axis_LeftLine_Two.y - 35,
+                30,
+                30
               );
               //DK
               let codes =
@@ -1564,9 +1568,9 @@ export default {
                 startLineX + offsetX + 20,
                 axis_LeftLine_Two.y - 35
               );
-            } //
+            }; //
           }
-        };
+        }
       }
       //============================
       //画地铁站
