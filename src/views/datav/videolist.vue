@@ -45,13 +45,16 @@ export default {
 
 <style>
 #videobox {
-  width: 99%;
-  height: 99%;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+ 
 }
 #videobox iframe {
+  margin: 0 auto;
   border: none;
-  height: 100%;
-  width: 100%;
+  height:90%;
+  width: 90%;
 }
 #videolist {
   margin: 10px 20px;

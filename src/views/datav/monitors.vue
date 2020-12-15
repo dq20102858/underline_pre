@@ -45,11 +45,11 @@
       <div class="progress-item">
         <div class="atxt">反光背心</div>
         <el-progress
-          :percentage="50"
+          :percentage="0"
           color="#6be0e3"
           :stroke-width="10"
         ></el-progress>
-        <div class="anum">20/<em>40</em></div>
+        <div class="anum">0/<em>110</em></div>
       </div>
       <div class="progress-txt">反光背心/<em>总人数</em></div>
     </div>

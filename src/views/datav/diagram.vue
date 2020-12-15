@@ -103,7 +103,7 @@ let axis_Applay_two = {
   x: 30,
   y: axis_Height - 330,
 };
-let applyClickXY = [];
+let locationPush = [];
 export default {
   data() {
     return {
@@ -392,23 +392,6 @@ export default {
       //人定位
       function drawAxesPeple(jsonData) {
         let jsoPeple = jsonData;
-        let jsoPeple1 = [
-          {
-            id: 1,
-            name: "R",
-            start_flag: 1,
-            start_length: 804,
-            line_type: 1,
-          },
-          {
-            id: 1,
-            name: "Y",
-            start_flag: 4,
-            start_length: 232,
-            line_type: 2,
-          },
-        ];
-
         let start = 0;
         context.fillStyle = "#fff ";
         context.font = "10px  Microsoft Yahei";
@@ -417,7 +400,14 @@ export default {
             parseInt(jsoPeple[i].start_flag) * 1000 +
             parseInt(jsoPeple[i].start_length);
           let startLineX = (total - lineTypeMinMileage) * everys;
-
+          let codes =
+            "[ " +
+            jsoPeple[i].name +
+            " ZDK" +
+            jsoPeple[i].start_flag +
+            " +" +
+            jsoPeple[i].start_length +
+            " ]";
           if (jsoPeple[i].line_type == 1) {
             let imgcar = new Image();
             imgcar.src = require("@/assets/image/ding" +
@@ -432,34 +422,15 @@ export default {
                 20
               );
               //DK
-              let codes =
-                "[ " +
-                jsoPeple[i].name +
-                " ZDK" +
-                jsoPeple[i].start_flag +
-                " +" +
-                jsoPeple[i].start_length +
-                " ]";
-              context.fillText(codes, startLineX + 5, axis_LeftLine.y - 28);
-
-              //  anvas.onclick = function (e) {
-              //   //给canvas添加点击事件
-              //   e = e || event; //获取事件对象
-              //   //获取事件在canvas中发生的位置
-              //   var x = e.clientX - canvas.offsetLeft;
-              //   var y = e.clientY - canvas.offsetTop;
-              //     alert(x+'_'+y+'_'+startLineX);
-              //   //如果bai事件位置在矩形区域中
-              //   if (
-              //     x >= startLineX.x &&
-              //     x <= startLineX.x +20 &&
-              //     y >= startLineX.y &&
-              //     y <= startLineX.y +20
-              //   ) {
-              //     alert("链接地址");
-              //   }
-              // };
+              //context.fillText(codes, startLineX + 5, axis_LeftLine.y - 28);
             };
+            locationPush.push({
+              x: startLineX + 5,
+              y: axis_LeftLine.y - 28,
+              w: 20,
+              h: 20,
+              text: codes,
+            });
           } else if (jsoPeple[i].line_type == 2) {
             let imgcar = new Image();
             imgcar.src = require("@/assets/image/ding" +
@@ -474,19 +445,52 @@ export default {
                 20
               );
               //DK
-              let codes =
-                "[ " +
-                jsoPeple[i].name +
-                " YDK" +
-                jsoPeple[i].start_flag +
-                " +" +
-                jsoPeple[i].start_length +
-                " ]";
-              context.fillText(codes, startLineX + 5, axis_LeftLine_Two.y - 28);
+              //context.fillText(codes, startLineX + 5, axis_LeftLine_Two.y - 28);
             }; //
+            locationPush.push({
+              x: startLineX + 5,
+              y: axis_LeftLine_Two.y - 28,
+              w: 20,
+              h: 20,
+              text: codes,
+            });
           }
         }
       }
+      canvas.onclick = function (event) {
+        var x = event.pageX - canvas.getBoundingClientRect().left;
+        var y = event.pageY - canvas.getBoundingClientRect().top;
+        //console.log("X：" + x + "_" + y);
+        //debugger;
+        //console.log(applyClickXY);
+        for (let item of locationPush) {
+          if (
+            x >= item.x &&
+            x <= item.x + item.w &&
+            y >= item.y &&
+            y <= item.y + item.h
+          ) {
+            that.$message({
+              showClose: true,
+              dangerouslyUseHTMLString: true,
+              message: item.text,
+            });
+            // that.$confirm(
+            //     "<p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>作业编号：</span>" +
+            //       infos+
+            //       "</p>",
+            //     {
+            //       distinguishCancelAndClose: true,
+            //       dangerouslyUseHTMLString: true,
+            //       showCancelButton: false,
+            //       showConfirmButton: false,
+            //     }
+            //   )
+            //   .catch(() => {});
+            break;
+          }
+        }
+      };
       //绘制道岔
       function drawDaocha() {
         let json = [
@@ -654,252 +658,7 @@ export default {
           //
         }
       }
-      //绘制请点
-      function drawAxesApply(jsonData) {
-        let json = jsonData;
-        let json1 = [
-          {
-            line_type: 1,
-            number: "A1-2-007-1",
-            command_num: "(2020)\u5b57\u7b2c04.21-007-2",
-            description: "\u98ce\u98ce\u5149\u5149",
-            work_area: "DK0+600\u81f3DK1+804",
-            start_time: "2020-04-28 00:00:00",
-            end_time: "2020-04-28 23:59:59",
-            start_flag: "0",
-            start_length: "600",
-            end_flag: "1",
-            end_length: "804",
-            type: "A1",
-            start_total: 600,
-            end_total: 10604,
-          },
-          {
-            line_type: 1,
-            number: "A4-2-007-1",
-            command_num: "(2020)\u5b57\u7b2c04.21-007-2",
-            description: "\u98ce\u98ce\u5149\u5149",
-            work_area: "DK4+232\u81f3DK5+245",
-            start_time: "2020-04-28 00:00:00",
-            end_time: "2020-04-28 23:59:59",
-            start_flag: "4",
-            start_length: "232",
-            end_flag: "5",
-            end_length: "245",
-            type: "A4",
-            start_total: 40232,
-            end_total: 50245,
-          },
 
-          {
-            line_type: 2,
-            number: "A3-2-007-1",
-            command_num: "(2020)\u5b57\u7b2c04.21-007-2",
-            description: "\u98ce\u98ce\u5149\u5149",
-            work_area: "DK14+160\u81f3DK21+370",
-            start_time: "2020-04-28 00:00:00",
-            end_time: "2020-04-28 23:59:59",
-            start_flag: "6",
-            start_length: "736",
-            end_flag: "9",
-            end_length: "808",
-            type: "A3",
-            start_total: 14600,
-            end_total: 21370,
-          },
-        ];
-        //  let clickXYApplyList = [];
-        for (let i = 0; i < json.length; i++) {
-          let start =
-            parseInt(json[i].start_flag) * 1000 +
-            parseInt(json[i].start_length);
-          let end =
-            parseInt(json[i].end_flag) * 1000 + parseInt(json[i].end_length);
-          let dksatrt =
-            "YDK" + json[i].start_flag + " +" + json[i].start_length;
-          let dkend = "YDK" + json[i].end_flag + " +" + json[i].end_length;
-          let startX = (start - lineTypeMinMileage) * everys;
-          if (parseInt(json[i].start_flag) == 0) {
-            startX = startX + axis_LeftLine.x;
-          }
-          let endX = (end - lineTypeMinMileage) * everys;
-          let centerX = (endX + startX) / 2; //开始结束平均值
-
-          //  startX=startX+axis_LeftLine.x;
-          console.log("startX：" + startX);
-
-          let desc = json[i].type;
-          context.lineWidth = 2;
-          //context.fillStyle = "#ffff00";
-          // context.strokeStyle = "#ffff00";
-          if (json[i].type == "A1") {
-            context.fillStyle = "#f14e0e";
-            context.strokeStyle = "#f14e0e";
-          } else if (json[i].type == "A2") {
-            context.fillStyle = "#fd7510";
-            context.strokeStyle = "#fd7510";
-          } else if (json[i].type == "A3") {
-            context.fillStyle = "#fda328";
-            context.strokeStyle = "#fda328";
-          } else if (json[i].type == "A4") {
-            context.fillStyle = "#f2c136";
-            context.strokeStyle = "#f2c136";
-          }
-          context.beginPath();
-          if (json[i].line_type == 1) {
-            //画水平直线
-            context.fillRect(startX, axis_Applay.y - 8, 2, 15);
-            context.fillRect(endX, axis_Applay.y - 8, 2, 15);
-            context.moveTo(startX, axis_Applay.y);
-            context.lineTo(endX + 1, axis_Applay.y);
-            //文字
-            //context.fillRect(centerX - 29, axis_Applay.y - 55, 60, 54);
-            applyClickXY.push({
-              x: centerX - 29,
-              y: axis_Applay.y - 55,
-              w: 60,
-              h: 54,
-              i: json[i],
-            });
-
-            let img = new Image();
-            img.src = require("@/assets/image/" + desc + ".png");
-            img.onload = function () {
-              context.drawImage(img, centerX - 29, axis_Applay.y - 56, 60, 54);
-            };
-          } else if (json[i].line_type == 2) {
-            //画水平直线
-            context.fillRect(startX, axis_Applay_two.y - 8, 2, 15);
-            context.fillRect(endX, axis_Applay_two.y - 8, 2, 15);
-            context.moveTo(startX, axis_Applay_two.y);
-            context.lineTo(endX + 1, axis_Applay_two.y);
-            //文字
-            applyClickXY.push({
-              x: centerX - 29,
-              y: axis_Applay_two.y - 55,
-              w: 60,
-              h: 54,
-              i: json[i],
-            });
-            let img = new Image();
-            img.src = require("@/assets/image/" + desc + ".png");
-            img.onload = function () {
-              context.drawImage(
-                img,
-                centerX - 29,
-                axis_Applay_two.y - 56,
-                60,
-                54
-              );
-            };
-          }
-          context.stroke();
-          //
-        }
-        canvas.onclick = function (event) {
-          var x = event.pageX - canvas.getBoundingClientRect().left;
-          var y = event.pageY - canvas.getBoundingClientRect().top;
-
-          console.log("X：" + x + "_" + y);
-          //console.log("clickXY：" + JSON.stringify(applyClickXY));
-          for (let item of applyClickXY) {
-            if (
-              x >= item.x &&
-              x <= item.x + item.w &&
-              y >= item.y &&
-              y <= item.y + item.h
-            ) {
-              let infos = item.i;
-              that
-                .$confirm(
-                  "<p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>作业编号：</span>" +
-                    infos.number +
-                    "</p><p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>作业令号</span>：" +
-                    infos.command_num +
-                    "</p>" +
-                    "<p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>开始时间：</span>" +
-                    infos.start_time +
-                    "</p><p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>结束时间：</span>" +
-                    infos.end_time +
-                    "</p>" +
-                    "<p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>施工区间：</span>" +
-                    infos.work_area +
-                    "</p><p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>施工内容：</span>" +
-                    infos.description +
-                    "</p>",
-                  {
-                    distinguishCancelAndClose: true,
-                    dangerouslyUseHTMLString: true,
-                    showCancelButton: false,
-                    showConfirmButton: false,
-                  }
-                )
-                .catch(() => {});
-              break;
-            }
-          }
-        };
-      }
-      //绘制施工进度
-      function drawProgressAxis(sprogressListJson) {
-        let json = sprogressListJson;
-        console.log(sprogressListJson);
-        let json1 = [
-          {
-            id: 233,
-            pro_id: 110,
-            pro_name: "\u6d4b\u8bd52",
-            line_type: 1,
-            start_flag: "0",
-            start_length: "257",
-            end_flag: "0",
-            end_length: "300",
-            line: "\u5de6\u7ebf",
-          },
-        ];
-        for (let i = 0; i < json.length; i++) {
-          if (json[i].start_flag != null) {
-            let start =
-              parseInt(json[i].start_flag) * 1000 +
-              parseInt(json[i].start_length);
-            let end =
-              parseInt(json[i].end_flag) * 1000 + parseInt(json[i].end_length);
-
-            let startX =
-              axis_LeftLine.x + (start - lineTypeMinMileage) * everys;
-            let endX = axis_LeftLine.x + (end - lineTypeMinMileage) * everys;
-            // console.log(
-            //   "startX：" + startX + " endX：" + endX + "_" + lineTypeMinMileage
-            // );
-            context.lineWidth = 10;
-            context.strokeStyle = "#27DB07";
-            context.beginPath();
-            if (json[i].line_type == 1) {
-              context.moveTo(startX, axis_LeftLine.y);
-              context.lineTo(endX + 1, axis_LeftLine.y);
-            } else if (json[i].line_type == 2) {
-              context.moveTo(startX, axis_LeftLine_Two.y);
-              context.lineTo(endX + 1, axis_LeftLine_Two.y);
-            } else if (json[i].line_type == 3) {
-              if (start == 0) {
-                startX = 0;
-                endX = end * everys;
-              }
-              context.moveTo(startX, axis_OutLine.y);
-              context.lineTo(endX + 1, axis_OutLine.y);
-            } else if (json[i].line_type == 4) {
-              if (start == 0) {
-                startX = 0;
-                endX = end * everys;
-              }
-              context.moveTo(startX, axis_OutLine_Two.y);
-              context.lineTo(endX + 1, axis_OutLine_Two.y);
-            }
-            context.stroke();
-          }
-          //
-        }
-      }
       //====================================
       drawAxesLine(this.lineTypeList);
       drawAxesStationList(this.stationList);
