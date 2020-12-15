@@ -35,21 +35,21 @@
       <div class="progress-item">
         <div class="atxt">&nbsp;&nbsp;&nbsp;&nbsp;安全帽</div>
         <el-progress
-          :percentage="0"
+          :percentage="100"
           color="#2e92ff"
           :stroke-width="10"
         ></el-progress>
-         <div class="anum">0/<em>110</em></div>
+         <div class="anum">110/<em>110</em></div>
       </div>
       <div class="progress-txt">安全帽/<em>总人数</em></div>
       <div class="progress-item">
         <div class="atxt">反光背心</div>
         <el-progress
-          :percentage="0"
+          :percentage="100"
           color="#6be0e3"
           :stroke-width="10"
         ></el-progress>
-        <div class="anum">0/<em>110</em></div>
+        <div class="anum">110/<em>110</em></div>
       </div>
       <div class="progress-txt">反光背心/<em>总人数</em></div>
     </div>
