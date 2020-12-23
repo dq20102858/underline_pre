@@ -35,7 +35,7 @@
       <div class="progress-item">
         <div class="atxt">&nbsp;&nbsp;&nbsp;&nbsp;安全帽</div>
         <el-progress
-          :percentage="100"
+          :percentage="100 "
           color="#2e92ff"
           :stroke-width="10"
         ></el-progress>

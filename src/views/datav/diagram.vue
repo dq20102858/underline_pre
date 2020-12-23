@@ -67,6 +67,7 @@
         >
       </el-radio-group>
     </div>
+    <div id="notify" class="notify"></div>
   </div>
 </template>
 <script>
@@ -458,11 +459,11 @@ export default {
         }
       }
       canvas.onclick = function (event) {
+ var notify = document.getElementById("notify");
+document.getElementById('notify').style.display = 'none';
+
         var x = event.pageX - canvas.getBoundingClientRect().left;
         var y = event.pageY - canvas.getBoundingClientRect().top;
-        //console.log("X：" + x + "_" + y);
-        //debugger;
-        //console.log(applyClickXY);
         for (let item of locationPush) {
           if (
             x >= item.x &&
@@ -470,23 +471,15 @@ export default {
             y >= item.y &&
             y <= item.y + item.h
           ) {
-            that.$message({
-              showClose: true,
-              dangerouslyUseHTMLString: true,
-              message: item.text,
-            });
-            // that.$confirm(
-            //     "<p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>作业编号：</span>" +
-            //       infos+
-            //       "</p>",
-            //     {
-            //       distinguishCancelAndClose: true,
-            //       dangerouslyUseHTMLString: true,
-            //       showCancelButton: false,
-            //       showConfirmButton: false,
-            //     }
-            //   )
-            //   .catch(() => {});
+           
+             notify.innerHTML = "<span>" + item.text + "</span>";
+            notify.style.display = "block";
+            notify.style.top=(y-180)+"px";
+            notify.style.left=(x-100)+"px";
+            // setTimeout(
+            //   "document.getElementById('notify').style.display = 'none';",
+            // 5000);
+            
             break;
           }
         }
@@ -850,7 +843,6 @@ export default {
   },
   //进度
 };
-
 //prototype
 CanvasRenderingContext2D.prototype.fillTextVertical = function (text, x, y) {
   var context = this;
@@ -1021,6 +1013,22 @@ CanvasRenderingContext2D.prototype.fillTextVertical = function (text, x, y) {
 }
 .check-lists .buildchk.is-checked .el-checkbox__label {
   color: #08ce80;
+}
+
+#notify {
+  position: relative;
+  top: -120px;
+  left: 45%;
+  display: none;  z-index: 999999;
+}
+#notify span {
+  background: #fff;
+  border: 1px #ddd solid;
+  border-radius: 6px;
+  width: 100%;
+  color: #000;
+  padding: 5px 10px;
+
 }
 </style>
 
