@@ -459,9 +459,8 @@ export default {
         }
       }
       canvas.onclick = function (event) {
- var notify = document.getElementById("notify");
-document.getElementById('notify').style.display = 'none';
-
+        var notify = document.getElementById("notify");
+        document.getElementById("notify").style.display = "none";
         var x = event.pageX - canvas.getBoundingClientRect().left;
         var y = event.pageY - canvas.getBoundingClientRect().top;
         for (let item of locationPush) {
@@ -471,15 +470,13 @@ document.getElementById('notify').style.display = 'none';
             y >= item.y &&
             y <= item.y + item.h
           ) {
-           
-             notify.innerHTML = "<span>" + item.text + "</span>";
+            notify.innerHTML = "<span>" + item.text + "</span>";
             notify.style.display = "block";
-            notify.style.top=(y-180)+"px";
-            notify.style.left=(x-100)+"px";
+            notify.style.top = y - 180 + "px";
+            notify.style.left = x - 100 + "px";
             // setTimeout(
             //   "document.getElementById('notify').style.display = 'none';",
             // 5000);
-            
             break;
           }
         }
@@ -1019,7 +1016,8 @@ CanvasRenderingContext2D.prototype.fillTextVertical = function (text, x, y) {
   position: relative;
   top: -120px;
   left: 45%;
-  display: none;  z-index: 999999;
+  display: none;
+  z-index: 999999;
 }
 #notify span {
   background: #fff;
@@ -1028,7 +1026,6 @@ CanvasRenderingContext2D.prototype.fillTextVertical = function (text, x, y) {
   width: 100%;
   color: #000;
   padding: 5px 10px;
-
 }
 </style>
 

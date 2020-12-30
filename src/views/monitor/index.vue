@@ -1,5 +1,6 @@
 <template>
   <div id="progress">
+    <!-- <div id="notify" class="notify"><span>Dk13123131</span></div> -->
     <div class="progress">
       <div class="starte-top">
         <div class="sleft">
@@ -36,6 +37,7 @@
       <div class="chkleft">
         <router-link to="/monitor/indexmini" class="rlink">缩小</router-link>
       </div>
+
       <div class="main-canvas">
         <div class="group-canvas">
           <div id="scrollbar">
@@ -1321,6 +1323,7 @@ export default {
               );
             };
             applyClickXY.push({
+              a: 1,
               x: centerX + 70,
               y: axis_applay.y - 55,
               w: 60,
@@ -1352,6 +1355,7 @@ export default {
               );
             };
             applyClickXY.push({
+              a: 1,
               x: centerX + 70,
               y: axis_applay_two.y - 55,
               w: 60,
@@ -1363,49 +1367,6 @@ export default {
           //
         }
       }
-      canvas.onclick = function (event) {
-        var x = event.pageX - canvas.getBoundingClientRect().left;
-        var y = event.pageY - canvas.getBoundingClientRect().top;
-        //console.log("X：" + x + "_" + y);
-        //debugger;
-        //console.log(applyClickXY);
-        for (let item of applyClickXY) {
-          if (
-            x >= item.x &&
-            x <= item.x + item.w &&
-            y >= item.y &&
-            y <= item.y + item.h
-          ) {
-            let infos = item.i;
-            that
-              .$confirm(
-                "<p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>作业编号：</span>" +
-                  infos.number +
-                  "</p><p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>作业令号</span>：" +
-                  infos.command_num +
-                  "</p>" +
-                  "<p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>开始时间：</span>" +
-                  infos.start_time +
-                  "</p><p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>结束时间：</span>" +
-                  infos.end_time +
-                  "</p>" +
-                  "<p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>施工区间：</span>" +
-                  infos.work_area +
-                  "</p><p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>施工内容：</span>" +
-                  infos.description +
-                  "</p>",
-                {
-                  distinguishCancelAndClose: true,
-                  dangerouslyUseHTMLString: true,
-                  showCancelButton: false,
-                  showConfirmButton: false,
-                }
-              )
-              .catch(() => {});
-            break;
-          }
-        }
-      };
       //车定位
       function drawAxesCar(jsonData) {
         let jsonCar = jsonData;
@@ -1475,7 +1436,7 @@ export default {
               context.drawImage(
                 imgcar,
                 startLineX + offsetX,
-                axis_LeftLine_Two.y - 25,
+                axis_LeftLine_Two.y - 35,
                 140,
                 20
               );
@@ -1501,16 +1462,24 @@ export default {
         let start = 0;
 
         for (let i = 0; i < jsonData.length; i++) {
+          let codes =
+            "[" +
+            jsonData[i].name +
+            "  ZDK" +
+            jsonData[i].start_flag +
+            " +" +
+            jsonData[i].start_length +
+            " ]";
+          let total =
+            parseInt(jsonData[i].start_flag) * 1000 +
+            parseInt(jsonData[i].start_length);
+          let startLineX = (total - leftLineMinMileage) * everys;
           if (jsonData[i].line_type == 1) {
             let imgcar = new Image();
             imgcar.src = require("@/assets/image/ding" +
               jsonData[i].type +
               ".png");
             imgcar.onload = function () {
-              let total =
-                parseInt(jsonData[i].start_flag) * 1000 +
-                parseInt(jsonData[i].start_length);
-              let startLineX = (total - leftLineMinMileage) * everys;
               context.drawImage(
                 imgcar,
                 startLineX + offsetX,
@@ -1518,60 +1487,99 @@ export default {
                 30,
                 30
               );
-              //DK
-              let codes =
-                " [" +
-                jsonData[i].name +
-                "  ZDK" +
-                jsonData[i].start_flag +
-                " +" +
-                jsonData[i].start_length +
-                " ]";
-              context.fillStyle = "#fff ";
-              context.font = "12px  Microsoft Yahei";
-              context.fillText(
-                codes,
-                startLineX + offsetX + 20,
-                axis_LeftLine.y - 35
-              );
             };
+            applyClickXY.push({
+              a: 2,
+              x: startLineX + offsetX,
+              y: axis_LeftLine.y - 35,
+              w: 30,
+              h: 30,
+              text: codes,
+            });
           } else if (jsonData[i].line_type == 2) {
             let imgcar = new Image();
             imgcar.src = require("@/assets/image/ding" +
               jsonData[i].type +
               ".png");
             imgcar.onload = function () {
-              let total =
-                parseInt(jsonData[i].start_flag) * 1000 +
-                parseInt(jsonData[i].start_length);
-              let startLineX = (total - leftLineMinMileage) * everys;
               context.drawImage(
                 imgcar,
                 startLineX + offsetX,
-                axis_LeftLine_Two.y - 35,
+                axis_LeftLine_Two.y -35,
                 30,
                 30
               );
-              //DK
-              let codes =
-                " [" +
-                jsonData[i].name +
-                "  YDK" +
-                jsonData[i].start_flag +
-                " +" +
-                jsonData[i].start_length +
-                " ]";
-              context.fillStyle = "#fff ";
-              context.font = "12px  Microsoft Yahei";
-              context.fillText(
-                codes,
-                startLineX + offsetX + 20,
-                axis_LeftLine_Two.y - 35
-              );
             }; //
+            applyClickXY.push({
+              a: 2,
+              x: startLineX + offsetX,
+              y: axis_LeftLine_Two.y -35,
+              w: 30,
+              h: 30,
+              text: codes,
+            });
           }
         }
       }
+
+      canvas.onclick = function (event) {
+       // var notify = document.getElementById("notify");
+       // document.getElementById("notify").style.display = "none";
+        var x = event.pageX - canvas.getBoundingClientRect().left;
+        var y = event.pageY - canvas.getBoundingClientRect().top;
+        console.log(applyClickXY);
+        console.log("XY:" + x + "_" + y);
+        for (let item of applyClickXY) {
+          if (
+            x >= item.x &&
+            x <= item.x + item.w &&
+            y >= item.y &&
+            y <= item.y + item.h
+          ) {
+            let infos = item.i;
+
+            if (item.a == 1) {
+              that
+                .$confirm(
+                  "<p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>作业编号：</span>" +
+                    infos.number +
+                    "</p><p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>作业令号</span>：" +
+                    infos.command_num +
+                    "</p>" +
+                    "<p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>开始时间：</span>" +
+                    infos.start_time +
+                    "</p><p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>结束时间：</span>" +
+                    infos.end_time +
+                    "</p>" +
+                    "<p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>施工区间：</span>" +
+                    infos.work_area +
+                    "</p><p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>施工内容：</span>" +
+                    infos.description +
+                    "</p>",
+                  {
+                    distinguishCancelAndClose: true,
+                    dangerouslyUseHTMLString: true,
+                    showCancelButton: false,
+                    showConfirmButton: false,
+                  }
+                )
+                .catch(() => {});
+                  break;
+            } else {
+              that.$message({
+                dangerouslyUseHTMLString: true,
+                message: item.text,
+              });
+                break;
+              //  notify.innerHTML = "<span>" + item.text + "</span>";
+              //   notify.style.display = "block";
+              // notify.style.top = y +180 + "px";
+              // notify.style.left = x - 100 + "px";
+            }
+          
+          }
+        }
+      };
       //============================
       //画地铁站
       drawStations(this.stationList);
@@ -1614,7 +1622,7 @@ export default {
         drawDaocha();
       }
       //定位人和车
-      drawAxesCar(this.carLocation);
+     // drawAxesCar(this.carLocation);
       drawAxesPeple(this.peopleLocation);
     },
     // ===================================桥 隧道 限速区 防区 道岔 坡度 施工进度
@@ -1990,5 +1998,19 @@ export default {
 }
 .cartablebox .el-table th {
   background: #1d397a !important;
+}
+#notify {
+  position: relative;
+  top: 180px;
+  left: 300px;
+  z-index: 999999;
+}
+#notify span {
+  background: #fff;
+  border: 1px #ddd solid;
+  border-radius: 6px;
+  width: 100%;
+  color: #000;
+  padding: 5px 10px;
 }
 </style>
