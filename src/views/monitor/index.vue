@@ -1463,13 +1463,9 @@ export default {
 
         for (let i = 0; i < jsonData.length; i++) {
           let codes =
-            "[" +
-            jsonData[i].name +
-            "  ZDK" +
-            jsonData[i].start_flag +
-            " +" +
-            jsonData[i].start_length +
-            " ]";
+              "<b style='padding-bottom:10px;display:block'>"+jsonData[i].name +   "&nbsp;" +" DK" +
+            jsonData[i].start_flag +" +" + jsonData[i].start_length + "</b>"+  jsonData[i].company_name + "&nbsp;&nbsp;" +
+              jsonData[i].depart_name + "&nbsp;&nbsp;" + jsonData[i].post_name;
           let total =
             parseInt(jsonData[i].start_flag) * 1000 +
             parseInt(jsonData[i].start_length);
@@ -1566,8 +1562,13 @@ export default {
                 .catch(() => {});
                   break;
             } else {
-              that.$message({
+                that.$message({
+               type:'none',
+                 customClass:'el-message-local',
                 dangerouslyUseHTMLString: true,
+                 showClose: true,
+                  duration:8000,
+                  offset:135,
                 message: item.text,
               });
                 break;

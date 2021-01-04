@@ -126,7 +126,6 @@ i,em {font-style: normal;}
 .app-pagination .btn-last{cursor: pointer;color: #1d397a;border-right: 1px solid #3655A5!important;}
 .app-pagination  .btn-next, .app-pagination  .btn-prev{background: none!important}
 /* dialog */
-
 .el-dialog{border-radius: 6px; margin-top: 10vh!important;}
 .el-dialog__header{border-radius:6px 6px 0 0; background: #3655a5;text-align: center;padding:12px;}
 .el-dialog__title{color: #fff;font-size: 18px;}
@@ -136,7 +135,6 @@ i,em {font-style: normal;}
 .el-dialog__headerbtn:hover .el-dialog__close {color: #1d397a;}
 .el-dialog .el-dialog__body{padding: 30px 30px 30px 20px;}
 .el-dialog .el-dialog__footer{padding: 0 30px 30px 30px;}
-
 
 .el-message-box-new {padding-bottom: 20px;border: #fff;}
 .el-message-box-new  .el-message-box__header{border-radius:6px 6px 0 0; background: #3655a5;text-align: center;padding:12px;}
@@ -168,4 +166,5 @@ i,em {font-style: normal;}
 .el-menu-top .is-active .el-submenu__title{font-size: 16px; height: 61px; background-color: #4b6eca;color: #fff!important;border: none!important;}
 .el-menu-top .is-active .el-submenu__title i{color: #fff}
 .el-menu-top .el-submenu__title{font-size: 16px!important}
-</style>
+.el-message-local{background: #fff;}
+.el-message-local .el-message__content{color: #000;}</style>

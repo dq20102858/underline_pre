@@ -401,14 +401,10 @@ export default {
             parseInt(jsoPeple[i].start_flag) * 1000 +
             parseInt(jsoPeple[i].start_length);
           let startLineX = (total - lineTypeMinMileage) * everys;
-          let codes =
-            "[ " +
-            jsoPeple[i].name +
-            " ZDK" +
-            jsoPeple[i].start_flag +
-            " +" +
-            jsoPeple[i].start_length +
-            " ]";
+         let codes =
+              "<b style='padding-bottom:10px;display:block'>"+jsoPeple[i].name +   "&nbsp;" +" DK" +
+            jsoPeple[i].start_flag +" +" + jsoPeple[i].start_length + "</b>"+  jsoPeple[i].company_name + "&nbsp;&nbsp;" +
+              jsoPeple[i].depart_name + "&nbsp;&nbsp;" + jsoPeple[i].post_name;
           if (jsoPeple[i].line_type == 1) {
             let imgcar = new Image();
             imgcar.src = require("@/assets/image/ding" +
@@ -459,8 +455,6 @@ export default {
         }
       }
       canvas.onclick = function (event) {
-        var notify = document.getElementById("notify");
-        document.getElementById("notify").style.display = "none";
         var x = event.pageX - canvas.getBoundingClientRect().left;
         var y = event.pageY - canvas.getBoundingClientRect().top;
         for (let item of locationPush) {
@@ -470,13 +464,16 @@ export default {
             y >= item.y &&
             y <= item.y + item.h
           ) {
-            notify.innerHTML = "<span>" + item.text + "</span>";
-            notify.style.display = "block";
-            notify.style.top = y - 180 + "px";
-            notify.style.left = x - 100 + "px";
-            // setTimeout(
-            //   "document.getElementById('notify').style.display = 'none';",
-            // 5000);
+
+             that.$message({
+               type:'none',
+                 customClass:'el-message-local',
+                dangerouslyUseHTMLString: true,
+                 showClose: true,
+                  duration:5000,
+                  offset:60,
+                message: item.text,
+              });
             break;
           }
         }
@@ -1027,5 +1024,6 @@ CanvasRenderingContext2D.prototype.fillTextVertical = function (text, x, y) {
   color: #000;
   padding: 5px 10px;
 }
+
 </style>
 
