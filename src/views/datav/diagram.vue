@@ -470,7 +470,7 @@ export default {
                  customClass:'el-message-local',
                 dangerouslyUseHTMLString: true,
                  showClose: true,
-                  duration:5000,
+                  duration:8000,
                   offset:60,
                 message: item.text,
               });
