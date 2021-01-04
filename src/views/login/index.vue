@@ -188,7 +188,7 @@ export default {
   border: 6px;
   padding: 0 5px 0 1px;
   color: #4b6eca;
-  height: 45px;
+  height: 44px;
   border: 1px #4b6eca solid;
   border-left: 0;
 }
