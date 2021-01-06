@@ -312,7 +312,7 @@ export default {
       //人定位
       function drawAxesPeple(jsonData) {
        let jsoPeple = jsonData;
-        let jsoPeplet = [
+        let jsoPeple2= [
           {
             id: 1,
             name: "ZY01",
@@ -339,9 +339,9 @@ export default {
         context.fillStyle = "#fff ";
         context.font = "10px  Microsoft Yahei";
         for (let i = 0; i < jsoPeple.length; i++) {
-          let total =
-            parseInt(jsoPeple[i].start_flag) * 1000 +
-            parseInt(jsoPeple[i].start_length);
+          var startFlag=parseInt(jsoPeple[i].start_flag) * 1000;
+        
+          let total =startFlag + parseInt(jsoPeple[i].start_length);
           let startLineX = (total - lineTypeMinMileage) * everys;
           let codes =
             "<b style='padding-bottom:10px;display:block'>" +
@@ -378,7 +378,7 @@ export default {
               y: axis_LeftLine.y - 25,
               w: 20,
               h: 20,
-              text: codes,
+            text: codes.replace("undefined","").replace("undefined",""),
             });
           } else if (jsoPeple[i].line_type == 2) {
             let imgcar = new Image();
@@ -401,7 +401,7 @@ export default {
               y: axis_LeftLine_Two.y - 25,
               w: 20,
               h: 20,
-              text: codes,
+             text: codes.replace("undefined","").replace("undefined",""),
             });
           }
         }
