@@ -309,90 +309,32 @@ export default {
         };
         context.stroke();
       }
-      //车定位
-      function drawAxesCar(jsonData) {
-        let jsonCar = jsonData;
-        let jsonCar1 = [
+      //人定位
+      function drawAxesPeple(jsonData) {
+       let jsoPeple = jsonData;
+        let jsoPeplet = [
           {
             id: 1,
             name: "ZY01",
-            start_flag: 1,
+            start_flag: 2,
             start_length: 804,
             line_type: 1,
-          },
-          {
-            id: 11,
-            name: "ZY02",
-            start_flag: 1,
-            start_length: 300,
+            type: "1",
+            company_name: "",
+            depart_name: "",
+            post_name: "",
+          } , {
+            id: 1,
+            name: "ZY01",
+            start_flag: 2,
+            start_length: 804,
             line_type: 2,
-          },
-        ];
-
-        let imgcar = new Image();
-        imgcar.src = require("@/assets/image/icon-car.png");
-        imgcar.onload = function () {
-          let start = 0;
-
-          //   context.beginPath();
-          for (let i = 0; i < jsonCar.length; i++) {
-            context.fillStyle = "#fff ";
-            context.font = "10px  Microsoft Yahei";
-            let total =
-              parseInt(jsonCar[i].start_flag) * 1000 +
-              parseInt(jsonCar[i].start_length);
-            let startLineX = (total - lineTypeMinMileage) * everys;
-
-            if (jsonCar[i].line_type == 1) {
-              if (jsonCar[i].start_flag == 0) {
-                startLineX = axis_LeftLine.x;
-              }
-              context.drawImage(
-                imgcar,
-                startLineX,
-                axis_LeftLine.y - 15,
-                70,
-                10
-              );
-              //DK
-              let codes =
-                jsonCar[i].name +
-                " [ZDK" +
-                jsonCar[i].start_flag +
-                " +" +
-                jsonCar[i].start_length +
-                " ]";
-              context.fillText(codes, startLineX + 10, axis_LeftLine.y - 20);
-            } else if (jsonCar[i].line_type == 2) {
-              context.drawImage(
-                imgcar,
-                startLineX,
-                axis_LeftLine_Two.y - 15,
-                70,
-                10
-              );
-              //DK
-
-              let codes =
-                jsonCar[i].name +
-                " [YDK" +
-                jsonCar[i].start_flag +
-                " +" +
-                jsonCar[i].start_length +
-                " ]";
-              context.fillText(
-                codes,
-                startLineX + 10,
-                axis_LeftLine_Two.y - 20
-              );
-            } //
+            type: "1",
+            company_name: "",
+            depart_name: "",
+            post_name: "",
           }
-        };
-        context.stroke();
-      }
-      //人定位
-      function drawAxesPeple(jsonData) {
-        let jsoPeple = jsonData;
+        ];
         let start = 0;
         context.fillStyle = "#fff ";
         context.font = "10px  Microsoft Yahei";
@@ -401,14 +343,24 @@ export default {
             parseInt(jsoPeple[i].start_flag) * 1000 +
             parseInt(jsoPeple[i].start_length);
           let startLineX = (total - lineTypeMinMileage) * everys;
-         let codes =
-              "<b style='padding-bottom:10px;display:block'>"+jsoPeple[i].name +   "&nbsp;" +" DK" +
-            jsoPeple[i].start_flag +" +" + jsoPeple[i].start_length + "</b>"+  jsoPeple[i].company_name + "&nbsp;&nbsp;" +
-              jsoPeple[i].depart_name + "&nbsp;&nbsp;" + jsoPeple[i].post_name;
+          let codes =
+            "<b style='padding-bottom:10px;display:block'>" +
+            jsoPeple[i].name +
+            "&nbsp;" +
+            " DK" +
+            jsoPeple[i].start_flag +
+            " +" +
+            jsoPeple[i].start_length +
+            "</b>" +
+            jsoPeple[i].company_name +
+            "&nbsp;&nbsp;" +
+            jsoPeple[i].depart_name +
+            "&nbsp;&nbsp;" +
+            jsoPeple[i].post_name;
           if (jsoPeple[i].line_type == 1) {
             let imgcar = new Image();
             imgcar.src = require("@/assets/image/ding" +
-              jsonData[i].type +
+              jsoPeple[i].type +
               ".png");
             imgcar.onload = function () {
               context.drawImage(
@@ -422,8 +374,8 @@ export default {
               //context.fillText(codes, startLineX + 5, axis_LeftLine.y - 28);
             };
             locationPush.push({
-              x: startLineX + 5,
-              y: axis_LeftLine.y - 28,
+              x: startLineX,
+              y: axis_LeftLine.y - 25,
               w: 20,
               h: 20,
               text: codes,
@@ -431,7 +383,7 @@ export default {
           } else if (jsoPeple[i].line_type == 2) {
             let imgcar = new Image();
             imgcar.src = require("@/assets/image/ding" +
-              jsonData[i].type +
+              jsoPeple[i].type +
               ".png");
             imgcar.onload = function () {
               context.drawImage(
@@ -445,8 +397,8 @@ export default {
               //context.fillText(codes, startLineX + 5, axis_LeftLine_Two.y - 28);
             }; //
             locationPush.push({
-              x: startLineX + 5,
-              y: axis_LeftLine_Two.y - 28,
+              x: startLineX,
+              y: axis_LeftLine_Two.y - 25,
               w: 20,
               h: 20,
               text: codes,
@@ -464,16 +416,16 @@ export default {
             y >= item.y &&
             y <= item.y + item.h
           ) {
-
-             that.$message({
-               type:'none',
-                 customClass:'el-message-local',
-                dangerouslyUseHTMLString: true,
-                 showClose: true,
-                  duration:8000,
-                  offset:60,
-                message: item.text,
-              });
+            console.log(item.text);
+            that.$message({
+              type: "none",
+              customClass: "el-message-local",
+              dangerouslyUseHTMLString: true,
+              showClose: true,
+              duration: 8000,
+              offset: 60,
+              message: item.text,
+            });
             break;
           }
         }
@@ -668,7 +620,6 @@ export default {
       // if (this.progressCheckValue) {
       //   drawProgressAxis(this.progressListItem);
       // }
-      drawAxesCar(this.carLocation);
       drawAxesPeple(this.peopleLocation);
       //道岔
       if (this.daocCheckValue) {
@@ -837,63 +788,6 @@ export default {
   },
   //进度
 };
-//prototype
-CanvasRenderingContext2D.prototype.fillTextVertical = function (text, x, y) {
-  var context = this;
-  var canvas = context.canvas;
-
-  var arrText = text.split("");
-  var arrWidth = arrText.map(function (letter) {
-    return context.measureText(letter).width;
-  });
-
-  var align = context.textAlign;
-  var baseline = context.textBaseline;
-
-  if (align == "left") {
-    x = x + Math.max.apply(null, arrWidth) / 2;
-  } else if (align == "right") {
-    x = x - Math.max.apply(null, arrWidth) / 2;
-  }
-  if (
-    baseline == "bottom" ||
-    baseline == "alphabetic" ||
-    baseline == "ideographic"
-  ) {
-    y = y - arrWidth[0] / 2;
-  } else if (baseline == "top" || baseline == "hanging") {
-    y = y + arrWidth[0] / 2;
-  }
-
-  context.textAlign = "center";
-  context.textBaseline = "middle";
-
-  // 开始逐字绘制
-  arrText.forEach(function (letter, index) {
-    // 确定下一个字符的纵坐标位置
-    var letterWidth = arrWidth[index];
-    // 是否需要旋转判断
-    var code = letter.charCodeAt(0);
-    if (code <= 256) {
-      context.translate(x, y);
-      // 英文字符，旋转90°
-      context.rotate((90 * Math.PI) / 180);
-      context.translate(-x, -y);
-    } else if (index > 0 && text.charCodeAt(index - 1) < 256) {
-      // y修正
-      y = y + arrWidth[index - 1] / 2;
-    }
-    context.fillText(letter, x, y);
-    // 旋转坐标系还原成初始态
-    context.setTransform(1, 0, 0, 1, 0, 0);
-    // 确定下一个字符的纵坐标位置
-    var letterWidth = arrWidth[index];
-    y = y + letterWidth;
-  });
-  // 水平垂直对齐方式还原
-  context.textAlign = align;
-  context.textBaseline = baseline;
-};
 </script>
 <style>
 #diagram {
@@ -1024,6 +918,5 @@ CanvasRenderingContext2D.prototype.fillTextVertical = function (text, x, y) {
   color: #000;
   padding: 5px 10px;
 }
-
 </style>
 

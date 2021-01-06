@@ -183,18 +183,9 @@ const constantRouterMap = [
   },
   {
     path: '/demo',
-    component: Layout,
-    hidden: true,
-    meta: {
-      keepAlive: false
-    },
-    children: [
-      {
-        path: '/demo',
-        component: () => import('@/views/demo/index')
-      }
-    ]
-  }
+    component: () => import('@/views/demo/index'),
+    hidden: true
+  },
 ]
 export { constantRouterMap }
 
