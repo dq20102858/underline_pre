@@ -5,7 +5,7 @@
       <div class="progress-item">
         <div class="atxt">请点单位</div>
         <el-progress
-          :percentage="getPercentage(dataInfo.todayCompanys/dataInfo.totalCompanys)"
+          :percentage="getPercentage(dataInfo.todayCompanys,dataInfo.totalCompanys)"
           color="#fe5a27"
           :stroke-width="10"
         ></el-progress>
