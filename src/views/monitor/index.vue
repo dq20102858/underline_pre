@@ -1367,6 +1367,96 @@ export default {
           //
         }
       }
+        //车定位
+      function drawAxesCar(jsonData) {
+        let jsonCar = jsonData;
+        //  [
+        //   {
+        //     id: 1,
+        //     name: "ZY01",
+        //     start_flag: 1,
+        //     start_length: 300,
+        //     line_type: 1
+        //   },
+        //   {
+        //     id: 1,
+        //     name: "ZY01",
+        //     start_flag: 5,
+        //     start_length: 300,
+        //     line_type: 2
+        //   },
+        //   {
+        //     id: 2,
+        //     name: "ZY02",
+        //     start_flag: 3,
+        //     start_length: 430,
+        //     line_type: 2
+        //   }
+        // ];
+
+        let imgcar = new Image();
+        imgcar.src = require("@/assets/image/icon-car.png");
+        imgcar.onload = function () {
+          let start = 0;
+
+          for (let i = 0; i < jsonCar.length; i++) {
+            context.fillStyle = "#fff";
+            context.font = "12px Microsoft Yahei";
+            if (jsonCar[i].line_type == 1) {
+              let total =
+                parseInt(jsonCar[i].start_flag) * 1000 +
+                parseInt(jsonCar[i].start_length);
+              let startLineX = (total - leftLineMinMileage) * everys;
+              context.drawImage(
+                imgcar,
+                startLineX + offsetX,
+                axis_LeftLine.y - 25,
+                140,
+                20
+              );
+              //DK
+              let codes =
+                jsonCar[i].name +
+                "[ ZDK" +
+                jsonCar[i].start_flag +
+                " +" +
+                jsonCar[i].start_length +
+                " ]";
+
+              context.fillText(
+                codes,
+                startLineX + offsetX + 18,
+                axis_LeftLine.y - 40
+              );
+            } else if (jsonCar[i].line_type == 2) {
+              let total =
+                parseInt(jsonCar[i].start_flag) * 1000 +
+                parseInt(jsonCar[i].start_length);
+              let startLineX = (total - leftLineMinMileage) * everys;
+              context.drawImage(
+                imgcar,
+                startLineX + offsetX,
+                axis_LeftLine_Two.y - 25,
+                140,
+                20
+              );
+              //DK
+              let codes =
+                jsonCar[i].name +
+                " [ YDK" +
+                jsonCar[i].start_flag +
+                " +" +
+                jsonCar[i].start_length +
+                " ]";
+              context.fillText(
+                codes,
+                startLineX + offsetX + 18,
+                axis_LeftLine_Two.y - 40
+              );
+            } //
+          }
+        };
+      }
       //人定位
       function drawAxesPeple(jsonData) {
         let start = 0;
@@ -1532,6 +1622,8 @@ export default {
       if (this.daocCheckValue) {
         drawDaocha();
       }
+      //轨道车
+      drawAxesCar(this.carLocation);
       //定位人和车
       drawAxesPeple(this.peopleLocation);
     },
