@@ -190,7 +190,7 @@ let applyClickXY = [];
 export default {
   data() {
     return {
-      time: null,
+      timer: null,
       flag: false,
       startX: 0,
       endX: 0,
@@ -1410,8 +1410,8 @@ export default {
                 imgcar,
                 startLineX + offsetX,
                 axis_LeftLine.y - 25,
-                140,
-                20
+                70,
+                10
               );
               //DK
               let codes =
@@ -1436,8 +1436,8 @@ export default {
                 imgcar,
                 startLineX + offsetX,
                 axis_LeftLine_Two.y - 25,
-                140,
-                20
+                70,
+                10
               );
               //DK
               let codes =
@@ -1489,16 +1489,16 @@ export default {
                 imgcar,
                 startLineX + offsetX,
                 axis_LeftLine.y - 35,
-                30,
-                30
+                20,
+                20
               );
             };
             applyClickXY.push({
               a: 2,
               x: startLineX + offsetX,
               y: axis_LeftLine.y - 35,
-              w: 30,
-              h: 30,
+              w: 20,
+              h: 20,
               text: codes.replace("undefined", "").replace("undefined", ""),
             });
           } else if (jsonData[i].line_type == 2) {
@@ -1511,16 +1511,16 @@ export default {
                 imgcar,
                 startLineX + offsetX,
                 axis_LeftLine_Two.y - 35,
-                30,
-                30
+                20,
+                20
               );
             }; //
             applyClickXY.push({
               a: 2,
               x: startLineX + offsetX,
               y: axis_LeftLine_Two.y - 35,
-              w: 30,
-              h: 30,
+              w: 20,
+              h: 20,
               text: codes.replace("undefined", "").replace("undefined", ""),
             });
           }
@@ -1747,19 +1747,16 @@ export default {
     window.addEventListener("resize", () => {
       this.scrollwidth = document.documentElement.clientWidth - 640;
     });
-    this.time = setInterval(() => {
+    var timer = setInterval(() => {
       this.getProjectProcessMap();
-    }, 1000 * 60); 
-    // const timer = setInterval(() => {
-    //   this.getProjectProcessMap();
-    // }, 60000);
-    // this.$once("hook:beforeDestroy", () => {
-    //   clearInterval(timer);
-    // });
+    }, 60000);
+    this.$once("hook:beforeDestroy", () => {
+      clearInterval(timer);
+    });
   },
-  beforDesroy() {
-    clearIntreval(this.time);
-    this.time = null;
+  beforeDestroy() {
+      clearInterval(this.timer); 
+      this.timer=null;
   },
 };
 </script>
