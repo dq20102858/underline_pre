@@ -190,6 +190,7 @@ let applyClickXY = [];
 export default {
   data() {
     return {
+      time: null,
       flag: false,
       startX: 0,
       endX: 0,
@@ -1746,17 +1747,19 @@ export default {
     window.addEventListener("resize", () => {
       this.scrollwidth = document.documentElement.clientWidth - 640;
     });
-
-    const timer = setInterval(() => {
+    this.time = setInterval(() => {
       this.getProjectProcessMap();
-    }, 60000);
-    this.$once("hook:beforeDestroy", () => {
-      clearInterval(timer);
-    });
-
-    // this.timer = setInterval(() => {
+    }, 1000 * 60); 
+    // const timer = setInterval(() => {
     //   this.getProjectProcessMap();
-    // }, 5000);
+    // }, 60000);
+    // this.$once("hook:beforeDestroy", () => {
+    //   clearInterval(timer);
+    // });
+  },
+  beforDesroy() {
+    clearIntreval(this.time);
+    this.time = null;
   },
 };
 </script>
