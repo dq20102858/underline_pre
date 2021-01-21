@@ -299,12 +299,10 @@ export default {
         }
       });
     },
-
     initCanvas() {
       const that = this;
       //坐标轴宽度高度
       //  let axis_Width = this.totalMileage / 2 + 1000;
-
       let minkm = this.minKM; //最小的公里数
       let minkmLength = this.minKMLength; //最小米数
       let leftLineMinMileage = this.leftLineMinMileage;
@@ -1367,7 +1365,7 @@ export default {
           //
         }
       }
-        //车定位
+      //车定位
       function drawAxesCar(jsonData) {
         let jsonCar = jsonData;
         //  [
@@ -1463,9 +1461,19 @@ export default {
 
         for (let i = 0; i < jsonData.length; i++) {
           let codes =
-              "<b style='padding-bottom:10px;display:block'>"+jsonData[i].name +   "&nbsp;" +" DK" +
-            jsonData[i].start_flag +" +" + jsonData[i].start_length + "</b>"+  jsonData[i].company_name + "&nbsp;&nbsp;" +
-              jsonData[i].depart_name + "&nbsp;&nbsp;" + jsonData[i].post_name;
+            "<b style='padding-bottom:10px;display:block'>" +
+            jsonData[i].name +
+            "&nbsp;" +
+            " DK" +
+            jsonData[i].start_flag +
+            " +" +
+            jsonData[i].start_length +
+            "</b>" +
+            jsonData[i].company_name +
+            "&nbsp;&nbsp;" +
+            jsonData[i].depart_name +
+            "&nbsp;&nbsp;" +
+            jsonData[i].post_name;
           let total =
             parseInt(jsonData[i].start_flag) * 1000 +
             parseInt(jsonData[i].start_length);
@@ -1490,7 +1498,7 @@ export default {
               y: axis_LeftLine.y - 35,
               w: 30,
               h: 30,
-            text: codes.replace("undefined","").replace("undefined",""),
+              text: codes.replace("undefined", "").replace("undefined", ""),
             });
           } else if (jsonData[i].line_type == 2) {
             let imgcar = new Image();
@@ -1501,7 +1509,7 @@ export default {
               context.drawImage(
                 imgcar,
                 startLineX + offsetX,
-                axis_LeftLine_Two.y -35,
+                axis_LeftLine_Two.y - 35,
                 30,
                 30
               );
@@ -1509,18 +1517,18 @@ export default {
             applyClickXY.push({
               a: 2,
               x: startLineX + offsetX,
-              y: axis_LeftLine_Two.y -35,
+              y: axis_LeftLine_Two.y - 35,
               w: 30,
               h: 30,
-             text: codes.replace("undefined","").replace("undefined",""),
+              text: codes.replace("undefined", "").replace("undefined", ""),
             });
           }
         }
       }
 
       canvas.onclick = function (event) {
-       // var notify = document.getElementById("notify");
-       // document.getElementById("notify").style.display = "none";
+        // var notify = document.getElementById("notify");
+        // document.getElementById("notify").style.display = "none";
         var x = event.pageX - canvas.getBoundingClientRect().left;
         var y = event.pageY - canvas.getBoundingClientRect().top;
         console.log(applyClickXY);
@@ -1560,24 +1568,23 @@ export default {
                   }
                 )
                 .catch(() => {});
-                  break;
+              break;
             } else {
-                that.$message({
-               type:'none',
-                 customClass:'el-message-local',
+              that.$message({
+                type: "none",
+                customClass: "el-message-local",
                 dangerouslyUseHTMLString: true,
-                 showClose: true,
-                  duration:8000,
-                  offset:135,
+                showClose: true,
+                duration: 8000,
+                offset: 135,
                 message: item.text,
               });
-                break;
+              break;
               //  notify.innerHTML = "<span>" + item.text + "</span>";
               //   notify.style.display = "block";
               // notify.style.top = y +180 + "px";
               // notify.style.left = x - 100 + "px";
             }
-          
           }
         }
       };
@@ -1739,6 +1746,17 @@ export default {
     window.addEventListener("resize", () => {
       this.scrollwidth = document.documentElement.clientWidth - 640;
     });
+
+    const timer = setInterval(() => {
+      this.getProjectProcessMap();
+    }, 60000);
+    this.$once("hook:beforeDestroy", () => {
+      clearInterval(timer);
+    });
+
+    // this.timer = setInterval(() => {
+    //   this.getProjectProcessMap();
+    // }, 5000);
   },
 };
 </script>

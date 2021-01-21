@@ -351,8 +351,8 @@ export default {
                 imgcar,
                 startLineX,
                 axis_LeftLine.y - 15,
-                70,
-                10
+                50,
+                7
               );
               //DK
               let codes =
@@ -368,8 +368,8 @@ export default {
                 imgcar,
                 startLineX,
                 axis_LeftLine_Two.y - 15,
-                70,
-                10
+                50,
+                5
               );
               //DK
 
@@ -448,8 +448,8 @@ export default {
                 imgcar,
                 startLineX,
                 axis_LeftLine.y - 25,
-                20,
-                20
+                15,
+                15
               );
               //DK
               //context.fillText(codes, startLineX + 5, axis_LeftLine.y - 28);
@@ -457,8 +457,8 @@ export default {
             locationPush.push({
               x: startLineX,
               y: axis_LeftLine.y - 25,
-              w: 20,
-              h: 20,
+              w: 15,
+              h: 15,
             text: codes.replace("undefined","").replace("undefined",""),
             });
           } else if (jsoPeple[i].line_type == 2) {
@@ -471,8 +471,8 @@ export default {
                 imgcar,
                 startLineX - 1,
                 axis_LeftLine_Two.y - 25,
-                20,
-                20
+                15,
+                15
               );
               //DK
               //context.fillText(codes, startLineX + 5, axis_LeftLine_Two.y - 28);
@@ -480,8 +480,8 @@ export default {
             locationPush.push({
               x: startLineX,
               y: axis_LeftLine_Two.y - 25,
-              w: 20,
-              h: 20,
+              w: 15,
+              h: 15,
              text: codes.replace("undefined","").replace("undefined",""),
             });
           }
