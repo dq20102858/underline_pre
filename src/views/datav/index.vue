@@ -32,6 +32,8 @@ import projectIntro from "./projectIntro"; //
 import operation from "./operation"; //
 import videolist from "./videolist"; //
 import diagram from "./diagram"; //运行图
+
+var _thisall = this;
 export default {
   name: "DataView",
   components: {
@@ -49,11 +51,9 @@ export default {
       fatherWidth: 0,
     };
   },
-  mounted() {
-    // this.fatherWidth = document.getElementById("diagram").clientWidth;
-  },
-  created() {},
   methods: {},
+  mounted() {},
+  created() {},
 };
 </script>
 <style>

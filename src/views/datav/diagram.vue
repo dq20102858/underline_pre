@@ -144,13 +144,24 @@ export default {
       carLocation: [],
     };
   },
-  props: ["fatherWidth"],
-  updated() {},
+  updated() {
+    this.initCanvas();
+  },
   created() {
     this.getProjectProcessMap();
   },
   mounted() {
     window.addEventListener("resize", this.initCanvas);
+      var timer = setInterval(() => {
+     this.getProjectProcessMap();
+    }, 10000);
+    this.$once("hook:beforeDestroy", () => {
+      clearInterval(timer);
+    });
+  },
+    beforeDestroy() {
+    clearInterval(this.timer);
+    this.timer = null;
   },
   destroyed() {
     window.removeEventListener("resize", this.initCanvas);
@@ -205,7 +216,7 @@ export default {
 
     initCanvas() {
       const that = this;
-      let canvasWidth = this.$refs.canvasWrapper.clientWidth - 30;
+      let canvasWidth = document.body.clientWidth- 30;
       this.cwidth = canvasWidth;
       let lineTypeBetwentMileage =
         this.lineTypeMaxMileage - this.lineTypeMinMileage;
@@ -872,7 +883,7 @@ export default {
 };
 </script>
 <style>
-#diagram {
+#diagram {  background: #01023a;
   position: absolute;
   width: 100%;
   /* background: #01023a; */

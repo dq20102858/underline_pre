@@ -1,9 +1,9 @@
 <template>
   <div id="operation">
     <div class="datav-ptitle"><h3>信息列表</h3></div>
-    <div class="datav-list"  v-if="iShow">
-     <dv-scroll-board :config="config" />
-    <!--  <ul class="worklist">
+    <div class="datav-list" v-if="iShow">
+      <dv-scroll-board :config="config" />
+      <!--  <ul class="worklist">
         <li class="header">
           <div>作业编号</div>
           <div>作业令号</div>
@@ -34,7 +34,7 @@
 export default {
   name: "Operation",
   data() {
-      return {
+    return {
       iShow: false,
       peopleList: [],
       config: {
@@ -45,23 +45,23 @@ export default {
         headerBGC: "#01023a",
         headerHeight: 45,
         oddRowBGC: "#01023a",
-        evenRowBGC: "#06074b"
-      }
+        evenRowBGC: "#06074b",
+      },
     };
   },
   created() {
     this.getDataList();
   },
   methods: {
-   getDataList() {
+    getDataList() {
       let page = 1;
       this.request({
         url: "/apply/getApplyPages",
         method: "get",
         params: {
-          page
-        }
-      }).then(res => {
+          page,
+        },
+      }).then((res) => {
         let data = res.data;
         if (data.status == 1) {
           this.dataList = [
@@ -71,7 +71,7 @@ export default {
               "作业内容作业内容作业内容",
 
               "未批复",
-              "何庆同"
+              "何庆同",
             ],
             [
               "12345",
@@ -79,7 +79,7 @@ export default {
               "作业内容作业内容作业内容",
 
               "未批复",
-              "何庆同"
+              "何庆同",
             ],
             [
               "12345",
@@ -87,7 +87,7 @@ export default {
               "作业内容作业内容作业内容",
 
               "未批复",
-              "何庆同"
+              "何庆同",
             ],
             [
               "12345",
@@ -95,7 +95,7 @@ export default {
               "作业内容作业内容作业内容",
 
               "未批复",
-              "何庆同"
+              "何庆同",
             ],
             [
               "12345",
@@ -103,7 +103,7 @@ export default {
               "作业内容作业内容作业内容",
 
               "未批复",
-              "何庆同"
+              "何庆同",
             ],
             [
               "32345",
@@ -111,7 +111,7 @@ export default {
               "作业内容作业内容作业内容",
 
               "未批复",
-              "何庆同"
+              "何庆同",
             ],
             [
               "42345",
@@ -119,7 +119,7 @@ export default {
               "作业内容作业内容作业内容",
 
               "未批复",
-              "何庆同"
+              "何庆同",
             ],
             [
               "52345",
@@ -127,7 +127,7 @@ export default {
               "作业内容作业内容作业内容",
 
               "未批复",
-              "何庆同"
+              "何庆同",
             ],
             [
               "62345",
@@ -135,7 +135,7 @@ export default {
               "作业内容作业内容作业内容",
 
               "未批复",
-              "何庆同"
+              "何庆同",
             ],
             [
               "72345",
@@ -143,7 +143,7 @@ export default {
               "作业内容作业内容作业内容",
 
               "未批复",
-              "何庆同"
+              "何庆同",
             ],
             [
               "82345",
@@ -151,7 +151,7 @@ export default {
               "作业内容作业内容作业内容",
 
               "未批复",
-              "何庆同"
+              "何庆同",
             ],
             [
               "92345",
@@ -159,8 +159,8 @@ export default {
               "作业内容作业内容作业内容",
 
               "未批复",
-              "何庆同"
-            ]
+              "何庆同",
+            ],
           ];
           let json = data.data.data;
           let arr = [];
@@ -184,22 +184,39 @@ export default {
                 arr.push(item[key]);
               }
             }
-            [arr[0],arr[1],arr[2],arr[3],arr[4]] = [arr[0],arr[3],arr[1],arr[2],arr[4]]
+            [arr[0], arr[1], arr[2], arr[3], arr[4]] = [
+              arr[0],
+              arr[3],
+              arr[1],
+              arr[2],
+              arr[4],
+            ];
             jsonData.push(arr);
           });
           this.config.data = jsonData;
           this.iShow = true;
         }
       });
-    }
-    //
-  }
+    },
+  },
+  mounted() {
+    var timer = setInterval(() => {
+      this.getDataList();
+    }, 10000);
+    this.$once("hook:beforeDestroy", () => {
+      clearInterval(timer);
+    });
+  },
+  beforeDestroy() {
+    clearInterval(this.timer);
+    this.timer = null;
+  },
 };
 </script>
 <style>
 #operation {
   position: relative;
-  width:50%;
+  width: 50%;
 }
 #operation .worklist {
 }
