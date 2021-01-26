@@ -3,30 +3,6 @@
     <div class="datav-ptitle"><h3>信息列表</h3></div>
     <div class="datav-list" v-if="iShow">
       <dv-scroll-board :config="config" />
-      <!--  <ul class="worklist">
-        <li class="header">
-          <div>作业编号</div>
-          <div>作业令号</div>
-          <div>作业内容</div>
-          <div>当前状态</div>
-          <div>公司简称</div>
-        </li>
-        <li
-          class="item"
-          :class="'p' + index"
-          v-for="(item, index) in dataList"
-          v-if="index < 6"
-        >
-          <i></i>
-          <div>{{ item.number }}</div>
-          <div>{{ item.command_num }}</div>
-          <div style="padding-left:10px">{{ item.description }}</div>
-          <div :style="{ color: item.status == '拒绝' ? '#FE5A27' : '' }">
-            {{ item.status }}
-          </div>
-          <div>{{ item.company }}</div>
-        </li>
-      </ul> -->
     </div>
   </div>
 </template>

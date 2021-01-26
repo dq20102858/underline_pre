@@ -49,7 +49,6 @@ let locationPush = [];
 export default {
   data() {
     return {
-      timer: null,
       stationList: [],
       lineTypeList: [],
       listSchedule: [],
