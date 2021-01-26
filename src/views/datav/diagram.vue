@@ -82,18 +82,17 @@ export default {
       carLocation: [],
     };
   },
-  updated() {},
   created() {
- this.getProjectMap();
+    this.getProjectMap();
   },
-  mounted() { 
+  mounted() {
     var timer = setInterval(() => {
-     this.getProjectProcessMap();
+      this.getProjectMap();
     }, 60000);
     this.$once("hook:beforeDestroy", () => {
       clearInterval(timer);
     });
-     window.addEventListener("resize", this.initCanvas);
+    window.addEventListener("resize", this.initCanvas);
   },
   beforeDestroy() {
     clearInterval(this.timer);
@@ -101,9 +100,9 @@ export default {
   },
   methods: {
     getProjectMap() {
-      var num=0;
+      var num = 0;
       num++;
-      console.log(num)
+      console.log(num);
       this.request({
         url: "/monitor/getMointorDatas",
         method: "get",
@@ -138,7 +137,7 @@ export default {
           this.carLocation = data.data.real_location; //车辆定位
 
           //initCanvas
-        this.initCanvas();
+          this.initCanvas();
         }
       });
     },
