@@ -29,8 +29,6 @@
   </div>
 </template>
 <script>
-let canvas;
-let context;
 let axis_Height = "650";
 //标尺起点
 let axis_LeftLine = {

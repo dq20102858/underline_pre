@@ -71,8 +71,6 @@
   </div>
 </template>
 <script>
-let canvas;
-let context;
 let axis_Height = 200;
 let offsetX = 0;
 let tick_Spacing = 100;
@@ -105,9 +103,11 @@ let axis_Applay_two = {
   y: axis_Height - 330,
 };
 let locationPush = [];
+
 export default {
   data() {
     return {
+      timer: null,
       conheight: {
         height: "",
       },
@@ -144,27 +144,22 @@ export default {
       carLocation: [],
     };
   },
-  updated() {
-    this.initCanvas();
-  },
+  updated() {},
   created() {
     this.getProjectProcessMap();
   },
   mounted() {
     window.addEventListener("resize", this.initCanvas);
-      var timer = setInterval(() => {
-     this.getProjectProcessMap();
-    }, 10000);
-    this.$once("hook:beforeDestroy", () => {
-      clearInterval(timer);
-    });
+    // var timer = setInterval(() => {
+    //   this.getProjectProcessMap();
+    // }, 60000);
+    // this.$once("hook:beforeDestroy", () => {
+    //   clearInterval(timer);
+    // });
   },
-    beforeDestroy() {
+  beforeDestroy() {
     clearInterval(this.timer);
     this.timer = null;
-  },
-  destroyed() {
-    window.removeEventListener("resize", this.initCanvas);
   },
   methods: {
     getProjectProcessMap() {
@@ -213,15 +208,12 @@ export default {
         }
       });
     },
-
     initCanvas() {
       const that = this;
-      let canvasWidth = document.body.clientWidth- 30;
+      let canvasWidth = this.$refs.canvasWrapper.clientWidth - 30;
       this.cwidth = canvasWidth;
       let lineTypeBetwentMileage =
         this.lineTypeMaxMileage - this.lineTypeMinMileage;
-      let lineTypeTotalMileage =
-        this.lineTypeMaxMileage + this.lineTypeMinMileage;
       this.everys = (parseInt(this.cwidth) / lineTypeBetwentMileage).toFixed(5);
       console.log("canvasWidth：" + this.cwidth + "_" + this.everys);
 
@@ -230,7 +222,7 @@ export default {
       let everys = this.everys; //每米长度等于px
       // console.log("everys" + everys);
 
-      const canvas = this.$refs.canvasStation;
+      let canvas = this.$refs.canvasStation;
       let context = canvas.getContext("2d");
       canvas.width = canvasWidth;
       //console.log("lineTypeMinMileage：" + lineTypeMinMileage);
@@ -320,7 +312,7 @@ export default {
         };
         context.stroke();
       }
-         //车定位
+      //车定位
       function drawAxesCar(jsonData) {
         let jsonCar = jsonData;
         let jsonCar1 = [
@@ -403,8 +395,8 @@ export default {
       }
       //人定位
       function drawAxesPeple(jsonData) {
-       let jsoPeple = jsonData;
-        let jsoPeple2= [
+        let jsoPeple = jsonData;
+        let jsoPeple2 = [
           {
             id: 1,
             name: "ZY01",
@@ -415,7 +407,8 @@ export default {
             company_name: "",
             depart_name: "",
             post_name: "",
-          } , {
+          },
+          {
             id: 1,
             name: "ZY01",
             start_flag: 2,
@@ -425,15 +418,15 @@ export default {
             company_name: "",
             depart_name: "",
             post_name: "",
-          }
+          },
         ];
         let start = 0;
         context.fillStyle = "#fff ";
         context.font = "10px  Microsoft Yahei";
         for (let i = 0; i < jsoPeple.length; i++) {
-          var startFlag=parseInt(jsoPeple[i].start_flag) * 1000;
-        
-          let total =startFlag + parseInt(jsoPeple[i].start_length);
+          var startFlag = parseInt(jsoPeple[i].start_flag) * 1000;
+
+          let total = startFlag + parseInt(jsoPeple[i].start_length);
           let startLineX = (total - lineTypeMinMileage) * everys;
           let codes =
             "<b style='padding-bottom:10px;display:block'>" +
@@ -470,7 +463,7 @@ export default {
               y: axis_LeftLine.y - 25,
               w: 15,
               h: 15,
-            text: codes.replace("undefined","").replace("undefined",""),
+              text: codes.replace("undefined", "").replace("undefined", ""),
             });
           } else if (jsoPeple[i].line_type == 2) {
             let imgcar = new Image();
@@ -493,7 +486,7 @@ export default {
               y: axis_LeftLine_Two.y - 25,
               w: 15,
               h: 15,
-             text: codes.replace("undefined","").replace("undefined",""),
+              text: codes.replace("undefined", "").replace("undefined", ""),
             });
           }
         }
@@ -712,7 +705,7 @@ export default {
       // if (this.progressCheckValue) {
       //   drawProgressAxis(this.progressListItem);
       // }
-      drawAxesCar(this.carLocation)
+      drawAxesCar(this.carLocation);
       drawAxesPeple(this.peopleLocation);
       //道岔
       if (this.daocCheckValue) {
@@ -883,7 +876,8 @@ export default {
 };
 </script>
 <style>
-#diagram {  background: #01023a;
+#diagram {
+  background: #01023a;
   position: absolute;
   width: 100%;
   /* background: #01023a; */
