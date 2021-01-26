@@ -8,32 +8,12 @@
     </div>
     <div class="check-lists">
       <span class="namess">显示图形：</span>
-      <!-- <el-checkbox
-        class="bridgechk"
-        v-model="bridgeCheckValue"
-        @change="bridgeCheckSelect"
-        label="桥"
-      ></el-checkbox>
-      <el-checkbox
-        class="tunnelchk"
-        v-model="tunnelCheckValue"
-        @change="tunnelCheckSelect"
-        label="隧道"
-      ></el-checkbox> -->
-
       <el-checkbox
         class="alertchk"
         v-model="alertCheckValue"
         @change="alertCheckSelect"
         label="防区"
       ></el-checkbox>
-      <!-- <el-checkbox v-model="checked5" label="道岔" border></el-checkbox> -->
-      <!-- <el-checkbox
-        class="slopechk"
-        v-model="slopeCheckValue"
-        @change="slopeCheckSelect"
-        label="坡度"
-      ></el-checkbox> -->
       <el-checkbox
         class="daocchk"
         v-model="daocCheckValue"
@@ -53,28 +33,9 @@
         label="施工地段"
       ></el-checkbox>
     </div>
-    <div class="progresslist" v-if="this.progressCheckValue != ''">
-      <span class="namess">施工进度：</span>
-      <el-radio-group
-        v-model="progressCheckValue"
-        @change="progressCheckSelect"
-      >
-        <el-radio
-          v-for="item in progressList"
-          :key="item.name"
-          :label="item.name"
-          >{{ item.name }}</el-radio
-        >
-      </el-radio-group>
-    </div>
-    <div id="notify" class="notify"></div>
   </div>
 </template>
 <script>
-let axis_Height = 200;
-let offsetX = 0;
-let tick_Spacing = 100;
-let tick_Height = 8; //刻度线高度
 //标尺起点
 let axis_LeftLine = {
   x: 30,
@@ -84,34 +45,11 @@ let axis_LeftLine_Two = {
   x: 30,
   y: 150,
 };
-//出入场线
-let axis_OutLine = {
-  x: 30,
-  y: axis_Height - 160,
-};
-let axis_OutLine_Two = {
-  x: 30,
-  y: axis_Height - 50,
-};
-
-let axis_Applay = {
-  x: 30,
-  y: axis_Height - 450,
-};
-let axis_Applay_two = {
-  x: 30,
-  y: axis_Height - 330,
-};
 let locationPush = [];
-
 export default {
   data() {
     return {
       timer: null,
-      conheight: {
-        height: "",
-      },
-      cwidth: 0,
       stationList: [],
       lineTypeList: [],
       listSchedule: [],
@@ -146,23 +84,26 @@ export default {
   },
   updated() {},
   created() {
-    this.getProjectProcessMap();
+ this.getProjectMap();
   },
-  mounted() {
-    window.addEventListener("resize", this.initCanvas);
+  mounted() { 
     var timer = setInterval(() => {
-      this.getProjectProcessMap();
+     this.getProjectProcessMap();
     }, 60000);
     this.$once("hook:beforeDestroy", () => {
       clearInterval(timer);
     });
+     window.addEventListener("resize", this.initCanvas);
   },
   beforeDestroy() {
     clearInterval(this.timer);
     this.timer = null;
   },
   methods: {
-    getProjectProcessMap() {
+    getProjectMap() {
+      var num=0;
+      num++;
+      console.log(num)
       this.request({
         url: "/monitor/getMointorDatas",
         method: "get",
@@ -190,37 +131,28 @@ export default {
                 parseInt(linetypeJson[i].start_length);
             }
           }
-          //请点
-          this.applyList = data.data.apply_lists;
           this.speedList = data.data.speed_lists; //限速区
           this.buildList = data.data.work_lists; //施工地段
           this.alertList = data.data.alert_lists; //防区
           this.peopleLocation = data.data.people_location; //人员定位
           this.carLocation = data.data.real_location; //车辆定位
-          //施工进度
-          if (data.data.project.length > 0) {
-            this.progressList = data.data.project;
-            this.progressCheckValue = data.data.project[0]["name"];
-            this.progressListItem = data.data.project[0].list;
-          }
-          this.initCanvas();
-          //
+
+          //initCanvas
+        this.initCanvas();
         }
       });
     },
     initCanvas() {
       const that = this;
       let canvasWidth = this.$refs.canvasWrapper.clientWidth - 30;
-      this.cwidth = canvasWidth;
       let lineTypeBetwentMileage =
         this.lineTypeMaxMileage - this.lineTypeMinMileage;
-      this.everys = (parseInt(this.cwidth) / lineTypeBetwentMileage).toFixed(5);
-      console.log("canvasWidth：" + this.cwidth + "_" + this.everys);
+      this.everys = (parseInt(canvasWidth) / lineTypeBetwentMileage).toFixed(5);
+      //console.log("canvasWidth：" + canvasWidth + "_" + this.everys);
 
       let lineTypeMinMileage = this.lineTypeMinMileage;
       let lineTypeMaxMileage = this.lineTypeMaxMileage;
       let everys = this.everys; //每米长度等于px
-      // console.log("everys" + everys);
 
       let canvas = this.$refs.canvasStation;
       let context = canvas.getContext("2d");
@@ -684,171 +616,40 @@ export default {
       }
 
       //====================================
+      //地铁站
       drawAxesLine(this.lineTypeList);
       drawAxesStationList(this.stationList);
-      //限速区
-      if (this.speedCheckValue) {
-        drawSpeedAxis(this.speedList);
-      }
       //防区
       if (this.alertList.length > 0) {
         if (this.alertCheckValue) {
           drawAlertAxis(this.alertList);
         }
       }
-      //施工路段
-      if (this.buildCheckValue) {
-        drawBuildAxis(this.buildList);
-      }
-
-      //施工进度
-      // if (this.progressCheckValue) {
-      //   drawProgressAxis(this.progressListItem);
-      // }
-      drawAxesCar(this.carLocation);
-      drawAxesPeple(this.peopleLocation);
       //道岔
       if (this.daocCheckValue) {
         drawDaocha();
       }
-      //作业
-      //  if (this.applyList.length > 0) {
-      //drawAxesApply(this.applyList);
-      //   }
-
-      function drawAxisTicksNum(
-        start,
-        startLen,
-        end,
-        endLen,
-        axis_Width,
-        axis_Line_X,
-        axis_Line_y,
-        axis_DK
-      ) {
-        //查找起始坐标
-        let first = darpNum(startLen);
-        let last = darpNum(endLen);
-        let lastMileage = end + endLen;
-        //
-        context.beginPath();
-        context.font = "12px Microsoft Yahei";
-        context.lineWidth = 10;
-        context.strokeStyle = "#ffffff";
-        context.moveTo(axis_Line_X, axis_Line_y);
-        context.lineTo(axis_Width + axis_Line_X + 1, axis_Line_y);
-        context.stroke();
-        //
-        context.beginPath();
-        context.fillStyle = "white";
-        context.textAlign = "center";
-        context.textBaseline = "top";
-        context.lineWidth = 2;
-        context.strokeStyle = "white";
-        let num_Ticks = axis_Width;
-        //起点
-        let startTicksNum = axis_DK + start / 1000 + " + " + startLen;
-        context.fillText(startTicksNum, axis_Line_X, axis_Line_y + 30);
-        context.moveTo(offsetX + 1, axis_Line_y + 5);
-        context.lineTo(offsetX + 1, axis_Line_y + 20);
-        //
-        //终点
-        let endTicksNum = axis_DK + end / 1000 + " + " + endLen;
-        //alert(endTicksNum);
-        context.fillText(
-          endTicksNum,
-          axis_Width + axis_Line_X, //guohonglin add
-          axis_Line_y + 30
-        );
-        context.moveTo(
-          axis_Width + axis_Line_X, //guohonglin add
-          axis_Line_y + 5
-        );
-        context.lineTo(
-          axis_Width + axis_Line_X, //guohonglin add
-          axis_Line_y + 20
-        );
-        context.stroke();
-
-        //中间
-
-        axis_Line_X = (parseInt(first) - parseInt(startLen)) * everys;
-        let num = 0;
-        let minKm = start / 1000;
-        for (let i = 1; i <= axis_Width; i++) {
-          let nums = parseInt(first) + parseInt(200 * num);
-          var endFlagNum = parseInt(minKm * 1000) + parseInt(nums);
-          if (endFlagNum < lastMileage) {
-            if (nums == 1000) {
-              minKm++;
-              //画数字
-              context.fillText(
-                axis_DK + minKm + " + 000",
-                axis_Line_X + i * tick_Spacing,
-                axis_Line_y + 20
-              );
-              num = 0;
-              first = 200;
-              //画小标
-              context.moveTo(axis_Line_X + i * tick_Spacing, axis_Line_y + 5);
-              context.lineTo(axis_Line_X + i * tick_Spacing, axis_Line_y + 15);
-              //
-            } else {
-              num++;
-              nums = parseInt(first) + parseInt(200 * (num - 1));
-              //画数字
-
-              context.fillText(
-                nums,
-                axis_Line_X + i * tick_Spacing,
-                axis_Line_y + 20
-              );
-              //画小标
-              context.moveTo(axis_Line_X + i * tick_Spacing, axis_Line_y + 5);
-              context.lineTo(axis_Line_X + i * tick_Spacing, axis_Line_y + 10);
-            }
-          }
-          //
-        }
-        //结束
-        context.stroke();
+      //限速区
+      if (this.speedCheckValue) {
+        drawSpeedAxis(this.speedList);
       }
-
-      function darpNum(startLen) {
-        let nums;
-        let startLens = parseInt(startLen);
-        if (startLens >= 0 && startLens < 200) {
-          nums = 200;
-        } else if (startLens >= 200 && startLens < 400) {
-          nums = 400;
-        } else if (startLens >= 400 && startLens < 600) {
-          nums = 600;
-        } else if (startLens >= 600 && startLens < 800) {
-          nums = 800;
-        } else if (startLens >= 800 && startLens <= 1000) {
-          nums = 1000;
-        }
-        return nums;
+      //施工路段
+      if (this.buildCheckValue) {
+        drawBuildAxis(this.buildList);
       }
+      //定位
+      drawAxesCar(this.carLocation);
+      drawAxesPeple(this.peopleLocation);
     },
     //=====================================
-    progressCheckSelect(val) {
-      this.progressList.map((item) => {
-        if (item.name == val) {
-          this.progressListItem = item.list;
-        }
-      });
-      this.initCanvas();
-    },
-    //桥
-    bridgeCheckSelect() {
-      context.clearRect(0, 0, canvas.width, canvas.height);
-      this.initCanvas();
-    },
-    //隧道
-    tunnelCheckSelect() {
-      this.initCanvas();
-    },
+    // progressCheckSelect(val) {
+    //   this.progressList.map((item) => {
+    //     if (item.name == val) {
+    //       this.progressListItem = item.list;
+    //     }
+    //   });
+    //   this.initCanvas();
+    // },
     //防区
     alertCheckSelect() {
       if (this.alertList.length > 0) {
@@ -863,16 +664,12 @@ export default {
     buildCheckSelect() {
       this.initCanvas();
     },
-    //坡度
-    slopeCheckSelect() {
-      this.initCanvas();
-    },
     //道岔
     daocCheckSelect() {
       this.initCanvas();
     },
   },
-  //进度
+  //
 };
 </script>
 <style>

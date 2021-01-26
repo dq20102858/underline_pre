@@ -4,7 +4,7 @@
     <div class="datav-list">
       <div class="progress-item">
         <div class="atxt">请点单位</div>
-        <el-progress
+        <el-progress v-if="getPercentage(dataInfo.todayCompanys,dataInfo.totalCompanys)"
           :percentage="getPercentage(dataInfo.todayCompanys,dataInfo.totalCompanys)"
           color="#fe5a27"
           :stroke-width="10"
@@ -16,7 +16,7 @@
       <div class="progress-txt">进场单位/<em>总数</em></div>
       <div class="progress-item">
         <div class="atxt">进场人数</div>
-        <el-progress
+        <el-progress v-if="getPercentage(dataInfo.todayTotalWorkers,dataInfo.totalAdmins)"
           :percentage="getPercentage(dataInfo.todayTotalWorkers,dataInfo.totalAdmins)"
           color="#ffd980"
           :stroke-width="10"
@@ -26,7 +26,7 @@
       <div class="progress-txt">进场人数/<em>总人数</em></div>
       <div class="progress-item">
         <div class="atxt">离场人数</div>
-        <el-progress
+        <el-progress v-if="getPercentage(dataInfo.todayLeafWorkers,dataInfo.totalAdmins)"
           :percentage="getPercentage(dataInfo.todayLeafWorkers,dataInfo.totalAdmins)"
           color="#26da06"
           :stroke-width="10"
@@ -36,7 +36,7 @@
       <div class="progress-txt">离场人数/<em>总人数</em></div>
       <div class="progress-item">
         <div class="atxt">作业内容</div>
-        <el-progress
+        <el-progress v-if="getPercentage(dataInfo.todayWorkDes,dataInfo.todayTotalApplys)"
           :percentage="getPercentage(dataInfo.todayWorkDes,dataInfo.todayTotalApplys)"
           color="#2e92ff"
           :stroke-width="10"
@@ -46,7 +46,7 @@
       <div class="progress-txt">作业数量/<em>请点总数</em></div>
       <div class="progress-item">
         <div class="atxt">施工站点</div>
-        <el-progress
+        <el-progress v-if="getPercentage(dataInfo.todayStations,8)"
           :percentage="getPercentage(dataInfo.todayStations,8)"
           color="#6be0e3"
           :stroke-width="10"
@@ -77,28 +77,16 @@ export default {
         let data = res.data;
         if (data.status == 1) {
           this.dataInfo = data.data;
-
-          //totalCompanys: 25                 所有公司数
-          //todayCompanys: 12               今日进场总公司数
-
-          //totalAdmins: 137                   所有人员数
-          //todayTotalWorkers: 646        今日进场总工人数
-
-          //todayLeafWorkers: 9              今日离场总工人数
-
-          //todayTotalApplys: 30             今日总请点数
-          //todayWorkDes: 14                    今日作业内容总数
-
-          //todayStations: 22                 今日站点数量
-
-          console.log(data.data);
         }
       });
     },
-    getPercentage(cur,total){
-var pec=cur/total
-return pec*100
-    }
+  getPercentage(cur, total) {
+      var pec = (parseInt(cur) / parseInt(total)) * 100;
+      if (pec > 100) {
+        pec = 100;
+      }
+      return pec;
+    },
     //
   },
 };

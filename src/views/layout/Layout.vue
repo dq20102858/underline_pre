@@ -4,7 +4,6 @@
       <sidebar class="sidebar-container"></sidebar>
       <div class="main-container">
         <navbar :msg="msg"></navbar>
-        <!-- <tags-view></tags-view> -->
         <app-main></app-main>
       </div>
     </div>
@@ -44,7 +43,7 @@ export default {
       };
     }
   },
-  mounted() {
+  created() {
     this.isMenu();
   },
   methods: {

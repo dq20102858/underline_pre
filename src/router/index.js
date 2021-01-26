@@ -157,7 +157,6 @@ const constantRouterMap = [
   {
     path: '/datav',
     component: Layout,
-    hidden: true,
     children: [
       {
         path: '/datav',
@@ -174,6 +173,10 @@ const constantRouterMap = [
       {
         path: '/datav/personnel',
         component: () => import('@/views/datav/personnel')
+      },
+      {
+        path: '/datav/monitors',
+        component: () => import('@/views/datav/monitors')
       },
       {
         path: '/datav/demo',
