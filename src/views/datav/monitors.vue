@@ -26,12 +26,12 @@
       <div class="progress-txt">进场人数/<em>总人数</em></div>
       <div class="progress-item">
         <div class="atxt">离场人数</div>
-        <el-progress v-if="getPercentage(dataInfo.todayLeafWorkers,dataInfo.totalAdmins)"
-          :percentage="getPercentage(dataInfo.todayLeafWorkers,dataInfo.totalAdmins)"
+        <el-progress v-if="getPercentage(dataInfo.todayLeafWorkers,dataInfo.todayTotalWorkers)"
+          :percentage="getPercentage(dataInfo.todayLeafWorkers,dataInfo.todayTotalWorkers)"
           color="#26da06"
           :stroke-width="10"
         ></el-progress>
-        <div class="anum">{{dataInfo.todayLeafWorkers}}/<em>{{dataInfo.totalAdmins}}</em></div>
+        <div class="anum">{{dataInfo.todayLeafWorkers}}/<em>{{dataInfo.todayTotalWorkers}}</em></div>
       </div>
       <div class="progress-txt">离场人数/<em>进场人数</em></div>
       <div class="progress-item">
