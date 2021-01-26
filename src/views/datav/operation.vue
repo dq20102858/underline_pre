@@ -202,7 +202,7 @@ export default {
   mounted() {
     var timer = setInterval(() => {
       this.getDataList();
-    }, 10000);
+    }, 60000);
     this.$once("hook:beforeDestroy", () => {
       clearInterval(timer);
     });
