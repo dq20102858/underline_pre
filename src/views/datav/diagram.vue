@@ -150,12 +150,12 @@ export default {
   },
   mounted() {
     window.addEventListener("resize", this.initCanvas);
-    // var timer = setInterval(() => {
-    //   this.getProjectProcessMap();
-    // }, 60000);
-    // this.$once("hook:beforeDestroy", () => {
-    //   clearInterval(timer);
-    // });
+    var timer = setInterval(() => {
+      this.getProjectProcessMap();
+    }, 60000);
+    this.$once("hook:beforeDestroy", () => {
+      clearInterval(timer);
+    });
   },
   beforeDestroy() {
     clearInterval(this.timer);
