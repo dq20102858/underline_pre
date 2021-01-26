@@ -33,7 +33,7 @@
         ></el-progress>
         <div class="anum">{{dataInfo.todayLeafWorkers}}/<em>{{dataInfo.totalAdmins}}</em></div>
       </div>
-      <div class="progress-txt">离场人数/<em>总人数</em></div>
+      <div class="progress-txt">离场人数/<em>进场人数</em></div>
       <div class="progress-item">
         <div class="atxt">作业内容</div>
         <el-progress v-if="getPercentage(dataInfo.todayWorkDes,dataInfo.todayTotalApplys)"
