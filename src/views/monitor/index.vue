@@ -180,12 +180,9 @@ let axis_applay_two = {
 };
 //刻度的间隔
 let tick_Spacing = 100;
-let tick_Height = 8; //刻度线高度
 let everys = 0.5; //每米长度等于px
 let offsetX = 100;
 let offsetXLine = 88;
-let scrollGapX = 0;
-let scrollStartx = 0;
 let applyClickXY = [];
 export default {
   data() {
@@ -304,14 +301,10 @@ export default {
       const that = this;
       //坐标轴宽度高度
       //  let axis_Width = this.totalMileage / 2 + 1000;
-      let minkm = this.minKM; //最小的公里数
-      let minkmLength = this.minKMLength; //最小米数
       let leftLineMinMileage = this.leftLineMinMileage;
       let leftLineMaxMileage = this.leftLineMaxMileage;
       let enterLineMinMileage = this.enterLineMinMileage;
-      let enterLineMaxMileage = this.enterLineMaxMileage;
       let outLineMinMileage = this.outLineMinMileage;
-      let outLineMaxMileage = this.leftLineMaxMileage;
       let axis_Width = (leftLineMaxMileage - leftLineMinMileage) * everys + 150;
       console.log(
         "axis_Width：" +
@@ -600,108 +593,12 @@ export default {
             parseInt(json[i].start_length);
           let end =
             parseInt(json[i].end_flag) * 1000 + parseInt(json[i].end_length);
-          let betweenMeters = (end - start) * everys; //两点之间距离米
           let startX = (start - leftLineMinMileage) * everys;
           let img = new Image();
           img.src = require("@/assets/image/icon-dc" + i + ".png");
           img.onload = function () {
-            context.drawImage(img, startX, 10, 69, 50);
+            context.drawImage(img, startX, 198, 200, 192);
           };
-        }
-      }
-      function drawDaochas() {
-        // let json1 = ListJson;
-        let json = [
-          {
-            id: 1,
-            type: 1,
-            start_flag: 0,
-            start_length: 400,
-            end_flag: 0,
-            end_length: 500,
-          },
-          {
-            id: 1,
-            type: 2,
-            start_flag: 2,
-            start_length: 100,
-            end_flag: 2,
-            end_length: 300,
-          },
-          {
-            id: 1,
-            type: 3,
-            start_flag: 5,
-            start_length: 500,
-            end_flag: 5,
-            end_length: 600,
-          },
-          {
-            id: 1,
-            type: 4,
-            start_flag: 7,
-            start_length: 200,
-            end_flag: 7,
-            end_length: 350,
-          },
-        ];
-        for (let i = 0; i < json.length; i++) {
-          let start =
-            parseInt(json[i].start_flag) * 1000 +
-            parseInt(json[i].start_length);
-          let end =
-            parseInt(json[i].end_flag) * 1000 + parseInt(json[i].end_length);
-          context.strokeStyle = "#107af7";
-          context.lineWidth = 3;
-          context.fillStyle = "#107af7";
-          context.font = "12px Microsoft Yahei";
-          context.beginPath();
-
-          let startX = (start - leftLineMinMileage) * everys;
-          let endX = (end - leftLineMinMileage) * everys;
-          if (json[i].type == 1) {
-            context.moveTo(startX + offsetX, 30);
-            context.lineTo(endX + offsetX, 30);
-            context.moveTo(startX + offsetX, 60);
-            context.lineTo(endX + offsetX, 60);
-            context.moveTo(startX + offsetX + 5, 30);
-            context.lineTo(endX + offsetX - 5, 60);
-            context.moveTo(startX + offsetX + 5, 60);
-            context.lineTo(endX + offsetX - 5, 30);
-          } else if (json[i].type == 2) {
-            context.moveTo(startX + offsetX, 30);
-            context.lineTo(endX + offsetX, 30);
-            context.moveTo(startX + offsetX, 60);
-            context.lineTo(endX + offsetX, 60);
-            context.moveTo(startX + offsetX + 60, 30);
-            context.lineTo(endX + offsetX + 20, 75);
-            context.moveTo(startX + offsetX + 60, 60);
-            context.lineTo(endX + offsetX + 20, 15);
-          } else if (json[i].type == 3) {
-            context.moveTo(startX + offsetX, 30);
-            context.lineTo(endX + offsetX, 30);
-            context.moveTo(startX + offsetX, 60);
-            context.lineTo(endX + offsetX, 60);
-            context.moveTo(startX + offsetX + 5, 60);
-            context.lineTo(endX + offsetX - 5, 30);
-          } else if (json[i].type == 4) {
-            context.moveTo(startX + offsetX, 30);
-            context.lineTo(endX + offsetX, 30);
-            context.moveTo(startX + offsetX, 60);
-            context.lineTo(endX + offsetX, 60);
-
-            context.moveTo(startX + offsetX, 10);
-            context.lineTo(startX + offsetX + 20, 30);
-
-            context.moveTo(startX + offsetX + 20, 60);
-            context.lineTo(startX + offsetX + 0, 85);
-
-            context.moveTo(endX + offsetX - 20, 30);
-            context.lineTo(endX + offsetX + 20, 90);
-            context.moveTo(endX + offsetX - 20, 60);
-            context.lineTo(endX + offsetX + 20, 0);
-          }
-          context.stroke();
         }
       }
       //绘制桥
@@ -1592,6 +1489,9 @@ export default {
       //============================
       //画地铁站
       drawStations(this.stationList);
+         if (this.daocCheckValue) {
+        drawDaocha();
+      }
       //施工进度
       if (this.progressCheckValue) {
         drawProgressAxis(this.progressListItem);
@@ -1627,9 +1527,7 @@ export default {
       drawAxesApply(this.applyList);
       // }
       //道岔
-      if (this.daocCheckValue) {
-        drawDaocha();
-      }
+   
       //轨道车
       drawAxesCar(this.carLocation);
       //定位人和车
