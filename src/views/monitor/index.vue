@@ -1647,7 +1647,7 @@ export default {
     });
     var timer = setInterval(() => {
       this.getProjectProcessMap();
-    }, 60000);
+    }, 10000);
     this.$once("hook:beforeDestroy", () => {
       clearInterval(timer);
     });

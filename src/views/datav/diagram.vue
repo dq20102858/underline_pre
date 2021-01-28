@@ -87,7 +87,7 @@ export default {
   mounted() {
     var timer = setInterval(() => {
       this.getProjectMap();
-    }, 60000);
+    }, 10000);
     this.$once("hook:beforeDestroy", () => {
       clearInterval(timer);
     });
@@ -482,7 +482,7 @@ export default {
           let img = new Image();
           img.src = require("@/assets/image/icon-dc" + i + ".png");
           img.onload = function () {
-            context.drawImage(img, startX, 0, 48, 35);
+            context.drawImage(img, startX, 75, 80, 70);
           };
         }
       }
