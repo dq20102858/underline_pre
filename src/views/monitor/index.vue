@@ -287,6 +287,7 @@ export default {
           this.alertList = data.data.alert_lists; //防区
           this.slopeList = data.data.slope_lists; //坡度
           this.peopleLocation = data.data.people_location; //人员定位
+          console.log(JSON.stringify(this.peopleLocation));
           this.carLocation = data.data.real_location; //车辆定位
           //施工进度
           if (data.data.project.length > 0) {
@@ -1359,7 +1360,7 @@ export default {
 
         for (let i = 0; i < jsonData.length; i++) {
           let codes =
-            "<b style='padding-bottom:10px;display:block'>" +
+            "<b style='display:block'>" +
             jsonData[i].name +
             "&nbsp;" +
             " DK" +
@@ -1393,9 +1394,9 @@ export default {
             applyClickXY.push({
               a: 2,
               x: startLineX + offsetX,
-              y: axis_LeftLine.y - 35,
-              w: 20,
-              h: 20,
+              y: axis_LeftLine.y - 30,
+              w: 10,
+              h: 10,
               text: codes.replace("undefined", "").replace("undefined", ""),
             });
           } else if (jsonData[i].line_type == 2) {
@@ -1415,9 +1416,9 @@ export default {
             applyClickXY.push({
               a: 2,
               x: startLineX + offsetX,
-              y: axis_LeftLine_Two.y - 35,
-              w: 20,
-              h: 20,
+              y: axis_LeftLine_Two.y - 30,
+              w: 10,
+              h: 10,
               text: codes.replace("undefined", "").replace("undefined", ""),
             });
           }
@@ -1429,7 +1430,7 @@ export default {
         // document.getElementById("notify").style.display = "none";
         var x = event.pageX - canvas.getBoundingClientRect().left;
         var y = event.pageY - canvas.getBoundingClientRect().top;
-        console.log(applyClickXY);
+        // console.log(applyClickXY);
         console.log("XY:" + x + "_" + y);
         for (let item of applyClickXY) {
           if (
@@ -1441,47 +1442,39 @@ export default {
             let infos = item.i;
 
             if (item.a == 1) {
-              that
-                .$confirm(
-                  "<p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>作业编号：</span>" +
-                    infos.number +
-                    "</p><p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>作业令号</span>：" +
-                    infos.command_num +
-                    "</p>" +
-                    "<p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>开始时间：</span>" +
-                    infos.start_time +
-                    "</p><p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>结束时间：</span>" +
-                    infos.end_time +
-                    "</p>" +
-                    "<p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>施工区间：</span>" +
-                    infos.work_area +
-                    "</p><p style='color:#4b6eca;padding-left:20px'><span style='color:#1d397a'>施工内容：</span>" +
-                    infos.description +
-                    "</p>",
-                  {
-                    distinguishCancelAndClose: true,
-                    dangerouslyUseHTMLString: true,
-                    showCancelButton: false,
-                    showConfirmButton: false,
-                  }
-                )
-                .catch(() => {});
+              that.$alert(
+                "<p style='color:#4b6eca;'><span style='color:#1d397a'>作业编号：</span>" +
+                  infos.number +
+                  "</p><p style='color:#4b6eca;'><span style='color:#1d397a'>作业令号</span>：" +
+                  infos.command_num +
+                  "</p>" +
+                  "<p style='color:#4b6eca;'><span style='color:#1d397a'>开始时间：</span>" +
+                  infos.start_time +
+                  "</p><p style='color:#4b6eca;'><span style='color:#1d397a'>结束时间：</span>" +
+                  infos.end_time +
+                  "</p>" +
+                  "<p style='color:#4b6eca;'><span style='color:#1d397a'>施工区间：</span>" +
+                  infos.work_area +
+                  "</p><p style='color:#4b6eca;'><span style='color:#1d397a'>施工内容：</span>" +
+                  infos.description +
+                  "</p>",
+                "作业内容",
+                {
+                  dangerouslyUseHTMLString: true,
+                  showConfirmButton: false,
+                  closeOnClickModal: true,
+                }
+              );
+
               break;
             } else {
-              that.$message({
-                type: "none",
-                customClass: "el-message-local",
+              that.$alert(item.text, "位置信息", {
                 dangerouslyUseHTMLString: true,
-                showClose: true,
-                duration: 8000,
-                offset: 135,
-                message: item.text,
+                showConfirmButton: false,
+                closeOnClickModal: true,
               });
+               window.setTimeout("closewin()",2000);   
               break;
-              //  notify.innerHTML = "<span>" + item.text + "</span>";
-              //   notify.style.display = "block";
-              // notify.style.top = y +180 + "px";
-              // notify.style.left = x - 100 + "px";
             }
           }
         }
@@ -1489,7 +1482,7 @@ export default {
       //============================
       //画地铁站
       drawStations(this.stationList);
-         if (this.daocCheckValue) {
+      if (this.daocCheckValue) {
         drawDaocha();
       }
       //施工进度
@@ -1526,8 +1519,7 @@ export default {
       // if (this.applyList.length > 0) {
       drawAxesApply(this.applyList);
       // }
-      //道岔
-   
+
       //轨道车
       drawAxesCar(this.carLocation);
       //定位人和车
@@ -1653,8 +1645,8 @@ export default {
     });
   },
   beforeDestroy() {
-      clearInterval(this.timer); 
-      this.timer=null;
+    clearInterval(this.timer);
+    this.timer = null;
   },
 };
 </script>

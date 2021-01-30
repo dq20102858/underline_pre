@@ -431,16 +431,12 @@ export default {
             y >= item.y &&
             y <= item.y + item.h
           ) {
-            console.log(item.text);
-            that.$message({
-              type: "none",
-              customClass: "el-message-local",
-              dangerouslyUseHTMLString: true,
-              showClose: true,
-              duration: 8000,
-              offset: 60,
-              message: item.text,
-            });
+              that.$alert(item.text, "位置信息", {
+                dangerouslyUseHTMLString: true,
+                showConfirmButton: false,
+                closeOnClickModal: true,
+              });
+               window.setTimeout("closewin()",2000);   
             break;
           }
         }
