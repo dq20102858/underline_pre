@@ -4,7 +4,7 @@
     <div class="datav-list">
       <div class="progress-item">
         <div class="atxt">请点单位</div>
-        <el-progress v-if="getPercentage(dataInfo.todayCompanys,dataInfo.totalCompanys)"
+        <el-progress
           :percentage="getPercentage(dataInfo.todayCompanys,dataInfo.totalCompanys)"
           color="#fe5a27"
           :stroke-width="10"
@@ -16,7 +16,7 @@
       <div class="progress-txt">进场单位/<em>总数</em></div>
       <div class="progress-item">
         <div class="atxt">进场人数</div>
-        <el-progress v-if="getPercentage(dataInfo.todayTotalWorkers,dataInfo.totalAdmins)"
+        <el-progress
           :percentage="getPercentage(dataInfo.todayTotalWorkers,dataInfo.totalAdmins)"
           color="#ffd980"
           :stroke-width="10"
@@ -26,7 +26,7 @@
       <div class="progress-txt">进场人数/<em>总人数</em></div>
       <div class="progress-item">
         <div class="atxt">离场人数</div>
-        <el-progress v-if="getPercentage(dataInfo.todayLeafWorkers,dataInfo.todayTotalWorkers)"
+        <el-progress 
           :percentage="getPercentage(dataInfo.todayLeafWorkers,dataInfo.todayTotalWorkers)"
           color="#26da06"
           :stroke-width="10"
@@ -36,7 +36,7 @@
       <div class="progress-txt">离场人数/<em>进场人数</em></div>
       <div class="progress-item">
         <div class="atxt">施工站点</div>
-        <el-progress v-if="getPercentage(dataInfo.todayStations,8)"
+        <el-progress
           :percentage="getPercentage(dataInfo.todayStations,8)"
           color="#6be0e3"
           :stroke-width="10"
