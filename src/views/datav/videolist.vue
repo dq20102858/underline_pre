@@ -1,14 +1,14 @@
 <template>
   <div id="videobox">
-    <!-- <iframe
+    <iframe
       src="http://172.28.2.200:8083/single/%E6%83%A0%E5%B1%B1%E7%AB%99%E8%B4%A7%E8%BF%90%E8%BD%A6%E9%81%93"
       scrolling="no"
-    ></iframe> -->
-
+    ></iframe>
+    <!--
     <img
       :src="require('@/assets/image/video0.jpg')"
       style="width: 650px; height: 350px"
-    />
+    />-->
   </div>
 </template>
 <script>
