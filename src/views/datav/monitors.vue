@@ -35,16 +35,6 @@
       </div>
       <div class="progress-txt">离场人数/<em>进场人数</em></div>
       <div class="progress-item">
-        <div class="atxt">作业内容</div>
-        <el-progress v-if="getPercentage(dataInfo.todayWorkDes,dataInfo.todayTotalApplys)"
-          :percentage="getPercentage(dataInfo.todayWorkDes,dataInfo.todayTotalApplys)"
-          color="#2e92ff"
-          :stroke-width="10"
-        ></el-progress>
-        <div class="anum">{{dataInfo.todayWorkDes}}/<em>{{dataInfo.todayTotalApplys}}</em></div>
-      </div>
-      <div class="progress-txt">作业数量/<em>请点总数</em></div>
-      <div class="progress-item">
         <div class="atxt">施工站点</div>
         <el-progress v-if="getPercentage(dataInfo.todayStations,8)"
           :percentage="getPercentage(dataInfo.todayStations,8)"
