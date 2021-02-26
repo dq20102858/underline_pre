@@ -561,30 +561,30 @@ export default {
       }
       //绘制道岔
       function drawDaocha() {
-        let json = [
+         let json = [
           {
             id: 1,
             type: 1,
             start_flag: 0,
-            start_length: 600,
+            start_length: 257,
           },
           {
             id: 1,
             type: 2,
-            start_flag: 2,
-            start_length: 300,
+            start_flag: 1,
+            start_length: 803,
           },
           {
             id: 1,
             type: 3,
             start_flag: 5,
-            start_length: 600,
+            start_length: 249,
           },
           {
             id: 1,
             type: 4,
-            start_flag: 7,
-            start_length: 200,
+            start_flag:6,
+            start_length: 736,
           },
         ];
         let start = 0;
@@ -598,7 +598,7 @@ export default {
           let img = new Image();
           img.src = require("@/assets/image/icon-dc" + i + ".png");
           img.onload = function () {
-            context.drawImage(img, startX, 198, 200, 192);
+            context.drawImage(img, startX+100, 198, 200, 192);
           };
         }
       }
