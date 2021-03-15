@@ -287,7 +287,7 @@ export default {
           this.alertList = data.data.alert_lists; //防区
           this.slopeList = data.data.slope_lists; //坡度
           this.peopleLocation = data.data.people_location; //人员定位
-          console.log(JSON.stringify(this.peopleLocation));
+         // console.log(JSON.stringify(this.peopleLocation));
           this.carLocation = data.data.real_location; //车辆定位
           //施工进度
           if (data.data.project.length > 0) {
@@ -307,14 +307,7 @@ export default {
       let enterLineMinMileage = this.enterLineMinMileage;
       let outLineMinMileage = this.outLineMinMileage;
       let axis_Width = (leftLineMaxMileage - leftLineMinMileage) * everys + 150;
-      console.log(
-        "axis_Width：" +
-          axis_Width +
-          "_" +
-          leftLineMinMileage +
-          "_" +
-          leftLineMaxMileage
-      );
+     // console.log(  "axis_Width：" +   axis_Width +  "_" +  leftLineMinMileage + "_" +  leftLineMaxMileage  );
       //初始化
       canvas = this.$refs.mycanvas;
       canvas.width = axis_Width;
