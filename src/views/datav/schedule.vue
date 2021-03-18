@@ -2,7 +2,7 @@
   <div id="schedule">
     <div class="datav-ptitle"><h3>项目进度</h3></div>
     <div id="progress" ref="proWrapper" :style="conheight">
-      <table class="lineTable zylineTable">
+      <!-- <table class="lineTable zylineTable">
         <tr class="linebar">
           <td style="width: 90px;">
             <div title="左线" class="tdtitle">左线</div>
@@ -23,7 +23,7 @@
             </div>
           </td>
         </tr>
-      </table>
+      </table> -->
 
       <div class="station">
         <canvas id="canvasStation" height="50" ref="canvasStation">
@@ -408,7 +408,7 @@ CanvasRenderingContext2D.prototype.fillTextVertical = function(text, x, y) {
   padding-bottom: 30px;
 }
 .station {
-  margin: 0px 0px 0px 90px;
+  margin: 20px 0px 0px 90px;
   position: relative;
   z-index: 999;
 }

@@ -73,6 +73,7 @@ const permission = {
         const accessedRouters = mapAsyncRouter(map, access)
         accessedRouters.push({ path: '*', redirect: '/404', hidden: true })
         commit('SET_ROUTERS', accessedRouters)
+        console.log(accessedRouters)
         resolve()
       })
     }
