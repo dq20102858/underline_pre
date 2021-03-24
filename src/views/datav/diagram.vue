@@ -454,19 +454,19 @@ export default {
             id: 1,
             type: 2,
             start_flag: 1,
-            start_length: 803,
+            start_length: 580,
           },
           {
             id: 1,
             type: 3,
             start_flag: 5,
-            start_length: 249,
+            start_length: 20,
           },
           {
             id: 1,
             type: 4,
             start_flag:6,
-            start_length: 736,
+            start_length: 520,
           },
         ];
         let start = 0;
