@@ -28,6 +28,7 @@ export default {
   created() {
     this.getDataList();
   },
+  
   methods: {
     getDataList() {
       let page = 1;
